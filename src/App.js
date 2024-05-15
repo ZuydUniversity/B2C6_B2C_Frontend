@@ -45,9 +45,9 @@ function App() {
 
         <ul>
 
-          {items.map((item) => (
+          {items.map((item) => ( // Starts looping over all the items in items and adding them to the list
 
-            <li key="{item.id}">
+            <li key={item.id}>
               {item.FirstName} {item.LastName} is {item.Age} years old
             </li>
 
