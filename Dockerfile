@@ -5,13 +5,13 @@ FROM node:14-alpine
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY mvpteam3/package*.json ./
 
 # Install project dependencies
 RUN npm install
 
 # Copy the remaining application code to the working directory
-COPY . .
+COPY mvpteam3/. .
 
 # Expose the port the app runs on
 EXPOSE 3000
