@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import PersonForm from './PersonForm';
 import "./index.css";
 
@@ -8,10 +7,33 @@ function App() {
 
   useEffect(() =>{
 
-    axios.get('http://localhost:8000/api/person/')
-    .then((Response) => { setItems(Response.data); })
-    .catch(error => {console.error("Error fetching data: ", error); });
+    const fetchData = async () => {
 
+      try
+      {
+
+        const Response = await fetch('http://localhost:8000/api/person/');
+        if (!Response.ok)
+        {
+
+          throw new Error("Failed to fetch data!");
+
+        }
+
+        const Data = await Response.json();
+        setItems(Data);
+
+      }
+      catch (error)
+      {
+
+        console.error("Error fetching data: ", error);
+
+      }
+
+   }
+
+   fetchData();
   }, []);
 
   return (
