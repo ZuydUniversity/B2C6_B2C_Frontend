@@ -13,8 +13,23 @@ RUN npm install
 # Copy the remaining application code to the working directory
 COPY mvpteam3/. .
 
-# Expose the port the app runs on
-EXPOSE 3000
+# Build the app for production
+RUN npm run build
 
-# Start the React app
-CMD ["npm", "start"]
+# Use a lightweight Node.js runtime for the production environment
+FROM node:14-alpine
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the build output from the previous stage
+COPY --from=0 /app/build ./build
+
+# Install serve to serve the app
+RUN npm install -g serve
+
+# Expose the port the app runs on
+EXPOSE 80
+
+# Start the app
+CMD ["serve", "-s", "build", "-l", "80"]
