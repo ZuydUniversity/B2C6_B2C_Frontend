@@ -6,18 +6,19 @@ function App() {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    if (!searchTerm) {
+    if (!searchTerm.trim()) {
       setPeople([]); // Reset people if searchTerm is empty
       return;
     }
 
-    if (searchTerm === " "){
-      setPeople([]); // Reset people if searchTerm is empty
-      return;
-    }
 
     fetch(`http://pythonbackend.eueahdc3epg9b3a6.westeurope.azurecontainer.io/people/${searchTerm}`)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok){
+          throw new Error(`Error: ${response.status}`);
+        }
+        return response.json();
+      })
       .then(data => {
         setPeople(data); // Store the entire person object
       })
