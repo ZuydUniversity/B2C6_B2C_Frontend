@@ -1,0 +1,39 @@
+.docter-container {
+  border-radius: 15px;
+  background-color: #014940;
+  border: 0px solid transparent;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 2%;
+  width: 60%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.docter-container-titel {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 45px;
+  color: #ffffff;
+}
+
+.docter-list-container {
+  border-radius: 15px;
+  background-color: #00a390;
+  width: 80%;
+  height: 100%;
+  margin-bottom: 5%;
+  padding: 15px;
+}
+
+.docter-list-element {
+  display: flex;
+  justify-content: start;
+  font-size: 24px;
+  color: #ffffff;
+  padding: 0px;
+  margin: 0px;
+}
