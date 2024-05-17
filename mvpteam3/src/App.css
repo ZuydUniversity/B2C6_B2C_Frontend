@@ -1,8 +1,30 @@
-.test{
+/* App.css */
+
+.test {
+  margin-bottom: 20px;
   justify-content: center;
   align-items: center;
   display: flex;
 }
+
+.Image {
+  width: 300px;
+  height: auto;
+}
+
+.names-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.names-list li {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
 .Image{
   margin: 0 auto;
   display: block;
