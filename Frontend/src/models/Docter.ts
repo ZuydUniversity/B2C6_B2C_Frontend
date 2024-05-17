@@ -53,7 +53,6 @@ export class Docter {
       const response = await fetch(urldocters);
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
       const docterData = await response.json();
-      console.log(docterData)
       const docters: Docter[] = docterData.map((docter: Docter) => ({
         id: docter.id,
         firstname: docter.firstname,
@@ -61,7 +60,6 @@ export class Docter {
         profession: docter.profession,
         salary: docter.salary
     }));
-      console.log(docters)
       return docters;
     }
     catch (error) {
