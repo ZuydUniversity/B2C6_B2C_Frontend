@@ -11,6 +11,11 @@ function App() {
       return;
     }
 
+    if (searchTerm === " "){
+      setPeople([]); // Reset people if searchTerm is empty
+      return;
+    }
+
     fetch(`http://pythonbackend.eueahdc3epg9b3a6.westeurope.azurecontainer.io/people/${searchTerm}`)
       .then(response => response.json())
       .then(data => {
@@ -39,7 +44,7 @@ function App() {
         />
       </div>
       <div className="test">
-        <p>Names:</p>
+        <p>Names: </p>
         <ul className="names-list">
           {people.map((person, index) => (
             <li key={index}>
