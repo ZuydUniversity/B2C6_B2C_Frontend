@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/patientpage.css';
 
 const patientpage: React.FC = () => {
   return (
