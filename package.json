@@ -20,9 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "coverage": "npm run test --coverage --watchAll --collectCoverageFrom='src/components/**/*.{ts,tsx}' --collectCoverageFrom='!src/components/index.tsx' --collectCoverageFrom='!src/index.tsx'"
+    "test": "react-scripts test --coverage --watchAll",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -51,7 +50,6 @@
         "statements": -10
       }
     }
-      
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
