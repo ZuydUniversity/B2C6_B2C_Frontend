@@ -44,3 +44,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+# My Project
+
+[![codecov](https://codecov.io/gh/username/repository/branch/main/graph/badge.svg?token=YOURTOKEN)](https://codecov.io/gh/username/repository)
+
+This is my project. Here's more information about it...
