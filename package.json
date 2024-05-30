@@ -41,17 +41,14 @@
       "last 1 safari version"
     ]
   },
-  "jest": {               
-    "coverageThreshold": {
-      "global": {
-        "branches": 0,
-        "functions": 0,
-        "lines": 0,
-        "statements": 0
-      }
-    }
-  },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@eslint/compat": "^1.0.1",
+    "@eslint/js": "^9.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^9.3.0",
+    "eslint-plugin-react": "^7.34.2",
+    "globals": "^15.3.0",
+    "typescript-eslint": "^7.11.0"
   }
 }
