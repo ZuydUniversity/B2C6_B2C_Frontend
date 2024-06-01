@@ -1,11 +1,11 @@
-name: Prettier Check
+name: Prettier
 
 on:
   pull_request:
     branches: [main]
 
 jobs:
-  prettier-check:
+  prettier:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,5 +15,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Check code formatting
+      - name: Run Prettier
         run: npx prettier --check .
