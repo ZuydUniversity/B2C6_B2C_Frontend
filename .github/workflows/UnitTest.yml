@@ -1,0 +1,31 @@
+name: Unit Test Frontend
+
+on:
+  pull_request:
+    branches: ['main', 'master'] # If it needs to trigger on extra pullrequests, add the branches here. (Don't add branches that get deleted.)
+  workflow_dispatch: # Makes the Pipeline able to run manualy
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Use any stable version of Node.JS However it needs to be 18 and up.
+
+      - name: Clear npm cache, remove node_modules and package-lock.json # Clears all the caching files that could give issues. (These get regenerated automaticaly.)
+        run: |
+          rm -rf node_modules 
+          rm -f package-lock.json 
+          npm cache clean --force
+
+      - name: Install dependencies # Installs the dependancy that are in package.json.
+        run: npm install
+
+      - name: Run tests # Runs all the files that have .test. in them. (Example: Example.test.tsx)
+        run: npm test -- --detectOpenHandles
