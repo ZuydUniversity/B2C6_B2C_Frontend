@@ -1,11 +1,12 @@
-name: Prettier
+name: Prettier Check
 
 on:
-  pull_request:
-    branches: [main] # Adjust the branch name as needed
+  push:
+    branches:
+      - main
 
 jobs:
-  prettier:
+  prettier-check:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,15 +16,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Prettier
-        run: npx prettier --write .
-
-      - name: Commit changes
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add .
-          git commit -m "Apply Prettier formatting"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check code formatting
+        run: npx prettier --check .
