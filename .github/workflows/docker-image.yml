@@ -37,7 +37,7 @@ jobs:
 
       - name: Verify container is running
         run: docker ps -a
-        
+
       - name: Clean up
         run: |
           docker stop my-container || echo "Container is not running or does not exist."
