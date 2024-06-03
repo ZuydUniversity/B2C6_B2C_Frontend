@@ -5,7 +5,7 @@ import "./styles/landingpagecss.css";
 const LandingPage: React.FC = () => {
   useEffect(() => {
     document.title = "SGACP";
-  }, []); 
+  }, []);
   return (
     <div className="landing-page">
       <header className="header">
