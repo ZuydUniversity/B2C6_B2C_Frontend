@@ -10,4 +10,4 @@ const AboutUsPage: React.FC = () => {
   );
 }
 
-export default AboutUsPage;
+export default AboutUsPage; 

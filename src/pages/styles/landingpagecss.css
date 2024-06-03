@@ -1,0 +1,47 @@
+/* src/LandingPage.css */
+
+.landing-page {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+.header {
+  background-color: #16a0d6;
+  color: white;
+  padding: 50px 20px;
+}
+
+.header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1.5em;
+  margin: 10px 0 20px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 20px;
+}
+
+.feature {
+  max-width: 300px;
+  border-radius: 20px;
+  border-color: black;
+  border-style: dashed;
+  padding: 20px;
+}
+
+.feature h2 {
+  font-size: 2em;
+  margin: 0 0 10px;
+}
+
+.feature p {
+  font-size: 1.2em;
+  color: #666;
+}
