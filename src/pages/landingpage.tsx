@@ -9,7 +9,7 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-page">
       <header className="header">
-        <h1>Super Gave Artsen Connect Portal.</h1>
+        <h1>Super Gave Artsen Connect Portaal.</h1>
         <p>SGACP</p>
         <p>Jou gezondheid, Onze verantwoordelijkheid</p>
       </header>
