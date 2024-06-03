@@ -24,11 +24,11 @@ const LandingPage: React.FC = () => {
           </li>
         </div>
         <div className="feature">
-          <h2>Docters Dossier</h2>
-          <p>Bekijk al onze docters.</p>
+          <h2>Artsen Dossier</h2>
+          <p>Bekijk al onze artsen.</p>
           <li className="navbar-item">
-            <a className="navbar-link" href="/doctors">
-              Doctors
+            <a className="navbar-link" href="/artsen">
+              Artsen
             </a>
           </li>
         </div>
