@@ -7,8 +7,7 @@ const PatientPage: React.FC = () => {
     <div className="patient-page">
       <h1>Patient Page</h1>
       <p>
-        Welcome to the Patient Page. Here you can find information and resources
-        for patients.
+        Welkom op de patienten pagina, hier vind je alle informatie beschikbaar over onze patienten.
       </p>
     </div>
   );

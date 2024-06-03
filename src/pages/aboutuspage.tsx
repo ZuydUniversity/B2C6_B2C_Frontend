@@ -4,8 +4,9 @@ import './styles/aboutuscss.css';
 const AboutUsPage: React.FC = () => {
   return (
     <div className="about-us-page">
-      <h1>About Us Page</h1>
-      <p>Welcome to the About Us Page. Learn more about our mission and values.</p>
+      <h1>About Us</h1>
+      <p>Wie zijn wij?</p>
+      <p>Wij zijn de klas B2C van de ICT Academie op Hogeschool zuyd. Onze klas is opgedeeld in 5 project teams die samen aan dit portaal werken.</p>
     </div>
   );
 }
