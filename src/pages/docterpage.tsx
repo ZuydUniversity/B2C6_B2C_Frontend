@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
+import './styles/docktercss.css';
 
-const Docterpage: React.FC = () => {
+const DoctorPage: React.FC = () => {
   return (
-    <div>
-      <h1>This is the Docterpage</h1>
+    <div className="doctor-page">
+      <h1>Doctor Page</h1>
+      <p>Welcome to the Doctor Page. Here you can find information and resources for doctors.</p>
     </div>
   );
-};
+}
 
-export default Docterpage;
+export default DoctorPage;
