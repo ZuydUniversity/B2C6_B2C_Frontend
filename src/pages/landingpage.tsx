@@ -18,7 +18,7 @@ const LandingPage: React.FC = () => {
           <h2>Patienten Dossier</h2>
           <p>Het dossier van alle patienten voor de artsen.</p>
           <li className="rootlink">
-            <a className="navbar-link" href="./patientpage">
+            <a className="navbar-link" href="./patients">
               Patienten
             </a>
           </li>
@@ -27,7 +27,7 @@ const LandingPage: React.FC = () => {
           <h2>Docters Dossier</h2>
           <p>Bekijk al onze docters.</p>
           <li className="navbar-item">
-            <a className="navbar-link" href="/DoctorPage">
+            <a className="navbar-link" href="/doctors">
               Doctors
             </a>
           </li>
@@ -36,7 +36,7 @@ const LandingPage: React.FC = () => {
           <h2>About Us</h2>
           <p>Wie zijn wij en wat doen wij.</p>
           <li className="navbar-item">
-            <a className="navbar-link" href="/AboutUsPage">
+            <a className="navbar-link" href="/aboutus">
               About Us
             </a>
           </li>
