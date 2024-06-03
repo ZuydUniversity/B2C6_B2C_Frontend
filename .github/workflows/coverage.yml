@@ -3,25 +3,25 @@ name: code coverage frontend
 on: push
 
 permissions:
-  contents: read 
-      
+  contents: read
+
 jobs:
   build:
-    runs-on: ubuntu-latest   
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
- 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Install dependencies
-      run: |                       
-        npm install
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
 
-    - name: run tests with coverage
-      run: |                        
-        npm run test
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: run tests with coverage
+        run: |
+          npm run test
