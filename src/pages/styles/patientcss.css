@@ -1,0 +1,17 @@
+.patient-page {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+.patient-page h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.patient-page p {
+  font-size: 1.2em;
+  color: #666;
+}
