@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import AboutUsPage from './pages/aboutuspage';
-import PatientPage from './pages/patientpage';
-import ArtsPage from './pages/artspage';
-import LandingPage from './pages/landingpage';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AboutUsPage from "./pages/aboutuspage";
+import PatientPage from "./pages/patientpage";
+import ArtsPage from "./pages/artspage";
+import LandingPage from "./pages/landingpage";
 
 function App() {
   return (
