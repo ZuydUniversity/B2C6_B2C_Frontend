@@ -2,7 +2,7 @@ name: Prettier
 
 on:
   push:
-    branches: code-style-formating
+    branches: [code-style-formating]
   pull_request:
     branches: [main]
 
