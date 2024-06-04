@@ -1,13 +1,14 @@
 name: Prettier
 
-on: push
+on:
+  push:
+    branches: code-style-formating
+  pull_request:
+    branches: [main]
 
 jobs:
   prettier:
     runs-on: ubuntu-latest
-
-    premissions:
-      contents: write
 
     steps:
       - name: Checkout code
