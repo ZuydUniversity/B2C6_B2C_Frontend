@@ -10,6 +10,9 @@ jobs:
   prettier:
     runs-on: ubuntu-latest
 
+    premissions:
+      contents: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -20,5 +23,4 @@ jobs:
       - name: Run Prettier
         run: npx prettier --write .
 
-      - name: Commit to github
-        run: git add . || git commit -m "Prettier - Applied prettier"
+      - uses: stefanzweifel/git-auto-commit-action@v5
