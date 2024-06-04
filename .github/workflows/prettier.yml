@@ -23,4 +23,5 @@ jobs:
       - name: Run Prettier
         run: npx prettier --write .
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Commit to github
+        run: git add . || git commit -m "Prettier - Applied prettier" || git push
