@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 20%;
+    background-color: #f4f9ff;
+    position: fixed;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+  }
+  
+  .collapsed .sidebar {
+    width: 5%;
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .collapsed .sidebar h2 {
+    display: none;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #e6f3ff;
+  }
+  
+  .collapsed .sidebar ul li {
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .main-content {
+    margin-left: 20%;
+    padding: 20px;
+    width: 80%;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+  }
+  
+  .collapsed .main-content {
+    margin-left: 5%;
+    width: 95%;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .patient-list {
+    margin-top: 20px;
+  }
+  
+  .patient {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  .patient img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .patient-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .patient-info div {
+    margin-left: 20px;
+  }
+  
+  .patient-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  
