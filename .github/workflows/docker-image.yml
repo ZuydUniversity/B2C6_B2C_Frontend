@@ -1,6 +1,8 @@
 name: Build, Push, and Run Docker Container
 
-on: push
+on:
+  pull_request:
+    types: [closed]
 
 jobs:
   build-push-run:
