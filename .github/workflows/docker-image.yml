@@ -1,7 +1,7 @@
 name: Build, Push, and Run Docker container
 
 on:
-  pull_request:
+ pull_request:
     types: [closed]
 
 jobs:
