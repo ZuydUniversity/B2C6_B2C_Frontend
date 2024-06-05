@@ -62,7 +62,7 @@ const PatientCard: React.FC<PatientCardProps> = ({
     </div>
   </div>
   <div className="patientCardOptions">
-        <button className="patientCardTime">
+        <button className="patientCardOptions button">
           <h3>...</h3>
         </button>
   </div>

@@ -23,6 +23,7 @@
   font-size: 2.25rem;
   font-weight: bold;
   color: #1e3a8a;
+  margin-bottom: 0;
 }
 
 .dashboardHeader hr {
@@ -48,11 +49,11 @@
 .dashboardInnerContent {
   display: flex;
   flex-direction: column;
-  padding: 3rem 4rem;
+  padding: 3rem 4rem 0rem 4rem;;
   background-color: white;
   border-radius: 3.5625rem;
-  max-height: 500px; /* Set a maximum height */
-  overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
+  max-height: 500px;
+  overflow-y: auto; 
 }
 
 .dashboardInnerHeader {
@@ -184,9 +185,11 @@
   min-height: 106px;
   border: none;
   margin-left: 5px;
-  min-width: 66px;
+  min-width: 5rem;
   justify-content: center;
   align-items: center;
+  background-color: #e0f2fe;
+  border-radius: 0 1.25rem 0 1.25rem;
 }
 
 .patientCardOptions button h3 {
@@ -196,3 +199,8 @@
   display: flex;
   font-weight: 1000;
 }
+
+.dashboardInnerContent::-webkit-scrollbar {
+  display: none;
+}
+
