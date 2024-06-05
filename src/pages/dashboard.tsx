@@ -1,63 +1,171 @@
-import React, {useState} from 'react';
+import * as React from 'react';
+import './styles/dashboardcss.css';
 
-import "./styles/dashboardcss.css";
+interface PatientCardProps {
+  date: string;
+  name: string;
+  age: string;
+  diagnosis: string;
+  medication: string;
+  appointments: number;
+  imageUrl: string;
+}
+
+const PatientCard: React.FC<PatientCardProps> = ({
+  date,
+  name,
+  age,
+  diagnosis,
+  medication,
+  appointments,
+  imageUrl,
+}) => {
+  return (
+<article className="patientCard">
+  <div className="patientCardTime">
+    <time dateTime={date.split('/').reverse().join('-')}>{date}</time>
+  </div>
+  <div className="patientCardMain">
+    <div className="patientCardImageWrapper">
+      <img
+        loading="lazy"
+        src={imageUrl}
+        alt={`${name} profile`}
+        className="patientCardImage"
+      />
+    </div>
+    <div className="patientCardDetails">
+      <div className="patientCardRow">
+        <h4 className="patientCardName">Naam:</h4>
+        <p>{name}</p>
+      </div>
+      <div className="patientCardRow">
+        <h4 className="patientCardAge">Leeftijd:</h4>
+        <p>{age}</p>
+      </div>
+      <div className="patientCardRow">
+        <h4 className="patientCardDiagnosis">Diagnose:</h4>
+        <p className="patientCardDiagnosisText">
+          <span>{diagnosis.split(' ')[0]} </span>
+          {diagnosis.split(' ').slice(1).join(' ')}
+        </p>
+      </div>
+      <div className="patientCardRow">
+        <h4 className="patientCardMedication">Medicatie:</h4>
+        <p>{medication}</p>
+      </div>
+      <div className="patientCardRow">
+        <h4 className="patientCardAppointments">Afspraken:</h4>
+        <p className="patientCardAppointmentsCount">{appointments}</p>
+      </div>
+    </div>
+  </div>
+  <div className="patientCardTime">
+    <time dateTime={date.split('/').reverse().join('-')}>{date}</time>
+  </div>
+</article>
+
+  );
+};
 
 const Dashboard: React.FC = () => {
-    const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const patients = [
+    {
+      date: '02/06/2021',
+      name: 'Joep Doe',
+      age: '10 jaar',
+      diagnosis: 'JDM (monocyclische)',
+      medication: 'x medicijn',
+      appointments: 4,
+      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+    },
+    {
+      date: '02/06/2021',
+      name: 'Joep Doe',
+      age: '10 jaar',
+      diagnosis: 'JDM (monocyclische)',
+      medication: 'x medicijn',
+      appointments: 4,
+      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+    },
+    {
+      date: '02/06/2021',
+      name: 'Joep Doe',
+      age: '10 jaar',
+      diagnosis: 'JDM (monocyclische)',
+      medication: 'x medicijn',
+      appointments: 4,
+      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+    },
+    {
+      date: '02/06/2021',
+      name: 'Joep Doe',
+      age: '10 jaar',
+      diagnosis: 'JDM (monocyclische)',
+      medication: 'x medicijn',
+      appointments: 4,
+      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+    },
+    {
+      date: '02/06/2021',
+      name: 'Joep Doe',
+      age: '10 jaar',
+      diagnosis: 'JDM (monocyclische)',
+      medication: 'x medicijn',
+      appointments: 4,
+      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+    },
+  ];
 
-  const toggleSidebar = () => {
-    setIsSidebarCollapsed(!isSidebarCollapsed);
-  };
-    return (
-        <div className={`container ${isSidebarCollapsed ? 'collapsed' : ''}`}>
-        <div className="sidebar">
-          <h2>JDB</h2>
-          <ul>
-            <li>Dashboard</li>
-            <li>Kalender</li>
-            <li>Documenten</li>
-            <li>Patiëntenoverzicht</li>
-            <li>Afspraak toevoegen</li>
-            <li>Sessie toevoegen arts</li>
-            <li>Sessie toevoegen fysiotherapeut</li>
-          </ul>
-          <ul>
-            <li>Instellingen</li>
-            <li>Uitloggen</li>
-          </ul>
-        </div>
-        <div className="main-content">
-          <div className="header">
-            <button onClick={toggleSidebar}>
-              {isSidebarCollapsed ? '>>' : '<<'}
-            </button>
-            <h1>Hallo, Dr. Johannes Doe</h1>
-          </div>
-          <div className="patient-list">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <div className="patient" key={index}>
-                <div className="patient-info">
-                  <img src="https://via.placeholder.com/50" alt="Patient" />
+  return (
+    <main className="dashboardMain">
+      <div className="dashboardSection">
+        <article className="dashboardArticle">
+          <h1 className="dashboardHeader">
+            Hallo, Dr. Johannes Doe
+          </h1>
+          <hr className="dashboardHeader" />
+          <section className="dashboardContent">
+            <article className="dashboardInnerContent">
+              <header className="dashboardInnerHeader">
+                <section>
+                  <h2>Patiënten met een afspraak</h2>
+                  <hr />
+                </section>
+                <section className="dashboardSort">
                   <div>
-                    <p><strong>Naam:</strong> Joep Doe</p>
-                    <p><strong>Leeftijd:</strong> 10 jaar</p>
-                    <p><strong>Diagnose:</strong> JDM (monocyclische)</p>
-                    <p><strong>Medicatie:</strong> x medicijn</p>
-                    <p><strong>Afspraken:</strong> 4</p>
+                    <span>oplopend</span>
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8680dffe1c994dd27e1c422f85ae2b00662d600ce944f33420b92f4cf8c535d?apiKey=070967f8f2f74db686d34af20d021ec7&"
+                      alt=""
+                    />
                   </div>
-                </div>
-                <div className="patient-actions">
-                  <button>...</button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="note">
-            <h3>Notitie</h3>
-            <textarea placeholder="Type iets..." ></textarea>
-          </div>
-        </div>
+                </section>
+              </header>
+              {patients.map((patient, index) => (
+                <PatientCard
+                  key={index}
+                  date={patient.date}
+                  name={patient.name}
+                  age={patient.age}
+                  diagnosis={patient.diagnosis}
+                  medication={patient.medication}
+                  appointments={patient.appointments}
+                  imageUrl={patient.imageUrl}
+                />
+              ))}
+              <footer className="dashboardFooter"></footer>
+            </article>
+          </section>
+        </article>
+        <footer className="dashboardFooter"></footer>
       </div>
-    );
-  }
+      <aside className="dashboardAside">
+        <section></section>
+      </aside>
+    </main>
+  );
+};
+
 export default Dashboard;
