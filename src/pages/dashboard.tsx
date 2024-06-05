@@ -191,7 +191,7 @@ const Dashboard: React.FC = () => {
                 </section>
                 <section className="dashboardSort">
                   <div>
-                    <span>oplopend</span>
+                    <span>oplopend </span>
                     <img
                       loading="lazy"
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8680dffe1c994dd27e1c422f85ae2b00662d600ce944f33420b92f4cf8c535d?apiKey=070967f8f2f74db686d34af20d021ec7&"
