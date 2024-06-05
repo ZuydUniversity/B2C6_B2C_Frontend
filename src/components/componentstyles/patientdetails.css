@@ -1,0 +1,21 @@
+.patient-info-card {
+    background-color: #E0F2FF;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin: 10px 0;
+  }
+  
+  .patient-info, .contact-person-info {
+    margin-bottom: 20px;
+  }
+  
+  .patient-info h2, .contact-person-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .patient-details div, .contact-details div {
+    margin-bottom: 5px;
+  }
+  

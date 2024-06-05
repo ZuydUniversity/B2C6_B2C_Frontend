@@ -1,6 +1,7 @@
 import React from "react";
-import "./styles/patientcss.css";
-import PatientList from "../components/patientlist";
+import { useParams } from "react-router-dom";
+import "./styles/patientoverviewcss.css";
+import PatientDetails from "../components/patientdetails";
 import { Patient } from '../types/types';
 
 const patients: Patient[] = [
@@ -9,13 +10,21 @@ const patients: Patient[] = [
   { id: 3, name: 'Alice Johnson', age: 60, diagnosis: 'Diabetes', medication: 'z medicijn', appointments: '4', image: 'https://via.placeholder.com/150', nextAppointment: "15-01-2024" },
 ];
 
-const PatientPage: React.FC = () => {
+const PatientOverview: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const patientId = parseInt(id || '', 10);
+  const patient = patients.find(p => p.id === patientId);
+
+  if (!patient) {
+    return <div>Patiënt niet gevonden</div>;
+  }
+
   return (
-    <div className="patient-page">
-      <h1>Hallo, Dr. Johannes Doe</h1>
-      <PatientList patients={patients} />
+    <div className="patient-overview">
+      <h1>Dashboard</h1>
+      <PatientDetails patient={patient} />
     </div>
   );
 };
 
-export default PatientPage;
+export default PatientOverview;
