@@ -42,6 +42,7 @@
   margin-top: 1.5rem;
   background-color: #e0f2fe;
   border-radius: 3.5625rem;
+  
 }
 
 .dashboardInnerContent {
@@ -50,6 +51,8 @@
   padding: 3rem 4rem;
   background-color: white;
   border-radius: 3.5625rem;
+  max-height: 500px; /* Set a maximum height */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
 }
 
 .dashboardInnerHeader {
