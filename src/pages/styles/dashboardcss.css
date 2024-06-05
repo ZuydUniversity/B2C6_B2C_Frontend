@@ -112,13 +112,21 @@
 .patientCardTime {
   display: flex;
   flex-direction: column;
-  padding: 2.775rem 0.875rem;
+  padding: 2.1rem 0.875rem;
   font-size: 0.875rem;
   margin-right: 5px;
   font-weight: 600;
   background-color: #e0f2fe;
   border-radius: 1.25rem 0 1.25rem 0;
   white-space: nowrap;
+}
+
+.patientCardTime p {
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
 }
 
 .patientCardMain {
@@ -167,4 +175,21 @@
 
 .patientCardDiagnosisText {
   font-size: 0.875rem;
+}
+
+.patientCardOptions button {
+  min-height: 106px;
+  border: none;
+  margin-left: 5px;
+  min-width: 66px;
+  justify-content: center;
+  align-items: center;
+}
+
+.patientCardOptions button h3 {
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: 1000;
 }

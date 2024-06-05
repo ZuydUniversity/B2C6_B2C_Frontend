@@ -23,6 +23,7 @@ const PatientCard: React.FC<PatientCardProps> = ({
   return (
 <article className="patientCard">
   <div className="patientCardTime">
+    <p>Gepland</p>
     <time dateTime={date.split('/').reverse().join('-')}>{date}</time>
   </div>
   <div className="patientCardMain">
@@ -60,8 +61,10 @@ const PatientCard: React.FC<PatientCardProps> = ({
       </div>
     </div>
   </div>
-  <div className="patientCardTime">
-    <time dateTime={date.split('/').reverse().join('-')}>{date}</time>
+  <div className="patientCardOptions">
+        <button className="patientCardTime">
+          <h3>...</h3>
+        </button>
   </div>
 </article>
 
@@ -70,6 +73,60 @@ const PatientCard: React.FC<PatientCardProps> = ({
 
 const Dashboard: React.FC = () => {
   const patients = [
+    {
+      date: '02/06/2021',
+      name: 'Joep Doe',
+      age: '10 jaar',
+      diagnosis: 'JDM (monocyclische)',
+      medication: 'x medicijn',
+      appointments: 4,
+      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+    },
+    {
+      date: '02/06/2021',
+      name: 'Joep Doe',
+      age: '10 jaar',
+      diagnosis: 'JDM (monocyclische)',
+      medication: 'x medicijn',
+      appointments: 4,
+      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+    },
+    {
+      date: '02/06/2021',
+      name: 'Joep Doe',
+      age: '10 jaar',
+      diagnosis: 'JDM (monocyclische)',
+      medication: 'x medicijn',
+      appointments: 4,
+      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+    },
+    {
+      date: '02/06/2021',
+      name: 'Joep Doe',
+      age: '10 jaar',
+      diagnosis: 'JDM (monocyclische)',
+      medication: 'x medicijn',
+      appointments: 4,
+      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+    },
+    {
+      date: '02/06/2021',
+      name: 'Joep Doe',
+      age: '10 jaar',
+      diagnosis: 'JDM (monocyclische)',
+      medication: 'x medicijn',
+      appointments: 4,
+      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+    },
+    {
+      date: '02/06/2021',
+      name: 'Joep Doe',
+      age: '10 jaar',
+      diagnosis: 'JDM (monocyclische)',
+      medication: 'x medicijn',
+      appointments: 4,
+      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+    },
     {
       date: '02/06/2021',
       name: 'Joep Doe',
