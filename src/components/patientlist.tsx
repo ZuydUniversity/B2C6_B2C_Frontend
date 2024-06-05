@@ -1,4 +1,4 @@
-import '../componentstyles/patientlist.css';
+import './componentstyles/patientlist.css';
 
 const PatientList = () => {
   const patients = [
