@@ -36,11 +36,9 @@
 }
 
 .dashboardContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 65%;
   padding: 3rem 2.5rem;
-  margin-top: 1.5rem;
+  margin: 1.5rem auto; /* Centers the element horizontally */
   background-color: #e0f2fe;
   border-radius: 3.5625rem;
   
