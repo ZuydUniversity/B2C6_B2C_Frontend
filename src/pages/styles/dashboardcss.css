@@ -11,14 +11,14 @@
   width: 100%;
 }
 
-.dashboardArticle {
+.dashboardArticle { 
   display: flex;
   flex-direction: column;
   padding: 1.25rem;
 }
 
 .dashboardHeader {
-  align-self: start;
+  align-self: center;
   margin-left: 1.75rem;
   font-size: 2.25rem;
   font-weight: bold;
@@ -150,7 +150,7 @@
   border: 2px solid #e0f2fe;
   width: 86px;
 }
-
+  
 .patientCardDetails {
   display: flex;
   flex-direction: row;
@@ -160,6 +160,7 @@
   background-color: white;
   border-radius: 1.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1608); /* Added drop shadow */
+  
 }
 .patientCardDetails p {
   margin: 0; /* Remove default margin for <p> elements */
