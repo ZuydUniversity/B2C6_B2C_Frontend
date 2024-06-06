@@ -15,22 +15,43 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
   };
 
   return (
-    <div className="patient-info-card">
-      <div className="patient-info">
+    <div className="patient-details-container">
+      <div className="patient-info-card">
         <h2>Patiënt</h2>
         <div className="patient-details">
-          <div><strong>Naam:</strong> {patient.name}</div>
-          <div><strong>Leeftijd:</strong> {patient.age}</div>
-          <div><strong>Diagnose:</strong> {patient.diagnosis}</div>
-          <div><strong>Medicatie:</strong> {patient.medication}</div>
+          <div className="patient-info-pair">
+            <span className="patient-label">Naam:</span>
+            <span className="patient-value">{patient.name}</span>
+          </div>
+          <div className="patient-info-pair">
+            <span className="patient-label">Geboorte datum:</span>
+            <span className="patient-value">{patient.birthdate}</span>
+          </div>
+          <div className="patient-info-pair">
+            <span className="patient-label">Diagnose:</span>
+            <span className="patient-value">{patient.diagnosis}</span>
+          </div>
+          <div className="patient-info-pair">
+            <span className="patient-label">Afspraken:</span>
+            <span className="patient-value">{patient.appointments}</span>
+          </div>
         </div>
       </div>
       <div className="contact-person-info">
         <h2>Contactpersoon</h2>
         <div className="contact-details">
-          <div><strong>Naam:</strong> {contactPerson.name}</div>
-          <div><strong>Telefoonnummer:</strong> {contactPerson.phone}</div>
-          <div><strong>E-mailadres:</strong> {contactPerson.email}</div>
+          <div className="contact-info-pair">
+            <span className="contact-label">Naam:</span>
+            <span className="contact-value">{contactPerson.name}</span>
+          </div>
+          <div className="contact-info-pair">
+            <span className="contact-label">Telefoonnummer:</span>
+            <span className="contact-value">{contactPerson.phone}</span>
+          </div>
+          <div className="contact-info-pair">
+            <span className="contact-label">E-mailadres:</span>
+            <span className="contact-value">{contactPerson.email}</span>
+          </div>
         </div>
       </div>
     </div>

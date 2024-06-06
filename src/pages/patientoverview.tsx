@@ -5,9 +5,9 @@ import PatientDetails from "../components/patientdetails";
 import { Patient } from '../types/types';
 
 const patients: Patient[] = [
-  { id: 1, name: 'John Doe', age: 30, diagnosis: 'JDM', medication: 'x medicijn', appointments: '3', image: 'https://via.placeholder.com/150', nextAppointment: "02-01-2024" },
-  { id: 2, name: 'Jane Smith', age: 45, diagnosis: 'Rheumatoid Arthritis', medication: 'y medicijn', appointments: '2', image: 'https://via.placeholder.com/150', nextAppointment: "10-01-2024" },
-  { id: 3, name: 'Alice Johnson', age: 60, diagnosis: 'Diabetes', medication: 'z medicijn', appointments: '4', image: 'https://via.placeholder.com/150', nextAppointment: "15-01-2024" },
+  { id: 1, name: 'John Doe', birthdate: '11/02/2008', diagnosis: 'JDM, monocycles', appointments: '2' },
+  { id: 2, name: 'Jane Smith', birthdate: '11/02/2008', diagnosis: 'JDM, monocycles', appointments: '2' },
+  { id: 3, name: 'Alice Johnson', birthdate: '11/02/2008', diagnosis: 'JDM, monocycles', appointments: '2' },
 ];
 
 const PatientOverview: React.FC = () => {

@@ -1,91 +1,67 @@
 .patientlist-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  border: 30px solid #D8EAFF;
-  background-color: white;
-  padding: 10px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
   margin: auto;
-  border-radius: 20px;
-  width: 60%;
+}
+
+.patientlist-title {
+  color: #333;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.patientlist-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #D8EAFF;
+  border-radius: 10px;
+  color: #000369;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .patient-row-wrapper {
   display: flex;
-  margin-bottom: 10px; 
-  margin-left: 3vw;
-}
-
-.appointment-card {
-  background-color: #D8EAFF;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  border-radius: 20px 0px;
-  margin-right: 10px;
-  color: #000369;
-  font-weight: bold;
-}
-
-.options-card{
-  background-color: #D8EAFF;
+  background-color: #FFF;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0px 20px;
-  margin-left: 10px;
-  width: 4vw;
-}
-
-.options-card span{
-  color: #000369;
-}
-
-.patient-row-container {
-  display: flex; 
-  align-items: center; 
-  background-color: #D8EAFF;
-  padding: 20px;
-  border-radius: 20px;
-  width: auto;
-}
-
-.patient-image {
-  width: 70px; 
-  height: 70px; 
-  margin-right: 10px; 
-}
-
-.patientlist-title {
-  color: blue;
-  text-align: left;
-  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
 
 .patient-row {
-  display: flex; 
-  background-color: white;
-  color: white;
-  padding: 5px;
-  margin-bottom: 5px;
-  list-style: none;   
-  border-radius: 40px;
-  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-.patientinfo-pair {
+.patient-name,
+.patient-birthdate,
+.patient-diagnosis,
+.patient-appointments {
+  flex: 1;
+  text-align: left;
+  padding: 0 10px;
+  color: #333;
+}
+
+.options-card {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D8EAFF;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   text-align: center;
   color: #000369;
-  margin-right: 3.5vw;
-}
-
-
-.patient-label {
   font-weight: bold;
+  cursor: pointer;
 }

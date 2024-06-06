@@ -1,14 +1,12 @@
 // src/types/types.ts
 export interface Patient {
-    id: number;
-    name: string;
-    age: number;
-    diagnosis: string;
-    medication: string;
-    appointments: string;
-    image: string;
-    nextAppointment: string;
-  }
+  id: number;
+  name: string;
+  birthdate: string;
+  diagnosis: string;
+  appointments: string;
+}
+
   
   export interface PatientDetailsProps {
     patients: Patient[];
