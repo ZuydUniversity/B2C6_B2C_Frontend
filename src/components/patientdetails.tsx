@@ -61,26 +61,7 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
               <span className="medication-label">Medicijn:</span>
               <span className="medication-value">Gebruik</span>
             </div>
-            <div className="medication-info-pair">
-              <span className="medication-label">Medicijn:</span>
-              <span className="medication-value">Gebruik</span>
-            </div>
-            <div className="medication-info-pair">
-              <span className="medication-label">Medicijn:</span>
-              <span className="medication-value">Gebruik</span>
-            </div>
-            <div className="medication-info-pair">
-              <span className="medication-label">Medicijn:</span>
-              <span className="medication-value">Gebruik</span>
-            </div>
-            <div className="medication-info-pair">
-              <span className="medication-label">Medicijn:</span>
-              <span className="medication-value">Gebruik</span>
-            </div>
-            <div className="medication-info-pair">
-              <span className="medication-label">Medicijn:</span>
-              <span className="medication-value">Gebruik</span>
-            </div>
+            {/* Add more medication details as needed */}
           </div>
         </div>
       </div>

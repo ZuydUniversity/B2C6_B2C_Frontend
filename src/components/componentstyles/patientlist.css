@@ -45,6 +45,7 @@
   margin-bottom: 10px;
   border-radius: 10px 0px;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 .patient-value-container {

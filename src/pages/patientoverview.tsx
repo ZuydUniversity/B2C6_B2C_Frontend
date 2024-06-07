@@ -12,7 +12,7 @@ const patients: Patient[] = [
 
 const PatientOverview: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const patientId = parseInt(id || '', 10);
+  const patientId = id ? parseInt(id, 10) : NaN;
   const patient = patients.find(p => p.id === patientId);
 
   if (!patient) {
