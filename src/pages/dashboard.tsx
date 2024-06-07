@@ -1,5 +1,5 @@
-import * as React from 'react';
-import './styles/dashboardcss.css';
+import * as React from "react";
+import "./styles/dashboardcss.css";
 
 interface PatientCardProps {
   date: string;
@@ -21,156 +21,166 @@ const PatientCard: React.FC<PatientCardProps> = ({
   imageUrl,
 }) => {
   return (
-<article className="patientCard">
-  <div className="patientCardTime">
-    <p>Gepland</p>
-    <time dateTime={date.split('/').reverse().join('-')}>{date}</time>
-  </div>
-  <div className="patientCardMain">
-    <div className="patientCardImageWrapper">
-      <img
-        loading="lazy"
-        src={imageUrl}
-        alt={`${name} profile`}
-        className="patientCardImage"
-      />
-    </div>
-    <div className="patientCardDetails">
-      <div className="patientCardRow">
-        <h4 className="patientCardName">Naam:</h4>
-        <p>{name}</p>
+    <article className="patientCard">
+      <div className="patientCardTime">
+        <p>Gepland</p>
+        <time dateTime={date.split("/").reverse().join("-")}>{date}</time>
       </div>
-      <div className="patientCardRow">
-        <h4 className="patientCardAge">Leeftijd:</h4>
-        <p>{age}</p>
+      <div className="patientCardMain">
+        <div className="patientCardImageWrapper">
+          <img
+            loading="lazy"
+            src={imageUrl}
+            alt={`${name} profile`}
+            className="patientCardImage"
+          />
+        </div>
+        <div className="patientCardDetails">
+          <div className="patientCardRow">
+            <h4 className="patientCardName">Naam:</h4>
+            <p>{name}</p>
+          </div>
+          <div className="patientCardRow">
+            <h4 className="patientCardAge">Leeftijd:</h4>
+            <p>{age}</p>
+          </div>
+          <div className="patientCardRow">
+            <h4 className="patientCardDiagnosis">Diagnose:</h4>
+            <p className="patientCardDiagnosisText">
+              <span>{diagnosis.split(" ")[0]} </span>
+              {diagnosis.split(" ").slice(1).join(" ")}
+            </p>
+          </div>
+          <div className="patientCardRow">
+            <h4 className="patientCardMedication">Medicatie:</h4>
+            <p>{medication}</p>
+          </div>
+          <div className="patientCardRow">
+            <h4 className="patientCardAppointments">Afspraken:</h4>
+            <p className="patientCardAppointmentsCount">{appointments}</p>
+          </div>
+        </div>
       </div>
-      <div className="patientCardRow">
-        <h4 className="patientCardDiagnosis">Diagnose:</h4>
-        <p className="patientCardDiagnosisText">
-          <span>{diagnosis.split(' ')[0]} </span>
-          {diagnosis.split(' ').slice(1).join(' ')}
-        </p>
-      </div>
-      <div className="patientCardRow">
-        <h4 className="patientCardMedication">Medicatie:</h4>
-        <p>{medication}</p>
-      </div>
-      <div className="patientCardRow">
-        <h4 className="patientCardAppointments">Afspraken:</h4>
-        <p className="patientCardAppointmentsCount">{appointments}</p>
-      </div>
-    </div>
-  </div>
-  <div className="patientCardOptions">
+      <div className="patientCardOptions">
         <button className="patientCardOptions button">
           <h3>...</h3>
         </button>
-  </div>
-</article>
-
+      </div>
+    </article>
   );
 };
 
 const Dashboard: React.FC = () => {
   const patients = [
     {
-      date: '02/06/2021',
-      name: 'Joep Doe',
-      age: '10 jaar',
-      diagnosis: 'JDM (monocyclische)',
-      medication: 'x medicijn',
+      date: "02/06/2021",
+      name: "Joep Doe",
+      age: "10 jaar",
+      diagnosis: "JDM (monocyclische)",
+      medication: "x medicijn",
       appointments: 4,
-      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
     },
     {
-      date: '02/06/2021',
-      name: 'Joep Doe',
-      age: '10 jaar',
-      diagnosis: 'JDM (monocyclische)',
-      medication: 'x medicijn',
+      date: "02/06/2021",
+      name: "Joep Doe",
+      age: "10 jaar",
+      diagnosis: "JDM (monocyclische)",
+      medication: "x medicijn",
       appointments: 4,
-      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
     },
     {
-      date: '02/06/2021',
-      name: 'Joep Doe',
-      age: '10 jaar',
-      diagnosis: 'JDM (monocyclische)',
-      medication: 'x medicijn',
+      date: "02/06/2021",
+      name: "Joep Doe",
+      age: "10 jaar",
+      diagnosis: "JDM (monocyclische)",
+      medication: "x medicijn",
       appointments: 4,
-      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
     },
     {
-      date: '02/06/2021',
-      name: 'Joep Doe',
-      age: '10 jaar',
-      diagnosis: 'JDM (monocyclische)',
-      medication: 'x medicijn',
+      date: "02/06/2021",
+      name: "Joep Doe",
+      age: "10 jaar",
+      diagnosis: "JDM (monocyclische)",
+      medication: "x medicijn",
       appointments: 4,
-      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
     },
     {
-      date: '02/06/2021',
-      name: 'Joep Doe',
-      age: '10 jaar',
-      diagnosis: 'JDM (monocyclische)',
-      medication: 'x medicijn',
+      date: "02/06/2021",
+      name: "Joep Doe",
+      age: "10 jaar",
+      diagnosis: "JDM (monocyclische)",
+      medication: "x medicijn",
       appointments: 4,
-      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
     },
     {
-      date: '02/06/2021',
-      name: 'Joep Doe',
-      age: '10 jaar',
-      diagnosis: 'JDM (monocyclische)',
-      medication: 'x medicijn',
+      date: "02/06/2021",
+      name: "Joep Doe",
+      age: "10 jaar",
+      diagnosis: "JDM (monocyclische)",
+      medication: "x medicijn",
       appointments: 4,
-      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
     },
     {
-      date: '02/06/2021',
-      name: 'Joep Doe',
-      age: '10 jaar',
-      diagnosis: 'JDM (monocyclische)',
-      medication: 'x medicijn',
+      date: "02/06/2021",
+      name: "Joep Doe",
+      age: "10 jaar",
+      diagnosis: "JDM (monocyclische)",
+      medication: "x medicijn",
       appointments: 4,
-      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
     },
     {
-      date: '02/06/2021',
-      name: 'Joep Doe',
-      age: '10 jaar',
-      diagnosis: 'JDM (monocyclische)',
-      medication: 'x medicijn',
+      date: "02/06/2021",
+      name: "Joep Doe",
+      age: "10 jaar",
+      diagnosis: "JDM (monocyclische)",
+      medication: "x medicijn",
       appointments: 4,
-      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
     },
     {
-      date: '02/06/2021',
-      name: 'Joep Doe',
-      age: '10 jaar',
-      diagnosis: 'JDM (monocyclische)',
-      medication: 'x medicijn',
+      date: "02/06/2021",
+      name: "Joep Doe",
+      age: "10 jaar",
+      diagnosis: "JDM (monocyclische)",
+      medication: "x medicijn",
       appointments: 4,
-      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
     },
     {
-      date: '02/06/2021',
-      name: 'Joep Doe',
-      age: '10 jaar',
-      diagnosis: 'JDM (monocyclische)',
-      medication: 'x medicijn',
+      date: "02/06/2021",
+      name: "Joep Doe",
+      age: "10 jaar",
+      diagnosis: "JDM (monocyclische)",
+      medication: "x medicijn",
       appointments: 4,
-      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
     },
     {
-      date: '02/06/2021',
-      name: 'Joep Doe',
-      age: '10 jaar',
-      diagnosis: 'JDM (monocyclische)',
-      medication: 'x medicijn',
+      date: "02/06/2021",
+      name: "Joep Doe",
+      age: "10 jaar",
+      diagnosis: "JDM (monocyclische)",
+      medication: "x medicijn",
       appointments: 4,
-      imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&',
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
     },
   ];
 
@@ -186,7 +196,6 @@ const Dashboard: React.FC = () => {
           </div>
           <hr className="dashboardHeader" />
           <section className="dashboardContent">
-            
             <article className="dashboardInnerContent">
               <header className="dashboardInnerHeader">
                 <section>
