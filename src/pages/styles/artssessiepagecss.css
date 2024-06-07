@@ -88,31 +88,27 @@
 }
 
 .main-container {
-  display: flex;
   flex-direction: column;
   padding: 1.25rem;
   font-weight: bold;
   color: #1e3a8a;
   margin: 0 auto;
-  background-color: #f0f4f8;
+  background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   min-height: 94vh;
   max-width: 1500px;
 }
 
 .header-text {
-  width: 100%;
   font-size: 2.5rem;
-  text-align: center;
-  color: #1d4ed8;
-
+  color: #1e3a8a;
+  margin-left: 10rem;
 }
 
 .sub-header {
-  align-self: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
   font-size: 1.5rem;
-  
+  margin-left: 9.7rem;
   color: #1e3a8a;
 }
 
@@ -120,15 +116,17 @@
   height: 0.125rem;
   background-color: #1e3a8a;
   border: none;
-  width: 40%;
-  margin-left: 40rem;
+  width: 416px;
+  margin-left: 10rem;
 }
 .divider2 {
   height: 0.125rem;
   background-color: #1e3a8a;
   border: none;
-  width: 25%;
-  margin-left: 40rem;
+  width: 260px;
+  margin-left: 10rem;
+  position: relative;
+  bottom: 16px;
 }
 
 @media (max-width: 768px) {
@@ -146,15 +144,15 @@
 }
 
 .flex-container {
-  display: flex;
   gap: 0.75rem;
   justify-content: center;
   align-items: center;
-  align-self: center;
   margin-top: 4rem;
   width: 15%;
   font-size: 0.875rem;
   border-radius: 1.25rem;
+  position: relative;
+  left: 80px;
 }
 
 .flex-container button {
@@ -162,15 +160,14 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  width: 300px;
-  height: 50px;
+  width: 553px;
+  height: 76px;
   border: 1px solid #d1d7e0;
   border-radius: 15px;
   background-color: white;
   cursor: pointer;
   font-size: 16px;
   color: #3a69c1;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .flex-container button:hover {
