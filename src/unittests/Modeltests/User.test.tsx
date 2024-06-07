@@ -1,4 +1,4 @@
-import { Dictionairy } from "../../abstracts/Dictionairy";
+import { Dictionairy } from "../../abstracts/Dictionary";
 import { User } from "../../abstracts/ImportsModels";
 
 describe("User", () => {

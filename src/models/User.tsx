@@ -1,4 +1,4 @@
-import { Dictionairy } from "../abstracts/Dictionairy";
+import { Dictionairy } from "../abstracts/Dictionary";
 
 export class User {
   _id!: number;
