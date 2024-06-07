@@ -7,7 +7,7 @@ describe("User", () => {
   const email = "JohnDoe@gmail.com";
   const phonenumber = "0612345678";
   const settings: Dictionairy<boolean> = {
-    isDarkMode: true,
+    "isDarkMode": true,
   };
 
   it("should create a new user with all the provided properties", () => {
@@ -44,8 +44,9 @@ describe("User", () => {
 
   it("should update the users settings", () => {
     const user = new User(firstname, lastname, email, phonenumber);
+    user.Settings = settings;
     const newSettings: Dictionairy<boolean> = {
-      isDarkMode: false,
+      "isDarkMode": false,
     };
 
     expect(user.Settings).toBe(settings);
