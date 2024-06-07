@@ -5,15 +5,15 @@ export class Note {
   Name!: string;
   Description!: string;
   Specialist!: Specialist;
-  Patient!: Patient;
-  Session!: Session;
+  Patient!: Patient | null;
+  Session!: Session | null;
 
   constructor(
     name: string,
     description: string,
     specialist: Specialist,
-    patient: Patient,
-    session: Session,
+    patient: Patient | null = null,
+    session: Session | null = null,
   ) {
     this.Id = 0;
     this.Name = name;
