@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/loginpage.css";
 
 interface Props {
@@ -6,6 +6,10 @@ interface Props {
 }
 
 const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
+
     useEffect(() => {
         setHideNavbar(true);
 
@@ -14,12 +18,44 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
         };
     }, [setHideNavbar]);
 
+    const handleLogin = async () => {
+        try {
+
+            const response = await fetch("http://127.0.0.1:8000/api/user/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password,
+                }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const accessToken = data.access_token;
+
+                localStorage.setItem('accessToken', accessToken)
+                window.location.href = "/";
+
+            }
+            else {
+                setError("Incorrect email or password")
+            }
+
+        }
+        catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
     return (
         <div className="login-page">
             <div className="login-form">
                 <div className="main-login-form">
                     <h1>Inloggen</h1>
-                    <form>
+                    <div>
                         <div className="form-group">
                             <input
                                 type="text"
@@ -34,6 +70,7 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
                                 id="login-email"
                                 name="login-email"
                                 placeholder="E-mail"
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
                         <div className="form-group">
@@ -42,14 +79,15 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
                                 id="password"
                                 name="password"
                                 placeholder="Wachtwoord"
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
                         <div className="form-group action-group">
-                            <button type="submit">Log in</button>
-
+                            <button onClick={handleLogin}>Log in</button>
                             <a href="#">Wachtwoord vergeten?</a>
                         </div>
-                    </form>
+                        {error && <p className="error-label">{error}</p>}
+                    </div>
 
                 </div>
                 <div className="footer">
