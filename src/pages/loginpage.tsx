@@ -8,9 +8,9 @@ interface Props {
 
 const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
     const [showPopup, setShowPopup] = useState<boolean>(false);
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [error, setError] = useState('')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     useEffect(() => {
         setHideNavbar(true);
@@ -26,12 +26,10 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
 
     const closePopup = () => {
         setShowPopup(false);
-
     };
 
     const handleLogin = async () => {
         try {
-
             const response = await fetch("http://127.0.0.1:8000/api/user/login", {
                 method: "POST",
                 headers: {
@@ -47,17 +45,13 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
                 const data = await response.json();
                 const accessToken = data.access_token;
 
-                localStorage.setItem('accessToken', accessToken)
+                localStorage.setItem('accessToken', accessToken);
                 window.location.href = "/";
-
+            } else {
+                setError("Incorrect email or password");
             }
-            else {
-                setError("Incorrect email or password")
-            }
-
-        }
-        catch (error) {
-            setError("No connection")
+        } catch (error) {
+            setError("No connection");
         }
     };
 
@@ -99,7 +93,6 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
                         </div>
                         {error && <p className="error-label">{error}</p>}
                     </div>
-
                 </div>
                 <div className="footer">
                     <p>Mede mogelijk gemaakt door</p>

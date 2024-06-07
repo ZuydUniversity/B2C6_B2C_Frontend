@@ -14,9 +14,10 @@
 }
 
 .main-login-form {
+  position: absolute;
+  top: 0;
   width: 70%;
   margin-left: 10%;
-  margin-top: 3%;
 }
 
 .login-form {
@@ -115,13 +116,13 @@ button:hover {
 }
 
 .footer {
-  margin-top: 6vh;
   margin-left: 2%;
   margin-bottom: 2%;
   height: 20vh;
-  align-self: self-end;
   width: 90%;
   color: #003366;
+  position: absolute;
+  bottom: 0;
 }
 
 .footer .logos {
