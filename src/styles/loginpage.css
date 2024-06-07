@@ -9,6 +9,10 @@
   position: relative;
 }
 
+.forgot-password-position {
+  position: absolute;
+}
+
 .main-login-form {
   width: 70%;
   margin-left: 10%;

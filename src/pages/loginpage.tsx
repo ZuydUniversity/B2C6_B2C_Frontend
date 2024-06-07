@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/loginpage.css";
+import ForgotPasswordPopup from "./forgotpasswordpopup"; // Ensure this path is correct
 
 interface Props {
     setHideNavbar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
+    const [showPopup, setShowPopup] = useState<boolean>(false);
+
     useEffect(() => {
         setHideNavbar(true);
 
@@ -13,6 +16,14 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
             setHideNavbar(false);
         };
     }, [setHideNavbar]);
+
+    const openPopup = () => {
+        setShowPopup(true);
+    };
+
+    const closePopup = () => {
+        setShowPopup(false);
+    };
 
     return (
         <div className="login-page">
@@ -47,10 +58,9 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
                         <div className="form-group action-group">
                             <button type="submit">Log in</button>
 
-                            <a href="#">Wachtwoord vergeten?</a>
+                            <a href="#" onClick={openPopup}>Wachtwoord vergeten?</a>
                         </div>
                     </form>
-
                 </div>
                 <div className="footer">
                     <p>Mede mogelijk gemaakt door</p>
@@ -69,6 +79,7 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
                     alt="Group of people in orange hoodies"
                 />
             </div>
+            {showPopup && <ForgotPasswordPopup onClose={closePopup} />} {/* Show popup if showPopup is true */}
         </div>
     );
 };
