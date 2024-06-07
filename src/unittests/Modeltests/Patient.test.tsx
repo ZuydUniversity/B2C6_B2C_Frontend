@@ -80,10 +80,10 @@ describe("Patient", () => {
       new Medication("medication2", "description2", patient),
     ];
 
-    expect(patient.Specialists).toBe([]);
-    expect(patient.Notes).toBe([]);
-    expect(patient.Medications).toBe([]);
-    expect(patient.Appointments).toBe([]);
+    expect(patient.Specialists).toStrictEqual([]);
+    expect(patient.Notes).toStrictEqual([]);
+    expect(patient.Medications).toStrictEqual([]);
+    expect(patient.Appointments).toStrictEqual([]);
 
     patient.Specialists = specialists;
     patient.Notes = notes;

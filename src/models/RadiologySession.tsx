@@ -15,5 +15,6 @@ export class RadiologySession extends Session {
     appointment: Appointment,
   ) {
     super(name, startdatetime, enddatetime, specialist, patient, appointment);
+    this.Notes = [];
   }
 }

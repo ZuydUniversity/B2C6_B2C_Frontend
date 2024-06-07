@@ -81,10 +81,10 @@ describe("Specialist", () => {
       ),
     ];
 
-    expect(specialist.Settings).toBe([]);
-    expect(specialist.Notes).toBe([]);
-    expect(specialist.Sessions).toBe([]);
-    expect(specialist.Appointments).toBe([]);
+    expect(specialist.Settings).toStrictEqual({});
+    expect(specialist.Notes).toStrictEqual([]);
+    expect(specialist.Sessions).toStrictEqual([]);
+    expect(specialist.Appointments).toStrictEqual([]);
 
     specialist.Settings = settings;
     specialist.Notes = notes;

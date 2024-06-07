@@ -69,7 +69,7 @@ describe("DoctorSession", () => {
       new Note("note2", "description2", specialist, patient, session),
     ];
 
-    expect(session.Notes).toBe([]);
+    expect(session.Notes).toStrictEqual([]);
 
     session.Notes = notes;
 

@@ -72,7 +72,7 @@ describe("Appointment", () => {
       ),
     ];
 
-    expect(appointment.Sessions).toBe([]);
+    expect(appointment.Sessions).toStrictEqual([]);
 
     appointment.Sessions = sessions;
 
