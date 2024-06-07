@@ -6,7 +6,7 @@ import ArtsPage from "./pages/artspage";
 import LandingPage from "./pages/landingpage";
 import DashboardPage from "./pages/dashboardpage";
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <Routes>
@@ -18,6 +18,6 @@ function App() {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
