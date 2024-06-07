@@ -1,4 +1,10 @@
-import { Specialist, Note, Appointment, Patient, Session } from "../../abstracts/ImportsModels";
+import {
+  Specialist,
+  Note,
+  Appointment,
+  Patient,
+  Session,
+} from "../../abstracts/ImportsModels";
 import { Dictionary } from "../../abstracts/Dictionary";
 import exp from "constants";
 
@@ -23,19 +29,56 @@ describe("Specialist", () => {
 
   it("should create a new specialist without the provided settings, notes, sessions and appointments. Then update them", () => {
     const specialist = new Specialist(firstname, lastname, email, phonenumber);
-      
+
     const notes: Array<Note> = [
       new Note("note1", "description1", specialist),
-      new Note("note2", "description2", specialist)
+      new Note("note2", "description2", specialist),
     ];
-    const patient = new Patient("Jane", "Duge", "JaneDuge@gmail.com", 32, "0687654321", false, "John", "Duge", "JohnDuge@hotmail.com", "0687654312");
+    const patient = new Patient(
+      "Jane",
+      "Duge",
+      "JaneDuge@gmail.com",
+      32,
+      "0687654321",
+      false,
+      "John",
+      "Duge",
+      "JohnDuge@hotmail.com",
+      "0687654312",
+    );
     const appointments: Array<Appointment> = [
-      new Appointment("appointment1", new Date(), new Date(), specialist, patient),
-      new Appointment("appointment2", new Date(), new Date(), specialist, patient),
+      new Appointment(
+        "appointment1",
+        new Date(),
+        new Date(),
+        specialist,
+        patient,
+      ),
+      new Appointment(
+        "appointment2",
+        new Date(),
+        new Date(),
+        specialist,
+        patient,
+      ),
     ];
     const sessions: Array<Session> = [
-      new Session("session1", new Date(), new Date(), specialist, patient, appointments[0]),
-      new Session("session2", new Date(), new Date(), specialist, patient, appointments[1]),
+      new Session(
+        "session1",
+        new Date(),
+        new Date(),
+        specialist,
+        patient,
+        appointments[0],
+      ),
+      new Session(
+        "session2",
+        new Date(),
+        new Date(),
+        specialist,
+        patient,
+        appointments[1],
+      ),
     ];
 
     expect(specialist.Settings).toBe([]);

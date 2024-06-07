@@ -1,4 +1,10 @@
-import { Patient, Specialist, Note, Medication, Appointment } from "../../abstracts/ImportsModels";
+import {
+  Patient,
+  Specialist,
+  Note,
+  Medication,
+  Appointment,
+} from "../../abstracts/ImportsModels";
 
 describe("Patient", () => {
   const firstname = "John";
@@ -13,7 +19,18 @@ describe("Patient", () => {
   const phonenumberContact = "0687654312";
 
   it("should create a new patient with all the provided properties", () => {
-    const patient = new Patient(firstname, lastname, email, age, phonenumber, sex, firstnameContact, lastnameContact, emailContact, phonenumberContact);
+    const patient = new Patient(
+      firstname,
+      lastname,
+      email,
+      age,
+      phonenumber,
+      sex,
+      firstnameContact,
+      lastnameContact,
+      emailContact,
+      phonenumberContact,
+    );
 
     expect(patient.Id).toBe(0);
     expect(patient.Firstname).toBe(firstname);
@@ -29,21 +46,38 @@ describe("Patient", () => {
   });
 
   it("should create a new patient with the provided specialists, notes, medications and appointments", () => {
-    const patient = new Patient(firstname, lastname, email, age, phonenumber, sex, firstnameContact, lastnameContact, emailContact, phonenumberContact);
+    const patient = new Patient(
+      firstname,
+      lastname,
+      email,
+      age,
+      phonenumber,
+      sex,
+      firstnameContact,
+      lastnameContact,
+      emailContact,
+      phonenumberContact,
+    );
 
     const specialists: Array<Specialist> = [
       new Specialist("John", "Doe", "JohnDoe@gmail.com", "0612345678"),
     ];
     const appointments: Array<Appointment> = [
-      new Appointment("cheeseAppointment", new Date(), new Date(), specialists[0], patient),
+      new Appointment(
+        "cheeseAppointment",
+        new Date(),
+        new Date(),
+        specialists[0],
+        patient,
+      ),
     ];
     const notes: Array<Note> = [
       new Note("note1", "description1", specialists[0], patient),
-      new Note("note2", "description2", specialists[0], patient)
+      new Note("note2", "description2", specialists[0], patient),
     ];
     const medications: Array<Medication> = [
       new Medication("medication1", "description1", patient),
-      new Medication("medication2", "description2", patient)
+      new Medication("medication2", "description2", patient),
     ];
 
     expect(patient.Specialists).toBe([]);
@@ -63,7 +97,18 @@ describe("Patient", () => {
   });
 
   it("should update the patients personalinformation", () => {
-    const patient = new Patient(firstname, lastname, email, age, phonenumber, sex, firstnameContact, lastnameContact, emailContact, phonenumberContact);
+    const patient = new Patient(
+      firstname,
+      lastname,
+      email,
+      age,
+      phonenumber,
+      sex,
+      firstnameContact,
+      lastnameContact,
+      emailContact,
+      phonenumberContact,
+    );
     const newFirstname = "Jane";
     const newLastname = "Duge";
     const newEmail = "JaneDuge@bing.com";
@@ -90,7 +135,18 @@ describe("Patient", () => {
   });
 
   it("should update the patients contactinformation", () => {
-    const patient = new Patient(firstname, lastname, email, age, phonenumber, sex, firstnameContact, lastnameContact, emailContact, phonenumberContact);
+    const patient = new Patient(
+      firstname,
+      lastname,
+      email,
+      age,
+      phonenumber,
+      sex,
+      firstnameContact,
+      lastnameContact,
+      emailContact,
+      phonenumberContact,
+    );
     const newFirstnameContact = "Mark";
     const newLastnameContact = "Rutte";
     const newEmailContact = "MarkRutte@hotmail.com";

@@ -3,7 +3,18 @@ import { Medication, Patient } from "../../abstracts/ImportsModels";
 describe("Medication", () => {
   const name = "cheeseMedication";
   const dosage = "1 pill per day";
-  const patient = new Patient("Jane", "Duge", "JaneDoe@gmail.com", 32, "0687654321", false, "John", "Duge", "JohnDuge@gmail.com", "0687654312");
+  const patient = new Patient(
+    "Jane",
+    "Duge",
+    "JaneDoe@gmail.com",
+    32,
+    "0687654321",
+    false,
+    "John",
+    "Duge",
+    "JohnDuge@gmail.com",
+    "0687654312",
+  );
 
   it("should create a new medication with all the provided properties", () => {
     const medication = new Medication(name, dosage, patient);
@@ -38,7 +49,18 @@ describe("Medication", () => {
 
   it("should update the medication's patient", () => {
     const medication = new Medication(name, dosage, patient);
-    const newPatient = new Patient("Mark", "Rutte", "", 54, "0687654321", false, "Geert", "Wilders", "", "0678645312");
+    const newPatient = new Patient(
+      "Mark",
+      "Rutte",
+      "",
+      54,
+      "0687654321",
+      false,
+      "Geert",
+      "Wilders",
+      "",
+      "0678645312",
+    );
 
     expect(medication.Patient).toBe(patient);
 
