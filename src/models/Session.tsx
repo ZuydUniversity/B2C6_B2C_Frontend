@@ -8,8 +8,8 @@ import {
 export class Session {
   Id!: number;
   Name!: string;
-  Startdate!: Date;
-  Enddate!: Date;
+  Startdatetime!: Date;
+  Enddatetime!: Date;
   Specialist!: Specialist;
   Patient!: Patient;
   Appointment!: Appointment;
@@ -17,16 +17,16 @@ export class Session {
 
   constructor(
     name: string,
-    startdate: Date,
-    enddate: Date,
+    startdatetime: Date,
+    enddatetime: Date,
     specialist: Specialist,
     patient: Patient,
     appointment: Appointment,
   ) {
     this.Id = 0;
     this.Name = name;
-    this.Startdate = startdate;
-    this.Enddate = enddate;
+    this.Startdatetime = startdatetime;
+    this.Enddatetime = enddatetime;
     this.Specialist = specialist;
     this.Patient = patient;
     this.Appointment = appointment;

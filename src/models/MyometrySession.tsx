@@ -8,12 +8,12 @@ import {
 export class MyometrySession extends Session {
   constructor(
     name: string,
-    startdate: Date,
-    enddate: Date,
+    startdatetime: Date,
+    enddatetime: Date,
     specialist: Specialist,
     patient: Patient,
     appointment: Appointment,
   ) {
-    super(name, startdate, enddate, specialist, patient, appointment);
+    super(name, startdatetime, enddatetime, specialist, patient, appointment);
   }
 }
