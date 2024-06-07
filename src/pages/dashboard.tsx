@@ -178,11 +178,14 @@ const Dashboard: React.FC = () => {
     <main className="dashboardMain">
       <div className="dashboardSection">
         <article className="dashboardArticle">
-          <h1 className="dashboardHeader">
+          <h1 className="dashboardHeader test">
+            
             Hallo, Dr. Johannes Doe
+            <hr />
           </h1>
           <hr className="dashboardHeader" />
           <section className="dashboardContent">
+            
             <article className="dashboardInnerContent">
               <header className="dashboardInnerHeader">
                 <section>
