@@ -29,20 +29,12 @@
 
 .dashboardHeader hr {
   margin-top: 0.875rem;
-  margin-left: 1.75rem;
-  height: 0.125rem;
-  border: 2px solid #1e3a8a;
-  width: 600px;
-  background-color: #1e3a8a;
-}
-
-.dashboardHeader.test hr {
-  margin-top: 0.875rem;   
-  margin-left: 0.3rem;
+  margin-left: 0rem;
   height: 0.125rem;
   border: 2px solid #1e3a8a;
   width: 95%;
   background-color: #1e3a8a;
+  max-width: 25rem;
 }
 
 
@@ -217,3 +209,6 @@
   display: none;
 }
 
+.welcomeDocLabel{
+  margin-left: 14rem;
+}
