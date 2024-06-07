@@ -1,15 +1,71 @@
-import './componentstyles/patientlist.css';
+import "./componentstyles/patientlist.css";
 
 const PatientList = () => {
   const patients = [
-    { id: 1, name: 'John Doe', geboortedatum: '01-01-1990', diagnosis: 'JDM', medication: 'x medicijn', appointments: '3'},
-    { id: 2, name: 'John Doe', geboortedatum: '01-01-1990', diagnosis: 'JDM', medication: 'x medicijn', appointments: '3'},
-    { id: 3, name: 'John Doe', geboortedatum: '01-01-1990', diagnosis: 'JDM', medication: 'x medicijn', appointments: '3'},
-    { id: 4, name: 'John Doe', geboortedatum: '01-01-1990', diagnosis: 'JDM', medication: 'x medicijn', appointments: '4'},
-    { id: 1, name: 'John Doe', geboortedatum: '01-01-1990', diagnosis: 'JDM', medication: 'x medicijn', appointments: '3'},
-    { id: 2, name: 'John Doe', geboortedatum: '01-01-1990', diagnosis: 'JDM', medication: 'x medicijn', appointments: '3'},
-    { id: 3, name: 'John Doe', geboortedatum: '01-01-1990', diagnosis: 'JDM', medication: 'x medicijn', appointments: '3'},
-    { id: 4, name: 'John Doe', geboortedatum: '01-01-1990', diagnosis: 'JDM', medication: 'x medicijn', appointments: '4'},
+    {
+      id: 1,
+      name: "John Doe",
+      geboortedatum: "01-01-1990",
+      diagnosis: "JDM",
+      medication: "x medicijn",
+      appointments: "3",
+    },
+    {
+      id: 2,
+      name: "John Doe",
+      geboortedatum: "01-01-1990",
+      diagnosis: "JDM",
+      medication: "x medicijn",
+      appointments: "3",
+    },
+    {
+      id: 3,
+      name: "John Doe",
+      geboortedatum: "01-01-1990",
+      diagnosis: "JDM",
+      medication: "x medicijn",
+      appointments: "3",
+    },
+    {
+      id: 4,
+      name: "John Doe",
+      geboortedatum: "01-01-1990",
+      diagnosis: "JDM",
+      medication: "x medicijn",
+      appointments: "4",
+    },
+    {
+      id: 1,
+      name: "John Doe",
+      geboortedatum: "01-01-1990",
+      diagnosis: "JDM",
+      medication: "x medicijn",
+      appointments: "3",
+    },
+    {
+      id: 2,
+      name: "John Doe",
+      geboortedatum: "01-01-1990",
+      diagnosis: "JDM",
+      medication: "x medicijn",
+      appointments: "3",
+    },
+    {
+      id: 3,
+      name: "John Doe",
+      geboortedatum: "01-01-1990",
+      diagnosis: "JDM",
+      medication: "x medicijn",
+      appointments: "3",
+    },
+    {
+      id: 4,
+      name: "John Doe",
+      geboortedatum: "01-01-1990",
+      diagnosis: "JDM",
+      medication: "x medicijn",
+      appointments: "4",
+    },
   ];
 
   return (
@@ -23,7 +79,7 @@ const PatientList = () => {
           <div>afspraken</div>
         </div>
       </div>
-      {patients.map(patient => (
+      {patients.map((patient) => (
         <div key={patient.id} className="patient-row-wrapper">
           <div className="patient-row">
             <div className="patient-value-container">

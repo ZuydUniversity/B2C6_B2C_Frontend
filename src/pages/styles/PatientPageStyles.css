@@ -1,116 +1,120 @@
 /* Add your CSS styling here */
 .main-content {
-    padding: 20px;
-  }
-  
-  header {
-    background: #f7f7f7;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .content-box {
-    border: 1px solid #ddd; /* Adjust as needed */
-    padding: 10px; /* Adjust as needed */
-    border-radius: 10px; /* Adjust as needed */
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Adjust as needed */
-    width: 100%; /* Adjust as needed */
-    max-width: 500px; /* Adjust as needed */
-    margin: 0 auto;
-    background-color: #D8EAFF;
-  }
-  
-  .patient-list {
-    margin-bottom: 5px;
-  }
+  padding: 20px;
+}
 
-  .patient-list h2 {
-    text-align: center;
-  }
-  
-  .patient-table {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .patient-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-  }
-  
-  .patient-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .patient-info img {
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .patient-actions button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .add-patient-form {
-    margin-top: 10px;
-  }
-  
-  .add-patient-form form {
-    display: flex;
-    flex-direction: column; /* Stack the input fields vertically */
-    gap: 1px; /* Adds spacing between the input fields */
-  }
-  
-  .add-patient-form label {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  button {
-    background-color: var(--btn-color);
-    color: var(--btn-text-color);
-    border: none;
-    border-radius: 20px;
-    width: 175px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 0.3s ease-in-out, transform 200ms ease-in-out;
-    margin: 5px auto 0 auto; /* Center the button horizontally and add margin on top */
-    display: block; /* Make the button a block-level element */
-  }
-  
-  button:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
-  }
-  
-  button:active {
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
-    transform: translateY(-4px);
-  }
-  
-  .input-field {
-    background-color: #fff;
-    color: var(--btn-text-color);
-    border: 1px solid rgba(0, 0, 0, 0.2);;
-    border-radius: 5px;
-    width: 100%; /* Make the input field take the full width of its container */
-    height: 30px;
-    font-size: 16px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
-  }
-  
-  /* .input-field:hover {
+header {
+  background: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.content-box {
+  border: 1px solid #ddd; /* Adjust as needed */
+  padding: 10px; /* Adjust as needed */
+  border-radius: 10px; /* Adjust as needed */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Adjust as needed */
+  width: 100%; /* Adjust as needed */
+  max-width: 500px; /* Adjust as needed */
+  margin: 0 auto;
+  background-color: #d8eaff;
+}
+
+.patient-list {
+  margin-bottom: 5px;
+}
+
+.patient-list h2 {
+  text-align: center;
+}
+
+.patient-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.patient-info {
+  display: flex;
+  align-items: center;
+}
+
+.patient-info img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.patient-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.add-patient-form {
+  margin-top: 10px;
+}
+
+.add-patient-form form {
+  display: flex;
+  flex-direction: column; /* Stack the input fields vertically */
+  gap: 1px; /* Adds spacing between the input fields */
+}
+
+.add-patient-form label {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  border: none;
+  border-radius: 20px;
+  width: 175px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition:
+    box-shadow 0.3s ease-in-out,
+    transform 200ms ease-in-out;
+  margin: 5px auto 0 auto; /* Center the button horizontally and add margin on top */
+  display: block; /* Make the button a block-level element */
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+.input-field {
+  background-color: #fff;
+  color: var(--btn-text-color);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 100%; /* Make the input field take the full width of its container */
+  height: 30px;
+  font-size: 16px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+  transition:
+    box-shadow 200ms ease-in-out,
+    transform 200ms ease-in-out;
+}
+
+/* .input-field:hover {
     transform: scale(1.05);
   }
   
@@ -118,4 +122,3 @@
     transform: translateY(2px);
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
   } */
-  
