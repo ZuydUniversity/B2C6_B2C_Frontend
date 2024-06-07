@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './styles/dashboardcss.css';
+import './styles/dashboardpagecss.css';
 
 interface PatientCardProps {
   date: string;

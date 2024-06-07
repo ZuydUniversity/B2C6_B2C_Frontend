@@ -4,7 +4,7 @@ import AboutUsPage from "./pages/aboutuspage";
 import PatientPage from "./pages/patientpage";
 import ArtsPage from "./pages/artspage";
 import LandingPage from "./pages/landingpage";
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/dashboardpage";
 
 function App() {
   return (
