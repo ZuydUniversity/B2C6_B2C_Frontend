@@ -12,7 +12,7 @@ export class Patient {
   Email!: string;
   Age!: number;
   Phonenumber!: string;
-  Gender!: boolean; // True = Male | False = Female
+  Sex!: boolean; // True = Male | False = Female
   FirstnameContact!: string;
   LastnameContact!: string;
   EmailContact!: string;
@@ -28,7 +28,7 @@ export class Patient {
     email: string,
     age: number,
     phonenumber: string,
-    gender: boolean,
+    sex: boolean,
     firstname_contact: string,
     lastname_contact: string,
     email_contact: string,
@@ -40,7 +40,7 @@ export class Patient {
     this.Email = email;
     this.Age = age;
     this.Phonenumber = phonenumber;
-    this.Gender = gender;
+    this.Sex = sex;
     this.FirstnameContact = firstname_contact;
     this.LastnameContact = lastname_contact;
     this.EmailContact = email_contact;
