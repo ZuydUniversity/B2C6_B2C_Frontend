@@ -1,4 +1,4 @@
-import { Dictionairy } from "../abstracts/Dictionary";
+import { Dictionary } from "../abstracts/Dictionary";
 
 export class User {
   _id!: number;
@@ -6,7 +6,7 @@ export class User {
   Lastname!: string;
   Email!: string;
   Phonenumber!: string;
-  Settings!: Dictionairy<boolean>;
+  Settings!: Dictionary<boolean>;
 
   constructor(
     firstname: string,

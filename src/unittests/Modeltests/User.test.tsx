@@ -1,4 +1,4 @@
-import { Dictionairy } from "../../abstracts/Dictionary";
+import { Dictionary } from "../../abstracts/Dictionary";
 import { User } from "../../abstracts/ImportsModels";
 
 describe("User", () => {
@@ -6,7 +6,7 @@ describe("User", () => {
   const lastname = "Doe";
   const email = "JohnDoe@gmail.com";
   const phonenumber = "0612345678";
-  const settings: Dictionairy<boolean> = {
+  const settings: Dictionary<boolean> = {
     isDarkMode: true,
   };
 
@@ -45,7 +45,7 @@ describe("User", () => {
   it("should update the users settings", () => {
     const user = new User(firstname, lastname, email, phonenumber);
     user.Settings = settings;
-    const newSettings: Dictionairy<boolean> = {
+    const newSettings: Dictionary<boolean> = {
       isDarkMode: false,
     };
 
