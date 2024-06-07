@@ -16,6 +16,5 @@ export class MyometrySession extends Session {
   ) {
     super(name, startdatetime, enddatetime, specialist, patient, appointment);
     this.Notes = [];
-    
   }
 }
