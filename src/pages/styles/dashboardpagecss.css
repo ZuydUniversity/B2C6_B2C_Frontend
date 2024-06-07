@@ -11,11 +11,11 @@
   width: 100%;
 }
 
-.dashboardArticle { 
+.dashboardArticle {
   display: flex;
   flex-direction: column;
   padding: 1.25rem;
-  align-items: left ;
+  align-items: left;
 }
 
 .dashboardHeader {
@@ -37,24 +37,22 @@
   max-width: 25rem;
 }
 
-
 .dashboardContent {
   width: 65%;
   padding: 3rem 2.5rem;
   margin: 1.5rem auto; /* Centers the element horizontally */
   background-color: #e0f2fe;
   border-radius: 3.5625rem;
-  
 }
 
 .dashboardInnerContent {
   display: flex;
   flex-direction: column;
-  padding: 3rem 4rem 0rem 4rem;;
+  padding: 3rem 4rem 0rem 4rem;
   background-color: white;
   border-radius: 3.5625rem;
   max-height: 500px;
-  overflow-y: auto; 
+  overflow-y: auto;
 }
 
 .dashboardInnerHeader {
@@ -62,7 +60,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
 .dashboardInnerHeader h2 {
@@ -78,8 +76,8 @@
   height: 0.125rem;
   border: 2px solid #1e3a8a;
   background-color: #1e3a8a;
-  margin-top: 0.25rem; 
-  margin-bottom: 0.5rem; 
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .dashboardSort {
@@ -152,7 +150,7 @@
   border: 2px solid #e0f2fe;
   width: 86px;
 }
-  
+
 .patientCardDetails {
   display: flex;
   flex-direction: row;
@@ -162,7 +160,6 @@
   background-color: white;
   border-radius: 1.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1608); /* Added drop shadow */
-  
 }
 .patientCardDetails p {
   margin: 0; /* Remove default margin for <p> elements */
@@ -210,6 +207,6 @@
   display: none;
 }
 
-.welcomeDocLabel{
+.welcomeDocLabel {
   margin-left: 14rem;
 }
