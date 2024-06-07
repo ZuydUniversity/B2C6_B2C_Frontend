@@ -1,7 +1,7 @@
 import { Dictionairy } from "../abstracts/Dictionairy";
 
 export class User {
-  Id!: number;
+  _id!: number;
   Firstname!: string;
   Lastname!: string;
   Email!: string;
@@ -14,7 +14,7 @@ export class User {
     email: string,
     phonenumber: string,
   ) {
-    this.Id = 0;
+    this._id = 0;
     this.Firstname = firstname;
     this.Lastname = lastname;
     this.Email = email;
