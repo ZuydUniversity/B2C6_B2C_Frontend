@@ -29,9 +29,10 @@ interface PatientSelectProps {
   
     return (
       <main className="main-container">
-        <header className="header-text">Sessie toevoegen</header>
-        <h2 className="sub-header">Patiëntgegevens</h2>
+        <header className="header-text">Sessie</header>
         <hr className="divider" />
+        <h2 className="sub-header">Patiëntgegevens</h2>
+        <hr className="divider2" />
         <PatientSelect onSelect={handleSelect} />
       </main>
     );
