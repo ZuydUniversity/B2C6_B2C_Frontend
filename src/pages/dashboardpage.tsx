@@ -70,7 +70,7 @@ const PatientCard: React.FC<PatientCardProps> = ({
   );
 };
 
-const Dashboard: React.FC = () => {
+const DashboardPage: React.FC = () => {
   const patients = [
     {
       date: "02/06/2021",
@@ -238,4 +238,4 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardPage;
