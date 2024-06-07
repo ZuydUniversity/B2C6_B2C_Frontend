@@ -26,6 +26,9 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
 
     const closePopup = () => {
         setShowPopup(false);
+
+    };
+
     const handleLogin = async () => {
         try {
 
@@ -54,7 +57,7 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
 
         }
         catch (error) {
-            console.error('Error:', error);
+            setError("No connection")
         }
     };
 
@@ -92,7 +95,7 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
                         </div>
                         <div className="form-group action-group">
                             <button onClick={handleLogin}>Log in</button>
-                            <a onClick={openPopup}>Wachtwoord vergeten?</a>
+                            <a href="#" onClick={openPopup}>Wachtwoord vergeten?</a>
                         </div>
                         {error && <p className="error-label">{error}</p>}
                     </div>
