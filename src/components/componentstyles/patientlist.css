@@ -1,67 +1,83 @@
 .patientlist-container {
-  background-color: #F5F5F5;
-  border-radius: 10px;
-  padding: 20px;
-  width: 100%;
-  max-width: 800px;
+  border: 30px solid #D8EAFF;
+  background-color: white;
+  padding: 10px;
   margin: auto;
+  border-radius: 20px;
+  width: 60%;
+  max-height: 500px; 
+  overflow-y: auto; 
+
+  /* ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  */
 }
 
-.patientlist-title {
-  color: #333;
+.patient-title {
   text-align: left;
-  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
 }
 
 .patientlist-header {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background-color: #D8EAFF;
-  border-radius: 10px;
   color: #000369;
-  font-weight: bold;
-  margin-bottom: 10px;
+  width: 91%;
 }
 
 .patient-row-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FFF;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
 }
 
 .patient-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  padding: 10px;
+  background-color: #D8EAFF;  
+  margin-bottom: 10px;
+  border-radius: 10px 0px;
+  flex-grow: 1;
 }
 
-.patient-name,
-.patient-birthdate,
-.patient-diagnosis,
-.patient-appointments {
-  flex: 1;
-  text-align: left;
-  padding: 0 10px;
-  color: #333;
-}
-
-.options-card {
+.patient-value-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #D8EAFF;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  text-align: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.patient-label-container {
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  border-radius: 20px;
+  padding-left: 30px;
+}
+
+.patient-value {
   color: #000369;
   font-weight: bold;
-  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
 }
+
+.extra-card{
+  background: #D8EAFF;
+  margin-left: 20px;
+  padding: 25px;
+  margin-bottom: 10px;
+  border-radius: 0px 10px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
