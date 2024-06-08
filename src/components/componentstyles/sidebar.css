@@ -51,17 +51,20 @@
   .settings-logout ul li {    
     display: flex;
     align-items: center;
+    margin-right: 10px;
     margin-bottom: 15px;
-    font-size: 14px;
+    font-size: 15px;
   }
   .settings-icon{
-    background: url(../../../public/Icons/Logout.svg) no-repeat 15px;
+    background: url(../../../public/Icons/Settings.svg) no-repeat 15px;
     padding-left: 55px;
+    padding-bottom: 10px;
     background-size: 34px;
   }
 
   .logout-icon{
     background: url(../../../public/Icons/Logout.svg) no-repeat 15px;
     padding-left: 55px;
+    padding-bottom: 10px;
     background-size: 34px;
   }
