@@ -1,5 +1,5 @@
 import React from 'react';
-import './Sidebar.css'; // We'll create this CSS file for styling
+import './componentstyles/sidebar.css';  // Styling 
 
 const Sidebar: React.FC = () => {
   return (
@@ -10,22 +10,22 @@ const Sidebar: React.FC = () => {
       </div>
       <nav>
         <ul>
-          <li><i className="icon dashboard-icon"></i>Dashboard</li>
-          <li><i className="icon calendar-icon"></i>Kalender</li>
-          <li><i className="icon documents-icon"></i>Documenten</li>
-          <li><i className="icon patients-icon"></i>Patiëntenoverzicht</li>
+          <li className="icon dashboard-icon">Dashboard</li>
+          <li className="icon calendar-icon">Kalender</li>
+          <li className="icon documents-icon">Documenten</li>
+          <li className="icon patients-icon">Patiëntenoverzicht</li>
         </ul>
         <hr />
         <ul>
-          <li><i className="icon add-appointment-icon"></i>Afspraak toevoegen</li>
-          <li><i className="icon add-doctor-session-icon"></i>Sessie toevoegen arts</li>
-          <li><i className="icon add-physio-session-icon"></i>Sessie toevoegen fysiotherapeut</li>
+          <li className="add-appointment-icon">Afspraak toevoegen</li>
+          <li className="add-doctor-session-icon">Sessie toevoegen arts</li>
+          <li className="add-physio-session-icon">Sessie toevoegen fysiotherapeut</li>
         </ul>
       </nav>
       <div className="settings-logout">
         <ul>
-          <li><i className="icon settings-icon"></i>Instellingen</li>
-          <li><i className="icon logout-icon"></i>Uitloggen</li>
+          <li className="settings-icon">Instellingen</li>
+          <li className='logout-icon'>Uitloggen</li>
         </ul>
       </div>
     </div>

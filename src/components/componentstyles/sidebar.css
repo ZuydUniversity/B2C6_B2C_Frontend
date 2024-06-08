@@ -37,10 +37,6 @@
     font-size: 14px;
   }
   
-  .icon {
-    margin-right: 10px;
-  }
-  
   hr {
     border: 1px solid #D0D5DD;
     margin: 20px 0;
@@ -52,9 +48,20 @@
     margin-top: auto;
   }
   
-  .settings-logout ul li {
+  .settings-logout ul li {    
     display: flex;
     align-items: center;
     margin-bottom: 15px;
     font-size: 14px;
+  }
+  .settings-icon{
+    background: url(../../../public/Icons/Logout.svg) no-repeat 15px;
+    padding-left: 55px;
+    background-size: 34px;
+  }
+
+  .logout-icon{
+    background: url(../../../public/Icons/Logout.svg) no-repeat 15px;
+    padding-left: 55px;
+    background-size: 34px;
   }
