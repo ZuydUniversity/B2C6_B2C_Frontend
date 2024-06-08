@@ -10,18 +10,19 @@ const Sidebar: React.FC = () => {
       </div>
       <nav>
         <ul>
-          <li className="icon dashboard-icon">Dashboard</li>
-          <li className="icon calendar-icon">Kalender</li>
-          <li className="icon documents-icon">Documenten</li>
-          <li className="icon patients-icon">Patiëntenoverzicht</li>
+          <li className="dashboard-icon">Dashboard</li>
+          <li className="calendar-icon">Kalender</li>
+          <li className="documents-icon">Documenten</li>
+          <li className="patients-icon">Patiëntenoverzicht</li>
         </ul>
-        <hr />
+        <hr/>
         <ul>
           <li className="add-appointment-icon">Afspraak toevoegen</li>
           <li className="add-doctor-session-icon">Sessie toevoegen arts</li>
           <li className="add-physio-session-icon">Sessie toevoegen fysiotherapeut</li>
         </ul>
-      </nav>
+        <hr/>
+      </nav>      
       <div className="settings-logout">
         <ul>
           <li className="settings-icon">Instellingen</li>

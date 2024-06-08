@@ -27,6 +27,8 @@
   height: 100vh;
   width: 250px;
   box-sizing: border-box;
+  flex-shrink: 0;
+  padding: 20px;
 }
 
 

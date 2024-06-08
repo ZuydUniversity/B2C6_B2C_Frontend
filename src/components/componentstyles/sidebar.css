@@ -6,6 +6,8 @@
     height: 100vh;
     padding: 20px;
     box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
   
   .logo {
@@ -38,7 +40,7 @@
   }
   
   hr {
-    border: 1px solid #D0D5DD;
+    border: 2px solid #D0D5DD;
     margin: 20px 0;
   }
   
