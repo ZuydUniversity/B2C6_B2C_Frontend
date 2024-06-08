@@ -1,6 +1,8 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./componentstyles/patientlist.css";
 
-const PatientList = () => {
+const PatientList: React.FC = () => {
   const patients = [
     {
       id: 1,
@@ -35,7 +37,7 @@ const PatientList = () => {
       appointments: "4",
     },
     {
-      id: 1,
+      id: 5,
       name: "John Doe",
       geboortedatum: "01-01-1990",
       diagnosis: "JDM",
@@ -43,7 +45,7 @@ const PatientList = () => {
       appointments: "3",
     },
     {
-      id: 2,
+      id: 6,
       name: "John Doe",
       geboortedatum: "01-01-1990",
       diagnosis: "JDM",
@@ -51,7 +53,7 @@ const PatientList = () => {
       appointments: "3",
     },
     {
-      id: 3,
+      id: 7,
       name: "John Doe",
       geboortedatum: "01-01-1990",
       diagnosis: "JDM",
@@ -59,7 +61,7 @@ const PatientList = () => {
       appointments: "3",
     },
     {
-      id: 4,
+      id: 8,
       name: "John Doe",
       geboortedatum: "01-01-1990",
       diagnosis: "JDM",
@@ -67,6 +69,12 @@ const PatientList = () => {
       appointments: "4",
     },
   ];
+
+  const navigate = useNavigate();
+
+  const openOverview = (patientId: number) => {
+    navigate(`/patient/${patientId}`);
+  };
 
   return (
     <div className="patientlist-container">
@@ -81,7 +89,7 @@ const PatientList = () => {
       </div>
       {patients.map((patient) => (
         <div key={patient.id} className="patient-row-wrapper">
-          <div className="patient-row">
+          <div className="patient-row" onClick={() => openOverview(patient.id)}>
             <div className="patient-value-container">
               <div className="patient-value">{patient.name}</div>
               <div className="patient-value">{patient.geboortedatum}</div>
