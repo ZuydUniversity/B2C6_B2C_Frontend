@@ -1,3 +1,4 @@
+/*Everything related to how the bar itself looks/works*/
 .sidebar {
     width: 250px;
     background-color: #E8EDF8;
@@ -10,6 +11,7 @@
     border-bottom-left-radius: 10px;
   }
   
+  /*Everything for the logo*/
   .logo {
     display: flex;
     align-items: center;
@@ -22,12 +24,44 @@
     margin-right: 10px;
   }
   
-  .logo-text {
-    font-size: 14px;
-    font-weight: bold;
+  .dashboard-icon {
+    background: url(../../../public/Icons/Dashboard.svg) no-repeat 15px;
+    padding-left: 60px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-size: 34px;
+    height: 35px;
   }
-  
-  nav ul {
+
+  .calendar-icon {
+    background: url(../../../public/Icons/Calendar.svg) no-repeat 15px;
+    padding-left: 60px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-size: 34px;
+    height: 35px;
+  }
+
+  .documents-icon {
+    background: url(../../../public/Icons/Documents.svg) no-repeat 15px;
+    padding-left: 60px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-size: 34px;
+    height: 35px;
+  }
+
+  .patients-icon {
+    background: url(../../../public/Icons/Patients.svg) no-repeat 15px;
+    padding-left: 60px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-size: 34px;
+    height: 35px;
+  }
+
+  /* Makes all text align to left*/
+  nav ul { 
     list-style-type: none;
     padding: 0;
   }
@@ -39,17 +73,20 @@
     font-size: 14px;
   }
   
+  /*The small line that seperates elements*/
   hr {
     border: 2px solid #D0D5DD;
     margin: 20px 0;
   }
   
+  /*Div for logout and settings*/
   .settings-logout ul {
     list-style-type: none;
     padding: 0;
     margin-top: auto;
   }
   
+  /*List for logout and settings*/
   .settings-logout ul li {    
     display: flex;
     align-items: center;
@@ -57,14 +94,17 @@
     margin-bottom: 15px;
     font-size: 15px;
   }
-  .settings-icon{
+
+  /*Icon for settings*/
+  .settings-icon {
     background: url(../../../public/Icons/Settings.svg) no-repeat 15px;
     padding-left: 55px;
     padding-bottom: 10px;
     background-size: 34px;
   }
 
-  .logout-icon{
+  /*Icon for logout*/
+  .logout-icon {
     background: url(../../../public/Icons/Logout.svg) no-repeat 15px;
     padding-left: 55px;
     padding-bottom: 10px;

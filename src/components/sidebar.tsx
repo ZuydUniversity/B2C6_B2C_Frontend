@@ -6,7 +6,6 @@ const Sidebar: React.FC = () => {
     <div className="sidebar">
       <div className="logo">
         <img src="path-to-logo" alt="JDB" className="logo-img" />
-        <span className="logo-text">Juveniele Dermatomyositis Board</span>
       </div>
       <nav>
         <ul>
