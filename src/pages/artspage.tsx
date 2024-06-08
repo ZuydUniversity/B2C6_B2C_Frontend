@@ -1,7 +1,8 @@
 import React from "react";
 import "./styles/artscss.css";
+import Sidebar from "../components/sidebar";
 
-const ArtesPage: React.FC = () => {
+const ArtsPage: React.FC = () => {
   return (
     <div className="arts-page">
       <h1>Artsen Page</h1>
@@ -12,4 +13,4 @@ const ArtesPage: React.FC = () => {
   );
 };
 
-export default ArtesPage;
+export default ArtsPage;
