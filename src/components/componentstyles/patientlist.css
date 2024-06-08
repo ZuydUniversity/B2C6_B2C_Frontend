@@ -1,12 +1,12 @@
 .patientlist-container {
-  border: 30px solid #D8EAFF;
+  border: 30px solid #d8eaff;
   background-color: white;
   padding: 10px;
   margin: auto;
   border-radius: 20px;
   width: 60%;
-  max-height: 500px; 
-  overflow-y: auto; 
+  max-height: 500px;
+  overflow-y: auto;
 
   /* ::-webkit-scrollbar {
     display: none;
@@ -41,7 +41,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background-color: #D8EAFF;  
+  background-color: #d8eaff;
   margin-bottom: 10px;
   border-radius: 10px 0px;
   flex-grow: 1;
@@ -72,8 +72,8 @@
   border-radius: 5px;
 }
 
-.extra-card{
-  background: #D8EAFF;
+.extra-card {
+  background: #d8eaff;
   margin-left: 20px;
   padding: 25px;
   margin-bottom: 10px;
@@ -81,4 +81,3 @@
   font-weight: bold;
   margin-right: 10px;
 }
-
