@@ -5,7 +5,12 @@ const Sidebar: React.FC = () => {
   return (
     <div className="sidebar">
       <div className="logo">
-        <img src="path-to-logo" alt="JDB" className="logo-img" />
+        <img src="Images/JDBLogo.png" 
+        className="logo-img" 
+        width="100" 
+        height="200" 
+        alt="JDB" 
+        />
       </div>
       <nav>
         <ul>

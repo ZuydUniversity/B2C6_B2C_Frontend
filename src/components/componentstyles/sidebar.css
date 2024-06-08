@@ -15,22 +15,24 @@
   .logo {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .logo-img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+    width: 120px;
+    height: 65px;
+    padding-left: 50px;
+    align-items: center;
   }
   
+  /*First set of icons*/
   .dashboard-icon {
     background: url(../../../public/Icons/Dashboard.svg) no-repeat 15px;
     padding-left: 60px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-size: 34px;
-    height: 35px;
+    background-size: 30px;
+    height: 20px;
   }
 
   .calendar-icon {
@@ -38,8 +40,8 @@
     padding-left: 60px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-size: 34px;
-    height: 35px;
+    background-size: 30px;
+    height: 30px;
   }
 
   .documents-icon {
@@ -47,8 +49,8 @@
     padding-left: 60px;
     padding-top: 5px;
     padding-bottom: 10px;
-    background-size: 34px;
-    height: 35px;
+    background-size: 30px;
+    height: 20px;
   }
 
   .patients-icon {
@@ -56,8 +58,8 @@
     padding-left: 60px;
     padding-top: 5px;
     padding-bottom: 10px;
-    background-size: 34px;
-    height: 35px;
+    background-size: 30px;
+    height: 20px;
   }
 
   /* Makes all text align to left*/
@@ -78,7 +80,35 @@
     border: 2px solid #D0D5DD;
     margin: 20px 0;
   }
+
+  /*Second set of icons*/
+  .add-appointment-icon {
+    background: url(../../../public/Icons/Plus.svg) no-repeat 15px;
+    padding-left: 60px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-size: 30px;
+    height: 20px;
+  }
   
+  .add-doctor-session-icon {
+    background: url(../../../public/Icons/Graph.svg) no-repeat 15px;
+    padding-left: 60px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-size: 30px;
+    height: 20px;
+  }
+
+  .add-physio-session-icon {
+    background: url(../../../public/Icons/Graph.svg) no-repeat 15px;
+    padding-left: 60px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-size: 30px;
+    height: 20px;
+  }
+
   /*Div for logout and settings*/
   .settings-logout ul {
     list-style-type: none;
@@ -98,15 +128,19 @@
   /*Icon for settings*/
   .settings-icon {
     background: url(../../../public/Icons/Settings.svg) no-repeat 15px;
-    padding-left: 55px;
+    padding-left: 60px;
+    padding-top: 5px;
     padding-bottom: 10px;
-    background-size: 34px;
+    background-size: 30px;
+    height: 20px;
   }
 
   /*Icon for logout*/
   .logout-icon {
     background: url(../../../public/Icons/Logout.svg) no-repeat 15px;
-    padding-left: 55px;
+    padding-left: 60px;
+    padding-top: 5px;
     padding-bottom: 10px;
-    background-size: 34px;
+    background-size: 30px;
+    height: 20px;
   }
