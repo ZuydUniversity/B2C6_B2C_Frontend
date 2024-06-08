@@ -7,7 +7,6 @@ import LandingPage from "./pages/landingpage";
 import DashboardPage from "./pages/dashboardpage";
 import PatientOverview from "./pages/patientoverview";
 
-
 const App: React.FC = () => {
   return (
     <Router>
