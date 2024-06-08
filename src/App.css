@@ -22,7 +22,7 @@
   color: #61dafb;
 }
 
-.main-sidebar{
+.main-sidebar {
   position: absolute;
   height: 100vh;
   width: 250px;
@@ -30,5 +30,3 @@
   flex-shrink: 0;
   padding: 20px;
 }
-
-

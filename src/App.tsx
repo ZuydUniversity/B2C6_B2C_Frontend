@@ -10,21 +10,21 @@ import Sidebar from "./components/sidebar";
 
 const App: React.FC = () => {
   return (
-    <Router> 
-      <div className="app-container">        
-        <Sidebar/>      
-      <div className="main-content">           
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/aboutus" element={<AboutUsPage />} />
-          <Route path="/patients" element={<PatientPage />} />
-          <Route path="/patient/:id" element={<PatientOverview />} />
-          <Route path="/artsen" element={<ArtsPage />} />
-          <Route path="/dashboardpage" element={<DashboardPage />} />
-        </Routes>
+    <Router>
+      <div className="app-container">
+        <Sidebar />
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/aboutus" element={<AboutUsPage />} />
+            <Route path="/patients" element={<PatientPage />} />
+            <Route path="/patient/:id" element={<PatientOverview />} />
+            <Route path="/artsen" element={<ArtsPage />} />
+            <Route path="/dashboardpage" element={<DashboardPage />} />
+          </Routes>
         </div>
       </div>
-      </Router>
-  )
-}     
+    </Router>
+  );
+};
 export default App;
