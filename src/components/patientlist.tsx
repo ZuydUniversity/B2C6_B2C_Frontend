@@ -89,10 +89,7 @@ const PatientList: React.FC = () => {
       </div>
       {patients.map((patient) => (
         <div key={patient.id} className="patient-row-wrapper">
-          <div
-            className="patient-row"
-            onClick={() => openOverview(patient.id)}
-          >
+          <div className="patient-row" onClick={() => openOverview(patient.id)}>
             <div className="patient-value-container">
               <div className="patient-value">{patient.name}</div>
               <div className="patient-value">{patient.geboortedatum}</div>

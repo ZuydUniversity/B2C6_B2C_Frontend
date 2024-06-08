@@ -1,6 +1,6 @@
-import React from 'react';
-import './componentstyles/patientdetails.css';
-import { Patient, ContactPerson } from '../types/types';
+import React from "react";
+import "./componentstyles/patientdetails.css";
+import { Patient, ContactPerson } from "../types/types";
 
 interface PatientDetailsProps {
   patient: Patient;
@@ -8,9 +8,9 @@ interface PatientDetailsProps {
 
 const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
   const contactPerson: ContactPerson = {
-    name: 'Jane Doe',
-    phone: '123-456-7890',
-    email: 'jane.doe@example.com',
+    name: "Jane Doe",
+    phone: "123-456-7890",
+    email: "jane.doe@example.com",
   };
 
   return (
@@ -67,6 +67,6 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
       </div>
     </div>
   );
-}
+};
 
 export default PatientDetails;

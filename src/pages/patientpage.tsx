@@ -13,7 +13,9 @@ const PatientPage: React.FC = () => {
   return (
     <div className="patient-page">
       <h1>Patiëntenoverzicht</h1>
-      <div onClick={() => handlePatientClick(1)}>  {/* Example button for testing */}
+      <div onClick={() => handlePatientClick(1)}>
+        {" "}
+        {/* Example button for testing */}
         <PatientList />
       </div>
     </div>
