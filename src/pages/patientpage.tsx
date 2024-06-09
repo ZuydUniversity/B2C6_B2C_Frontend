@@ -1,11 +1,25 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./styles/patientcss.css";
+import PatientList from "../components/patientlist";
 
-const patientpage: React.FC = () => {
+const PatientPage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handlePatientClick = (id: number) => {
+    navigate(`/patient/${id}`);
+  };
+
   return (
-    <div>
-      <h1>This is the Patientpage</h1>
+    <div className="patient-page">
+      <h1>Patiëntenoverzicht</h1>
+      <div onClick={() => handlePatientClick(1)}>
+        {" "}
+        {/* Example button for testing */}
+        <PatientList />
+      </div>
     </div>
   );
 };
 
-export default patientpage;
+export default PatientPage;
