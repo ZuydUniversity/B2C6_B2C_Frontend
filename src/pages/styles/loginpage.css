@@ -64,19 +64,19 @@
 }
 
 #personnel-number {
-  background: url(Icons/UserCard.svg) no-repeat 15px;
+  background: url(/public/Icons/UserCard.svg) no-repeat 15px;
   padding-left: 55px;
   background-size: 34px;
 }
 
 #login-email {
-  background: url(Icons/User.svg) no-repeat 15px;
+  background: url(/public/Icons/User.svg) no-repeat 15px;
   padding-left: 55px;
   background-size: 35px;
 }
 
 #password {
-  background: url(Icons/Key.svg) no-repeat 18px;
+  background: url(/public/Icons/Key.svg) no-repeat 18px;
   padding-left: 55px;
   background-size: 30px;
 }
