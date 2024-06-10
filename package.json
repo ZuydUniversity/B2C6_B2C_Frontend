@@ -59,7 +59,14 @@
         "lines": 0,
         "statements": 0
       }
-    }
+    },
+    "collectCoverageFrom": [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!src/index.tsx",
+    "!src/reportWebVitals.ts",
+    "!src/abstracts/**",
+    "!src/types/**"
+  ]
   },
   "devDependencies": {
     "eslint-config-react-app": "^7.0.1",
