@@ -144,3 +144,8 @@ hr {
   background-size: 30px;
   height: 20px;
 }
+
+.url {
+  text-decoration: none;
+  color: #000000;
+}

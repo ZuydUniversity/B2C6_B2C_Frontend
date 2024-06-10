@@ -15,10 +15,14 @@ const Sidebar: React.FC = () => {
       </div>
       <nav>
         <ul>
-          <li className="dashboard-icon">Dashboard</li>
+          <a href="/dashboard" className="url">
+            <li className="dashboard-icon">Dashboard</li>
+          </a>
           <li className="calendar-icon">Kalender</li>
           <li className="documents-icon">Documenten</li>
-          <li className="patients-icon">Patiëntenoverzicht</li>
+          <a href="/patients" className="url">
+            <li className="patients-icon">Patiëntenoverzicht</li>
+          </a>
         </ul>
         <hr />
         <ul>
@@ -33,7 +37,9 @@ const Sidebar: React.FC = () => {
       <div className="settings-logout">
         <ul>
           <li className="settings-icon">Instellingen</li>
-          <li className="logout-icon">Uitloggen</li>
+          <a href="/login" className="url">
+            <li className="logout-icon">Uitloggen</li>
+          </a>
         </ul>
       </div>
     </div>
