@@ -16,7 +16,7 @@ const patients = [
     "Jane",
     "Doe",
     "jane.doe@example.com",
-    "098-765-4321"
+    "098-765-4321",
   ),
   new Patient(
     "Jane",
@@ -28,7 +28,7 @@ const patients = [
     "John",
     "Smith",
     "john.smith@example.com",
-    "444-555-6666"
+    "444-555-6666",
   ),
   new Patient(
     "Alice",
@@ -40,7 +40,7 @@ const patients = [
     "Bob",
     "Johnson",
     "bob.johnson@example.com",
-    "000-111-2222"
+    "000-111-2222",
   ),
   // Add more patients as needed
 ];

@@ -15,7 +15,7 @@ const patients = [
     "Jane",
     "Doe",
     "jane.doe@example.com",
-    "098-765-4321"
+    "098-765-4321",
   ),
   new Patient(
     "Alice",
@@ -27,7 +27,7 @@ const patients = [
     "Bob",
     "Smith",
     "bob.smith@example.com",
-    "444-555-6666"
+    "444-555-6666",
   ),
   new Patient(
     "David",
@@ -39,7 +39,7 @@ const patients = [
     "Emily",
     "Johnson",
     "emily.johnson@example.com",
-    "000-111-2222"
+    "000-111-2222",
   ),
   // Add more patients as needed
 ];
@@ -62,11 +62,16 @@ const PatientList: React.FC<PatientListProps> = ({ onPatientClick }) => {
       </div>
       {patients.map((patient) => (
         <div key={patient.Id} className="patient-row-wrapper">
-          <div className="patient-row" onClick={() => onPatientClick(patient.Id)}>
+          <div
+            className="patient-row"
+            onClick={() => onPatientClick(patient.Id)}
+          >
             <div className="patient-value-container">
               <div className="patient-value">{`${patient.Firstname} ${patient.Lastname}`}</div>
               <div className="patient-value">{patient.Email}</div>
-              <div className="patient-value">{patient.Sex ? "Male" : "Female"}</div>
+              <div className="patient-value">
+                {patient.Sex ? "Male" : "Female"}
+              </div>
               <div className="patient-value">{patient.Appointments.length}</div>
             </div>
           </div>

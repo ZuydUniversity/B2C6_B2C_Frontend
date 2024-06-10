@@ -46,7 +46,9 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
             </div>
             <div className="patient-info-pair">
               <span className="patient-label">Geslacht:</span>
-              <span className="patient-value">{patient.Sex ? "Male" : "Female"}</span>
+              <span className="patient-value">
+                {patient.Sex ? "Male" : "Female"}
+              </span>
             </div>
           </div>
         </div>
