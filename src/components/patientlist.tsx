@@ -1,100 +1,78 @@
+// src/components/PatientList.tsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./componentstyles/patientlist.css";
+import { Patient } from "../abstracts/ImportsModels";
 
-const PatientList: React.FC = () => {
-  const patients = [
-    {
-      id: 1,
-      name: "John Doe",
-      geboortedatum: "01-01-1990",
-      diagnosis: "JDM",
-      medication: "x medicijn",
-      appointments: "3",
-    },
-    {
-      id: 2,
-      name: "John Doe",
-      geboortedatum: "01-01-1990",
-      diagnosis: "JDM",
-      medication: "x medicijn",
-      appointments: "3",
-    },
-    {
-      id: 3,
-      name: "John Doe",
-      geboortedatum: "01-01-1990",
-      diagnosis: "JDM",
-      medication: "x medicijn",
-      appointments: "3",
-    },
-    {
-      id: 4,
-      name: "John Doe",
-      geboortedatum: "01-01-1990",
-      diagnosis: "JDM",
-      medication: "x medicijn",
-      appointments: "4",
-    },
-    {
-      id: 5,
-      name: "John Doe",
-      geboortedatum: "01-01-1990",
-      diagnosis: "JDM",
-      medication: "x medicijn",
-      appointments: "3",
-    },
-    {
-      id: 6,
-      name: "John Doe",
-      geboortedatum: "01-01-1990",
-      diagnosis: "JDM",
-      medication: "x medicijn",
-      appointments: "3",
-    },
-    {
-      id: 7,
-      name: "John Doe",
-      geboortedatum: "01-01-1990",
-      diagnosis: "JDM",
-      medication: "x medicijn",
-      appointments: "3",
-    },
-    {
-      id: 8,
-      name: "John Doe",
-      geboortedatum: "01-01-1990",
-      diagnosis: "JDM",
-      medication: "x medicijn",
-      appointments: "4",
-    },
-  ];
+const patients = [
+  new Patient(
+    "John",
+    "Doe",
+    "john.doe@example.com",
+    34,
+    "123-456-7890",
+    true,
+    "Jane",
+    "Doe",
+    "jane.doe@example.com",
+    "098-765-4321",
+  ),
+  new Patient(
+    "Alice",
+    "Smith",
+    "alice.smith@example.com",
+    28,
+    "111-222-3333",
+    false,
+    "Bob",
+    "Smith",
+    "bob.smith@example.com",
+    "444-555-6666",
+  ),
+  new Patient(
+    "David",
+    "Johnson",
+    "david.johnson@example.com",
+    45,
+    "777-888-9999",
+    true,
+    "Emily",
+    "Johnson",
+    "emily.johnson@example.com",
+    "000-111-2222",
+  ),
+  // Add more patients as needed
+];
 
-  const navigate = useNavigate();
+interface PatientListProps {
+  onPatientClick: (id: number) => void;
+}
 
-  const openOverview = (patientId: number) => {
-    navigate(`/patient/${patientId}`);
-  };
-
+const PatientList: React.FC<PatientListProps> = ({ onPatientClick }) => {
   return (
     <div className="patientlist-container">
       <h4 className="patient-title">Alle patienten</h4>
       <div className="patientlist-header">
         <div className="patient-label-container">
           <div>naam</div>
-          <div>geboorte datum</div>
-          <div>diagnose</div>
+          <div>email</div>
+          <div>geslacht</div>
           <div>afspraken</div>
         </div>
       </div>
       {patients.map((patient) => (
-        <div key={patient.id} className="patient-row-wrapper">
-          <div className="patient-row" onClick={() => openOverview(patient.id)}>
+        <div key={patient.Id} className="patient-row-wrapper">
+          <div
+            className="patient-row"
+            onClick={() => onPatientClick(patient.Id)}
+          >
             <div className="patient-value-container">
-              <div className="patient-value">{patient.name}</div>
-              <div className="patient-value">{patient.geboortedatum}</div>
-              <div className="patient-value">{patient.diagnosis}</div>
-              <div className="patient-value">{patient.appointments}</div>
+              <div className="patient-value">{`${patient.Firstname} ${patient.Lastname}`}</div>
+              <div className="patient-value">{patient.Email}</div>
+              <div className="patient-value">
+                {patient.Sex ? "Male" : "Female"}
+              </div>
+              <div className="patient-value">{patient.Appointments.length}</div>
             </div>
           </div>
           <div className="extra-card">...</div>
