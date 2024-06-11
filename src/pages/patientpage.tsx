@@ -13,6 +13,7 @@ const PatientPage: React.FC = () => {
   return (
     <div className="patient-page">
       <h1>Patiëntenoverzicht</h1>
+      <hr />
       <div onClick={() => handlePatientClick(1)}>
         {" "}
         {/* Example button for testing */}
