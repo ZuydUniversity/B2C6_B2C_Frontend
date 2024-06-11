@@ -1,0 +1,26 @@
+.notes-container {
+  background-color: #418383;
+  border-radius: 15px;
+  height: 400px;
+  width: 700px;
+}
+
+.notes-title {
+  font-size: 30px;
+  text-align: left;
+  color: #f0f0f0;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 20px;
+}
+
+.notes-background {
+  background-color: #76faff;
+  border-radius: 15px;
+  height: 80%;
+  width: 90%;
+  margin-top: 15%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
