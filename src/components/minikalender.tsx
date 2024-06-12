@@ -6,6 +6,7 @@ const MiniKalender: React.FC = () => {
   const titleRef = useRef<HTMLDivElement>(null);
 
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [hoveredDay, setHoveredDay] = useState<number | null>(null);
 
   useEffect(() => {
     const calendar = calendarRef.current;
@@ -38,38 +39,20 @@ const MiniKalender: React.FC = () => {
 
   const daysOfWeek = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
   const monthNames = [
-    "januari",
-    "februari",
-    "maart",
-    "april",
-    "mei",
-    "juni",
-    "juli",
-    "augustus",
-    "september",
-    "oktober",
-    "november",
-    "december",
+    "januari", "februari", "maart", "april", "mei", "juni", "juli",
+    "augustus", "september", "oktober", "november", "december"
   ];
 
   const handlePreviousMonth = () => {
     setCurrentDate((prevDate) => {
-      const prevMonthDate = new Date(
-        prevDate.getFullYear(),
-        prevDate.getMonth() - 1,
-        1,
-      );
+      const prevMonthDate = new Date(prevDate.getFullYear(), prevDate.getMonth() - 1, 1);
       return prevMonthDate;
     });
   };
 
   const handleNextMonth = () => {
     setCurrentDate((prevDate) => {
-      const nextMonthDate = new Date(
-        prevDate.getFullYear(),
-        prevDate.getMonth() + 1,
-        1,
-      );
+      const nextMonthDate = new Date(prevDate.getFullYear(), prevDate.getMonth() + 1, 1);
       return nextMonthDate;
     });
   };
@@ -88,15 +71,26 @@ const MiniKalender: React.FC = () => {
       calendarDays.push(
         <div key={`prev-${i}`} className="calendar-day prev-month">
           <span className="day-number">{prevMonthDays - i}</span>
-        </div>,
+        </div>
       );
     }
 
     for (let day = 1; day <= daysInMonth; day++) {
       calendarDays.push(
-        <div key={day} className="calendar-day">
+        <div
+          key={day}
+          className="calendar-day"
+          onMouseEnter={() => setHoveredDay(day)}
+          onMouseLeave={() => setHoveredDay(null)}
+        >
           {day}
-        </div>,
+          {hoveredDay === day && (
+            <div className="popup">
+              <div>Day {day}</div>
+              <div>Dummy Text</div>
+            </div>
+          )}
+        </div>
       );
     }
 
@@ -104,7 +98,7 @@ const MiniKalender: React.FC = () => {
       calendarDays.push(
         <div key={`next-${i}`} className="calendar-day next-month">
           <span className="day-number">{i}</span>
-        </div>,
+        </div>
       );
     }
 
@@ -115,23 +109,17 @@ const MiniKalender: React.FC = () => {
     <div className="calendar" ref={calendarRef}>
       <nav>
         <a href="/kalender" className="url">
-          <div className="calendar-title" ref={titleRef}>
-            Kalender
-          </div>
+          <div className="calendar-title" ref={titleRef}>Kalender</div>
         </a>
       </nav>
       <div className="calendar-header"></div>
-      <div className="calendar-left-button" onClick={handlePreviousMonth}>
-        {"<"}
-      </div>
+      <div className="calendar-left-button" onClick={handlePreviousMonth}>{"<"}</div>
       <div className="calendar-text">
         <div>
           {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
         </div>
       </div>
-      <div className="calendar-right-button" onClick={handleNextMonth}>
-        {">"}
-      </div>
+      <div className="calendar-right-button" onClick={handleNextMonth}>{">"}</div>
       <div className="days-of-week">
         {daysOfWeek.map((day) => (
           <div key={day} className="day-of-week">

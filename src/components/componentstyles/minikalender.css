@@ -102,6 +102,28 @@
   justify-content: center;
   align-items: center;
   margin-bottom: -1px;
+  position: relative;
+}
+
+.popup {
+
+  position: absolute;
+  height: 120px;
+  bottom: 50px; 
+  left: 50%;
+  opacity: 90%;
+  transform: translateX(-50%);
+  background-color: #e2e2e2;
+  color: #000000;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+.calendar-day:hover .popup {
+  display: block;
 }
 
 .days-of-week {
@@ -131,8 +153,7 @@
   opacity: 0.5;
 }
 
-.calendar-left-button:hover,
-.calendar-right-button:hover {
+.calendar-left-button:hover, .calendar-right-button:hover {
   filter: brightness(85%);
   transform: scale(1.2);
 }
