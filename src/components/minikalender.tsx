@@ -3,20 +3,20 @@ import "./componentstyles/minikalender.css";
 
 const MiniKalender: React.FC = () => {
   const currentDate = new Date();
-  const daysOfWeek = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+  const daysOfWeek = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
   const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "januari",
+    "februari",
+    "maart",
+    "april",
+    "mei",
+    "juni",
+    "juli",
+    "augustus",
+    "september",
+    "oktober",
+    "november",
+    "december"
   ];
 
   const renderCalendar = () => {
