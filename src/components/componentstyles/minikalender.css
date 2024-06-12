@@ -11,6 +11,11 @@
   font-family: Arial, sans-serif;
   color: #ffffff;
   z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.calendar:hover {
+  background-color: #151aab;
 }
 
 .calendar-title {
@@ -125,4 +130,3 @@
 .next-month .day-number {
   opacity: 0.5;
 }
-
