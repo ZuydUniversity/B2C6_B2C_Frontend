@@ -18,7 +18,9 @@ const Sidebar: React.FC = () => {
           <a href="/dashboard" className="url">
             <li className="dashboard-icon">Dashboard</li>
           </a>
-          <li className="calendar-icon">Kalender</li>
+          <a href="/kalender" className="url"> 
+            <li className="calendar-icon">Kalender</li>
+          </a>
           <li className="documents-icon">Documenten</li>
           <a href="/patients" className="url">
             <li className="patients-icon">Patiëntenoverzicht</li>
