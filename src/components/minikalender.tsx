@@ -16,7 +16,7 @@ const MiniKalender: React.FC = () => {
     "september",
     "oktober",
     "november",
-    "december"
+    "december",
   ];
 
   const renderCalendar = () => {
