@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./componentstyles/minikalender.css";
 
 const MiniKalender: React.FC = () => {
+  const calendarRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const calendar = calendarRef.current;
+    const title = titleRef.current;
+
+    const handleMouseOver = () => {
+      if (calendar) {
+        calendar.classList.add("calendar-hover");
+      }
+    };
+
+    const handleMouseOut = () => {
+      if (calendar) {
+        calendar.classList.remove("calendar-hover");
+      }
+    };
+
+    if (title) {
+      title.addEventListener("mouseover", handleMouseOver);
+      title.addEventListener("mouseout", handleMouseOut);
+    }
+
+    return () => {
+      if (title) {
+        title.removeEventListener("mouseover", handleMouseOver);
+        title.removeEventListener("mouseout", handleMouseOut);
+      }
+    };
+  }, []);
+
   const currentDate = new Date();
   const daysOfWeek = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
   const monthNames = [
@@ -57,8 +89,14 @@ const MiniKalender: React.FC = () => {
   };
 
   return (
-    <div className="calendar">
-      <div className="calendar-title">Kalender</div>
+    <div className="calendar" ref={calendarRef}>
+      <nav>
+        <a href="/kalender" className="url">
+          <div className="calendar-title" ref={titleRef}>
+            Kalender
+          </div>
+        </a>
+      </nav>
       <div className="calendar-header"></div>
       <div className="calendar-left-button">{"<"}</div>
       <div className="calendar-text">
