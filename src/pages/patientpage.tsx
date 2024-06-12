@@ -14,6 +14,7 @@ const PatientPage: React.FC = () => {
   return (
     <div className="patient-page">
       <h1>Patiëntenoverzicht</h1>
+      <hr />
       <PatientList onPatientClick={handlePatientClick} />
     </div>
   );
