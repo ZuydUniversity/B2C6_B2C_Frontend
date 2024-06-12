@@ -106,10 +106,9 @@
 }
 
 .popup {
-
   position: absolute;
   height: 120px;
-  bottom: 50px; 
+  bottom: 50px;
   left: 50%;
   opacity: 90%;
   transform: translateX(-50%);
@@ -153,7 +152,8 @@
   opacity: 0.5;
 }
 
-.calendar-left-button:hover, .calendar-right-button:hover {
+.calendar-left-button:hover,
+.calendar-right-button:hover {
   filter: brightness(85%);
   transform: scale(1.2);
 }
