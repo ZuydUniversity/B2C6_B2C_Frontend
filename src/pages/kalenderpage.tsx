@@ -1,18 +1,8 @@
 import React, { useState } from 'react';
 import './styles/kalendercss.css';
 
-
-interface Appointment {
-  day: number;
-  time: string;
-  patient: string;
-  imageUrl: string;
-}
-
 const Calendar: React.FC = () => {
-  const [appointments, setAppointments] = useState<Appointment[]>([
-    { day: 4, time: '10:00 - 11:30', patient: 'Lenny Hermans', imageUrl: 'data:image/jpeg;base64,...' }
-  ]);
+  const [appointments, setAppointments] = useState([]);
 
   const handleDayClick = (day: number) => {
     // Logic to add an appointment
@@ -21,30 +11,19 @@ const Calendar: React.FC = () => {
   return (
     <div className="calendar-container">
       <div className="calendar-header">
+        <button className="nav-button left-nav">{'<'}</button>
         <h2>Juni 14 - 18, 2021</h2>
-        <button className="week-button">Werkweek</button>
+        <button className="nav-button right-nav">{'>'}</button>
       </div>
+      <div className="calendar-header-underline"></div>
       <div className="calendar-grid">
-        {Array.from({ length: 5 }).map((_, index) => (
+        {['Ma', 'Di', 'Wo', 'Do', 'Vr'].map((day, index) => (
           <div key={index} className="calendar-day">
-            {['Ma', 'Di', 'Wo', 'Do', 'Vr'][index]} 14 juni
+            {day} 14 juni
           </div>
         ))}
         {Array.from({ length: 5 }).map((_, index) => (
           <div key={index} className="calendar-slot" onClick={() => handleDayClick(index + 1)}></div>
-        ))}
-        {appointments.map((appointment, index) => (
-          <div
-            key={index}
-            className="calendar-event"
-            style={{ gridColumn: appointment.day, gridRow: '3 / span 2' }}
-          >
-            <div className="event-time">{appointment.time}</div>
-            <div className="event-patient">
-              <img src={appointment.imageUrl} alt={appointment.patient} />
-              <span>{appointment.patient}</span>
-            </div>
-          </div>
         ))}
       </div>
     </div>
@@ -54,6 +33,10 @@ const Calendar: React.FC = () => {
 const KalenderPage: React.FC = () => {
   return (
     <div className="kalender-page">
+      <div className="kalender-title">
+        <h1>Kalender</h1>
+        <div className="underline"></div>
+      </div>
       <Calendar />
     </div>
   );

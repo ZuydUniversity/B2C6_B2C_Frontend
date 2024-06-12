@@ -1,18 +1,83 @@
-.calendar-container {
+.kalender-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+    background-color: #ffffff;
+    min-height: 100vh;
+  }
+  
+  .kalender-title {
+    width: 80%;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .kalender-title h1 {
+    align-self: left;
+    margin-left: 0.00rem;
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 0;
+  }
+  
+  .underline {
+    width: 150px;
+    height: 3px;
+    background-color: #1e3a8a;
+    margin-top: 5px;
+  }
+  
+  .calendar-container {
+    width: 80%;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
   }
   
   .calendar-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    margin-bottom: 0;
+    position: relative;
+  }
+  
+  .calendar-header h2 {
+    font-size: 1.5rem;
+    color: #1e3a8a;
+    margin: 0 10px;
+  }
+  
+  .calendar-header-underline {
+    width: calc(100% - 40px);
+    height: 2px;
+    background-color: #1e3a8a;
+    margin: 5px 20px 0 20px;
+  }
+  
+  .nav-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #1e3a8a;
+    cursor: pointer;
+  }
+  
+  .nav-button.left-nav {
+    position: absolute;
+    left: 0;
+  }
+  
+  .nav-button.right-nav {
+    position: absolute;
+    right: 0;
   }
   
   .week-button {
-    background-color: #ffab40;
+    background-color: none;
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -23,40 +88,27 @@
   .calendar-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 60px);
+    grid-template-rows: repeat(6, 60px);
     gap: 10px;
   }
   
-  .calendar-day,
-  .calendar-slot {
+  .calendar-day {
     text-align: center;
     padding: 10px;
     background-color: #f0f0f0;
     border-radius: 5px;
-  }
-  
-  .calendar-event {
-    background-color: #1e88e5;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .event-time {
     font-weight: bold;
+    grid-row: 1;
   }
   
-  .event-patient {
-    display: flex;
-    align-items: center;
+  .calendar-slot {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    grid-row: span 5;
   }
   
-  .event-patient img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+  .calendar-slot:hover {
+    background-color: #d0d0d0;
   }
   
