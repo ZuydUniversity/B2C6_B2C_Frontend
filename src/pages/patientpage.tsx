@@ -1,3 +1,4 @@
+// src/pages/PatientPage.tsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/patientcss.css";
@@ -14,11 +15,7 @@ const PatientPage: React.FC = () => {
     <div className="patient-page">
       <h1>Patiëntenoverzicht</h1>
       <hr />
-      <div onClick={() => handlePatientClick(1)}>
-        {" "}
-        {/* Example button for testing */}
-        <PatientList />
-      </div>
+      <PatientList onPatientClick={handlePatientClick} />
     </div>
   );
 };

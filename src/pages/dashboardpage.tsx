@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./styles/dashboardpagecss.css";
+import MiniKalender from "../components/minikalender";
 
 interface PatientCardProps {
   date: string;
@@ -195,6 +196,7 @@ const DashboardPage: React.FC = () => {
             </h1>
           </div>
           <hr className="dashboardHeader" />
+          <MiniKalender />
           <section className="dashboardContent">
             <article className="dashboardInnerContent">
               <header className="dashboardInnerHeader">

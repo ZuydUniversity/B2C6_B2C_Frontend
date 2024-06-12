@@ -1,6 +1,14 @@
+// src/components/PatientDetails.tsx
 import React from "react";
 import "./componentstyles/patientdetails.css";
-import { Patient, ContactPerson } from "../types/types";
+import { Patient } from "../abstracts/ImportsModels";
+
+type ContactPerson = {
+  Firstname: string;
+  Lastname: string;
+  Phonenumber: string;
+  Email: string;
+};
 
 interface PatientDetailsProps {
   patient: Patient;
@@ -8,9 +16,10 @@ interface PatientDetailsProps {
 
 const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
   const contactPerson: ContactPerson = {
-    name: "Jane Doe",
-    phone: "123-456-7890",
-    email: "jane.doe@example.com",
+    Firstname: patient.FirstnameContact,
+    Lastname: patient.LastnameContact,
+    Phonenumber: patient.PhonenumberContact,
+    Email: patient.EmailContact,
   };
 
   return (
@@ -21,19 +30,25 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
           <div className="patient-details">
             <div className="patient-info-pair">
               <span className="patient-label">Naam:</span>
-              <span className="patient-value">{patient.name}</span>
+              <span className="patient-value">{`${patient.Firstname} ${patient.Lastname}`}</span>
             </div>
             <div className="patient-info-pair">
-              <span className="patient-label">Geboorte datum:</span>
-              <span className="patient-value">{patient.birthdate}</span>
+              <span className="patient-label">Email:</span>
+              <span className="patient-value">{patient.Email}</span>
             </div>
             <div className="patient-info-pair">
-              <span className="patient-label">Diagnose:</span>
-              <span className="patient-value">{patient.diagnosis}</span>
+              <span className="patient-label">Leeftijd:</span>
+              <span className="patient-value">{patient.Age}</span>
             </div>
             <div className="patient-info-pair">
-              <span className="patient-label">Afspraken:</span>
-              <span className="patient-value">{patient.appointments}</span>
+              <span className="patient-label">Telefoonnummer:</span>
+              <span className="patient-value">{patient.Phonenumber}</span>
+            </div>
+            <div className="patient-info-pair">
+              <span className="patient-label">Geslacht:</span>
+              <span className="patient-value">
+                {patient.Sex ? "Male" : "Female"}
+              </span>
             </div>
           </div>
         </div>
@@ -42,15 +57,15 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
           <div className="contact-details">
             <div className="contact-info-pair">
               <span className="contact-label">Naam:</span>
-              <span className="contact-value">{contactPerson.name}</span>
+              <span className="contact-value">{`${contactPerson.Firstname} ${contactPerson.Lastname}`}</span>
             </div>
             <div className="contact-info-pair">
               <span className="contact-label">Telefoonnummer:</span>
-              <span className="contact-value">{contactPerson.phone}</span>
+              <span className="contact-value">{contactPerson.Phonenumber}</span>
             </div>
             <div className="contact-info-pair">
               <span className="contact-label">E-mailadres:</span>
-              <span className="contact-value">{contactPerson.email}</span>
+              <span className="contact-value">{contactPerson.Email}</span>
             </div>
           </div>
         </div>
