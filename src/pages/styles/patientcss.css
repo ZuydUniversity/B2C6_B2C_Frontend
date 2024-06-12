@@ -1,5 +1,5 @@
 .patient-page {
-  font-family: Arial, sans-serif;  
+  font-family: Arial, sans-serif;
   padding: 20px;
   background-color: #ffffff;
   color: #333;
@@ -15,7 +15,7 @@
 
 .patient-page hr {
   margin-top: 0.875rem;
-  margin-left: 5.80rem;
+  margin-left: 5.8rem;
   height: 0.125rem;
   border: 2px solid #1e3a8a;
   width: 18%;
