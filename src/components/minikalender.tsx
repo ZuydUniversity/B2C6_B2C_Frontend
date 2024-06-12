@@ -37,8 +37,18 @@ const MiniKalender: React.FC = () => {
   const currentDate = new Date();
   const daysOfWeek = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
   const monthNames = [
-    "januari", "februari", "maart", "april", "mei", "juni", "juli", 
-    "augustus", "september", "oktober", "november", "december"
+    "januari",
+    "februari",
+    "maart",
+    "april",
+    "mei",
+    "juni",
+    "juli",
+    "augustus",
+    "september",
+    "oktober",
+    "november",
+    "december",
   ];
 
   const renderCalendar = () => {
@@ -55,7 +65,7 @@ const MiniKalender: React.FC = () => {
       calendarDays.push(
         <div key={`prev-${i}`} className="calendar-day prev-month">
           <span className="day-number">{prevMonthDays - i}</span>
-        </div>
+        </div>,
       );
     }
 
@@ -63,7 +73,7 @@ const MiniKalender: React.FC = () => {
       calendarDays.push(
         <div key={day} className="calendar-day">
           {day}
-        </div>
+        </div>,
       );
     }
 
@@ -71,7 +81,7 @@ const MiniKalender: React.FC = () => {
       calendarDays.push(
         <div key={`next-${i}`} className="calendar-day next-month">
           <span className="day-number">{i}</span>
-        </div>
+        </div>,
       );
     }
 
@@ -82,7 +92,9 @@ const MiniKalender: React.FC = () => {
     <div className="calendar" ref={calendarRef}>
       <nav>
         <a href="/kalender" className="url">
-          <div className="calendar-title" ref={titleRef}>Kalender</div>
+          <div className="calendar-title" ref={titleRef}>
+            Kalender
+          </div>
         </a>
       </nav>
       <div className="calendar-header"></div>
