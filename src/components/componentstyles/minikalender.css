@@ -130,3 +130,9 @@
 .next-month .day-number {
   opacity: 0.5;
 }
+
+.calendar-left-button:hover,
+.calendar-right-button:hover {
+  filter: brightness(85%);
+  transform: scale(1.2);
+}
