@@ -1,0 +1,62 @@
+.calendar-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .week-button {
+    background-color: #ffab40;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 60px);
+    gap: 10px;
+  }
+  
+  .calendar-day,
+  .calendar-slot {
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .calendar-event {
+    background-color: #1e88e5;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .event-time {
+    font-weight: bold;
+  }
+  
+  .event-patient {
+    display: flex;
+    align-items: center;
+  }
+  
+  .event-patient img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  

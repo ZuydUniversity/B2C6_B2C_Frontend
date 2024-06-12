@@ -13,6 +13,7 @@ import PatientOverview from "./pages/patientoverview";
 import Sidebar from "./components/sidebar";
 import LoginPage from "./pages/loginpage";
 import NotFoundPage from "./pages/notfoundpage";
+import KalenderPage from "./pages/kalenderpage"; 
 
 const App: React.FC = () => {
   const [hideNavbar, setHideNavbar] = useState(false);
@@ -33,7 +34,8 @@ const App: React.FC = () => {
             <Route path="/patient/:id" element={<PatientOverview />} />
             <Route path="/artsen" element={<ArtsPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
-            <Route
+            <Route path="/kalender" element={<KalenderPage />} />
+            <Route 
               path="*"
               element={<NotFoundPage setHideNavbar={setHideNavbar} />}
             />
