@@ -4,21 +4,8 @@ import "./componentstyles/minikalender.css";
 const MiniKalender: React.FC = () => {
   const currentDate = new Date();
   const daysOfWeek = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
-  const monthNames = [
-    "januari",
-    "februari",
-    "maart",
-    "april",
-    "mei",
-    "juni",
-    "juli",
-    "augustus",
-    "september",
-    "oktober",
-    "november",
-    "december",
-  ];
-
+  const monthNames = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
+  
   const renderCalendar = () => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
@@ -58,7 +45,11 @@ const MiniKalender: React.FC = () => {
 
   return (
     <div className="calendar">
-      <div className="calendar-title">Kalender</div>
+        <nav>  
+            <a href="/kalender" className="url">
+                <div className="calendar-title">Kalender</div>
+            </a>
+        </nav>
       <div className="calendar-header"></div>
       <div className="calendar-left-button">{"<"}</div>
       <div className="calendar-text">
