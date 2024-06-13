@@ -6,6 +6,7 @@ const MiniKalender: React.FC = () => {
   const titleRef = useRef<HTMLDivElement>(null);
 
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [hoveredDay, setHoveredDay] = useState<number | null>(null);
 
   useEffect(() => {
     const calendar = calendarRef.current;
@@ -94,8 +95,19 @@ const MiniKalender: React.FC = () => {
 
     for (let day = 1; day <= daysInMonth; day++) {
       calendarDays.push(
-        <div key={day} className="calendar-day">
+        <div
+          key={day}
+          className="calendar-day"
+          onMouseEnter={() => setHoveredDay(day)}
+          onMouseLeave={() => setHoveredDay(null)}
+        >
           {day}
+          {hoveredDay === day && (
+            <div className="popup">
+              <div>Day {day}</div>
+              <div>Dummy Text</div>
+            </div>
+          )}
         </div>,
       );
     }
