@@ -10,6 +10,12 @@
   padding: 25px;
   font-family: Arial, sans-serif;
   color: #ffffff;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.calendar-hover {
+  background-color: #151aab;
 }
 
 .calendar-title {
@@ -19,6 +25,7 @@
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+  color: #ffffff;
 }
 
 .calendar-header {
@@ -33,30 +40,6 @@
   position: relative;
   height: 10px;
   width: 208px;
-  margin-bott.calendar {
-    position: absolute;
-    top: 30px;
-    right: 10px;
-    width: 230px;
-    height: 300px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #1b21d4;
-    padding: 25px;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    z-index: 10;
-  }
-
-  .calendar-title {
-    text-align: center;
-    margin-top: -5px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  om: -1px;
 }
 
 .calendar-left-button {
@@ -91,7 +74,7 @@
   text-align: center;
   box-sizing: border-box;
   margin: 1px 0;
-  cursor: pointer;
+  cursor: default;
   border-radius: 0;
   transition: background-color 0.3s;
   border: 1px solid black;
@@ -146,4 +129,10 @@
 .prev-month .day-number,
 .next-month .day-number {
   opacity: 0.5;
+}
+
+.calendar-left-button:hover,
+.calendar-right-button:hover {
+  filter: brightness(85%);
+  transform: scale(1.2);
 }
