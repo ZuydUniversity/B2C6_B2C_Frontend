@@ -1,6 +1,6 @@
 /*Everything related to how the bar itself looks/works*/
 .sidebar {
-  width: 257px;
+  width: 260px;
   background-color: #e8edf8;
   display: flex;
   flex-direction: column;
