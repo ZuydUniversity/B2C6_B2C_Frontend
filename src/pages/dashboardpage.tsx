@@ -22,7 +22,7 @@ const PatientCard: React.FC<PatientCardProps> = ({
   imageUrl,
 }) => {
   return (
-    <article className="patientCard">
+    <div className="patientCard">
       <div className="patientCardTime">
         <p>Gepland</p>
         <time dateTime={date.split("/").reverse().join("-")}>{date}</time>
@@ -47,10 +47,10 @@ const PatientCard: React.FC<PatientCardProps> = ({
           </div>
           <div className="patientCardRow">
             <h4 className="patientCardDiagnosis">Diagnose:</h4>
-            <p className="patientCardDiagnosisText">
-              <span>{diagnosis.split(" ")[0]} </span>
-              {diagnosis.split(" ").slice(1).join(" ")}
-            </p>
+            <div className="patientCardDiagnosisText">
+              <p>{diagnosis.split(" ")[0]} </p>
+              <p>{diagnosis.split(" ").slice(1).join(" ")}</p>
+            </div>
           </div>
           <div className="patientCardRow">
             <h4 className="patientCardMedication">Medicatie:</h4>
@@ -63,11 +63,9 @@ const PatientCard: React.FC<PatientCardProps> = ({
         </div>
       </div>
       <div className="patientCardOptions">
-        <button className="patientCardOptions button">
-          <h3>...</h3>
-        </button>
+        <input type="Button" className="patientCardOptionsButton" value="..." />
       </div>
-    </article>
+    </div>
   );
 };
 
@@ -186,57 +184,42 @@ const DashboardPage: React.FC = () => {
   ];
 
   return (
-    <main className="dashboardMain">
-      <div className="dashboardSection">
-        <article className="dashboardArticle">
-          <div className="welcomeDocLabel">
-            <h1 className="dashboardHeader">
-              Hallo, Dr. Johannes Doe
+    <div className="dashboardMain">
+      <h1 className="dashboardHeader"> Hallo, Dr. Johannes Doe </h1>
+      <MiniKalender />
+      <div className="dashboardContent">
+        <div className="dashboardInnerContent">
+          <div className="dashboardInnerHeader">
+            <section>
+              <h2>Patiënten met een afspraak</h2>
               <hr />
-            </h1>
-          </div>
-          <hr className="dashboardHeader" />
-          <MiniKalender />
-          <section className="dashboardContent">
-            <article className="dashboardInnerContent">
-              <header className="dashboardInnerHeader">
-                <section>
-                  <h2>Patiënten met een afspraak</h2>
-                  <hr />
-                </section>
-                <section className="dashboardSort">
-                  <div>
-                    <span>oplopend </span>
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8680dffe1c994dd27e1c422f85ae2b00662d600ce944f33420b92f4cf8c535d?apiKey=070967f8f2f74db686d34af20d021ec7&"
-                      alt=""
-                    />
-                  </div>
-                </section>
-              </header>
-              {patients.map((patient, index) => (
-                <PatientCard
-                  key={index}
-                  date={patient.date}
-                  name={patient.name}
-                  age={patient.age}
-                  diagnosis={patient.diagnosis}
-                  medication={patient.medication}
-                  appointments={patient.appointments}
-                  imageUrl={patient.imageUrl}
+            </section>
+            <div className="dashboardSort">
+              <div>
+                <span>oplopend </span>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8680dffe1c994dd27e1c422f85ae2b00662d600ce944f33420b92f4cf8c535d?apiKey=070967f8f2f74db686d34af20d021ec7&"
+                  alt=""
                 />
-              ))}
-              <footer className="dashboardFooter"></footer>
-            </article>
-          </section>
-        </article>
-        <footer className="dashboardFooter"></footer>
+              </div>
+            </div>
+          </div>
+          {patients.map((patient, index) => (
+            <PatientCard
+              key={index}
+              date={patient.date}
+              name={patient.name}
+              age={patient.age}
+              diagnosis={patient.diagnosis}
+              medication={patient.medication}
+              appointments={patient.appointments}
+              imageUrl={patient.imageUrl}
+            />
+          ))}
+        </div>
       </div>
-      <aside className="dashboardAside">
-        <section></section>
-      </aside>
-    </main>
+    </div>
   );
 };
 
