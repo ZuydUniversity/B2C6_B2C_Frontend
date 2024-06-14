@@ -5,8 +5,18 @@ import { Note, Specialist } from "../abstracts/ImportsModels";
 import dropdown_arrow from "./images/dropdown_arrow.png";
 import dropdown_arrow_up from "./images/dropdown_arrow_reverse.png";
 
-const baseSpecialist1 = new Specialist("Barack", "Obama", "JohnDoe@gmail.com", "0612345678");
-const baseSpecialist2 = new Specialist("John", "Doe", "JohnDoe@gmail.com", "0612345678");
+const baseSpecialist1 = new Specialist(
+  "Barack",
+  "Obama",
+  "JohnDoe@gmail.com",
+  "0612345678",
+);
+const baseSpecialist2 = new Specialist(
+  "John",
+  "Doe",
+  "JohnDoe@gmail.com",
+  "0612345678",
+);
 
 var initialNotes: Note[] = [
   new Note("Note 1", "This is the first note.", baseSpecialist1),
@@ -18,7 +28,8 @@ var initialNotes: Note[] = [
 const Notes: React.FC = () => {
   const [notes, setNotes] = useState<Note[]>(initialNotes);
   const [filteredByName, setFilteredByName] = useState<boolean>(false);
-  const [filteredBySpecialist, setFilteredBySpecialist] = useState<boolean>(false);
+  const [filteredBySpecialist, setFilteredBySpecialist] =
+    useState<boolean>(false);
   const [filteredByPatient, setFilteredByPatient] = useState<boolean>(false);
   const [filteredBySession, setFilteredBySession] = useState<boolean>(false);
 
@@ -43,7 +54,7 @@ const Notes: React.FC = () => {
 
     // Update the notes array
     setNotes(sortedNotes);
-  }
+  };
 
   // Sort notes by specialist
   const sortNotesBySpecialist = () => {
@@ -55,7 +66,9 @@ const Notes: React.FC = () => {
       sortedNotes.reverse();
       setFilteredBySpecialist(false);
     } else {
-      sortedNotes.sort((a: Note, b: Note) => a.Specialist.Firstname.localeCompare(b.Specialist.Firstname));
+      sortedNotes.sort((a: Note, b: Note) =>
+        a.Specialist.Firstname.localeCompare(b.Specialist.Firstname),
+      );
       setFilteredBySpecialist(true);
     }
 
@@ -66,7 +79,7 @@ const Notes: React.FC = () => {
 
     // Update the notes array
     setNotes(sortedNotes);
-  }
+  };
 
   // Sort notes by patient
   const sortNotesByPatient = () => {
@@ -78,7 +91,7 @@ const Notes: React.FC = () => {
       sortedNotes.reverse();
       setFilteredByPatient(false);
     } else {
-      sortedNotes.sort((a:Note, b:Note) => {
+      sortedNotes.sort((a: Note, b: Note) => {
         if (a.Patient === null && b.Patient === null) {
           return 0; // Beschouw ze als gelijk
         } else if (a.Patient === null) {
@@ -99,7 +112,7 @@ const Notes: React.FC = () => {
 
     // Update the notes array
     setNotes(sortedNotes);
-  }
+  };
 
   // Sort notes by session
   const sortNotesBySession = () => {
@@ -111,7 +124,7 @@ const Notes: React.FC = () => {
       sortedNotes.reverse();
       setFilteredBySession(false);
     } else {
-      sortedNotes.sort((a:Note, b:Note) => {
+      sortedNotes.sort((a: Note, b: Note) => {
         if (a.Session === null && b.Session === null) {
           return 0; // Beschouw ze als gelijk
         } else if (a.Session === null) {
@@ -132,17 +145,16 @@ const Notes: React.FC = () => {
 
     // Update the notes array
     setNotes(sortedNotes);
-  }
+  };
 
   return (
     <div className="general-container">
       <div className="notes-background">
-
-      {/* Title bar in container */}  	
+        {/* Title bar in container */}
         <div className="notes-title">
           <h1>
             Notities
-            <hr className="notes-title-line"/>
+            <hr className="notes-title-line" />
           </h1>
         </div>
 
@@ -151,7 +163,8 @@ const Notes: React.FC = () => {
           <div className="notes-container-inside">
             {/* Search bar? */}
             <div className="notes-filter-bar">
-              Search bar here, maybe? Or a filter bar? Or both? Or neither? Who knows? Not me.
+              Search bar here, maybe? Or a filter bar? Or both? Or neither? Who
+              knows? Not me.
               <hr />
             </div>
 
@@ -160,42 +173,67 @@ const Notes: React.FC = () => {
               <div className="notes-table-sections-title table-section-note">
                 <h2>Notitie</h2>
                 <button onClick={sortNotesByName} className="filter-by-button">
-                  <img src={filteredByName ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+                  <img
+                    src={filteredByName ? dropdown_arrow_up : dropdown_arrow}
+                    alt="Arrow down"
+                    className="dropdown_arrow"
+                  />
                 </button>
               </div>
               <div className="notes-table-sections-title table-section-specialist">
                 <h2>Specialist</h2>
-                <button onClick={sortNotesBySpecialist} className="filter-by-button">
-                  <img src={filteredBySpecialist ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+                <button
+                  onClick={sortNotesBySpecialist}
+                  className="filter-by-button"
+                >
+                  <img
+                    src={
+                      filteredBySpecialist ? dropdown_arrow_up : dropdown_arrow
+                    }
+                    alt="Arrow down"
+                    className="dropdown_arrow"
+                  />
                 </button>
               </div>
               <div className="notes-table-sections-title table-section-patient">
                 <h2>Patiënt</h2>
-                <button onClick={sortNotesByPatient} className="filter-by-button">
-                  <img src={filteredByPatient ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+                <button
+                  onClick={sortNotesByPatient}
+                  className="filter-by-button"
+                >
+                  <img
+                    src={filteredByPatient ? dropdown_arrow_up : dropdown_arrow}
+                    alt="Arrow down"
+                    className="dropdown_arrow"
+                  />
                 </button>
               </div>
               <div className="notes-table-sections-title table-section-session">
                 <h2>Sessie</h2>
-                <button onClick={sortNotesBySession} className="filter-by-button">
-                  <img src={filteredBySession ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+                <button
+                  onClick={sortNotesBySession}
+                  className="filter-by-button"
+                >
+                  <img
+                    src={filteredBySession ? dropdown_arrow_up : dropdown_arrow}
+                    alt="Arrow down"
+                    className="dropdown_arrow"
+                  />
                 </button>
               </div>
             </div>
 
             {/* List of notes */}
             <div className="notes-list">
-              {
-                notes.map((note: Note, index: number) => {
-                  return <NoteListItem key={note.Id ?? index} note={note} />
-                })
-              }
+              {notes.map((note: Note, index: number) => {
+                return <NoteListItem key={note.Id ?? index} note={note} />;
+              })}
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Notes;
