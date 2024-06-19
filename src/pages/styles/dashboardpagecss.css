@@ -1,10 +1,9 @@
 .dashboardMain {
-  display: flex;
   flex-grow: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Occupy full viewport height */
+  margin: 0 2%;
 }
 
 .dashboardHeader {
@@ -13,15 +12,15 @@
   font-weight: bold;
   color: #1e3a8a;
   border-bottom: 4px solid #1e3a8a;
-  width: 50%;
-  text-align: center;
+  width: 28%;
+  margin-left: 4%;
 }
 
 .dashboardContent {
   display: flex;
   flex-grow: 1;
-  width: 65%;
-  padding: 4%;
+  width: 75%;
+  padding: 3%;
   background-color: #e0f2fe;
   border-radius: 75px;
   max-height: calc(100vh - 250px);
