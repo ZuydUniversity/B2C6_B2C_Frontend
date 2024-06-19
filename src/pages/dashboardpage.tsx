@@ -156,7 +156,7 @@ const DashboardPage: React.FC = () => {
       name: "Joep ABUBAKAR",
       age: "10 jaar",
       diagnosis: "JDM (monocyclische)",
-      medication: "A medicijn, A medicijn, A medicijn, A medicijn",
+      medication: "A medicijn, A medicijn, A medicijn, A medicijn, ",
       appointments: 4,
       imageUrl:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
