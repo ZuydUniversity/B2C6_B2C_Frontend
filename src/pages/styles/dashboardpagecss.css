@@ -1,11 +1,11 @@
 .dashboardMain {
-  display: flex;
   flex-grow: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Occupy full viewport height */
+  margin: 0 2%;
 }
+
 
 .dashboardHeader {
   align-self: center;
@@ -13,14 +13,14 @@
   font-weight: bold;
   color: #1e3a8a;
   border-bottom: 4px solid #1e3a8a;
-  width: 50%;
-  text-align: center;
+  width: 28%;
+  margin-left: 4%;
 }
 
 .dashboardContent {
   display: flex;
   flex-grow: 1;
-  width: 65%;
+  width: 73%;
   padding: 4%;
   background-color: #e0f2fe;
   border-radius: 75px;
