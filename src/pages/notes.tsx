@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import "./styles/notes.css";
 import NoteListItem from "../components/notelistitem";
-import { Note, Specialist } from "../abstracts/ImportsModels";
+import {
+  Note,
+  Specialist,
+  Patient,
+  Appointment,
+  Session,
+} from "../abstracts/ImportsModels";
 import dropdown_arrow from "./images/dropdown_arrow.png";
 import dropdown_arrow_up from "./images/dropdown_arrow_reverse.png";
 
+// Set constant values for the tests
 const baseSpecialist1 = new Specialist(
   "Barack",
   "Obama",
@@ -18,7 +25,45 @@ const baseSpecialist2 = new Specialist(
   "0612345678",
 );
 
-var initialNotes: Note[] = [
+const patient = new Patient(
+  "Jane",
+  "English",
+  "Jane.English@yahoo.com",
+  25,
+  "0612345678",
+  false,
+  "Tarzan",
+  "English",
+  "Tarzan.English@yahoo.com",
+  "0612345678",
+);
+
+const appointment = new Appointment(
+  "Appointment 1",
+  new Date(2021, 11, 1),
+  new Date(2021, 11, 2),
+  baseSpecialist1,
+  patient,
+);
+
+const session1 = new Session(
+  "Session 1",
+  appointment.Startdatetime,
+  appointment.Enddatetime,
+  appointment.Specialist,
+  appointment.Patient,
+  appointment,
+);
+const session2 = new Session(
+  "Session 2",
+  appointment.Startdatetime,
+  appointment.Enddatetime,
+  appointment.Specialist,
+  appointment.Patient,
+  appointment,
+);
+
+export var initialNotes: Note[] = [
   new Note("Note 1", "This is the first note.", baseSpecialist1),
   new Note("Note 6", "This is the second note.", baseSpecialist2),
   new Note("Note 3", "This is the third note.", baseSpecialist2),
@@ -172,7 +217,11 @@ const Notes: React.FC = () => {
             <div className="notes-table-sections">
               <div className="notes-table-sections-title table-section-note">
                 <h2>Notitie</h2>
-                <button onClick={sortNotesByName} className="filter-by-button">
+                <button
+                  onClick={sortNotesByName}
+                  className="filter-by-button"
+                  id="dropdown_arrow_name"
+                >
                   <img
                     src={filteredByName ? dropdown_arrow_up : dropdown_arrow}
                     alt="Arrow down"
@@ -185,6 +234,7 @@ const Notes: React.FC = () => {
                 <button
                   onClick={sortNotesBySpecialist}
                   className="filter-by-button"
+                  id="dropdown_arrow_specialist"
                 >
                   <img
                     src={
@@ -200,6 +250,7 @@ const Notes: React.FC = () => {
                 <button
                   onClick={sortNotesByPatient}
                   className="filter-by-button"
+                  id="dropdown_arrow_patient"
                 >
                   <img
                     src={filteredByPatient ? dropdown_arrow_up : dropdown_arrow}
@@ -213,6 +264,7 @@ const Notes: React.FC = () => {
                 <button
                   onClick={sortNotesBySession}
                   className="filter-by-button"
+                  id="dropdown_arrow_session"
                 >
                   <img
                     src={filteredBySession ? dropdown_arrow_up : dropdown_arrow}
