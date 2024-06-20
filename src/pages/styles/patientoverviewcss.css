@@ -1,0 +1,29 @@
+.patient-overview {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.patient-overview h1 {
+  margin-left: 5.75rem;
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 0px;
+}
+
+.patient-overview hr {
+  margin-top: 0.875rem;
+  margin-left: 5.8rem;
+  height: 0.125rem;
+  border: 2px solid #1e3a8a;
+  width: 18%;
+  background-color: #1e3a8a;
+  max-width: 25rem;
+}
+
+.patient-overview p {
+  font-size: 1.2em;
+  color: #666;
+}

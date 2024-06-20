@@ -57,6 +57,7 @@ const PatientOverview: React.FC = () => {
   return (
     <div className="patient-overview">
       <h1>Dashboard</h1>
+      <hr />
       <PatientDetails patient={patient} />
     </div>
   );
