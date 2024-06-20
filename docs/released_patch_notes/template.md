@@ -13,17 +13,23 @@ title: recent-patch-notes
 # Patch Notes - 20/06/2024
 
 ## Bug Fixes
+
 ### Theme
+
 fix...
 
 ### Theme 2
+
 fix...
 
 ## New Features
+
 ### Theme
+
 features
 
 ### Theme 2
+
 features
 
 ---

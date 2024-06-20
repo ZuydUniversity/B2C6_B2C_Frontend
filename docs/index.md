@@ -11,9 +11,12 @@ title: recent-patch-notes
 ---
 
 # Patch Notes - 20/06/2024
+
 ## Features
+
 ### Notities
-* Pagina waar alle notities te vinden zijn toegevoegd
-  * Notities kunnen gefiltert worden op Naam, Specialist, Patient en Sessie
+
+- Pagina waar alle notities te vinden zijn toegevoegd
+  - Notities kunnen gefiltert worden op Naam, Specialist, Patient en Sessie
 
 ---
