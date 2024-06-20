@@ -1,0 +1,75 @@
+.appointment-planner {
+    background-color: #D8EAFF;
+    width: 40%;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    color: #000369;
+  }
+  
+  .title-with-underline {
+    position: relative;
+    color: #000369;
+    left: 30px;
+    font-size: 25px; 
+  }
+  
+  .title-with-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: calc(100% + -100px);
+    height: 1.5px;
+    background-color: #000369;
+  }
+  
+  .title-of-element {
+    position: absolute;
+    color: #000369;
+    left: 70px;
+    font-size: 20px; 
+  }
+  
+  .appointment-form {
+    margin-bottom: 20px;
+  }
+  
+  .appointment-form input {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .appointment-form button {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  
+  .appointment-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .appointment-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .appointment-item h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .appointment-item p {
+    margin: 5px 0 0;
+    font-size: 16px;
+  }
+  
