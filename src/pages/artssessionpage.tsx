@@ -2,7 +2,6 @@ import * as React from "react";
 import "./styles/artssession.css";
 import { FaPlus } from "react-icons/fa";
 
-
 interface PatientSelectProps {
     onSelect: () => void;
   }
