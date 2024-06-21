@@ -1,4 +1,4 @@
-import PatientPage from "../pages/patientpage";
+import PatientPage from "../../pages/patientpage";
 import { render } from "@testing-library/react";
 
 test("Check if page renders", () => {
