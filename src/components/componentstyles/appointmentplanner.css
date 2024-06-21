@@ -31,7 +31,7 @@
   background-color: #000369;
 }
 
-.title-of-element {
+.title-of-title-bar {
   position: absolute;
   font-size: 20px; 
   color: #000369;
@@ -46,12 +46,13 @@
 
 .title-input {
   position: absolute;
-  top: 190px;
+  top: 180px;
   right: 35px;
   width: 80%;
   padding: 10px;
   font-size: 16px;
   background-color: white;
+  color: black;
   border: 1px solid #ccc; 
   border-radius: 10px;
   margin-bottom: 20px;
@@ -66,4 +67,20 @@
   background-color: white; 
   border-color: #999; 
   outline: none; 
+}
+
+.title-of-repetition {
+  position: absolute;
+  font-size: 20px; 
+  color: #000369;
+  left: 70px;
+  top: 250px;
+}
+
+.title-of-repetition-optional {
+  position: absolute;
+  font-size: 10px; 
+  color: #000369;
+  left: 165px;
+  top: 267px;
 }
