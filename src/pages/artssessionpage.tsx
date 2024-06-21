@@ -22,7 +22,7 @@ interface PatientSelectProps {
     );
   };
   
-  const MyComponent: React.FC = () => {
+  const AddPatientSelection: React.FC = () => {
     const handleSelect = () => {
 
     };
@@ -38,4 +38,4 @@ interface PatientSelectProps {
     );
   };
   
-  export default MyComponent;
+  export default AddPatientSelection;
