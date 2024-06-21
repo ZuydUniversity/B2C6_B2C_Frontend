@@ -17,7 +17,6 @@
   font-weight: bold;
   position: relative;
   color: #000369;
-  left: 30px;
   font-size: 25px; 
 }
 
@@ -31,31 +30,28 @@
   background-color: #000369;
 }
 
+.title-section {
+  margin-bottom: 20px;
+}
+
 .title-of-title-bar {
-  position: absolute;
   font-size: 20px; 
   color: #000369;
-  left: 70px;
-  top: 130px;
 }
 
 .appointment-form {
-  margin-top: 50px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
 .title-input {
-  position: absolute;
-  top: 180px;
-  right: 35px;
-  width: 80%;
+  width: 100%;
   padding: 10px;
   font-size: 16px;
   background-color: white;
   color: black;
   border: 1px solid #ccc; 
   border-radius: 10px;
-  margin-bottom: 20px;
   transition: background-color 0.3s ease; 
 }
 
@@ -69,18 +65,65 @@
   outline: none; 
 }
 
-.title-of-repetition {
-  position: absolute;
-  font-size: 20px; 
-  color: #000369;
-  left: 70px;
-  top: 250px;
+.repetition-section {
+  margin-bottom: 20px;
 }
 
-.title-of-repetition-optional {
-  position: absolute;
-  font-size: 10px; 
+.title-of-repetition {
+  font-size: 20px; 
   color: #000369;
-  left: 165px;
-  top: 267px;
+  left: 2009px;
+
+}.optional {
+  font-size: 12px; 
+  color: #000369; 
+  margin-left: 5px; 
+}
+
+.repetition-options {
+  display: flex;
+}
+
+.repetition-options label {
+  margin-left: 20px; 
+}
+
+.transparent-rectangle-daily {
+  width: 115px; 
+  position: absolute;
+  height: 40px; 
+  top: 230px;
+  left: 55px;
+  border: 3px solid #1B21D4; 
+  background-color: transparent; 
+  border-radius: 20px;
+}
+
+.transparent-rectangle-weekly {
+  width: 115px; 
+  position: absolute;
+  height: 40px; 
+  top: 230px;
+  left: 169px;
+  border: 3px solid #1B21D4; 
+  background-color: transparent; 
+  border-radius: 20px;
+}
+
+.transparent-rectangle-monthly {
+  width: 115px; 
+  position: absolute;
+  height: 40px; 
+  top: 230px;
+  left: 285px;
+  border: 3px solid #1B21D4; 
+  background-color: transparent; 
+  border-radius: 20px;
+}
+
+.title-of-information-appointment {
+  font-size: 20px; 
+  position: absolute;
+  color: #000369;
+  top: 280px;
 }
