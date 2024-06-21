@@ -5,10 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e5e4e7;
+  background-color: #ffffff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  flex-grow: 1;
+}
+
+.app-container {
+  flex-grow: 1;
+  display: flex;
+  width: 100%;
+}
+
+.main-content {
+  width: 100%;
 }

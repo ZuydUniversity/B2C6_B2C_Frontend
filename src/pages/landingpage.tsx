@@ -42,6 +42,15 @@ const LandingPage: React.FC = () => {
             </a>
           </li>
         </div>
+        <div className="feature">
+          <h2>Dashboard</h2>
+          <p>Navigatie Dashboard</p>
+          <li className="navbar-item">
+            <a className="navbar-link" href="/dashboardpage">
+              Dashboard
+            </a>
+          </li>
+        </div>
       </section>
     </div>
   );
