@@ -46,7 +46,7 @@ describe("Note", () => {
   it("should create a new note with all the provided and required properties", () => {
     const note = new Note(name, description, specialist);
 
-    expect(note.Id).toBe(0);
+    expect(note.Id).toBe(null);
     expect(note.Name).toBe(name);
     expect(note.Description).toBe(description);
     expect(note.Specialist).toBe(specialist);
@@ -57,7 +57,7 @@ describe("Note", () => {
   it("should create a new note with all the provided properties", () => {
     const note = new Note(name, description, specialist, patient, session);
 
-    expect(note.Id).toBe(0);
+    expect(note.Id).toBe(null);
     expect(note.Name).toBe(name);
     expect(note.Description).toBe(description);
     expect(note.Specialist).toBe(specialist);

@@ -1,7 +1,7 @@
 import { Specialist, Patient, Session } from "../abstracts/ImportsModels";
 
 export class Note {
-  Id!: number;
+  Id!: number | null;
   Name!: string;
   Description!: string;
   Specialist!: Specialist;
@@ -15,7 +15,7 @@ export class Note {
     patient: Patient | null = null,
     session: Session | null = null,
   ) {
-    this.Id = 0;
+    this.Id = null;
     this.Name = name;
     this.Description = description;
     this.Specialist = specialist;
