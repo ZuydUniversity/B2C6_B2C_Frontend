@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./styles/artssession.css";
-//import { FaPlus } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 
 
 interface PatientSelectProps {
@@ -15,7 +15,7 @@ interface PatientSelectProps {
           className="select-patient-button flex-container"
           aria-label="Select patient"
         >
-          {/* <FaPlus className="select-patient-icon" aria-hidden="true"/> */}
+          <FaPlus className="select-patient-icon" aria-hidden="true"/>
           <span className="selecting patient">Selecteer patiënt</span>
         </button>
       </section>
@@ -29,7 +29,7 @@ interface PatientSelectProps {
   
     return (
       <main className="main-patient-container">
-        <header className="header-text">Sessie</header>
+        <header className="header-text">Sessie Toevoegen</header>
         <hr className="divider" />
         <h2 className="sub-header">Patiëntgegevens</h2>
         <hr className="divider2" />

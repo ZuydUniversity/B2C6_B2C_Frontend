@@ -93,10 +93,6 @@
     font-weight: bold;
     color: #1e3a8a;
     margin: 0 auto;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 94vh;
-    max-width: 1500px;
   }
   
   .header-text {
