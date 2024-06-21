@@ -16,7 +16,6 @@
   .patient-info-container {
     display: flex;
     margin-top: 41px;
-    width: 100%;
     flex-direction: column;
     align-items: start;
     color: #000369;
@@ -197,6 +196,7 @@
     padding-left: 10px;
     flex-direction: column;
     align-items: start;
+    
   }
   @media (max-width: 991px) {
     .results-container {
