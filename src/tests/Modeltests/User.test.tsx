@@ -55,4 +55,45 @@ describe("User", () => {
 
 		expect(user.Settings).toBe(newSettings);
 	});
+
+	it("should set a new setting", () => {
+		const user = new User(firstname, lastname, email, phonenumber);
+		user.Settings = JSON.parse(JSON.stringify(settings));
+		const oldSettings = JSON.parse(JSON.stringify(user.Settings));
+
+		expect(user.Settings).toStrictEqual(settings);
+
+		user.setSetting("receivesMessages", true);
+
+		expect(settings).toStrictEqual(oldSettings);
+		expect(user.Settings).not.toBe(oldSettings);
+	});
+
+	it("should get the settings", () => {
+		const user = new User(firstname, lastname, email, phonenumber);
+		user.Settings = JSON.parse(JSON.stringify(settings));
+
+		expect(user.Settings).toStrictEqual(settings);
+		expect(user.getSettings()).toStrictEqual(settings);
+	});
+
+	it("should delete a setting", () => {
+		const user = new User(firstname, lastname, email, phonenumber);
+		user.Settings = JSON.parse(JSON.stringify(settings));
+
+		expect(user.Settings).toStrictEqual(settings);
+
+		user.removeSetting("isDarkMode");
+
+		expect(user.Settings).not.toBe(settings);
+		expect(user.Settings["isDarkMode"]).toBeUndefined();
+	});
+
+	it("should get the requested setting", () => {
+		const user = new User(firstname, lastname, email, phonenumber);
+		user.Settings = JSON.parse(JSON.stringify(settings));
+
+		expect(user.Settings).toStrictEqual(settings);
+		expect(user.getSetting("isDarkMode")).toBe(true);
+	});
 });
