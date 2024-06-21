@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import AboutUsPage from "./pages/aboutuspage";
 import PatientPage from "./pages/patientpage";
 import ArtsPage from "./pages/artspage";
@@ -17,7 +12,7 @@ import Notes from "./pages/notes";
 import ArtsSessionPage from "./pages/artssessionpage";
 
 const App: React.FC = () => {
-  const [hideNavbar, setHideNavbar] = useState(false);
+	const [hideNavbar, setHideNavbar] = useState(false);
 
   return (
     <Router>

@@ -1,74 +1,74 @@
 /* Main container to center and limit width */
 .main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #fff;
 }
 
 /* Updated styles for patient details container */
 .patient-details-container {
-  background-color: white;
-  border: 30px solid #d8eaff;
-  border-radius: 30px;
-  padding: 20px;
-  margin: 10px 0;
-  max-width: 800px;
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background-color: white;
+	border: 30px solid #d8eaff;
+	border-radius: 30px;
+	padding: 20px;
+	margin: 10px 0;
+	max-width: 800px;
+	width: 100%;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .patient-info-card,
 .contact-person-info,
 .medication-info {
-  background-color: white;
-  border-radius: 30px;
-  padding: 20px;
-  margin-bottom: 20px;
-  color: #000369;
+	background-color: white;
+	border-radius: 30px;
+	padding: 20px;
+	margin-bottom: 20px;
+	color: #000369;
 }
 
 .patient-info-card h2,
 .contact-person-info h2,
 .medication-info h2 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
+	font-size: 1.5em;
+	margin-bottom: 20px;
 }
 
 .patient-details,
 .contact-details,
 .medication-details {
-  display: grid;
-  gap: 10px;
+	display: grid;
+	gap: 10px;
 }
 
 .patient-info-pair,
 .contact-info-pair,
 .medication-info-pair {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .patient-label,
 .contact-label,
 .medication-label {
-  font-weight: bold;
-  color: #000369;
+	font-weight: bold;
+	color: #000369;
 }
 
 .patient-value,
 .contact-value,
 .medication-value {
-  color: #555;
+	color: #555;
 }
 
 .patient-details-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
 }
 
 .medication-info {
-  grid-column: span 2;
+	grid-column: span 2;
 }
