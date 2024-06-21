@@ -30,3 +30,7 @@
   flex-shrink: 0;
   padding: 20px;
 }
+
+body {
+  font-family: 'Montserrat';
+}

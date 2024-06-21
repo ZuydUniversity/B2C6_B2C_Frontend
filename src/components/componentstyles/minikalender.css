@@ -8,7 +8,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #1b21d4;
   padding: 25px;
-  font-family: Arial, sans-serif;
   color: #ffffff;
   z-index: 10;
   transition: background-color 0.3s;
@@ -70,6 +69,7 @@
 
 .day-of-week {
   width: calc(100% / 7);
+  font-family: Arial, Helvetica, sans-serif;
   aspect-ratio: 1;
   text-align: center;
   box-sizing: border-box;
@@ -88,6 +88,7 @@
 
 .calendar .calendar-day {
   width: calc(100% / 7);
+  font-family: Arial, Helvetica, sans-serif;
   height: 34px;
   text-align: center;
   box-sizing: border-box;

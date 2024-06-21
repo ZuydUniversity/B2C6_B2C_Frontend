@@ -23,13 +23,16 @@ const AppointmentPlanner: React.FC = () => {
     <div className="appointment-planner">
       <h1 className="title-with-underline">Afspraak toevoegen</h1>
       <h1 className="title-of-element">Titel</h1>
-      <ul className="appointment-list">
-        {appointments.map((appointment) => (
-          <li key={appointment.id} className="appointment-item">
-            <h2>{appointment.title}</h2>
-          </li>
-        ))}
-      </ul>
+      <div className="appointment-form">
+        <input
+          type="text"
+          placeholder="Typ je titel"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          className="title-input"
+        />
+      </div>
+
     </div>
   );
 };

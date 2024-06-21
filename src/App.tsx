@@ -13,6 +13,8 @@ import PatientOverview from "./pages/patientoverview";
 import Sidebar from "./components/sidebar";
 import LoginPage from "./pages/loginpage";
 import NotFoundPage from "./pages/notfoundpage";
+import 'typeface-montserrat';
+import "./App.css";
 
 const App: React.FC = () => {
   const [hideNavbar, setHideNavbar] = useState(false);
@@ -43,4 +45,5 @@ const App: React.FC = () => {
     </Router>
   );
 };
+
 export default App;
