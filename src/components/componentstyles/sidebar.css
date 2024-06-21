@@ -1,158 +1,158 @@
 /*Everything related to how the bar itself looks/works*/
 .sidebar {
-  width: 265px;
-  background-color: #e8edf8;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+	width: 265px;
+	background-color: #e8edf8;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	padding: 20px;
+	box-sizing: border-box;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 
 /*Everything for the logo*/
 .logo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
 .logo-img {
-  width: 120px;
-  height: 65px;
-  padding-left: 50px;
-  align-items: center;
+	width: 120px;
+	height: 65px;
+	padding-left: 50px;
+	align-items: center;
 }
 
 /*First set of icons*/
 .dashboard-icon {
-  background: url(../../../public/Icons/Dashboard.svg) no-repeat 15px;
-  padding-left: 60px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-size: 30px;
-  height: 20px;
+	background: url(../../../public/Icons/Dashboard.svg) no-repeat 15px;
+	padding-left: 60px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-size: 30px;
+	height: 20px;
 }
 
 .calendar-icon {
-  background: url(../../../public/Icons/Calendar.svg) no-repeat 15px;
-  padding-left: 60px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-size: 30px;
-  height: 30px;
+	background: url(../../../public/Icons/Calendar.svg) no-repeat 15px;
+	padding-left: 60px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-size: 30px;
+	height: 30px;
 }
 
 .documents-icon {
-  background: url(../../../public/Icons/Documents.svg) no-repeat 15px;
-  padding-left: 60px;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  background-size: 30px;
-  height: 20px;
+	background: url(../../../public/Icons/Documents.svg) no-repeat 15px;
+	padding-left: 60px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-size: 30px;
+	height: 20px;
 }
 
 .patients-icon {
-  background: url(../../../public/Icons/Patients.svg) no-repeat 15px;
-  padding-left: 60px;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  background-size: 30px;
-  height: 20px;
+	background: url(../../../public/Icons/Patients.svg) no-repeat 15px;
+	padding-left: 60px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-size: 30px;
+	height: 20px;
 }
 
 /* Makes all text align to left*/
 nav ul {
-  list-style-type: none;
-  padding: 0;
+	list-style-type: none;
+	padding: 0;
 }
 
 nav ul li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  font-size: 14px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	font-size: 14px;
 }
 
 /*The small line that seperates elements*/
 hr {
-  border: 2px solid #d0d5dd;
-  margin: 20px 0;
+	border: 2px solid #d0d5dd;
+	margin: 20px 0;
 }
 
 /*Second set of icons*/
 .add-appointment-icon {
-  background: url(../../../public/Icons/Plus.svg) no-repeat 15px;
-  padding-left: 60px;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  background-size: 30px;
-  height: 20px;
+	background: url(../../../public/Icons/Plus.svg) no-repeat 15px;
+	padding-left: 60px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-size: 30px;
+	height: 20px;
 }
 
 .add-doctor-session-icon {
-  background: url(../../../public/Icons/Graph.svg) no-repeat 15px;
-  padding-left: 60px;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  background-size: 30px;
-  height: 20px;
+	background: url(../../../public/Icons/Graph.svg) no-repeat 15px;
+	padding-left: 60px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-size: 30px;
+	height: 20px;
 }
 
 .add-physio-session-icon {
-  background: url(../../../public/Icons/Graph.svg) no-repeat 15px;
-  padding-left: 60px;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  background-size: 30px;
-  height: 20px;
+	background: url(../../../public/Icons/Graph.svg) no-repeat 15px;
+	padding-left: 60px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-size: 30px;
+	height: 20px;
 }
 
 /*Div for logout and settings*/
 .settings-logout ul {
-  list-style-type: none;
-  padding: 0;
-  margin-top: auto;
+	list-style-type: none;
+	padding: 0;
+	margin-top: auto;
 }
 
 /*List for logout and settings*/
 .settings-logout ul li {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-  margin-bottom: 15px;
-  font-size: 15px;
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+	margin-bottom: 15px;
+	font-size: 15px;
 }
 
 /*Icon for settings*/
 .settings-icon {
-  background: url(../../../public/Icons/Settings.svg) no-repeat 15px;
-  padding-left: 60px;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  background-size: 30px;
-  height: 20px;
+	background: url(../../../public/Icons/Settings.svg) no-repeat 15px;
+	padding-left: 60px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-size: 30px;
+	height: 20px;
 }
 
 /*Icon for logout*/
 .logout-icon {
-  background: url(../../../public/Icons/Logout.svg) no-repeat 15px;
-  padding-left: 60px;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  background-size: 30px;
-  height: 20px;
+	background: url(../../../public/Icons/Logout.svg) no-repeat 15px;
+	padding-left: 60px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-size: 30px;
+	height: 20px;
 }
 
 /* Makes the text bold on hover */
 .sidebar a.url:hover,
 .sidebar li:hover {
-  color: #000000;
-  font-weight: bold;
+	color: #000000;
+	font-weight: bold;
 }
 
 .url {
-  text-decoration: none;
-  color: #000000;
+	text-decoration: none;
+	color: #000000;
 }
