@@ -14,6 +14,7 @@ import Sidebar from "./components/sidebar";
 import LoginPage from "./pages/loginpage";
 import NotFoundPage from "./pages/notfoundpage";
 import Notes from "./pages/notes";
+import ArtsSessionPage from "./pages/artssessionpage";
 
 const App: React.FC = () => {
   const [hideNavbar, setHideNavbar] = useState(false);
@@ -35,6 +36,7 @@ const App: React.FC = () => {
             <Route path="/artsen" element={<ArtsPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/notes" element={<Notes />} />
+            <Route path="/artsession" element={<ArtsSessionPage />} />
             <Route
               path="*"
               element={<NotFoundPage setHideNavbar={setHideNavbar} />}
