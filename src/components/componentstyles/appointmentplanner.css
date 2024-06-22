@@ -35,22 +35,18 @@
 }
 
 .title-of-title-bar {
+  margin-top: 40px;
   font-size: 20px; 
   color: #000369;
 }
 
-.appointment-form {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
 .title-input {
-  width: 100%;
+  width: 520px;
+  height: 20px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 10px;
   background-color: white;
-  color: black;
-  border: 1px solid #ccc; 
+  color: black; 
   border-radius: 10px;
   transition: background-color 0.3s ease; 
 }
@@ -73,8 +69,9 @@
   font-size: 20px; 
   color: #000369;
   left: 2009px;
+}
 
-}.optional {
+.optional {
   font-size: 12px; 
   color: #000369; 
   margin-left: 5px; 
@@ -84,46 +81,29 @@
   display: flex;
 }
 
-.repetition-options label {
-  margin-left: 20px; 
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
 }
 
-.transparent-rectangle-daily {
-  width: 115px; 
-  position: absolute;
-  height: 40px; 
-  top: 230px;
-  left: 55px;
-  border: 3px solid #1B21D4; 
-  background-color: transparent; 
-  border-radius: 20px;
+.custom-checkbox input[type="checkbox"] {
+  display: none;
 }
 
-.transparent-rectangle-weekly {
-  width: 115px; 
-  position: absolute;
-  height: 40px; 
-  top: 230px;
-  left: 169px;
-  border: 3px solid #1B21D4; 
-  background-color: transparent; 
-  border-radius: 20px;
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000000;
+  background-color: white;
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.transparent-rectangle-monthly {
-  width: 115px; 
-  position: absolute;
-  height: 40px; 
-  top: 230px;
-  left: 285px;
-  border: 3px solid #1B21D4; 
-  background-color: transparent; 
-  border-radius: 20px;
+.checkbox.selected {
+  background-color: #1B21D4;
+  
 }
 
-.title-of-information-appointment {
-  font-size: 20px; 
-  position: absolute;
-  color: #000369;
-  top: 280px;
-}
