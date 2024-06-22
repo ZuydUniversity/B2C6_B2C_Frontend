@@ -68,7 +68,6 @@
 .title-of-repetition {
   font-size: 20px; 
   color: #000369;
-  left: 2009px;
 }
 
 .optional {
@@ -104,6 +103,4 @@
 
 .checkbox.selected {
   background-color: #1B21D4;
-  
 }
-
