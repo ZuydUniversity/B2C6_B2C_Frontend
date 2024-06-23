@@ -33,7 +33,7 @@ const App: React.FC = () => {
             <Route path="/patient/:id" element={<PatientOverview />} />
             <Route path="/artsen" element={<ArtsPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
-            <Route
+            <Route 
               path="*"
               element={<NotFoundPage setHideNavbar={setHideNavbar} />}
             />

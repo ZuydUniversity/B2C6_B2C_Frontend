@@ -1,0 +1,150 @@
+/* Container for the form or the part of the form you want to apply grid layout */
+.form-grid-container {
+    display: grid;
+    grid-template-columns: auto auto; /* Adjust based on your design needs */
+    gap: 10px; /* Adjust the gap between label and input */
+    align-items: center;
+  }
+  
+  .label {
+    text-align: right;
+  }
+  
+  .input-field, .submitcn {
+    grid-column: 2 / 3; /* Ensures inputs and submit button start at the same point */
+  }
+.firstnamecn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.lastnamecn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.emailcn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.agecn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.phonenumbercn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.sexcn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.malecn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+  
+}
+.malebuttoncn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.femalebuttoncn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.femalecn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+
+.firstnamecontactcn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.lastnamecontactcn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.emailcontactcn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.phonenumbercontactcn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.specialistcn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.notecn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}
+.medicationcn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+} 
+.appointmentcn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+} 
+.submitcn {
+    text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+}

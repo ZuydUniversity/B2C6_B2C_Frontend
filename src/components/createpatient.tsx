@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./componentstyles/HIERZOAANPASSENLATER.css";
+import "./componentstyles/createpatient.css";
 import { Patient } from "../abstracts/ImportsModels";
 
+
 const CreatePatient: React.FC = () => {
-  // Add connections to other models here...
+
   const [id, setId] = useState<number>(0);
   const [firstname, setFirstname] = useState<string>("");
   const [lastname, setLastname] = useState<string>("");
@@ -21,7 +22,7 @@ const CreatePatient: React.FC = () => {
   const [medication, setMedication] = useState<string>("");
   const [appointment, setAppointment] = useState<string>("");
   
-  // Handle form submission
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     const newPatient = {
@@ -41,8 +42,9 @@ const CreatePatient: React.FC = () => {
       Medications: [],
       Appointments: [],
     };
+
+
     console.log("Patiënt aangemaakt:", newPatient);
-    // Reset form (add connection models here...)
     setId(0);
     setFirstname("");
     setLastname("");
@@ -57,166 +59,158 @@ const CreatePatient: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="id">ID:</label>
-        <input
-          id="id"
-          type="number"
-          value={id}
-          onChange={(e) => setId(+e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="firstname">Voornaam:</label>
-        <input
-          id="firstname"
-          type="text"
-          value={firstname}
-          onChange={(e) => setFirstname(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="lastname">Achternaam:</label>
-        <input
-          id="lastname"
-          type="text"
-          value={lastname}
-          onChange={(e) => setLastname(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          id="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="age">Leeftijd:</label>
-        <input
-          id="age"
-          type="number"
-          value={age}
-          onChange={(e) => setAge(+e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="phonenumber">Telefoonnummer:</label>
-        <input
-          id="phonenumber"
-          type="tel"
-          value={phonenumber}
-          onChange={(e) => setPhonenumber(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Geslacht:</label>
-        <div>
+    <form onSubmit={handleSubmit} className="form-grid-container">
+      <label className="firstnamecn label" htmlFor="firstname">Voornaam:</label>
+      <input className="firstnamecn input"
+        id="firstname"
+        type="text"
+        value={firstname}
+        onChange={(e) => setFirstname(e.target.value)}/>
+      
+        
+          <label className="lastnamecn" htmlFor="lastname">Achternaam:</label>
           <input
-            type="radio"
-            id="male"
-            name="sex"
-            value="male"
-            checked={!sex}
-            onChange={() => setSex(false)}
+            id="lastname"
+            type="text"
+            value={lastname}
+            onChange={(e) => setLastname(e.target.value)}
           />
-          <label htmlFor="male">Man</label>
-        </div>
-        <div>
+        
+        
+          <label className="emailcn" htmlFor="email">Email:</label>
           <input
-            type="radio"
-            id="female"
-            name="sex"
-            value="female"
-            checked={sex}
-            onChange={() => setSex(true)}
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <label htmlFor="female">Vrouw</label>
-        </div>
-      </div>
+        
+        
+          <label className="agecn" htmlFor="age">Leeftijd:</label>
+          <input
+            id="age"
+            type="number"
+            value={age}
+            onChange={(e) => setAge(+e.target.value)}
+          />
+        
+        
+          <label className="phonenumbercn" htmlFor="phonenumber">Telefoonnummer:</label>
+          <input
+            id="phonenumber"
+            type="tel"
+            value={phonenumber}
+            onChange={(e) => setPhonenumber(e.target.value)}
+          />
+        
+        
+          
+          <label className="sexcn"> Geslacht:</label>
+          <div className="malebuttoncn"> 
+            <input
+              type="radio"
+              id="male"
+              name="sex"
+              value="male"
+              checked={!sex}
+              onChange={() => setSex(false)}
+            />
+            <label className="malecn" htmlFor="male">Man</label>
+          </div>
+          <div> 
+          </div>
+          <div className="femalebuttoncn">
+            <input
+              type="radio"
+              id="female"
+              name="sex"
+              value="female"
+              checked={sex}
+              onChange={() => setSex(true)}
+            />
+            <label className="femalecn" htmlFor="female">Vrouw</label>
+          </div>
+        
 
-      <div>
-        <label htmlFor="firstnameContact">Voornaam Contactpersoon:</label>
-        <input
-          id="firstnameContact"
-          type="text"
-          value={firstnameContact}
-          onChange={(e) => setFirstnameContact(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="lastnameContact">Achternaam Contactpersoon:</label>
-        <input
-          id="lastnameContact"
-          type="text"
-          value={lastnameContact}
-          onChange={(e) => setLastnameContact(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="emailContact">Email Contactpersoon:</label>
-        <input
-          id="emailContact"
-          type="email"
-          value={emailContact}
-          onChange={(e) => setEmailContact(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="phonenumberContact">
-          Telefoonnummer Contactpersoon:
-        </label>
-        <input
-          id="phonenumberContact"
-          type="tel"
-          value={phonenumberContact}
-          onChange={(e) => setPhonenumberContact(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="specialist">Specialist:</label>
-        <input
-          id="specialist"
-          type="text"
-          value={specialist}
-          onChange={(e) => setSpecialist(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="note">Notitie:</label>
-        <input
-          id="note"
-          type="text"
-          value={note}
-          onChange={(e) => setNote(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="medication">Medicatie:</label>
-        <input
-          id="medication"
-          type="text"
-          value={medication}
-          onChange={(e) => setMedication(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="appointment">Afspraak:</label>
-        <input
-          id="appointment"
-          type="text"
-          value={appointment}
-          onChange={(e) => setAppointment(e.target.value)}
-        />
-      </div>
-      <br />
-      <br />
+        
+          <label className="firstnamecontactcn" htmlFor="firstnameContact">Voornaam Contactpersoon:</label>
+          <input
+            id="firstnameContact"
+            type="text"
+            value={firstnameContact}
+            onChange={(e) => setFirstnameContact(e.target.value)}
+          />
+        
+        
+          <label className="lastnamecontactcn" htmlFor="lastnameContact">Achternaam Contactpersoon:</label>
+          <input
+            id="lastnameContact"
+            type="text"
+            value={lastnameContact}
+            onChange={(e) => setLastnameContact(e.target.value)}
+          />
+        
+        
+          <label className="emailcontactcn" htmlFor="emailContact">Email Contactpersoon:</label>
+          <input
+            id="emailContact"
+            type="email"
+            value={emailContact}
+            onChange={(e) => setEmailContact(e.target.value)}
+          />
+        
+        
+          <label className="phonenumbercontactcn" htmlFor="phonenumberContact">
+            Telefoonnummer Contactpersoon:
+          </label>
+          <input
+            id="phonenumberContact"
+            type="tel"
+            value={phonenumberContact}
+            onChange={(e) => setPhonenumberContact(e.target.value)}
+          />
+        
+        
+          <label className="specialistcn" htmlFor="specialist">Specialist:</label>
+          <input
+            id="specialist"
+            type="text"
+            value={specialist}
+            onChange={(e) => setSpecialist(e.target.value)}
+          />
+        
+        
+          <label className="notecn" htmlFor="note">Notitie:</label>
+          <input
+            id="note"
+            type="text"
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
+          />
+        
+        
+          <label className="medicationcn" htmlFor="medication">Medicatie:</label>
+          <input
+            id="medication"
+            type="text"
+            value={medication}
+            onChange={(e) => setMedication(e.target.value)}
+          />
+        
+        
+          <label className="appointmentcn" htmlFor="appointment">Afspraak:</label>
+          <input
+            id="appointment"
+            type="text"
+            value={appointment}
+            onChange={(e) => setAppointment(e.target.value)}
+          />
+        
+        <br />
+        <button className="submitcn" type="submit">Maak patiënt aan</button>
 
-      <button type="submit">Patiënt Aanmaken</button>
     </form>
+    
   );
 };
 
