@@ -1,17 +1,111 @@
+body {
+  background-color: #e8edf8;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
+.kalender {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 25px;
+  border: 1px solid #D8EAFF;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.kalender-title {
+  font-size: 40x;
+  margin: 0;
+  color: #000369;
+}
 
 .kalender-underline {
   width: 135px;
   height: 3px;
   background-color: #000369;
-  margin-bottom: 20px;
+  margin: 10px 0 20px;
+}
+
+.kalender-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.kalender-header h2 {
+  margin: 0 10px;
+  color: #000369;
+}
+
+.kalender-header button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #000369;
 }
 
 .kalender-header-underline {
-  position: absolute;
   width: 100%;
   height: 3px;
   background-color: #000369;
-  bottom: -10px;
+  margin-top: 10px;
 }
 
+.workweek {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.week-toggle-button {
+  background-color: white;
+  color: #ff6347;
+  border: 2px solid #ff6347;
+  padding: 3px 8px;  /* Adjusted padding to make the button smaller */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;  /* Adjusted font size to make the button smaller */
+}
+
+.kalender-table-container {
+  max-height: 400px;
+  overflow-y: scroll;
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.kalender-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.kalender-table th,
+.kalender-table td {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  text-align: center;
+  color: #000369;
+}
+
+.kalender-table th {
+  background-color: #f1f1f1;
+}
+
+.appointment {
+  background-color: #d3e0ff;
+}
+
+.add-button {
+  background-color: #0033cc;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  align-self: flex-start;
+}
