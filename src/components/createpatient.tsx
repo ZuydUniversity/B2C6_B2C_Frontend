@@ -59,17 +59,25 @@ const CreatePatient: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-grid-container">
-      <label className="firstnamecn label" htmlFor="firstname">Voornaam:</label>
-      <input className="firstnamecn input"
-        id="firstname"
-        type="text"
-        value={firstname}
-        onChange={(e) => setFirstname(e.target.value)}/>
-      
+    <div className="maincontainercn">
+      <div className="form-wrapper">
+        <form onSubmit={handleSubmit}>
+          <h1 className="titlecn">Maak een nieuwe patiënt aan</h1>
+
+        <form onSubmit={handleSubmit} className="form-grid-container">
         
+        <label className="firstnamecn label" htmlFor="firstname">Voornaam:</label>
+        <input className="firstnamecn input"
+          id="firstname"
+          type="text"
+          value={firstname}
+          onChange={(e) => setFirstname(e.target.value)}/>
+  
+        
+          
           <label className="lastnamecn" htmlFor="lastname">Achternaam:</label>
           <input
+          className="lastnamecn input"
             id="lastname"
             type="text"
             value={lastname}
@@ -79,6 +87,7 @@ const CreatePatient: React.FC = () => {
         
           <label className="emailcn" htmlFor="email">Email:</label>
           <input
+            className="emailcn input"
             id="email"
             type="email"
             value={email}
@@ -88,6 +97,7 @@ const CreatePatient: React.FC = () => {
         
           <label className="agecn" htmlFor="age">Leeftijd:</label>
           <input
+            className="agecn input"
             id="age"
             type="number"
             value={age}
@@ -97,6 +107,7 @@ const CreatePatient: React.FC = () => {
         
           <label className="phonenumbercn" htmlFor="phonenumber">Telefoonnummer:</label>
           <input
+            className="phonenumbercn input"
             id="phonenumber"
             type="tel"
             value={phonenumber}
@@ -135,6 +146,7 @@ const CreatePatient: React.FC = () => {
         
           <label className="firstnamecontactcn" htmlFor="firstnameContact">Voornaam Contactpersoon:</label>
           <input
+          className="firstnamecontactcn input"
             id="firstnameContact"
             type="text"
             value={firstnameContact}
@@ -144,6 +156,7 @@ const CreatePatient: React.FC = () => {
         
           <label className="lastnamecontactcn" htmlFor="lastnameContact">Achternaam Contactpersoon:</label>
           <input
+            className="lastnamecontactcn input"
             id="lastnameContact"
             type="text"
             value={lastnameContact}
@@ -153,6 +166,7 @@ const CreatePatient: React.FC = () => {
         
           <label className="emailcontactcn" htmlFor="emailContact">Email Contactpersoon:</label>
           <input
+            className="emailcontactcn input"
             id="emailContact"
             type="email"
             value={emailContact}
@@ -164,6 +178,7 @@ const CreatePatient: React.FC = () => {
             Telefoonnummer Contactpersoon:
           </label>
           <input
+            className="phonenumbercontactcn input"
             id="phonenumberContact"
             type="tel"
             value={phonenumberContact}
@@ -173,6 +188,7 @@ const CreatePatient: React.FC = () => {
         
           <label className="specialistcn" htmlFor="specialist">Specialist:</label>
           <input
+            className="specialistcn input"
             id="specialist"
             type="text"
             value={specialist}
@@ -182,6 +198,7 @@ const CreatePatient: React.FC = () => {
         
           <label className="notecn" htmlFor="note">Notitie:</label>
           <input
+            className="notecn input"
             id="note"
             type="text"
             value={note}
@@ -191,6 +208,7 @@ const CreatePatient: React.FC = () => {
         
           <label className="medicationcn" htmlFor="medication">Medicatie:</label>
           <input
+            className="medicationcn input"
             id="medication"
             type="text"
             value={medication}
@@ -200,6 +218,7 @@ const CreatePatient: React.FC = () => {
         
           <label className="appointmentcn" htmlFor="appointment">Afspraak:</label>
           <input
+            className="appointmentcn input"
             id="appointment"
             type="text"
             value={appointment}
@@ -207,9 +226,14 @@ const CreatePatient: React.FC = () => {
           />
         
         <br />
+        
         <button className="submitcn" type="submit">Maak patiënt aan</button>
-
-    </form>
+  
+      </form>
+      </form>
+    </div>
+      
+    </div>
     
   );
 };

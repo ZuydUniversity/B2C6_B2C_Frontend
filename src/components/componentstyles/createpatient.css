@@ -1,9 +1,36 @@
 /* Container for the form or the part of the form you want to apply grid layout */
+.maincontainercn {
+  
+  border: 30px solid #d8eaff;
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+  width: 60%;
+  max-height: 500px;
+  overflow-y: auto;
+  }
+.titlecn {
+  text-align: left;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #000369;
+  text-decoration: underline;
+  ;   
+}
+
 .form-grid-container {
     display: grid;
-    grid-template-columns: auto auto; /* Adjust based on your design needs */
+    grid-template-columns: 10px, 1px; /* Adjust based on your design needs */
     gap: 10px; /* Adjust the gap between label and input */
     align-items: center;
+  }
+  
+  .form-wrapper {
+    background-color: #d8eaff; /* Light blue background */
+    color: #000; /* Optionally set text color */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
   }
   
   .label {
@@ -11,56 +38,56 @@
   }
   
   .input-field, .submitcn {
+
     grid-column: 2 / 3; /* Ensures inputs and submit button start at the same point */
+  }
+  .input {
+    background-color: #f0f0f0; /* Light gray background */
+    color: #000; /* Black text color */
+    border: 1px solid #ccc; /* Optional: adds a light gray border */
   }
 .firstnamecn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
+  
 }
 .lastnamecn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .emailcn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .agecn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .phonenumbercn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .sexcn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .malecn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
   
 }
 .malebuttoncn {
@@ -68,21 +95,18 @@
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .femalebuttoncn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .femalecn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 
 .firstnamecontactcn {
@@ -90,61 +114,54 @@
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .lastnamecontactcn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .emailcontactcn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .phonenumbercontactcn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .specialistcn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .notecn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 }
 .medicationcn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 } 
 .appointmentcn {
     text-align: left;
   padding: 15px;
   font-size: 1.1rem;
   color: #000369;
-  text-decoration: underline;
 } 
 .submitcn {
-    text-align: left;
+  text-align: left;
   padding: 15px;
   font-size: 1.1rem;
+  background-color: white;
   color: #000369;
   text-decoration: underline;
 }
