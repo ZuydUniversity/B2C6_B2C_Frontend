@@ -5,6 +5,7 @@ interface Appointment {
   id: number;
   title: string;
   repetition: string;
+  description: string;
 }
 
 const AppointmentPlanner: React.FC = () => {
@@ -12,17 +13,20 @@ const AppointmentPlanner: React.FC = () => {
   const [title, setTitle] = useState('');
   const [repetition, setRepetition] = useState('none');
   const [additionalInfo, setAdditionalInfo] = useState('');
+  const [description, setDescription] = useState('');
 
   const addAppointment = () => {
     const newAppointment: Appointment = {
       id: appointments.length + 1,
       title,
       repetition,
+      description,
     };
     setAppointments([...appointments, newAppointment]);
     setTitle('');
     setRepetition('none');
     setAdditionalInfo('');
+    setDescription('');
   };
 
   const handleCheckboxChange = (value: string) => {
@@ -88,6 +92,19 @@ const AppointmentPlanner: React.FC = () => {
           />
         </div>
       )}
+      <div className="description-section">
+        <h2 className="title-of-title-bar">Beschrijving afspraak</h2>
+        <textarea
+          placeholder="Typ de beschrijving"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          className="description-textarea"
+        />
+      </div>
+      <div className="patient-section">
+        <h2 className="title-of-title-bar">Patiënt toevoegen</h2>
+        <div className="add-patient"></div>
+      </div>
     </div>
   );
 };

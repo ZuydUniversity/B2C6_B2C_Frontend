@@ -1,5 +1,5 @@
 .appointment-planner {
-  background-color: #D8EAFF;
+  background-color: #d8eaff;
   width: 40%;
   height: 100vh;
   position: absolute;
@@ -17,7 +17,8 @@
   font-weight: bold;
   position: relative;
   color: #000369;
-  font-size: 25px; 
+  font-size: 25px;
+  margin-top: -10px;
 }
 
 .title-with-underline::after {
@@ -25,7 +26,7 @@
   position: absolute;
   left: 0;
   bottom: -10px;
-  width: calc(100% + -100px);
+  width: 100%;
   height: 1.5px;
   background-color: #000369;
 }
@@ -36,7 +37,7 @@
 
 .title-of-title-bar {
   margin-top: 40px;
-  font-size: 20px; 
+  font-size: 20px;
   color: #000369;
 }
 
@@ -46,19 +47,40 @@
   padding: 10px;
   font-size: 10px;
   background-color: white;
-  color: black; 
+  color: black;
   border-radius: 10px;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
 }
 
 .title-input:hover {
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
 }
 
 .title-input:focus {
-  background-color: white; 
-  border-color: #999; 
-  outline: none; 
+  background-color: white;
+  border-color: #999;
+  outline: none;
+}
+
+.description-textarea {
+  width: 520px;
+  height: 100px; 
+  padding: 10px;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.description-textarea:hover {
+  background-color: #f0f0f0;
+}
+
+.description-textarea:focus {
+  background-color: white;
+  border-color: #999;
+  outline: none;
 }
 
 .repetition-section {
@@ -66,14 +88,14 @@
 }
 
 .title-of-repetition {
-  font-size: 20px; 
+  font-size: 20px;
   color: #000369;
 }
 
 .optional {
-  font-size: 12px; 
-  color: #000369; 
-  margin-left: 5px; 
+  font-size: 12px;
+  color: #000369;
+  margin-left: 5px;
 }
 
 .repetition-options {
@@ -102,5 +124,19 @@
 }
 
 .checkbox.selected {
-  background-color: #1B21D4;
+  background-color: #1b21d4;
+}
+
+.patient-section {
+  margin-top: 40px;
+}
+
+.add-patient {
+  width: 520px;
+  height: 20px;
+  padding: 10px;
+  font-size: 10px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
 }
