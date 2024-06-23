@@ -187,7 +187,7 @@ const DashboardPage: React.FC = () => {
   return (
     <div className="dashboardMain">
       <h1 className="dashboardHeader"> Hallo, Dr. Johannes Doe </h1>
-      <AppointmentPlanner/>
+      <MiniKalender/>
       <div className="dashboardContent">
         <div className="dashboardInnerContent">
           <div className="dashboardInnerHeader">
