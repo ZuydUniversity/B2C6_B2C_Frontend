@@ -140,3 +140,21 @@
   color: black;
   border-radius: 10px;
 }
+
+.cancel-button {
+  position: relative;
+  width: 141px;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 20px;
+  background-color: #d8eaff;
+  color: #ff6347;
+  border: 2px solid #1B21D4;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: red;
+}
