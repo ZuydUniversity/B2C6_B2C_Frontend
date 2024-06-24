@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./componentstyles/createpatient.css";
 import { Patient } from "../abstracts/ImportsModels";
 
 
 const CreatePatient: React.FC = () => {
-
   const [id, setId] = useState<number>(0);
   const [firstname, setFirstname] = useState<string>("");
   const [lastname, setLastname] = useState<string>("");
@@ -21,7 +20,6 @@ const CreatePatient: React.FC = () => {
   const [note, setNote] = useState<string>("");
   const [medication, setMedication] = useState<string>("");
   const [appointment, setAppointment] = useState<string>("");
-  
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -43,7 +41,6 @@ const CreatePatient: React.FC = () => {
       Appointments: [],
     };
 
-
     console.log("Patiënt aangemaakt:", newPatient);
     setId(0);
     setFirstname("");
@@ -57,160 +54,178 @@ const CreatePatient: React.FC = () => {
     setEmailContact("");
     setPhonenumberContact("");
   };
+  const firstnameRef = useRef(null);
+  const lastnameRef = useRef(null);
+  const emailRef = useRef(null);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, ref: React.RefObject<HTMLInputElement>) => {
+    if (e.key === "ArrowDown") {
+      e.preventDefault(); // Prevent the default action of the arrow key
+      if (ref.current && ref.current.nextElementSibling) {
+        (ref.current.nextElementSibling as HTMLInputElement).focus(); // Focus the next input
+      }
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (ref.current && ref.current.previousElementSibling) {
+        (ref.current.previousElementSibling as HTMLInputElement).focus(); // Focus the previous input
+      }
+    }
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="form-grid-container">
-      <label className="firstnamecn label" htmlFor="firstname">Voornaam:</label>
-      <input className="firstnamecn input"
-        id="firstname"
-        type="text"
-        value={firstname}
-        onChange={(e) => setFirstname(e.target.value)}/>
-      
-        
-          <label className="lastnamecn" htmlFor="lastname">Achternaam:</label>
-          <input
-            id="lastname"
-            type="text"
-            value={lastname}
-            onChange={(e) => setLastname(e.target.value)}
-          />
-        
-        
-          <label className="emailcn" htmlFor="email">Email:</label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        
-        
-          <label className="agecn" htmlFor="age">Leeftijd:</label>
-          <input
-            id="age"
-            type="number"
-            value={age}
-            onChange={(e) => setAge(+e.target.value)}
-          />
-        
-        
-          <label className="phonenumbercn" htmlFor="phonenumber">Telefoonnummer:</label>
-          <input
-            id="phonenumber"
-            type="tel"
-            value={phonenumber}
-            onChange={(e) => setPhonenumber(e.target.value)}
-          />
-        
-        
-          
-          <label className="sexcn"> Geslacht:</label>
-          <div className="malebuttoncn"> 
+    <div className="main-content">
+      <div className="content-box">
+        <form onSubmit={handleSubmit} className="add-patient-form">
+          <label>
+            Voornaam:
             <input
-              type="radio"
-              id="male"
-              name="sex"
-              value="male"
-              checked={!sex}
-              onChange={() => setSex(false)}
+              ref={firstnameRef}
+              className="input-field"
+              type="text"
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+              onKeyDown={(e) => handleKeyDown(e, firstnameRef)}
             />
-            <label className="malecn" htmlFor="male">Man</label>
-          </div>
-          <div> 
-          </div>
-          <div className="femalebuttoncn">
-            <input
-              type="radio"
-              id="female"
-              name="sex"
-              value="female"
-              checked={sex}
-              onChange={() => setSex(true)}
-            />
-            <label className="femalecn" htmlFor="female">Vrouw</label>
-          </div>
-        
-
-        
-          <label className="firstnamecontactcn" htmlFor="firstnameContact">Voornaam Contactpersoon:</label>
-          <input
-            id="firstnameContact"
-            type="text"
-            value={firstnameContact}
-            onChange={(e) => setFirstnameContact(e.target.value)}
-          />
-        
-        
-          <label className="lastnamecontactcn" htmlFor="lastnameContact">Achternaam Contactpersoon:</label>
-          <input
-            id="lastnameContact"
-            type="text"
-            value={lastnameContact}
-            onChange={(e) => setLastnameContact(e.target.value)}
-          />
-        
-        
-          <label className="emailcontactcn" htmlFor="emailContact">Email Contactpersoon:</label>
-          <input
-            id="emailContact"
-            type="email"
-            value={emailContact}
-            onChange={(e) => setEmailContact(e.target.value)}
-          />
-        
-        
-          <label className="phonenumbercontactcn" htmlFor="phonenumberContact">
-            Telefoonnummer Contactpersoon:
           </label>
-          <input
-            id="phonenumberContact"
-            type="tel"
-            value={phonenumberContact}
-            onChange={(e) => setPhonenumberContact(e.target.value)}
-          />
-        
-        
-          <label className="specialistcn" htmlFor="specialist">Specialist:</label>
-          <input
-            id="specialist"
-            type="text"
-            value={specialist}
-            onChange={(e) => setSpecialist(e.target.value)}
-          />
-        
-        
-          <label className="notecn" htmlFor="note">Notitie:</label>
-          <input
-            id="note"
-            type="text"
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-          />
-        
-        
-          <label className="medicationcn" htmlFor="medication">Medicatie:</label>
-          <input
-            id="medication"
-            type="text"
-            value={medication}
-            onChange={(e) => setMedication(e.target.value)}
-          />
-        
-        
-          <label className="appointmentcn" htmlFor="appointment">Afspraak:</label>
-          <input
-            id="appointment"
-            type="text"
-            value={appointment}
-            onChange={(e) => setAppointment(e.target.value)}
-          />
-        
-        <br />
-        <button className="submitcn" type="submit">Maak patiënt aan</button>
-
-    </form>
-    
+          <label>
+            Achternaam:
+            <input
+              ref={lastnameRef}
+              className="input-field"
+              type="text"
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
+              onKeyDown={(e) => handleKeyDown(e, lastnameRef)}
+            />
+          </label>
+          <label>
+            Email:
+            <input
+              className="input-field"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+          <label>
+            Leeftijd:
+            <input
+              className="input-field"
+              type="number"
+              value={age}
+              onChange={(e) => setAge(+e.target.value)}
+            />
+          </label>
+          <label>
+            Telefoonnummer:
+            <input
+              className="input-field"
+              type="tel"
+              value={phonenumber}
+              onChange={(e) => setPhonenumber(e.target.value)}
+            />
+          </label>
+          <label>
+            Geslacht:
+            <div className="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="sex"
+                  value="male"
+                  checked={!sex}
+                  onChange={() => setSex(false)}
+                />
+                Man
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="sex"
+                  value="female"
+                  checked={sex}
+                  onChange={() => setSex(true)}
+                />
+                Vrouw
+              </label>
+            </div>
+          </label>
+          <label>
+            Voornaam Contactpersoon:
+            <input
+              className="input-field"
+              type="text"
+              value={firstnameContact}
+              onChange={(e) => setFirstnameContact(e.target.value)}
+            />
+          </label>
+          <label>
+            Achternaam Contactpersoon:
+            <input
+              className="input-field"
+              type="text"
+              value={lastnameContact}
+              onChange={(e) => setLastnameContact(e.target.value)}
+            />
+          </label>
+          <label>
+            Email Contactpersoon:
+            <input
+              className="input-field"
+              type="email"
+              value={emailContact}
+              onChange={(e) => setEmailContact(e.target.value)}
+            />
+          </label>
+          <label>
+            Telefoonnummer Contactpersoon:
+            <input
+              className="input-field"
+              type="tel"
+              value={phonenumberContact}
+              onChange={(e) => setPhonenumberContact(e.target.value)}
+            />
+          </label>
+          <label>
+            Specialist:
+            <input
+              className="input-field"
+              type="text"
+              value={specialist}
+              onChange={(e) => setSpecialist(e.target.value)}
+            />
+          </label>
+          <label>
+            Notitie:
+            <input
+              className="input-field"
+              type="text"
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+            />
+          </label>
+          <label>
+            Medicatie:
+            <input
+              className="input-field"
+              type="text"
+              value={medication}
+              onChange={(e) => setMedication(e.target.value)}
+            />
+          </label>
+          <label>
+            Afspraak:
+            <input
+              className="input-field"
+              type="text"
+              value={appointment}
+              onChange={(e) => setAppointment(e.target.value)}
+            />
+          </label>
+          <button type="submit">Maak patiënt</button>
+        </form>
+      </div>
+    </div>
   );
 };
 
