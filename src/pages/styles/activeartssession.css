@@ -13,7 +13,7 @@
       max-width: 100%;
     }
   }
-  .patient-info-container {
+  .patient-session-container {
     display: flex;
     margin-top: 41px;
     flex-direction: column;
@@ -22,7 +22,7 @@
     padding: 0 55px 0 10px;
   }
   @media (max-width: 991px) {
-    .patient-info-container {
+    .patient-session-info-container {
       max-width: 100%;
       padding-right: 20px;
       margin-top: 40px;
@@ -41,14 +41,14 @@
     max-width: 100%;
     height: 2px;
   }
-  .patient-card {
+  .patient-session-card {
     align-self: center;
     display: flex;
     gap: 8px;
     margin: 39px 0 0 46px;
   }
   @media (max-width: 991px) {
-    .patient-card {
+    .patient-session-card {
       flex-wrap: wrap;
     }
   }
@@ -74,25 +74,25 @@
     font-family: Montserrat, sans-serif;
     margin-top: 6px;
   }
-  .patient-details {
+  .patient-session-details {
     background-color: #d8eaff;
     display: flex;
     gap: 10px;
     padding: 5px 14px;
   }
   @media (max-width: 991px) {
-    .patient-details {
+    .patient-session-details {
       flex-wrap: wrap;
     }
   }
-  .patient-image {
+  .patient-session-image {
     aspect-ratio: 1;
     object-fit: auto;
     object-position: center;
     width: 126px;
     border: 2px solid #d8eaff;
   }
-  .patient-info {
+  .patient-session-info {
     display: flex;
     flex-direction: column;
     fill: #fff;
@@ -108,13 +108,13 @@
     padding: 8px 22px;
   }
   @media (max-width: 991px) {
-    .patient-info {
+    .patient-session-info {
       max-width: 100%;
       flex-wrap: wrap;
       padding: 0 20px;
     }
   }
-  .patient-info-background {
+  .patient-session-info-background {
     position: absolute;
     inset: 0;
     height: 100%;
@@ -122,23 +122,23 @@
     object-fit: cover;
     object-position: center;
   }
-  .patient-name-container {
+  .patient-session-name-container {
     position: relative;
     align-self: start;
     display: flex;
     flex-direction: column;
     font-size: 18px;
   }
-  .patient-info-label {
+  .patient-session-info-label {
     font-family: Montserrat, sans-serif;
     font-weight: 600;
   }
-  .patient-info-value {
+  .patient-session-info-value {
     font-family: Montserrat, sans-serif;
     font-weight: 400;
     margin-top: 9px;
   }
-  .patient-details-grid {
+  .patient-session-details-grid {
     position: relative;
     display: flex;
     align-items: start;
@@ -148,11 +148,11 @@
     flex-basis: auto;
   }
   @media (max-width: 991px) {
-    .patient-details-grid {
+    .patient-session-details-grid {
       flex-wrap: wrap;
     }
   }
-  .patient-detail-item {
+  .patient-session-detail-item {
     display: flex;
     flex-direction: column;
     font-size: 18px;
