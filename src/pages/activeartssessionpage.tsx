@@ -78,7 +78,7 @@ type PatientInfoProps = {
                 <div className="appointment-date">02/06/2021</div>
               </div>
               <div className="patient-session-details">
-                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f91112687be1ee8808c57b1188ab71e8e192855444387e44214872f13576251?apiKey=625a4e4417524f8294fdf8a1fc2d2593&" className="patient-image" alt="Patient" />
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f91112687be1ee8808c57b1188ab71e8e192855444387e44214872f13576251?apiKey=625a4e4417524f8294fdf8a1fc2d2593&" className="patient-session-image" alt="Patient" />
                 <PatientInfo
                   name="Joep Doe"
                   age="10 jaar"
