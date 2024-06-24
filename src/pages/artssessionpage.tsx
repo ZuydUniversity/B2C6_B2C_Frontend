@@ -41,7 +41,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
     }
   };
 
-  const AddPatientToSession = () => {
+  const addPatientToSession = () => {
     
   };
 
@@ -73,7 +73,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
                 <p>{patient.name}</p>
                 <p>{patient.age}</p>
               </div>
-              <button  onClick={AddPatientToSession} className="add-button">+</button>
+              <button  onClick={addPatientToSession} className="add-button">+</button>
             </li>
             {index < patients.length - 1 && <hr className="patient-divider" />} {/* Add this line */}
           </React.Fragment>
