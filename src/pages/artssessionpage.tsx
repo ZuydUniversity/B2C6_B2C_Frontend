@@ -42,7 +42,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
   };
 
   const addPatientToSession = () => {
-    
+  window.location.href = '/activeartssession'; //BAD PRACTICE <3
   };
 
   React.useEffect(() => {
