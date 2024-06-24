@@ -8,35 +8,6 @@ const MiniKalender: React.FC = () => {
 	const [currentDate, setCurrentDate] = useState(new Date());
 	const [hoveredDay, setHoveredDay] = useState<number | null>(null);
 
-	useEffect(() => {
-		const calendar = calendarRef.current;
-		const title = titleRef.current;
-
-		const handleMouseOver = () => {
-			if (calendar) {
-				calendar.classList.add("calendar-hover");
-			}
-		};
-
-		const handleMouseOut = () => {
-			if (calendar) {
-				calendar.classList.remove("calendar-hover");
-			}
-		};
-
-		if (title) {
-			title.addEventListener("mouseover", handleMouseOver);
-			title.addEventListener("mouseout", handleMouseOut);
-		}
-
-		return () => {
-			if (title) {
-				title.removeEventListener("mouseover", handleMouseOver);
-				title.removeEventListener("mouseout", handleMouseOut);
-			}
-		};
-	}, []);
-
 	const daysOfWeek = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
 	const monthNames = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
 
