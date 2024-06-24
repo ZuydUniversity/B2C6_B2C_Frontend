@@ -29,7 +29,7 @@
 }
 
 .calendar-header {
-	margin-bottom: -1px;
+	margin-bottom: -24px;
 	background-color: #fc6039;
 	border: 1px solid black;
 	border-top-left-radius: 10px;
@@ -43,29 +43,28 @@
 }
 
 .calendar-left-button {
+	margin-left: -200px;
+	margin-bottom: -18px;
 	text-align: center;
 	color: #000369;
-	position: absolute;
-	top: 60px;
-	right: 237px;
+	position: relative;
 	cursor: pointer;
 }
 
 .calendar-text {
 	text-align: center;
 	color: #000369;
-	position: absolute;
-	top: 60px;
-	right: 104px;
+	position: relative;
+	margin-bottom: -18.5px;
 }
 
 .calendar-right-button {
 	text-align: center;
 	color: #000369;
-	position: absolute;
-	top: 60px;
-	right: 34px;
+	position: relative;
+	margin-left: 200px;
 	cursor: pointer;
+	margin-bottom: 5px;
 }
 
 .day-of-week {
