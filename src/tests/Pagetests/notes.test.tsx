@@ -214,14 +214,14 @@ describe("Tests sorting functions by Name", () => {
 			expect(noteName).not.toBeNull();
 			expect(noteSpecialist).not.toBeNull();
 
-			newInitialNotes[i].Patient === null ? expect(notePatient).toBe("-") : expect(notePatient).toBe(newInitialNotes[i].Patient?.Firstname + " " + newInitialNotes[i].Patient?.Lastname);
+			newInitialNotes[i].Patient === null || undefined ? expect(notePatient).toBe("-") : expect(notePatient).toBe(newInitialNotes[i].Patient?.Firstname + " " + newInitialNotes[i].Patient?.Lastname);
 
 			orderedNotesPatients.push(notePatient);
 		}
 
 		// Check if the notes are in ascending order
-		const sortedNotesPatients = [...orderedNotesPatients].sort();
-		expect(orderedNotesPatients).toEqual(sortedNotesPatients);
+		const sortedNotesPatients = [...orderedNotesPatients];
+		expect(orderedNotesPatients).toEqual(sortedNotesPatients.sort());
 	});
 
 	it("sortNotesByPatient sorts notes by name in descending order", () => {
@@ -262,14 +262,14 @@ describe("Tests sorting functions by Name", () => {
 			expect(noteName).not.toBeNull();
 			expect(noteSpecialist).not.toBeNull();
 
-			newInitialNotes[i].Patient === null ? expect(notePatient).toBe("-") : expect(notePatient).toBe(newInitialNotes[i].Patient?.Firstname + " " + newInitialNotes[i].Patient?.Lastname);
+			newInitialNotes[i].Patient === null || undefined ? expect(notePatient).toBe("-") : expect(notePatient).toBe(newInitialNotes[i].Patient?.Firstname + " " + newInitialNotes[i].Patient?.Lastname);
 
 			orderedNotesPatient.push(notePatient);
 		}
 
 		// Check if the notes are in descending order
-		const sortedNotesPatients = [...orderedNotesPatient].sort().reverse();
-		expect(orderedNotesPatient).toEqual(sortedNotesPatients);
+		const sortedNotesPatients = [...orderedNotesPatient];
+		expect(orderedNotesPatient).toEqual(sortedNotesPatients.sort().reverse());
 	});
 
 	it("sortNotesBySession sorts notes by name in ascending order", () => {
@@ -315,8 +315,8 @@ describe("Tests sorting functions by Name", () => {
 		}
 
 		// Check if the notes are in ascending order
-		const sortedNotesSessions = [...orderedNotesSession].sort();
-		expect(orderedNotesSession).toEqual(sortedNotesSessions);
+		const sortedNotesSessions = [...orderedNotesSession];
+		expect(orderedNotesSession).toEqual(sortedNotesSessions.sort());
 	});
 
 	it("sortNotesBySession sorts notes by name in descending order", () => {
@@ -365,7 +365,7 @@ describe("Tests sorting functions by Name", () => {
 		}
 
 		// Check if the notes are in descending order
-		const sortedNotesSessions = [...orderedNotesSession].sort().reverse();
-		expect(orderedNotesSession).toEqual(sortedNotesSessions);
+		const sortedNotesSessions = [...orderedNotesSession];
+		expect(orderedNotesSession).toEqual(sortedNotesSessions.sort().reverse());
 	});
 });

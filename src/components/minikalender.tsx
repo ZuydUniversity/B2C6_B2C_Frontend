@@ -78,15 +78,13 @@ const MiniKalender: React.FC = () => {
 				</a>
 			</nav>
 			<div className="calendar-header"></div>
-			<div className="calendar-left-button" onClick={handlePreviousMonth}>
+			<div id="previous-month" className="calendar-left-button" onClick={handlePreviousMonth}>
 				{"<"}
 			</div>
-			<div className="calendar-text">
-				<div>
-					{monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
-				</div>
+			<div id="current-date" className="calendar-text">
+				{monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
 			</div>
-			<div className="calendar-right-button" onClick={handleNextMonth}>
+			<div id="next-month" className="calendar-right-button" onClick={handleNextMonth}>
 				{">"}
 			</div>
 			<div className="days-of-week">

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./styles/notes.css";
 import NoteListItem from "../components/notelistitem";
 import { Note, Specialist, Patient, Appointment, Session } from "../abstracts/ImportsModels";
-import dropdown_arrow from "./images/dropdown_arrow.png";
-import dropdown_arrow_up from "./images/dropdown_arrow_reverse.png";
+import dropdown_arrow from "../assets/images/dropdown_arrow.png";
+import dropdown_arrow_up from "../assets/images/dropdown_arrow_reverse.png";
 
 // Set constant values for the tests
 const baseSpecialist1 = new Specialist("Barack", "Obama", "JohnDoe@gmail.com", "0612345678");
