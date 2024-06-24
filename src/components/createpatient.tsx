@@ -125,6 +125,7 @@ const CreatePatient: React.FC = () => {
               onChange={(e) => setPhonenumber(e.target.value)}
             />
           </label>
+          <br />
           <label>
             Geslacht:
             <div className="radio-group">
@@ -149,7 +150,9 @@ const CreatePatient: React.FC = () => {
                 Vrouw
               </label>
             </div>
+            
           </label>
+          <br />
           <label>
             Voornaam Contactpersoon:
             <input

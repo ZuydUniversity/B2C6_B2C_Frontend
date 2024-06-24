@@ -50,8 +50,11 @@ interface PatientListProps {
 
 const PatientList: React.FC<PatientListProps> = ({ onPatientClick }) => {
   return (
+
     <div className="patientlist-container">
+      
       <h4 className="patient-title">Alle patienten</h4>
+      
       <div className="patientlist-header">
         <div className="patient-label-container">
           <div>naam</div>

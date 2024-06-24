@@ -1,4 +1,3 @@
-/* Add your CSS styling here */
 .main-content {
   padding: 20px;
 }
@@ -8,6 +7,7 @@ header {
   padding: 20px;
   margin-bottom: 20px;
 }
+
 
 .content-box {
   border: 1px solid #ddd;
@@ -126,4 +126,8 @@ button:active {
   display: flex;
   justify-content: space-around;
   width: 350px; /* Match the input field width */
+}
+
+.content-box input:hover{
+  background-color: rgb(238, 238, 238);
 }
