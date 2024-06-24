@@ -28,7 +28,7 @@ interface PatientSelectProps {
 const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
   const [showPatients, setShowPatients] = React.useState(false);
 
-  const handleButtonClick = () => {
+  const handleOpenListClick = () => {
     onSelect(); // Call the parent component's onSelect function
     setShowPatients(!showPatients); // Toggle to show/hide patient list
   };
@@ -39,6 +39,10 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
     if (!target.closest(".patient-list")) {
       setShowPatients(false); // Hide patient list
     }
+  };
+
+  const addPatientToSession = () => {
+    
   };
 
   React.useEffect(() => {
@@ -53,7 +57,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
   return (
   <section className="flex-container">
     <button
-      onClick={handleButtonClick}
+      onClick={handleOpenListClick}
       className="select-patient-button"
       aria-label="Select patient"
     >
@@ -69,7 +73,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
                 <p>{patient.name}</p>
                 <p>{patient.age}</p>
               </div>
-              <button className="add-button">+</button>
+              <button  onClick={addPatientToSession} className="add-button">+</button>
             </li>
             {index < patients.length - 1 && <hr className="patient-divider" />} {/* Add this line */}
           </React.Fragment>
