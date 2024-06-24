@@ -3,9 +3,9 @@
 import { render } from "@testing-library/react";
 import DashboardPage from "../../pages/dashboardpage";
 
-describe('DashboardPage', () => {
-    it('renders without crashing', () => {
-      const { getByText } = render(<DashboardPage />);
-      expect(getByText('Hallo, Dr. Johannes Doe')).toBeInTheDocument();
-    });
-  });
+describe("DashboardPage", () => {
+	it("renders without crashing", () => {
+		const { getByText } = render(<DashboardPage />);
+		expect(getByText("Hallo, Dr. Johannes Doe")).toBeInTheDocument();
+	});
+});
