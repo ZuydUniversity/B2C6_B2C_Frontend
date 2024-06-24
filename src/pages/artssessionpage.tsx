@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./styles/artssession.css";
-import { FaPlus } from "react-icons/fa";
+// import { FaPlus } from "react-icons/fa";
+import plusicon from "./images/plus_icon.png";
 
 interface PatientSelectProps {
 	onSelect: () => void;
@@ -10,7 +11,8 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 	return (
 		<section className="flex-container">
 			<button onClick={onSelect} className="select-patient-button flex-container" aria-label="Select patient">
-				<FaPlus className="select-patient-icon" aria-hidden="true" />
+				{/* <FaPlus className="select-patient-icon" aria-hidden="true" /> */}
+        <img src={plusicon} alt="plus icon" className="select-patient-icon" aria-hidden="true" />
 				<span className="selecting patient">Selecteer patiënt</span>
 			</button>
 		</section>
