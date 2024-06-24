@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
-import ArtesPage from "../../pages/artspage";
+import ArtsPage from "../../pages/artspage";
 
 test("Check if page renders", () => {
-	const page = render(<ArtesPage />);
+	const page = render(<ArtsPage />);
 	expect(page.getByText("Artsen Page")).toBeInTheDocument();
 });
