@@ -57,10 +57,10 @@
     background-color: #d8eaff;
     display: flex;
     flex-direction: column;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     white-space: nowrap;
-    padding: 32px 13px;
+    padding: 52px 13px;
   }
   @media (max-width: 991px) {
     .appointment-info {
@@ -89,7 +89,7 @@
     aspect-ratio: 1;
     object-fit: auto;
     object-position: center;
-    width: 86px;
+    width: 126px;
     border: 2px solid #d8eaff;
   }
   .patient-info {
