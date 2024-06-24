@@ -10,29 +10,29 @@ type PatientInfoProps = {
   };
   
   const PatientInfo: React.FC<PatientInfoProps> = ({ name, age, diagnosis, medication, appointmentsCount }) => (
-    <div className="patient-info">
-      <img className="patient-info-background" src="https://cdn.builder.io/api/v1/image/assets/TEMP/13d0d541a6beb1a30214553122df731e5fdeb6aa403f21a1f83098c86c22ee49?apiKey=625a4e4417524f8294fdf8a1fc2d2593&" alt="" />
-      <div className="patient-name-container">
-        <div className="patient-info-label">Naam</div>
-        <div className="patient-info-value">{name}</div>
+    <div className="patient-session-info">
+      <img className="patient-session-info-background" src="https://cdn.builder.io/api/v1/image/assets/TEMP/13d0d541a6beb1a30214553122df731e5fdeb6aa403f21a1f83098c86c22ee49?apiKey=625a4e4417524f8294fdf8a1fc2d2593&" alt="" />
+      <div className="patient-session-name-container">
+        <div className="patient-session-info-label">Naam</div>
+        <div className="patient-session-info-value">{name}</div>
       </div>
-      <div className="patient-details-grid">
-        <div className="patient-detail-item">
-          <div className="patient-info-label">Leeftijd</div>
-          <div className="patient-info-value">{age}</div>
+      <div className="patient-session-details-grid">
+        <div className="patient-session-detail-item">
+          <div className="patient-session-info-label">Leeftijd</div>
+          <div className="patient-session-info-value">{age}</div>
         </div>
         <div className="diagnosis-container">
-          <div className="patient-info-label">Diagnose</div>
+          <div className="patient-session-info-label">Diagnose</div>
           <div className="diagnosis-value">
             <span style={{ fontSize: '18px' }}>{diagnosis}</span>
           </div>
         </div>
-        <div className="patient-detail-item">
-          <div className="patient-info-label">Medicatie</div>
-          <div className="patient-info-value">{medication}</div>
+        <div className="patient-session-detail-item">
+          <div className="patient-session-info-label">Medicatie</div>
+          <div className="patient-session-info-value">{medication}</div>
         </div>
         <div className="appointments-count">
-          <div className="patient-info-label">Afspraken</div>
+          <div className="patient-session-info-label">Afspraken</div>
           <div className="appointments-count-value">{appointmentsCount}</div>
         </div>
       </div>
@@ -69,15 +69,15 @@ type PatientInfoProps = {
       <>
         <main className="main-container">
           <h1 className="page-title">Sessie toevoegen</h1>
-          <section className="patient-info-container">
+          <section className="patient-session-info-container">
             <h2 className="section-title">Patiëntgegevens</h2>
             <div className="section-divider" />
-            <div className="patient-card">
+            <div className="patient-session-card">
               <div className="appointment-info">
                 <div className="appointment-label">Gepland</div>
                 <div className="appointment-date">02/06/2021</div>
               </div>
-              <div className="patient-details">
+              <div className="patient-session-details">
                 <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f91112687be1ee8808c57b1188ab71e8e192855444387e44214872f13576251?apiKey=625a4e4417524f8294fdf8a1fc2d2593&" className="patient-image" alt="Patient" />
                 <PatientInfo
                   name="Joep Doe"
