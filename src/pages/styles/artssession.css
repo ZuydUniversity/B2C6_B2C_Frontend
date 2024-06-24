@@ -196,9 +196,9 @@
 .patient-list {
 	position: absolute;
 	top: -20%;
-	left: 40%;
+	left: 20%;
 	z-index: 1000;
-	width: 553px;
+	width: 570px;
 	overflow-y: auto; /* Enable vertical scrolling if needed */
 	border: 1px solid #ccc;
 	background-color: #fff;
