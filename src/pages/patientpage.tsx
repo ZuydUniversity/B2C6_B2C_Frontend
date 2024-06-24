@@ -21,12 +21,11 @@ const PatientPage: React.FC = () => {
       <h1>Patiëntenoverzicht</h1>
       <hr />
       <div>
-        <PatientList onPatientClick={handlePatientClick} />
-        <br />  
-        <button className="createpatientbutton"onClick={handleCreatePatient}>Nieuwe patiënt</button>
-        {showCreatePatient && <CreatePatient/>}   
-        
+        <PatientList onPatientClick={handlePatientClick} />  
+        <button className="createpatient-button"onClick={handleCreatePatient}>Nieuwe patiënt</button>
+          {showCreatePatient && <CreatePatient/>}   
       </div>
+      
     </div>
   );
 };

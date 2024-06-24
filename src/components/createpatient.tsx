@@ -73,7 +73,7 @@ const CreatePatient: React.FC = () => {
   };
 
   return (
-    <div className="main-content">
+    <div className="main-contentcn">
       <div className="content-box">
         <form onSubmit={handleSubmit} className="add-patient-form">
           <label>
