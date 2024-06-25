@@ -7,7 +7,7 @@ export class Patient {
 	Email!: string;
 	Age!: number;
 	Phonenumber!: string;
-	Sex!: string; 
+	Sex!: string;
 	EmailContact!: string;
 	PhonenumberContact!: string;
 	Specialists!: Array<Specialist>;
