@@ -15,9 +15,9 @@ const session1 = new Session("Session 1", appointment.Startdatetime, appointment
 const session2 = new Session("Session 2", appointment.Startdatetime, appointment.Enddatetime, appointment.Specialist, appointment.Patient, appointment);
 
 export var initialNotes: Note[] = [
-	new Note("Note 1", "This is the first note.", baseSpecialist1),
-	new Note("Note 6", "This is the second note.", baseSpecialist2),
-	new Note("Note 3", "This is the third note.", baseSpecialist2),
+	new Note("Note 1", "This is the first note.", baseSpecialist1, null, session1),
+	new Note("Note 6", "This is the second note.", baseSpecialist2, patient, session2),
+	new Note("Note 3", "This is the third note.", baseSpecialist2, patient),
 	new Note("Note 4", "This is the fourth note.", baseSpecialist1),
 ];
 
