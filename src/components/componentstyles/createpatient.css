@@ -20,6 +20,16 @@ header {
   background-color: rgba(0, 0, 0, 0.75); 
 }
 
+.close-btn{
+  font-weight: bold;
+}
+
+.close-btn:hover {
+  cursor: pointer;
+  color: red;
+  transition: 0.1s ease;
+}
+
 
 .form-container {
   border: 1px solid #ddd;

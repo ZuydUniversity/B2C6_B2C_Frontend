@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./componentstyles/createpatient.css";
+import { closePatientForm } from "../scripts/functions";
 
 
 const CreatePatient: React.FC = () => {
@@ -60,7 +61,7 @@ const CreatePatient: React.FC = () => {
     <div className="modal">
       <div className="form-container">
         <form onSubmit={handleSubmit} className="add-patient-form">
-          <span className="close">X</span>
+          <span className="close-btn" onClick={closePatientForm}>X</span>
           <label>
             Voornaam:
             <input
