@@ -1,4 +1,4 @@
-  import React, { useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import AboutUsPage from "./pages/aboutuspage";
 import PatientPage from "./pages/patientpage";
