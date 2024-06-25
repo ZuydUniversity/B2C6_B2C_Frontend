@@ -1,7 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import "./componentstyles/createpatient.css";
-import { Patient } from "../abstracts/ImportsModels";
 
 
 const CreatePatient: React.FC = () => {
@@ -58,24 +56,11 @@ const CreatePatient: React.FC = () => {
   const lastnameRef = useRef(null);
   const emailRef = useRef(null);
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, ref: React.RefObject<HTMLInputElement>) => {
-    if (e.key === "ArrowDown") {
-      e.preventDefault(); // Prevent the default action of the arrow key
-      if (ref.current && ref.current.nextElementSibling) {
-        (ref.current.nextElementSibling as HTMLInputElement).focus(); // Focus the next input
-      }
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      if (ref.current && ref.current.previousElementSibling) {
-        (ref.current.previousElementSibling as HTMLInputElement).focus(); // Focus the previous input
-      }
-    }
-  };
-
   return (
-    <div className="main-contentcn">
-      <div className="content-box">
+    <div className="modal">
+      <div className="form-container">
         <form onSubmit={handleSubmit} className="add-patient-form">
+          <span className="close">X</span>
           <label>
             Voornaam:
             <input
@@ -84,7 +69,6 @@ const CreatePatient: React.FC = () => {
               type="text"
               value={firstname}
               onChange={(e) => setFirstname(e.target.value)}
-              onKeyDown={(e) => handleKeyDown(e, firstnameRef)}
             />
           </label>
           <label>
@@ -95,7 +79,6 @@ const CreatePatient: React.FC = () => {
               type="text"
               value={lastname}
               onChange={(e) => setLastname(e.target.value)}
-              onKeyDown={(e) => handleKeyDown(e, lastnameRef)}
             />
           </label>
           <label>

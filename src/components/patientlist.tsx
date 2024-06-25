@@ -1,6 +1,5 @@
 // src/components/PatientList.tsx
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./componentstyles/patientlist.css";
 import { Patient } from "../abstracts/ImportsModels";
 
