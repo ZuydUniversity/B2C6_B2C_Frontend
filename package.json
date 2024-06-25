@@ -66,7 +66,8 @@
       "!src/index.tsx",
       "!src/reportWebVitals.ts",
       "!src/abstracts/**",
-      "!src/pages/notfoundpage.tsx"
+      "!src/pages/notfoundpage.tsx",
+      "!src/models/**"
     ]
   },
   "devDependencies": {

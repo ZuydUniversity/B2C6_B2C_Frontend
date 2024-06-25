@@ -24,6 +24,7 @@ const patients = [
 interface PatientSelectProps {
 	onSelect: () => void;
 }
+
 const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 	const [showPatients, setShowPatients] = React.useState(false);
 
@@ -88,7 +89,9 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 };
 
 const AddPatientSelection: React.FC = () => {
-	const handleSelect = () => {};
+	const handleSelect = () => {
+		return;
+	};
 
 	return (
 		<main className="main-patient-container">

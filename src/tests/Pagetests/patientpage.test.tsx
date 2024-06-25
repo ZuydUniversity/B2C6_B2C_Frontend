@@ -1,5 +1,6 @@
 import PatientPage from "../../pages/patientpage";
 import { fireEvent, render } from "@testing-library/react";
+import { screen } from "@testing-library/dom";
 
 test("Check if page renders", () => {
 	const page = render(<PatientPage />);
@@ -7,9 +8,7 @@ test("Check if page renders", () => {
 
 	const patientRow = document.querySelector("#patient-click-container") as HTMLElement;
 	expect(patientRow).toBeInTheDocument();
-	const patientOnClick = patientRow.onclick;
+	const patientOnClick = patientRow.onclick as Function;
 	expect(patientOnClick).toBeDefined();
-
-	// fireEvent.click(patientRow);
-	// expect(patientOnClick).toHaveBeenCalled();
+	expect(patientOnClick).not.toThrowError();
 });
