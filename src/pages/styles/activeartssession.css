@@ -46,7 +46,7 @@
     align-self: center;
     display: flex;
     gap: 8px;
-    margin: 39px 0 0 46px;
+    margin: 39px 0 0 3px;
   }
   @media (max-width: 991px) {
     .patient-session-card {
@@ -119,7 +119,6 @@
     position: absolute;
     inset: 0;
     height: 100%;
-    width: 100%;
     object-fit: cover;
     object-position: center;
   }
@@ -161,6 +160,19 @@
     flex-direction: column;
     font-size: 18px;
   }
+  .patient-session-card-options-button {
+    min-height: 106px;
+    border: none;
+    margin-left: 5px;
+    min-width: 5rem;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: bold;
+    color: #1e3a8a;
+    background-color: #D8EAFF;
+    border-radius: 0 1.25rem 0 1.25rem;
+  }
   .diagnosis-container {
     align-self: stretch;
     display: flex;
@@ -186,10 +198,10 @@
     font-weight: 400;
     align-self: center;
     margin-top: 6px;
+    color: #000369;
   }
   .edit-icon {
     aspect-ratio: 0.69;
-    object-fit: auto;
     object-position: center;
     width: 66px;
   }

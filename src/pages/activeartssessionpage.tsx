@@ -86,8 +86,8 @@ type PatientInfoProps = {
                   medication="x medicijn"
                   appointmentsCount={4}
                 />
-                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd422162-9c14-4a6d-a2b0-9b70244e54a1?apiKey=625a4e4417524f8294fdf8a1fc2d2593&" className="edit-icon" alt="Edit" />
               </div>
+              <input type="Button" className="patient-session-card-options-button" value="..."></input>
             </div>
           </section>
           <section className="results-container">
