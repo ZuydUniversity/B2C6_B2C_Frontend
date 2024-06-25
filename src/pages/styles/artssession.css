@@ -1,122 +1,122 @@
 .flex {
 	display: flex;
-  }
-  
-  .justify-center {
+}
+
+.justify-center {
 	justify-content: center;
-  }
-  
-  .items-center {
+}
+
+.items-center {
 	align-items: center;
-  }
-  
-  .px-16 {
+}
+
+.px-16 {
 	padding-left: 4rem;
 	padding-right: 4rem;
-  }
-  
-  .py-5 {
+}
+
+.py-5 {
 	padding-top: 1.25rem;
 	padding-bottom: 1.25rem;
-  }
-  
-  .mt-16 {
+}
+
+.mt-16 {
 	margin-top: 4rem;
-  }
-  
-  .w-full {
+}
+
+.w-full {
 	width: 100%;
-  }
-  
-  .text-sm {
+}
+
+.text-sm {
 	font-size: 0.875rem;
-  }
-  
-  .text-blue-700 {
+}
+
+.text-blue-700 {
 	color: #1d4ed8;
-  }
-  
-  .rounded-2xl {
+}
+
+.rounded-2xl {
 	border-radius: 1.25rem;
-  }
-  
-  .border-2 {
+}
+
+.border-2 {
 	border-width: 2px;
-  }
-  
-  .border-solid {
+}
+
+.border-solid {
 	border-style: solid;
-  }
-  
-  .border-blue-700 {
+}
+
+.border-blue-700 {
 	border-color: #1d4ed8;
-  }
-  
-  .shrink-0 {
+}
+
+.shrink-0 {
 	flex-shrink: 0;
-  }
-  
-  .aspect-square {
+}
+
+.aspect-square {
 	aspect-ratio: 1 / 1;
-  }
-  
-  .w-34px {
+}
+
+.w-34px {
 	width: 34px;
-  }
-  
-  .flex-auto {
+}
+
+.flex-auto {
 	flex: 1 1 auto;
-  }
-  
-  .my-auto {
+}
+
+.my-auto {
 	margin: auto 0;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
 	.max-md-px-5 {
-	  padding-left: 1.25rem;
-	  padding-right: 1.25rem;
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
 	}
-  
+
 	.max-md-mt-10 {
-	  margin-top: 2.5rem;
+		margin-top: 2.5rem;
 	}
-  
+
 	.max-md-max-w-full {
-	  max-width: 100%;
+		max-width: 100%;
 	}
-  }
-  
-  .main-patient-container {
+}
+
+.main-patient-container {
 	flex-direction: column;
 	padding: 1.25rem;
 	font-weight: bold;
 	color: #1e3a8a;
 	margin: 0 auto;
-  }
-  
-  .header-text {
+}
+
+.header-text {
 	font-size: 2.5rem;
 	color: #1e3a8a;
 	margin-left: 10rem;
-  }
-  
-  .sub-header {
+}
+
+.sub-header {
 	margin-top: 4rem;
 	font-size: 1.5rem;
 	margin-left: 9.7rem;
 	color: #1e3a8a;
-  }
-  
-  .divider {
+}
+
+.divider {
 	height: 0.125rem;
 	background-color: #1e3a8a;
 	border: none;
 	width: 416px;
 	margin-left: 10rem;
-  }
-  
-  .divider2 {
+}
+
+.divider2 {
 	height: 0.125rem;
 	background-color: #1e3a8a;
 	border: none;
@@ -124,23 +124,23 @@
 	margin-left: 10rem;
 	position: relative;
 	bottom: 16px;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
 	.header-text,
 	.sub-header,
 	.divider {
-	  max-width: 100%;
-	  font-size: 1.75rem;
-	  margin-left: 0;
+		max-width: 100%;
+		font-size: 1.75rem;
+		margin-left: 0;
 	}
-  }
-  
-  .gap-3 {
+}
+
+.gap-3 {
 	gap: 0.75rem;
-  }
-  
-  .flex-container {
+}
+
+.flex-container {
 	gap: 0.75rem;
 	justify-content: center;
 	align-items: center;
@@ -150,9 +150,9 @@
 	border-radius: 1.25rem;
 	position: relative;
 	left: 80px;
-  }
-  
-  .select-patient-button {
+}
+
+.select-patient-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -166,32 +166,32 @@
 	font-size: 16px;
 	color: #3a69c1;
 	margin-left: 5rem;
-  }
-  
-  .select-patient-button:hover {
+}
+
+.select-patient-button:hover {
 	background-color: #f5f6fa;
-  }
-  
-  @media (max-width: 1000px) {
+}
+
+@media (max-width: 1000px) {
 	.flex-container {
-	  background-color: #3a69c1;
-	  color: white;
-	  border-radius: 100%;
-	  width: 24px;
-	  height: 24px;
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
+		background-color: #3a69c1;
+		color: white;
+		border-radius: 100%;
+		width: 24px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
-  }
-  
-  .patient-divider {
+}
+
+.patient-divider {
 	border: none;
 	border-bottom: 1px solid #ccc; /* Customize the color and thickness */
 	margin: 10px 0; /* Adjust as necessary */
-  }
-  
-  .patient-list {
+}
+
+.patient-list {
 	position: absolute;
 	top: -20%;
 	left: 20%;
@@ -203,55 +203,55 @@
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 	border-radius: 8px;
 	padding: 10px;
-  }
-  
-  .patient-item {
+}
+
+.patient-item {
 	border-radius: 10px;
 	display: flex;
 	align-items: center;
 	padding: 10px;
 	cursor: pointer;
-  }
-  
-  .patient-item:hover {
+}
+
+.patient-item:hover {
 	background-color: #f5f5f5;
-  }
-  
-  .patient-image {
+}
+
+.patient-image {
 	width: 60px;
 	height: 60px;
 	border-radius: 10px;
 	margin-right: 10px;
 	flex-shrink: 0; /* Prevent the image from shrinking */
-  }
-  
-  .patient-details {
+}
+
+.patient-details {
 	display: flex;
 	flex-direction: column;
 	flex: 1; /* Take up remaining space */
 	margin-right: 10px; /* Add some space between details and button */
-  }
-  
-  .patient-info {
+}
+
+.patient-info {
 	display: flex;
 	margin-left: 5%;
-    gap: 20%;
-  }
-  
-  .patient-info-section {
+	gap: 20%;
+}
+
+.patient-info-section {
 	display: flex;
 	flex-direction: column;
-  }
-  
-  .patient-label {
+}
+
+.patient-label {
 	font-weight: bold;
-  }
-  
-  .patient-data {
+}
+
+.patient-data {
 	margin-top: 0.25rem;
-  }
-  
-  .add-button {
+}
+
+.add-button {
 	background-color: #1d4ed8;
 	color: white;
 	border: none;
@@ -264,25 +264,24 @@
 	justify-content: center;
 	cursor: pointer;
 	flex-shrink: 0; /* Prevent the button from shrinking */
-  }
-  
-  .add-button:hover {
+}
+
+.add-button:hover {
 	background-color: #4776ee;
-  }
-  
-  /* Media query for responsiveness */
-  @media (max-width: 768px) {
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
 	.patient-list {
-	  max-height: 200px;
+		max-height: 200px;
 	}
-  }
-  
-  .add-patient-to-session-icon {
+}
+
+.add-patient-to-session-icon {
 	background: url(../../../public/Icons/Plus.svg) no-repeat 15px;
 	padding-left: 60px;
 	padding-top: 14px;
 	padding-bottom: 10px;
 	background-size: 30px;
 	height: 20px;
-  }
-  
+}
