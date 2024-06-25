@@ -30,6 +30,7 @@
   }
   .section-title {
     font: 700 25px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+    color: #000369;
   }
   .section-divider {
     border-color: #000369;
@@ -61,6 +62,7 @@
     font-weight: 600;
     white-space: nowrap;
     padding: 52px 13px;
+    color: #000369;
   }
   @media (max-width: 991px) {
     .appointment-info {
@@ -94,13 +96,12 @@
   }
   .patient-session-info {
     display: flex;
-    flex-direction: column;
     fill: #fff;
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.16));
     overflow: hidden;
     position: relative;
     min-height: 59px;
-    width: 680px;
+    width: 595px;
     gap: 20px;
     flex-grow: 1;
     flex-basis: auto;
@@ -132,11 +133,14 @@
   .patient-session-info-label {
     font-family: Montserrat, sans-serif;
     font-weight: 600;
+    font-size: 18px;
+    color: #000369;
   }
   .patient-session-info-value {
     font-family: Montserrat, sans-serif;
     font-weight: 400;
     margin-top: 9px;
+    color: #000369;
   }
   .patient-session-details-grid {
     position: relative;
@@ -164,7 +168,7 @@
   }
   .diagnosis-value {
     margin-top: 11px;
-    font: 400 12px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+    font: 400 18px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
   }
   .appointments-count {
     display: flex;

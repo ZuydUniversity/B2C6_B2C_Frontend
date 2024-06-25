@@ -24,7 +24,7 @@ type PatientInfoProps = {
         <div className="diagnosis-container">
           <div className="patient-session-info-label">Diagnose</div>
           <div className="diagnosis-value">
-            <span style={{ fontSize: '18px' }}>{diagnosis}</span>
+            <span style={{ fontSize: '' }}>{diagnosis}</span>
           </div>
         </div>
         <div className="patient-session-detail-item">
