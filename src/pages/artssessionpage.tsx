@@ -87,7 +87,6 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 
 const AddPatientSelection: React.FC = () => {
   const handleSelect = () => {
-    // Handle the selection logic if needed
   };
 
   return (
