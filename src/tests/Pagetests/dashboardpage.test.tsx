@@ -1,11 +1,23 @@
-// Assuming necessary imports are already in place at the top of your test file
+import { render, screen } from "@testing-library/react";
+import DashboardPage, { PatientCard, patients } from "../../pages/dashboardpage";
+import MiniKalender from "../../components/minikalender";
 
-import { render } from "@testing-library/react";
-import DashboardPage from "../../pages/dashboardpage";
+describe("Dashboard Page", () => {
+	test("should render", () => {
+		render(<DashboardPage />);
 
-describe("DashboardPage", () => {
-	it("renders without crashing", () => {
-		const { getByText } = render(<DashboardPage />);
-		expect(getByText("Hallo, Dr. Johannes Doe")).toBeInTheDocument();
+		const miniCalendar = document.querySelector(".calendar") as HTMLElement;
+		expect(miniCalendar).toBeInTheDocument();
+	});
+});
+
+describe("PatientCard Component", () => {
+	test("should render", () => {
+		const patient = patients[0];
+		render(<PatientCard date={patient.date} name={patient.name} age={patient.age} diagnosis={patient.diagnosis} medication={patient.medication} appointments={patient.appointments} imageUrl={patient.imageUrl} />);
+
+		const patientProfile = screen.queryByAltText(`${patient.name} profile`) as HTMLImageElement;
+		expect(patientProfile).toBeInTheDocument();
+		expect(patientProfile.src).toBe(patient.imageUrl);
 	});
 });
