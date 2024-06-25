@@ -142,10 +142,6 @@
 	font-weight: bold;
 }
 
-.patientCardDiagnosisText {
-	font-size: 0.875rem;
-}
-
 .patientCardOptionsButton {
 	min-height: 106px;
 	border: none;

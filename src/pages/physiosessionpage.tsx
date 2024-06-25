@@ -24,6 +24,7 @@ const patients = [
 interface PatientSelectProps {
 	onSelect: () => void;
 }
+
 const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 	const [showPatients, setShowPatients] = React.useState(false);
 
@@ -41,7 +42,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 	};
 
 	const addPatientToSession = () => {
-		window.location.href = "/activeartssession"; //BAD PRACTICE <3
+		window.location.href = "/activephysiosession"; //BAD PRACTICE <3
 	};
 
 	React.useEffect(() => {

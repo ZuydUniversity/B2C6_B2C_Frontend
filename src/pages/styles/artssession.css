@@ -115,6 +115,7 @@
 	width: 416px;
 	margin-left: 10rem;
 }
+
 .divider2 {
 	height: 0.125rem;
 	background-color: #1e3a8a;
@@ -151,7 +152,7 @@
 	left: 80px;
 }
 
-.flex-container button {
+.select-patient-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -164,9 +165,10 @@
 	cursor: pointer;
 	font-size: 16px;
 	color: #3a69c1;
+	margin-left: 5rem;
 }
 
-.flex-container button:hover {
+.select-patient-button:hover {
 	background-color: #f5f6fa;
 }
 
@@ -181,4 +183,105 @@
 		align-items: center;
 		justify-content: center;
 	}
+}
+
+.patient-divider {
+	border: none;
+	border-bottom: 1px solid #ccc; /* Customize the color and thickness */
+	margin: 10px 0; /* Adjust as necessary */
+}
+
+.patient-list {
+	position: absolute;
+	top: -20%;
+	left: 20%;
+	z-index: 1000;
+	width: 570px;
+	overflow-y: auto; /* Enable vertical scrolling if needed */
+	border: 1px solid #ccc;
+	background-color: #fff;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	padding: 10px;
+}
+
+.patient-item {
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.patient-item:hover {
+	background-color: #f5f5f5;
+}
+
+.patient-image {
+	width: 60px;
+	height: 60px;
+	border-radius: 10px;
+	margin-right: 10px;
+	flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.patient-details {
+	display: flex;
+	flex-direction: column;
+	flex: 1; /* Take up remaining space */
+	margin-right: 10px; /* Add some space between details and button */
+}
+
+.patient-info {
+	display: flex;
+	margin-left: 5%;
+	gap: 20%;
+}
+
+.patient-info-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.patient-label {
+	font-weight: bold;
+}
+
+.patient-data {
+	margin-top: 0.25rem;
+}
+
+.add-button {
+	background-color: #1d4ed8;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	width: 93px;
+	height: 34px;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	flex-shrink: 0; /* Prevent the button from shrinking */
+}
+
+.add-button:hover {
+	background-color: #4776ee;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+	.patient-list {
+		max-height: 200px;
+	}
+}
+
+.add-patient-to-session-icon {
+	background: url(../../../public/Icons/Plus.svg) no-repeat 15px;
+	padding-left: 60px;
+	padding-top: 14px;
+	padding-bottom: 10px;
+	background-size: 30px;
+	height: 20px;
 }
