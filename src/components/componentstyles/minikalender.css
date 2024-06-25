@@ -2,6 +2,8 @@
 	position: relative;
 	margin-left: 975px;
 	margin-top: -150px;
+	display: flex;
+	flex-direction: column;
 	top: 30px;
 	right: 10px;
 	width: 230px;
@@ -66,7 +68,7 @@
 	position: relative;
 	margin-left: 200px;
 	cursor: pointer;
-	margin-bottom: 5px;
+	margin-bottom: 3px;
 }
 
 .day-of-week {
@@ -108,11 +110,11 @@
 
 .popup {
 	position: absolute;
-	height: 120px;
-	bottom: 50px;
+	top: -140px; /* Adjust this value to place the popup above the calendar day */
 	left: 50%;
-	opacity: 90%;
 	transform: translateX(-50%);
+	opacity: 0;
+	visibility: hidden;
 	background-color: #e2e2e2;
 	color: #000000;
 	padding: 5px;
@@ -120,10 +122,12 @@
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	z-index: 1000;
 	white-space: nowrap;
+	transition: opacity 0.3s, visibility 0.3s;
 }
 
 .calendar-day:hover .popup {
-	display: block;
+	opacity: 1;
+	visibility: visible;
 }
 
 .days-of-week {

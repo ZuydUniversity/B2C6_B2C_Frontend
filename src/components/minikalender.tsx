@@ -87,7 +87,8 @@ const MiniKalender: React.FC = () => {
           {hoveredDay === day && (
             <div className="popup">
               <div>Day {day}</div>
-              <div>Additional Info</div>
+              <div>Additional Info
+              </div>
             </div>
           )}
         </div>
