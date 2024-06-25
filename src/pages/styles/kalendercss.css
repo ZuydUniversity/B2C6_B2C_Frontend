@@ -19,13 +19,13 @@ body {
 .kalender-title {
   font-size: 40x;
   margin: 0;
-  color: #000369;
+  color: #1e3a8a;
 }
 
 .kalender-underline {
   width: 135px;
   height: 3px;
-  background-color: #000369;
+  background-color: #1e3a8a;
   margin: 10px 0 20px;
 }
 
@@ -33,11 +33,12 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-left: 0px;
 }
 
 .kalender-header h2 {
-  margin: 0 10px;
-  color: #000369;
+  margin: 10px;
+  color: #1e3a8a;
 }
 
 .kalender-header button {
@@ -45,30 +46,33 @@ body {
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #000369;
+  color: #1e3a8a;
+  width: 0px;
 }
 
 .kalender-header-underline {
-  width: 100%;
+  width: 30%;
   height: 3px;
-  background-color: #000369;
-  margin-top: 10px;
+  background-color: #1e3a8a;
+  margin-top: 5px;
 }
 
-.workweek {
+.week-toggle-button {
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
 }
 
-.week-toggle-button {
+.workweek {
   background-color: white;
   color: #ff6347;
   border: 2px solid #ff6347;
-  padding: 3px 8px;  /* Adjusted padding to make the button smaller */
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;  /* Adjusted font size to make the button smaller */
+  font-size: 16px;
+  text-align: center;
+  width: 200px;
+  height: 40px;
 }
 
 .kalender-table-container {
@@ -84,14 +88,14 @@ body {
 }
 
 .kalender-table th,
-.kalender-table td {
+.kalender-table td /*rasterlijnen*/{
   border: 1px solid #e0e0e0;
   padding: 10px;
   text-align: center;
   color: #000369;
 }
 
-.kalender-table th {
+.kalender-table th /*kolomtitels*/{
   background-color: #f1f1f1;
 }
 
@@ -101,11 +105,11 @@ body {
 
 .add-button {
   background-color: #0033cc;
-  border: none;
+  border: none solid;
   color: white;
-  padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 20px;
-  align-self: flex-start;
+  margin-top: 1%;
+  width: 200px;
+  margin-left: 85%;
 }

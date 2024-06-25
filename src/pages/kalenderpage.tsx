@@ -1,18 +1,56 @@
 import React, { useState } from 'react';
 import './styles/kalendercss.css';
 
+// Functie om de weeknummer te krijgen
+const getWeekNumber = (date: Date): number => {
+  const firstJan = new Date(date.getFullYear(), 0, 1);
+  const pastDaysOfYear = (date.valueOf() - firstJan.valueOf()) / 86400000;
+  return Math.ceil((pastDaysOfYear + firstJan.getDay() + 1) / 7);
+};
+
+// Functie om de startdatum van een ISO week te krijgen
+const getDateOfISOWeek = (week: number, year: number): Date => {
+  const simple = new Date(year, 0, 1 + (week - 1) * 7);
+  const dayOfWeek = simple.getDay();
+  const ISOweekStart = simple;
+  if (dayOfWeek <= 4) ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
+  else ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+  return ISOweekStart;
+};
+
+// Functie om de startdatum van de week te krijgen
+const getStartOfWeek = (date: Date): Date => {
+  const day = date.getDay();
+  const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+  return new Date(date.setDate(diff));
+};
+
 const KalenderPage: React.FC = () => {
   const [currentWeek, setCurrentWeek] = useState<Date>(getStartOfWeek(new Date()));
+  const [selectedWeek, setSelectedWeek] = useState<number>(getWeekNumber(new Date()));
 
   const days = ['Ma', 'Di', 'Wo', 'Do', 'Vr'];
-  const times = Array.from({ length: 24 }, (_, i) => `${String(i).padStart(2, '0')}:00`);
+  const times = Array.from({ length: 13 }, (_, i) => `${String(i + 8).padStart(2, '0')}:00`);
 
   const handlePrevWeek = () => {
-    setCurrentWeek(new Date(currentWeek.setDate(currentWeek.getDate() - 7)));
+    const newDate = new Date(currentWeek);
+    newDate.setDate(newDate.getDate() - 7);
+    setCurrentWeek(newDate);
+    setSelectedWeek(getWeekNumber(newDate));
   };
 
   const handleNextWeek = () => {
-    setCurrentWeek(new Date(currentWeek.setDate(currentWeek.getDate() + 7)));
+    const newDate = new Date(currentWeek);
+    newDate.setDate(newDate.getDate() + 7);
+    setCurrentWeek(newDate);
+    setSelectedWeek(getWeekNumber(newDate));
+  };
+
+  const handleWeekChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const week = parseInt(event.target.value, 10);
+    const newDate = getDateOfISOWeek(week, new Date().getFullYear());
+    setCurrentWeek(newDate);
+    setSelectedWeek(week);
   };
 
   const formatDate = (date: Date): string => {
@@ -44,8 +82,12 @@ const KalenderPage: React.FC = () => {
         <button className="arrow-button-right" onClick={handleNextWeek}>&gt;</button>
       </div>
       <div className="kalender-header-underline"></div>
-      <div className="workweek">
-        <button className="week-toggle-button">werkweek</button>
+      <div className="week-toggle-button">
+        <select className="workweek" value={selectedWeek} onChange={handleWeekChange}>
+          {Array.from({ length: 52 }, (_, i) => (
+            <option key={i + 1} value={i + 1}>Week {i + 1}</option>
+          ))}
+        </select>
       </div>
       <div className="kalender-table-container">
         <table className="kalender-table">
@@ -61,8 +103,7 @@ const KalenderPage: React.FC = () => {
             {times.map((time, index) => (
               <tr key={index}>
                 <td>{time}</td>
-                {dates.map((_, i) => (
-                  <td key={i} className={time === "11:00" && i === 0 ? "appointment" : ""}></td>
+                {dates.map((_, i) => (<td key={i}></td>
                 ))}
               </tr>
             ))}
@@ -72,12 +113,6 @@ const KalenderPage: React.FC = () => {
       <button className="add-button">Toevoegen</button>
     </div>
   );
-};
-
-const getStartOfWeek = (date: Date): Date => {
-  const day = date.getDay();
-  const diff = date.getDate() - day + (day === 0 ? -6 : 1);
-  return new Date(date.setDate(diff));
 };
 
 export default KalenderPage;
