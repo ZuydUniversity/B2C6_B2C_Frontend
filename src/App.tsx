@@ -11,6 +11,7 @@ import NotFoundPage from "./pages/notfoundpage";
 import Notes from "./pages/notes";
 import ArtsSessionPage from "./pages/artssessionpage";
 import PhysioSessionPage from "./pages/physiosessionpage";
+import ActiveArtsSession from "./pages/activeartssessionpage";
 
 const App: React.FC = () => {
 	const [hideNavbar, setHideNavbar] = useState(false);
@@ -31,6 +32,7 @@ const App: React.FC = () => {
 						<Route path="/notes" element={<Notes />} />
 						<Route path="/artsession" element={<ArtsSessionPage />} />
 						<Route path="/physiosession" element={<PhysioSessionPage />} />
+						<Route path="/activeartssession" element={<ActiveArtsSession />} />
 						<Route path="*" element={<NotFoundPage setHideNavbar={setHideNavbar} />} />
 					</Routes>
 				</div>
