@@ -6,31 +6,31 @@ import PatientDetails from "../../components/patientdetails";
 const patient = new Patient("Johnny", "English", "Johnny.English@gmail.com", 37, "0612345678", true, "Timmmy", "English", "Timmy.English@gmail.com", "0689378469");
 
 describe("PatientDetails component", () => {
-  it("should render the PatientDetails component with all properties", () => {
-    render(<PatientDetails patient={patient} />);
-    
-    const name = document.getElementById("patient-name") as HTMLElement;
-    expect(name.textContent).toBe(patient.Firstname + " " + patient.Lastname);
+	it("should render the PatientDetails component with all properties", () => {
+		render(<PatientDetails patient={patient} />);
 
-    const email = document.getElementById("patient-email") as HTMLElement;
-    expect(email.textContent).toBe(patient.Email);
+		const name = document.getElementById("patient-name") as HTMLElement;
+		expect(name.textContent).toBe(patient.Firstname + " " + patient.Lastname);
 
-    const age = document.getElementById("patient-age") as HTMLElement;
-    expect(age.textContent).toBe(patient.Age.toString());
+		const email = document.getElementById("patient-email") as HTMLElement;
+		expect(email.textContent).toBe(patient.Email);
 
-    const phonenumber = document.getElementById("patient-phonenumber") as HTMLElement;
-    expect(phonenumber.textContent).toBe(patient.Phonenumber);
+		const age = document.getElementById("patient-age") as HTMLElement;
+		expect(age.textContent).toBe(patient.Age.toString());
 
-    const sex = document.getElementById("patient-sex") as HTMLElement;
-    expect(sex.textContent).toBe(patient.Sex ? "Male" : "Female");
+		const phonenumber = document.getElementById("patient-phonenumber") as HTMLElement;
+		expect(phonenumber.textContent).toBe(patient.Phonenumber);
 
-    const contactName = document.getElementById("contactperson-name") as HTMLElement;
-    expect(contactName.textContent).toBe(patient.FirstnameContact + " " + patient.LastnameContact);
+		const sex = document.getElementById("patient-sex") as HTMLElement;
+		expect(sex.textContent).toBe(patient.Sex ? "Male" : "Female");
 
-    const contactEmail = document.getElementById("contactperson-email") as HTMLElement;
-    expect(contactEmail.textContent).toBe(patient.EmailContact);
+		const contactName = document.getElementById("contactperson-name") as HTMLElement;
+		expect(contactName.textContent).toBe(patient.FirstnameContact + " " + patient.LastnameContact);
 
-    const contactPhonenumber = document.getElementById("contactperson-phonenumber") as HTMLElement;
-    expect(contactPhonenumber.textContent).toBe(patient.PhonenumberContact);
-  });
+		const contactEmail = document.getElementById("contactperson-email") as HTMLElement;
+		expect(contactEmail.textContent).toBe(patient.EmailContact);
+
+		const contactPhonenumber = document.getElementById("contactperson-phonenumber") as HTMLElement;
+		expect(contactPhonenumber.textContent).toBe(patient.PhonenumberContact);
+	});
 });

@@ -32,9 +32,15 @@ const PatientList: React.FC<PatientListProps> = ({ onPatientClick }) => {
 					<div className="patient-row" id="patient-click-container" onClick={() => onPatientClick(patient.Id)}>
 						<div className="patient-value-container">
 							<div className="patient-value" id="patient-name">{`${patient.Firstname} ${patient.Lastname}`}</div>
-							<div className="patient-value" id="patient-email">{patient.Email}</div>
-							<div className="patient-value" id="patient-sex">{patient.Sex ? "Male" : "Female"}</div>
-							<div className="patient-value" id="patient-appointment-count">{patient.Appointments.length}</div>
+							<div className="patient-value" id="patient-email">
+								{patient.Email}
+							</div>
+							<div className="patient-value" id="patient-sex">
+								{patient.Sex ? "Male" : "Female"}
+							</div>
+							<div className="patient-value" id="patient-appointment-count">
+								{patient.Appointments.length}
+							</div>
 						</div>
 					</div>
 					<div className="extra-card">...</div>

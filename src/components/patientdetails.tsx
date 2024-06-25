@@ -34,19 +34,27 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
 						</div>
 						<div className="patient-info-pair">
 							<span className="patient-label">Email:</span>
-							<span id="patient-email" className="patient-value">{patient.Email}</span>
+							<span id="patient-email" className="patient-value">
+								{patient.Email}
+							</span>
 						</div>
 						<div className="patient-info-pair">
 							<span className="patient-label">Leeftijd:</span>
-							<span id="patient-age" className="patient-value">{patient.Age}</span>
+							<span id="patient-age" className="patient-value">
+								{patient.Age}
+							</span>
 						</div>
 						<div className="patient-info-pair">
 							<span className="patient-label">Telefoonnummer:</span>
-							<span id="patient-phonenumber" className="patient-value">{patient.Phonenumber}</span>
+							<span id="patient-phonenumber" className="patient-value">
+								{patient.Phonenumber}
+							</span>
 						</div>
 						<div className="patient-info-pair">
 							<span className="patient-label">Geslacht:</span>
-							<span id="patient-sex" className="patient-value">{patient.Sex ? "Male" : "Female"}</span>
+							<span id="patient-sex" className="patient-value">
+								{patient.Sex ? "Male" : "Female"}
+							</span>
 						</div>
 					</div>
 				</div>
@@ -59,11 +67,15 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
 						</div>
 						<div className="contact-info-pair">
 							<span className="contact-label">Telefoonnummer:</span>
-							<span id="contactperson-phonenumber" className="contact-value">{contactPerson.Phonenumber}</span>
+							<span id="contactperson-phonenumber" className="contact-value">
+								{contactPerson.Phonenumber}
+							</span>
 						</div>
 						<div className="contact-info-pair">
 							<span className="contact-label">E-mailadres:</span>
-							<span id="contactperson-email" className="contact-value">{contactPerson.Email}</span>
+							<span id="contactperson-email" className="contact-value">
+								{contactPerson.Email}
+							</span>
 						</div>
 					</div>
 				</div>

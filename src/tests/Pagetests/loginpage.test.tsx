@@ -8,7 +8,7 @@ import { click } from "@testing-library/user-event/dist/click";
 // // TODO: Fix this
 
 test("temp test to fix real test", () => {
-  expect(1).toBe(1);
+	expect(1).toBe(1);
 });
 
 // describe("LoginPage page", () => {
@@ -32,7 +32,7 @@ test("temp test to fix real test", () => {
 
 //     const openPopupButton = document.querySelector("#password-forgotten-button") as HTMLElement;
 //     expect(openPopupButton).toBeInTheDocument();
-    
+
 //     const openPopup = openPopupButton.onclick;
 //     expect(openPopup).toBeDefined();
 //     fireEvent.click(openPopupButton);

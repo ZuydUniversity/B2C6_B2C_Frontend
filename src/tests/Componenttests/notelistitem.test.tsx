@@ -35,22 +35,22 @@ describe("Notes component", () => {
 		expect(noteSession.textContent).toBe(note1.Session?.Name);
 	});
 
-  it("should render the Notes component without properties", () => {
-    render(<NoteListItem key={note2.Id} note={note2} />);
+	it("should render the Notes component without properties", () => {
+		render(<NoteListItem key={note2.Id} note={note2} />);
 
-    const noteListItem = document.getElementsByClassName("note-list-item")[0];
-    expect(noteListItem).toBeInTheDocument();
+		const noteListItem = document.getElementsByClassName("note-list-item")[0];
+		expect(noteListItem).toBeInTheDocument();
 
-    const noteName = document.getElementsByClassName("note-name")[0] as HTMLElement;
-    expect(noteName.textContent).toBe(note2.Name);
+		const noteName = document.getElementsByClassName("note-name")[0] as HTMLElement;
+		expect(noteName.textContent).toBe(note2.Name);
 
-    const noteSpecialist = document.getElementsByClassName("note-specialist")[0] as HTMLElement;
-    expect(noteSpecialist.textContent).toBe(note2.Specialist.Firstname + " " + note2.Specialist.Lastname);
+		const noteSpecialist = document.getElementsByClassName("note-specialist")[0] as HTMLElement;
+		expect(noteSpecialist.textContent).toBe(note2.Specialist.Firstname + " " + note2.Specialist.Lastname);
 
-    const notePatient = document.getElementsByClassName("note-patient")[0] as HTMLElement;
-    expect(notePatient.textContent).toBe("-");
+		const notePatient = document.getElementsByClassName("note-patient")[0] as HTMLElement;
+		expect(notePatient.textContent).toBe("-");
 
-    const noteSession = document.getElementsByClassName("note-session")[0] as HTMLElement;
-    expect(noteSession.textContent).toBe("-");
-  });
+		const noteSession = document.getElementsByClassName("note-session")[0] as HTMLElement;
+		expect(noteSession.textContent).toBe("-");
+	});
 });

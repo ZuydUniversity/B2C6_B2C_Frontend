@@ -2,24 +2,24 @@ import { fireEvent, render } from "@testing-library/react";
 import ForgotPasswordPopup from "../../pages/forgotpasswordpopup";
 
 describe("ForgotPasswordPopup page", () => {
-  it("should render without crashing and change email", () => {
-    render(<ForgotPasswordPopup onClose={() => {}} />);
-    
-    const emailInput = document.querySelector("#email") as HTMLInputElement;
-    expect(emailInput).toBeInTheDocument();
+	it("should render without crashing and change email", () => {
+		render(<ForgotPasswordPopup onClose={() => {}} />);
 
-    const currentEmail = emailInput.value;
-    expect(currentEmail).toBe("");
+		const emailInput = document.querySelector("#email") as HTMLInputElement;
+		expect(emailInput).toBeInTheDocument();
 
-    expect(emailInput.value).toBe("");
-    const newEmail = "newEmail@gmail.com";
-    emailInput.value = newEmail;
-    expect(emailInput.value).toBe(newEmail);
+		const currentEmail = emailInput.value;
+		expect(currentEmail).toBe("");
 
-    const form = document.querySelector("#reset-password-form") as HTMLFormElement;
-    expect(form).toBeInTheDocument();
-    fireEvent.submit(form);
-    const formSubmit = form.onsubmit;
-    expect(formSubmit).toBeDefined();
-  });
+		expect(emailInput.value).toBe("");
+		const newEmail = "newEmail@gmail.com";
+		emailInput.value = newEmail;
+		expect(emailInput.value).toBe(newEmail);
+
+		const form = document.querySelector("#reset-password-form") as HTMLFormElement;
+		expect(form).toBeInTheDocument();
+		fireEvent.submit(form);
+		const formSubmit = form.onsubmit;
+		expect(formSubmit).toBeDefined();
+	});
 });
