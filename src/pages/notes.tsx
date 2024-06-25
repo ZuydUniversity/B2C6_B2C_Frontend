@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./styles/notes.css";
 import NoteListItem from "../components/notelistitem";
 import { Note, Specialist, Patient, Appointment, Session } from "../abstracts/ImportsModels";
-import dropdown_arrow from "../assets/images/dropdown_arrow.png";
-import dropdown_arrow_up from "../assets/images/dropdown_arrow_reverse.png";
 
 // Set constant values for the tests
 const baseSpecialist1 = new Specialist("Barack", "Obama", "JohnDoe@gmail.com", "0612345678");
@@ -167,25 +165,25 @@ const Notes: React.FC = () => {
 							<div className="notes-table-sections-title table-section-note">
 								<h2>Notitie</h2>
 								<button onClick={sortNotesByName} className="filter-by-button" id="dropdown_arrow_name">
-									<img src={filteredByName ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+									<img src={filteredByName ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
 							</div>
 							<div className="notes-table-sections-title table-section-specialist">
 								<h2>Specialist</h2>
 								<button onClick={sortNotesBySpecialist} className="filter-by-button" id="dropdown_arrow_specialist">
-									<img src={filteredBySpecialist ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+									<img src={filteredBySpecialist ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
 							</div>
 							<div className="notes-table-sections-title table-section-patient">
 								<h2>Patiënt</h2>
 								<button onClick={sortNotesByPatient} className="filter-by-button" id="dropdown_arrow_patient">
-									<img src={filteredByPatient ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+									<img src={filteredByPatient ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
 							</div>
 							<div className="notes-table-sections-title table-section-session">
 								<h2>Sessie</h2>
 								<button onClick={sortNotesBySession} className="filter-by-button" id="dropdown_arrow_session">
-									<img src={filteredBySession ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+									<img src={filteredBySession ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
 							</div>
 						</div>
