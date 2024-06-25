@@ -42,45 +42,52 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
   };
 
   const addPatientToSession = () => {
-  window.location.href = '/activeartssession'; //BAD PRACTICE <3
+  window.location.href = '/activephysiosession'; //BAD PRACTICE <3
   };
 
   React.useEffect(() => {
-    // Attach event listener on mount to handle outside click
     document.addEventListener("mousedown", handleOutsideClick);
     return () => {
-      // Cleanup event listener on unmount
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, []);
 
   return (
-  <section className="flex-container">
-    <button
-      onClick={handleOpenListClick}
-      className="select-patient-button"
-      aria-label="Select patient"
-    >
-      <span className="add-patient-to-session-icon selecting patient">Selecteer patiënt</span>
-    </button>
-    {showPatients && (
-      <ul className="patient-list">
-        {patients.map((patient, index) => (
-          <React.Fragment key={index}>
-            <li className="patient-item">
-              <img src={patient.imageUrl} alt={patient.name} className="patient-image" />
-              <div className="patient-details">
-                <p>{patient.name}</p>
-                <p>{patient.age}</p>
+<section className="flex-container">
+  <button
+    onClick={handleOpenListClick}
+    className="select-patient-button"
+    aria-label="Select patient"
+  >
+    <span className="add-patient-to-session-icon selecting patient">Selecteer patiënt</span>
+  </button>
+  {showPatients && (
+    <ul className="patient-list">
+      {patients.map((patient, index) => (
+        <React.Fragment key={index}>
+          <li className="patient-item">
+            <img src={patient.imageUrl} alt={patient.name} className="patient-image" />
+            <div className="patient-details">
+              <div className="patient-info">
+                <div className="patient-info-section">
+                  <span className="patient-label">Naam:</span>
+                  <span className="patient-data">{patient.name}</span>
+                </div>
+                <div className="patient-info-section">
+                  <span className="patient-label">Leeftijd:</span>
+                  <span className="patient-data">{patient.age}</span>
+                </div>
               </div>
-              <button  onClick={addPatientToSession} className="add-button">+</button>
-            </li>
-            {index < patients.length - 1 && <hr className="patient-divider" />} {/* Add this line */}
-          </React.Fragment>
-        ))}
-      </ul>
-    )}
-  </section>
+            </div>
+            <button onClick={addPatientToSession} className="add-button">+</button>
+          </li>
+          {index < patients.length - 1 && <hr className="patient-divider" />}
+        </React.Fragment>
+      ))}
+    </ul>
+  )}
+</section>
+
 
   );
 };
