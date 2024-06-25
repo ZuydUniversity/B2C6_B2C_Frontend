@@ -71,7 +71,7 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
 							<input type="password" id="password" name="password" placeholder="Wachtwoord" onChange={(e) => setPassword(e.target.value)} />
 						</div>
 						<div className="form-group action-group">
-							<button onClick={handleLogin}>Log in</button>
+							<button className="loginpage-button" onClick={handleLogin}>Log in</button>
 							<a href="#" onClick={openPopup}>
 								Wachtwoord vergeten?
 							</a>

@@ -131,19 +131,9 @@ type PatientInfoProps = {
                     ))}
                   </div>
                 ))}
-                <div className="action-buttons">
-                  <button className="cancel-button">
-                    <div className="cancel-button-content">
-                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d2dc604e65ab539492f855f364252b60dc51e1562d6fc1b5fea112e2dd826ee4?apiKey=625a4e4417524f8294fdf8a1fc2d2593&" className="cancel-button-bg" alt="" />
-                      <span className="cancel-button-text">annuleer</span>
-                    </div>
-                  </button>
-                  <button className="add-session-button">
-                    <div className="add-session-button-content">
-                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0091900eabc6567aa8fe1fc63bde8d3b105d56584d871f681fb36eef0cc1202c?apiKey=625a4e4417524f8294fdf8a1fc2d2593&" className="add-session-button-bg" alt="" />
-                      <span className="add-session-button-text">sessie toevoegen</span>
-                    </div>
-                  </button>
+                <div className="add-cancel-button-container">
+                  <button className="cancel-session-button">Annuleer</button>
+                  <button className="add-session-button">Sessie Toevoegen</button>
                 </div>
               </div>
             </div>

@@ -239,7 +239,6 @@
   .results-inner {
     border-radius: 57px;
     background-color: #fff;
-    display: flex;
     flex-direction: column;
     padding: 42px 33px;
   }
@@ -288,16 +287,16 @@
     }
   }
   .radiology-labels {
-    align-self: end;
     display: flex;
     margin-top: 64px;
-    width: 182px;
+    width: 135px;
     max-width: 100%;
     gap: 20px;
     font-size: 20px;
     font-weight: 400;
     white-space: nowrap;
     justify-content: space-between;
+    margin-left: 75px;
   }
   @media (max-width: 991px) {
     .radiology-labels {
@@ -471,94 +470,47 @@
       padding: 0 20px;
     }
   }
-  .action-buttons {
-    align-self: end;
+  .button-container {
     display: flex;
-    margin-top: 72px;
-    gap: 14px;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
+    justify-content: start;
+    gap: 10px;
+    margin-top: 20px;
   }
-  @media (max-width: 991px) {
-    .action-buttons {
-      margin: 40px 10px 0 0;
-    }
+  
+  .button-container button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 150px; 
+    height: 40px;
   }
-  .cancel-button {
-    display: flex;
-    align-items: center;
+  .add-cancel-button-container{
+  margin-top: 10px;
+  }
+  .cancel-session-button {
+    background-color: #fff;
+    border: solid;
+    border-color: #1B21D4;
+    border-width: 2px;
     color: #000369;
-    white-space: nowrap;
-    justify-content: center;
-    flex: 1;
-  }
-  @media (max-width: 991px) {
-    .cancel-button {
-      white-space: initial;
-    }
-  }
-  .cancel-button-content {
-    display: flex;
-    flex-direction: column;
-    font-family: Montserrat, sans-serif;
-    position: relative;
-    stroke-width: 2px;
-    stroke: #1b21d4;
-    overflow: hidden;
-    border: 2px solid #1b21d4;
-    aspect-ratio: 2.5;
-    justify-content: center;
-    padding: 24px 39px;
-  }
-  @media (max-width: 991px) {
-    .cancel-button-content {
-      white-space: initial;
-      padding: 0 20px;
-    }
-  }
-  .cancel-button-bg {
-    position: absolute;
-    inset: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  .cancel-button-text {
-    position: relative;
-  }
-  .add-session-button {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    justify-content: center;
-    flex: 1;
-  }
-  .add-session-button-content {
-    display: flex;
-    flex-direction: column;
-    font-family: Montserrat, sans-serif;
-    position: relative;
-    fill: #1b21d4;
-    overflow: hidden;
-    aspect-ratio: 2.5;
     width: 150px;
-    padding: 24px 32px 1px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
   }
-  @media (max-width: 991px) {
-    .add-session-button-content {
-      padding: 0 20px;
-    }
+  
+  .add-session-button {
+    background-color: #1B21D4;
+    color: white;
+    cursor: pointer;
+    width: 150px;
+    height: 60px;
   }
-  .add-session-button-bg {
-    position: absolute;
-    inset: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
+  
+  .button-container button:hover {
+    opacity: 0.8;
   }
-  .add-session-button-text {
-    position: relative;
-}
+  
