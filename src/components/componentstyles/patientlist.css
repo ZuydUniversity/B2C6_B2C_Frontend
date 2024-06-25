@@ -3,7 +3,7 @@
 	background-color: white;
 	padding: 10px;
 	margin: auto;
-	border-radius: 20px;
+	border-radius: 70px;
 	width: 60%;
 	max-height: 500px;
 	overflow-y: auto;
@@ -28,7 +28,7 @@
 	justify-content: space-between;
 	padding: 10px;
 	color: #000369;
-	width: 91%;
+	width: 90%;
 }
 
 .patient-row-wrapper {
@@ -43,7 +43,7 @@
 	padding: 10px;
 	background-color: #e0f2fe;
 	margin-bottom: 10px;
-	border-radius: 10px 0px;
+	border-radius: 10px;
 	flex-grow: 1;
 	cursor: pointer;
 }

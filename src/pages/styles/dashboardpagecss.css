@@ -19,10 +19,10 @@
 .dashboardContent {
 	display: flex;
 	flex-grow: 1;
-	width: 75%;
-	padding: 3%;
+	width: 75%;	
+	padding: 40px;
 	background-color: #e0f2fe;
-	border-radius: 75px;
+	border-radius: 70px;
 	max-height: calc(100vh - 250px);
 	overflow: hidden;
 }
