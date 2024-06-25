@@ -42,7 +42,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 	};
 
 	const addPatientToSession = () => {
-		window.location.href = "/activeartssession"; //BAD PRACTICE <3
+		window.location.href = "/activephysiosession"; //BAD PRACTICE <3
 	};
 
 	React.useEffect(() => {
@@ -89,7 +89,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 };
 
 const AddPatientSelection: React.FC = () => {
-	const handleSelect = () => {return;};
+	const handleSelect = () => {};
 
 	return (
 		<main className="main-patient-container">
