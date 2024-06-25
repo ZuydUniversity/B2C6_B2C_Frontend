@@ -1,8 +1,9 @@
 .note-list-container {
-	background-color: #c2d6ff;
+	background-color: #d8eaff;
 	border-radius: 1rem;
 	height: 100%;
 	padding: 1rem;
+	
 }
 
 .note-list-item {
@@ -12,8 +13,8 @@
 	gap: 1rem;
 	background-color: #ffffff;
 	border-radius: 10px;
-	font-size: 1.25rem;
-	padding: 0.75rem;
+	font-size: 20px;
+	padding: 10px;
 	color: #1e3a8a;
 	font-weight: 600;
 }

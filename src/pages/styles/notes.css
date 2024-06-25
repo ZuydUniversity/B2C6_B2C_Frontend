@@ -1,5 +1,6 @@
 .general-container {
 	height: 95%;
+	width: 100%;	
 }
 
 .notes-background {
@@ -40,8 +41,8 @@
 	margin-left: 1%;
 	margin-right: 1%;
 	height: 70%;
-	border: 50px solid #c2d6ff;
-	background-color: #c2d6ff;
+	border: 25px solid #e0f2fe;
+	background-color: #e0f2fe;
 	border-radius: 50px;
 }
 

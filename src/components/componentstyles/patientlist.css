@@ -1,5 +1,5 @@
 .patientlist-container {
-	border: 30px solid #d8eaff;
+	border: 30px solid #e0f2fe;
 	background-color: white;
 	padding: 10px;
 	margin: auto;
@@ -41,7 +41,7 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
-	background-color: #d8eaff;
+	background-color: #e0f2fe;
 	margin-bottom: 10px;
 	border-radius: 10px 0px;
 	flex-grow: 1;
@@ -73,7 +73,7 @@
 }
 
 .extra-card {
-	background: #d8eaff;
+	background: #e0f2fe;
 	margin-left: 20px;
 	padding: 25px;
 	margin-bottom: 10px;
