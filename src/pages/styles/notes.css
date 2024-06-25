@@ -1,0 +1,144 @@
+.general-container {
+	height: 95%;
+}
+
+.notes-background {
+	background-color: #ffffff;
+	margin: 0;
+	height: 100%;
+	width: 70%;
+	margin-left: 2%;
+	margin-right: 28%;
+}
+
+.notes-title {
+	font-size: 2.25rem;
+	color: #1e3a8a;
+	font-weight: bold;
+	margin-left: 35%;
+	margin-right: 35%;
+	margin-top: 1%;
+	margin-bottom: 0%;
+	width: 30%;
+	text-align: center;
+}
+
+.notes-title-line {
+	background-color: #1e3a8a;
+	border-radius: 25px;
+	border-color: #1e3a8a;
+	height: 0.02rem;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 0%;
+	margin-bottom: 0%;
+}
+
+.notes-container {
+	width: 95%;
+	margin-left: 1%;
+	margin-right: 1%;
+	height: 70%;
+	border: 50px solid #c2d6ff;
+	background-color: #c2d6ff;
+	border-radius: 50px;
+}
+
+.notes-container-inside {
+	background-color: #ffffff;
+	border-radius: 30px;
+	width: 94%;
+	height: 92%;
+	margin: 0%;
+	padding-left: 3%;
+	padding-right: 3%;
+	padding-top: 2%;
+	padding-bottom: 3%;
+}
+
+.notes-filter-bar {
+	font-size: 25px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.notes-table-sections {
+	display: flex;
+	flex-direction: row;
+	gap: 0rem;
+	margin-top: 0px;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	margin-bottom: 0px;
+}
+
+.notes-table-sections-title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #000000;
+	margin-top: 0px;
+	display: flex;
+	flex-direction: row;
+	gap: 1.5rem;
+}
+
+.table-section-note {
+	width: 30%;
+}
+
+.table-section-specialist {
+	width: 30%;
+}
+
+.table-section-patient {
+	width: 20%;
+}
+
+.table-section-session {
+	width: 20%;
+}
+
+.notes-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.table-section-note-filter {
+	margin: 0px;
+	padding: 0px;
+	background-color: #1e3a8a;
+	border-radius: 5px;
+	height: 2.5rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dropdown_arrow {
+	height: 2rem;
+	width: 2rem;
+	margin-left: 0rem;
+	margin-top: 1.4rem;
+}
+
+.filter-by-button {
+	background-color: transparent;
+	border: none;
+	width: fit-content;
+	height: fit-content;
+	margin: 0;
+	padding: 0;
+}
+
+.filter-by-button:hover {
+	background-color: transparent;
+}

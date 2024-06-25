@@ -1,157 +1,157 @@
 /* LoginPage.css */
 .login-page {
-  display: flex;
-  height: 75vh;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
-  margin-right: 15vh;
-  margin-left: 15vh;
-  position: relative;
+	display: flex;
+	height: 75vh;
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+	margin-right: 15vh;
+	margin-left: 15vh;
+	position: relative;
 }
 
 .forgot-password-position {
-  position: absolute;
+	position: absolute;
 }
 
 .main-login-form {
-  position: absolute;
-  top: 0;
-  width: 70%;
-  margin-left: 10%;
+	position: absolute;
+	top: 0;
+	width: 70%;
+	margin-left: 10%;
 }
 
 .login-form {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: #c2d6ff;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  position: relative;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	background-color: #c2d6ff;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	position: relative;
 }
 
 .login-form h1 {
-  width: 50%;
-  margin-bottom: 35px;
-  padding-bottom: 10px;
-  color: #003366;
-  border-bottom: 2px #003366 solid;
-  font-size: 3rem;
+	width: 50%;
+	margin-bottom: 35px;
+	padding-bottom: 10px;
+	color: #003366;
+	border-bottom: 2px #003366 solid;
+	font-size: 3rem;
 }
 
 .form-group {
-  margin-bottom: 15px;
-  width: 100%;
+	margin-bottom: 15px;
+	width: 100%;
 }
 
 .form-group input {
-  width: 95%;
-  height: 4vh;
-  padding: 10px;
-  background-color: #c2d6ff;
-  color: #000000;
-  border: 2px solid #96a4f0;
-  border-radius: 20px;
+	width: 95%;
+	height: 4vh;
+	padding: 10px;
+	background-color: #c2d6ff;
+	color: #000000;
+	border: 2px solid #96a4f0;
+	border-radius: 20px;
 }
 
 .form-group input:focus {
-  border-color: #003366;
-  transition:
-    ease-in-out,
-    border-color 0.25s ease-in-out;
+	border-color: #003366;
+	transition:
+		ease-in-out,
+		border-color 0.25s ease-in-out;
 
-  outline: none;
+	outline: none;
 }
 
 #personnel-number {
-  background: url(/public/Icons/UserCard.svg) no-repeat 15px;
-  padding-left: 55px;
-  background-size: 34px;
+	background: url(/public/Icons/UserCard.svg) no-repeat 15px;
+	padding-left: 55px;
+	background-size: 34px;
 }
 
 #login-email {
-  background: url(/public/Icons/User.svg) no-repeat 15px;
-  padding-left: 55px;
-  background-size: 35px;
+	background: url(/public/Icons/User.svg) no-repeat 15px;
+	padding-left: 55px;
+	background-size: 35px;
 }
 
 #password {
-  background: url(/public/Icons/Key.svg) no-repeat 18px;
-  padding-left: 55px;
-  background-size: 30px;
+	background: url(/public/Icons/Key.svg) no-repeat 18px;
+	padding-left: 55px;
+	background-size: 30px;
 }
 
 .form-group a {
-  color: #003366;
-  text-decoration: none;
-  font-size: 14px;
+	color: #003366;
+	text-decoration: none;
+	font-size: 14px;
 }
 
 .action-group {
-  display: flex;
-  flex: 1;
-  width: 104%;
-  justify-content: space-between;
+	display: flex;
+	flex: 1;
+	width: 104%;
+	justify-content: space-between;
 }
 
 button {
-  width: 30%;
-  height: 6vh;
-  padding: 10px;
-  background-color: #1b21d4;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: large;
-  cursor: pointer;
+	width: 30%;
+	height: 6vh;
+	padding: 10px;
+	background-color: #1b21d4;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	font-size: large;
+	cursor: pointer;
 }
 
 .error-label {
-  display: block;
-  color: red;
+	display: block;
+	color: red;
 }
 
 button:hover {
-  background-color: #161bac;
+	background-color: #161bac;
 }
 
 .footer {
-  margin-left: 2%;
-  margin-bottom: 2%;
-  height: 20vh;
-  width: 90%;
-  color: #003366;
-  position: absolute;
-  bottom: 0;
+	margin-left: 2%;
+	margin-bottom: 2%;
+	height: 20vh;
+	width: 90%;
+	color: #003366;
+	position: absolute;
+	bottom: 0;
 }
 
 .footer .logos {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  border-top: 1px black solid;
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	border-top: 1px black solid;
 }
 
 .footer .logos img {
-  margin: 0 50px;
-  max-width: 25%;
+	margin: 0 50px;
+	max-width: 25%;
 }
 
 .image-container {
-  flex: 1;
-  background-color: #c2d6ff;
-  display: flex;
-  justify-content: end;
-  margin: 0;
-  padding: 0;
-  align-items: end;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
+	flex: 1;
+	background-color: #c2d6ff;
+	display: flex;
+	justify-content: end;
+	margin: 0;
+	padding: 0;
+	align-items: end;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
 }
 
 .image-container img {
-  max-width: 100%;
-  max-height: 100%;
-  height: 100vh;
+	max-width: 100%;
+	max-height: 100%;
+	height: 100vh;
 }
