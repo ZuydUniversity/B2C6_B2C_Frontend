@@ -71,6 +71,7 @@
   color: black;
   border-radius: 10px;
   transition: background-color 0.3s ease;
+  resize: none; 
 }
 
 .description-textarea:hover {
