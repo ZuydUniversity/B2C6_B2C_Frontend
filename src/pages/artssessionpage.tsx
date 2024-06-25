@@ -1,6 +1,19 @@
 import * as React from "react";
 import "./styles/artssession.css";
-// import { FaPlus } from "react-icons/fa";
+
+interface PatientSelectProps {
+	onSelect: () => void;
+}
+
+const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
+	return (
+		<section className="flex-container">
+			<button onClick={onSelect} className="select-patient-button flex-container" aria-label="Select patient">
+				<span className="selecting patient">Selecteer patiënt</span>
+			</button>
+		</section>
+	);
+};
 
 const AddPatientSelection: React.FC = () => {
 	const handleSelect = () => {};

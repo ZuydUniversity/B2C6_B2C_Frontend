@@ -50,7 +50,7 @@ const MiniKalender: React.FC = () => {
 					{hoveredDay === day && (
 						<div className="popup">
 							<div>Day {day}</div>
-							<div>Dummy Text</div>
+							<div>Additional Info</div>
 						</div>
 					)}
 				</div>
