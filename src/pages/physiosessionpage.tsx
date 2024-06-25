@@ -24,6 +24,7 @@ const patients = [
 interface PatientSelectProps {
 	onSelect: () => void;
 }
+
 const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 	const [showPatients, setShowPatients] = React.useState(false);
 
@@ -41,7 +42,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 	};
 
 	const addPatientToSession = () => {
-		window.location.href = "/activeartssession"; //BAD PRACTICE <3
+		window.location.href = "/activephysiosession"; //BAD PRACTICE <3
 	};
 
 	React.useEffect(() => {
@@ -55,7 +56,6 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 		<section className="flex-container">
 			<button onClick={handleOpenListClick} className="select-patient-button" aria-label="Select patient">
 				<span className="add-patient-to-session-icon selecting patient">Selecteer patiënt</span>
-
 			</button>
 			{showPatients && (
 				<ul className="patient-list">

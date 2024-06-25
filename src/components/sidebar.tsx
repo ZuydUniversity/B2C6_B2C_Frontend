@@ -26,7 +26,9 @@ const Sidebar: React.FC = () => {
 					<a href="/artsession" className="url">
 						<li className="add-doctor-session-icon">Sessie toevoegen arts</li>
 					</a>
-					<li className="add-physio-session-icon">Sessie toevoegen fysiotherapeut</li>
+					<a href="/physiosession" className="url">
+						<li className="add-physio-session-icon">Sessie toevoegen fysiotherapeut</li>
+					</a>
 				</ul>
 				<hr />
 			</nav>

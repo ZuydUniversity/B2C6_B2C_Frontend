@@ -4,6 +4,7 @@
 	justify-content: center;
 	align-items: center;
 	margin: 0 2%;
+	margin-bottom: -200%;
 }
 
 .dashboardHeader {
@@ -139,10 +140,6 @@
 .patientCardAppointments {
 	margin: 0;
 	font-weight: bold;
-}
-
-.patientCardDiagnosisText {
-	font-size: 0.875rem;
 }
 
 .patientCardOptionsButton {
