@@ -55,7 +55,6 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 		<section className="flex-container">
 			<button onClick={handleOpenListClick} className="select-patient-button" aria-label="Select patient">
 				<span className="add-patient-to-session-icon selecting patient">Selecteer patiënt</span>
-
 			</button>
 			{showPatients && (
 				<ul className="patient-list">
