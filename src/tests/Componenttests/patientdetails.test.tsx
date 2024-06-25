@@ -3,7 +3,7 @@ import { Patient } from "../../abstracts/ImportsModels";
 import PatientDetails from "../../components/patientdetails";
 
 // Set const values for the tests
-const patient = new Patient("Johnny", "English", "Johnny.English@gmail.com", 37, "0612345678", true, "Timmmy", "English", "Timmy.English@gmail.com", "0689378469");
+const patient = new Patient("Johnny", "English", "Johnny.English@gmail.com", 37, "0612345678", "Timmy.English@gmail.com", "0689378469");
 
 describe("PatientDetails component", () => {
 	it("should render the PatientDetails component with all properties", () => {
@@ -23,9 +23,6 @@ describe("PatientDetails component", () => {
 
 		const sex = document.getElementById("patient-sex") as HTMLElement;
 		expect(sex.textContent).toBe(patient.Sex ? "Male" : "Female");
-
-		const contactName = document.getElementById("contactperson-name") as HTMLElement;
-		expect(contactName.textContent).toBe(patient.FirstnameContact + " " + patient.LastnameContact);
 
 		const contactEmail = document.getElementById("contactperson-email") as HTMLElement;
 		expect(contactEmail.textContent).toBe(patient.EmailContact);
