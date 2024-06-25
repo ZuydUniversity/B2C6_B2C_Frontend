@@ -14,7 +14,7 @@
 	transition: background-color 0.3s;
 }
 
-.calendar-hover {
+.calendar:hover {
 	background-color: #151aab;
 }
 
