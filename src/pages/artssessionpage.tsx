@@ -89,7 +89,9 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 };
 
 const AddPatientSelection: React.FC = () => {
-	const handleSelect = () => {return;};
+	const handleSelect = () => {
+		return;
+	};
 
 	return (
 		<main className="main-patient-container">

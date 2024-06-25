@@ -10,5 +10,5 @@ test("Check if page renders", () => {
 	expect(patientRow).toBeInTheDocument();
 	const patientOnClick = patientRow.onclick as Function;
 	expect(patientOnClick).toBeDefined();
-  expect(patientOnClick).not.toThrowError();
+	expect(patientOnClick).not.toThrowError();
 });

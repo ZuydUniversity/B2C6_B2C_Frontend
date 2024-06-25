@@ -12,6 +12,6 @@ describe("ArtsSession page tests", () => {
 
 		const selectPatientButton = document.querySelector(".select-patient-button") as HTMLButtonElement;
 		expect(selectPatientButton).toBeInTheDocument();
-    expect(selectPatientButton.onclick).toBeDefined();
+		expect(selectPatientButton.onclick).toBeDefined();
 	});
 });
