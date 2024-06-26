@@ -124,8 +124,8 @@ type PatientInfoProps = {
                     </div>
                     <div className="radiology-item-input">Type iets ...</div>
                   </div>
-                  <button onClick={handleRadiologyButtonClick}>
-                    <img src= "" className="radiology-item-button" alt="Radiology Button" />
+                  <button onClick={handleRadiologyButtonClick} className="radiology-item-button">
+                    <img src= {search_icon} className="radiology-item-button-img" alt="Radiology Button" />
                   </button>
                 </div>
                 <h3 className="blood-chemistry">Bloedchemie</h3>
