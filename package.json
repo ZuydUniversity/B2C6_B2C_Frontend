@@ -62,7 +62,7 @@
       }
     },
     "coveragePathIgnorePatterns": [
-      "src/models/*.ts"
+      "src/*.d.ts"
     ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
