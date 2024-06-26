@@ -14,4 +14,6 @@ describe("ArtsSession page tests", () => {
 		expect(selectPatientButton).toBeInTheDocument();
 		expect(selectPatientButton.onclick).toBeDefined();
 	});
+
+
 });

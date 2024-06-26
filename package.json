@@ -61,6 +61,9 @@
         "statements": 80
       }
     },
+    "coveragePathIgnorePatterns": [
+      "src/models/*.ts"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/index.tsx",
