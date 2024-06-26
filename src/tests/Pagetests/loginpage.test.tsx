@@ -33,12 +33,13 @@ describe("Login Page", () => {
 
 		render(<LoginPage setHideNavbar={setHideNavbar} />);
 
+		fireEvent.change(screen.getByPlaceholderText("Personeels nummer"), { target: { value: "150891390385389" } });
 		fireEvent.change(screen.getByPlaceholderText("E-mail"), { target: { value: "cheese@swiss.com" } });
 		fireEvent.change(screen.getByPlaceholderText("Wachtwoord"), { target: { value: "password" } });
 		fireEvent.click(screen.getByText("Log in"));
 
 		await waitFor(() => {
-			expect(screen.getByText("Incorrect email or password")).toBeInTheDocument();
+			expect(screen.getByText("Incorrect personel number, email or password")).toBeInTheDocument();
 		});
 	});
 
