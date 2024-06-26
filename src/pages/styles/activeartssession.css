@@ -12,6 +12,17 @@
     .page-title {
       max-width: 100%;
     }
+    .page-title-divider {
+      border-color: #000369;
+      border-style: solid;
+      border-width: 2px;
+      background-color: #000369;
+      margin-top: 5px;
+      width: 263px;
+      max-width: 100%;
+      height: 2px;
+    
+    }
   }
   .patient-session-container {
     display: flex;
@@ -52,6 +63,9 @@
     .patient-session-card {
       flex-wrap: wrap;
     }
+  }
+  .patient-session-info-container {
+  margin-right: 220px;
   }
   .appointment-info {
     border-radius: 18px 0px;
@@ -296,7 +310,7 @@
     font-weight: 400;
     white-space: nowrap;
     justify-content: space-between;
-    margin-left: 75px;
+    margin-left: 110px;
   }
   @media (max-width: 991px) {
     .radiology-labels {
@@ -321,7 +335,7 @@
   }
   .assessment-label {
     color: #000369;
-    margin-top: 94px;
+    margin-top: 154px;
     font: 400 20px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
   }
   @media (max-width: 991px) {
@@ -334,7 +348,7 @@
     display: flex;
     gap: 8px;
     color: #000369;
-    margin: 22px 0 0 39px;
+    margin: 22px 0 0 63px;
   }
   @media (max-width: 991px) {
     .radiology-item {
@@ -346,9 +360,9 @@
     background-color: #d8eaff;
     display: flex;
     gap: 20px;
-    flex-grow: 1;
     flex-basis: auto;
     padding: 18px 33px;
+    width: 650px;
   }
   @media (max-width: 991px) {
     .radiology-item-content {
@@ -398,12 +412,18 @@
       padding-right: 20px;
     }
   }
-  .radiology-item-icon {
-    aspect-ratio: 1.23;
-    object-fit: auto;
-    object-position: center;
-    width: 102px;
-    max-width: 100%;
+  .radiology-item-button {
+    min-height: 106px;
+    border: none;
+    margin-left: 5px;
+    min-width: 5rem;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: bold;
+    color: #1e3a8a;
+    background-color: #D8EAFF;
+    border-radius: 0 1.25rem 0 1.25rem;
   }
   .blood-chemistry {
     color: #000369;
@@ -487,7 +507,8 @@
     height: 40px;
   }
   .add-cancel-button-container{
-  margin-top: 10px;
+  margin-top: 70px;
+  margin-left: 610px;
   }
   .cancel-session-button {
     background-color: #fff;
@@ -500,6 +521,7 @@
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
+    margin-right: 14px;
   }
   
   .add-session-button {
@@ -508,6 +530,7 @@
     cursor: pointer;
     width: 150px;
     height: 60px;
+    border-radius: 10px;
   }
   
   .button-container button:hover {

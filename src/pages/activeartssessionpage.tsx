@@ -120,7 +120,9 @@ type PatientInfoProps = {
                     </div>
                     <div className="radiology-item-input">Type iets ...</div>
                   </div>
-                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff90ff6c-bac0-4b39-80b1-998e24fc5574?apiKey=625a4e4417524f8294fdf8a1fc2d2593&" className="radiology-item-icon" alt="Radiology Icon" />
+                  <button className="radiology-item-button">
+                    <img src="images/_x35__33_.png" className="radiology-item-button" alt="Radiology Button" />
+                  </button>
                 </div>
                 <h3 className="blood-chemistry">Bloedchemie</h3>
                 <div className="section-divider" />
