@@ -37,7 +37,7 @@ describe("Login Page", () => {
 		fireEvent.click(screen.getByText("Log in"));
 
 		await waitFor(() => {
-			expect(screen.getByText("Incorrect personel number, email or password")).toBeInTheDocument();
+			expect(screen.getByText("Incorrect personeels nummer, email or password")).toBeInTheDocument();
 		});
 	});
 

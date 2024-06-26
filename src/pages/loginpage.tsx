@@ -51,7 +51,7 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
         localStorage.setItem("accessToken", accessToken);
         window.location.href = "/dashboard";
       } else {
-        setError("Incorrect personel number, email or password");
+        setError("Incorrect personeels nummer, email or password");
       }
     } catch (error) {
       setError("No connection");
