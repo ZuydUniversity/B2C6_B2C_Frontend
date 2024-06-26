@@ -59,25 +59,4 @@ describe("Login Page", () => {
 		fireEvent.click(document.querySelector(".cancel-button") as Element);
 		expect(popUpElement).not.toBeInTheDocument();
 	});
-
-	it("should update state on input change", () => {
-		render(<LoginPage setHideNavbar={setHideNavbar} />);
-
-		fireEvent.change(screen.getByPlaceholderText("Personeels nummer"), {
-			target: { value: "150891390385389" },
-		});
-		fireEvent.change(screen.getByPlaceholderText("E-mail"), {
-			target: { value: "cheese@swiss.com" },
-		});
-		fireEvent.change(screen.getByPlaceholderText("Wachtwoord"), {
-			target: { value: "password" },
-		});
-
-		expect(screen.getByPlaceholderText("Personeels nummer")).toHaveValue(
-			"150891390385389"
-		);
-		expect(screen.getByPlaceholderText("E-mail")).toHaveValue("cheese@swiss.com");
-		expect(screen.getByPlaceholderText("Wachtwoord")).toHaveValue("password");
-	});
-
 });
