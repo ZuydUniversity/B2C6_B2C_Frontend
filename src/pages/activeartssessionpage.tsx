@@ -1,4 +1,5 @@
 import * as React from "react";
+import search_icon from "./images/search_icon.png"; 
 import "./styles/activeartssession.css";
 
 type PatientInfoProps = {
@@ -64,6 +65,9 @@ type PatientInfoProps = {
       { name: 'CK', range: '0 -145 U/L', value: '100' },
       { name: 'CK', range: '0 -145 U/L', value: '100' },
     ];
+    const handleRadiologyButtonClick = () => {
+      alert("Radiology image clicked!");
+    };
   
     return (
       <>
@@ -120,8 +124,8 @@ type PatientInfoProps = {
                     </div>
                     <div className="radiology-item-input">Type iets ...</div>
                   </div>
-                  <button className="radiology-item-button">
-                    <img src="images/_x35__33_.png" className="radiology-item-button" alt="Radiology Button" />
+                  <button onClick={handleRadiologyButtonClick}>
+                    <img src= "" className="radiology-item-button" alt="Radiology Button" />
                   </button>
                 </div>
                 <h3 className="blood-chemistry">Bloedchemie</h3>
