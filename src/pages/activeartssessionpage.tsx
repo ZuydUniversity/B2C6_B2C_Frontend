@@ -72,6 +72,7 @@ type PatientInfoProps = {
   
     return (
       <>
+		<SessionScanner />	
         <main className="main-container">
           <h1 className="page-title">Sessie toevoegen</h1>
           <section className="patient-session-info-container">

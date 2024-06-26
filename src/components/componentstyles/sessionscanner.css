@@ -1,49 +1,63 @@
 .scanner-container {
-    position: fixed; /* Stick to a fixed position */
-    top: 0; /* Align to the top of the page */
-    right: 0; /* Align to the right of the page */
-    max-width: 314px;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 1000; /* Ensure it stays on top of other elements */
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  width: 280px;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1000;
 }
 
-  .scanner-card {
-    border-radius: 20px;
-    background-color: #1b21d4;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    padding: 25px 32px;
-  }
-  .scanner-title {
-    color: #fff;
-    font: 600 25px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
-  }
-  .scanner-preview {
-    border-radius: 20px;
-    background-color: #fff;
-    margin-top: 25px;
-    height: 375px;
-  }
-  .aspect-title {
-    color: #fff;
-    text-align: center;
-    align-self: center;
-    margin-top: 28px;
-    font: 600 25px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
-  }
-  .icon-container {
-    align-self: center;
-    display: flex;
-    margin-top: 47px;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  .icon {
-    aspect-ratio: 1;
-    object-fit: auto;
-    object-position: center;
-    width: 66px;
-    border: 2px solid #fff;
-  }
+.scanner-card {
+  border-radius: 20px;
+  background-color: #1b21d4;
+  display: flex;
+  flex-direction: column;
+  max-height: 464px;
+  padding: 25px 32px;
+}
+
+.scanner-title {
+  color: #fff;
+  font: 600 25px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.scanner-preview {
+  border-radius: 20px;
+  background-color: #fff;
+  margin-top: 25px;
+  height: 375px;
+}
+
+.aspect-title {
+  color: #fff;
+  text-align: center;
+  align-self: center;
+  margin-top: 28px;
+  font: 600 25px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.left-icon-scanner,
+.right-icon-scanner {
+  width: 66px;
+  height: 66px;
+  background-color: #1092F9;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 18.5px; 
+}
+
+.right-icon-scanner img {
+  width: 24px; /* Adjust based on your icon size */
+  height: 24px; /* Adjust based on your icon size */
+  filter: invert(1); /* Makes the icon white if it's originally black */
+}
