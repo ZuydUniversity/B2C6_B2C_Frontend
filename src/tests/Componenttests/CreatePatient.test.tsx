@@ -48,27 +48,27 @@ describe('CreatePatient Component', () => {
     
       test('allows firstnameContact to be entered', () => {
         render(<CreatePatient />);
-        const firstnameContactInput = screen.getByLabelText(/Voornaam Contact:/i) as HTMLInputElement;
+        const firstnameContactInput = screen.getByLabelText(/Voornaam Contactpersoon:/i) as HTMLInputElement;
         fireEvent.change(firstnameContactInput, { target: { value: 'John' } });
         expect(firstnameContactInput.value).toBe('John');
       });
       // deze werkt nog niet
       test('allows lastnameContact to be entered', () => {
         render(<CreatePatient />);
-        const lastnameContactInput = screen.getByLabelText(/Achternaam Contact:/i) as HTMLInputElement;
+        const lastnameContactInput = screen.getByLabelText(/Achternaam Contactpersoon:/i) as HTMLInputElement;
         fireEvent.change(lastnameContactInput, { target: { value: 'Smith' } });
         expect(lastnameContactInput.value).toBe('Smith');
       });
     // deze werkt nog niet
       test('allows emailContact to be entered', () => {
         render(<CreatePatient />);
-        const emailContactInput = screen.getByLabelText(/Email Contact:/i) as HTMLInputElement;
+        const emailContactInput = screen.getByLabelText(/Email Contactpersoon:/i) as HTMLInputElement;
         fireEvent.change(emailContactInput, { target: { value: '' } });
       });
     // deze werkt nog niet
       test('allows phonenumberContact to be entered', () => {
         render(<CreatePatient />);
-        const phonenumberContactInput = screen.getByLabelText(/Telefoonnummer Contact:/i) as HTMLInputElement;
+        const phonenumberContactInput = screen.getByLabelText(/Telefoonnummer Contactpersoon:/i) as HTMLInputElement;
         fireEvent.change(phonenumberContactInput, { target: { value: '0987654321' } });
         expect(phonenumberContactInput.value).toBe('0987654321');
       });
