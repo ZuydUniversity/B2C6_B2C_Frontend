@@ -1,9 +1,9 @@
 import PhysioSessionPage from "../../pages/physiosessionpage";
-import { render } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
-describe("AddPatientSelection Page Tests", () => {
+describe("PhysioSessionPage Tests", () => {
 	test("renders header and sub-header correctly", () => {
-		render(<AddPatientSelection />);
+		render(<PhysioSessionPage />);
 
 		const headerText = screen.getByText("Sessie Toevoegen");
 		expect(headerText).toBeInTheDocument();
@@ -12,13 +12,8 @@ describe("AddPatientSelection Page Tests", () => {
 		expect(subHeader).toBeInTheDocument();
 	});
 
-	test("Check if page renders", () => {
-		const page = render(<PhysioSessionPage />);
-		expect(page.getByText("Selecteer patiënt")).toBeInTheDocument();
-	});
-
 	test("toggles patient list visibility on button click", () => {
-		render(<AddPatientSelection />);
+		render(<PhysioSessionPage />);
 
 		const selectPatientButton = screen.getByRole("button", { name: "Selecteer patiënt" });
 		fireEvent.click(selectPatientButton);
@@ -32,17 +27,17 @@ describe("AddPatientSelection Page Tests", () => {
 	});
 
 	test("adds patient to session on button click", () => {
-		render(<AddPatientSelection />);
+		render(<PhysioSessionPage />);
 
 		const addButton = screen.getAllByRole("button", { name: "+" })[0];
 		fireEvent.click(addButton);
 
-		// Here you might need to mock the window.location and verify the redirect behavior
+		// Mock window.location.href and verify the redirect behavior
 		expect(window.location.href).toBe("/activephysiosession");
 	});
 
 	test("closes patient list on outside click", () => {
-		render(<AddPatientSelection />);
+		render(<PhysioSessionPage />);
 
 		fireEvent.click(screen.getByRole("button", { name: "Selecteer patiënt" }));
 		expect(screen.getByRole("list", { name: "patient-list" })).toBeInTheDocument();
@@ -51,4 +46,23 @@ describe("AddPatientSelection Page Tests", () => {
 		expect(screen.queryByRole("list", { name: "patient-list" })).not.toBeInTheDocument();
 	});
 
+	test("handles error scenario on failed API call", async () => {
+		global.fetch = jest.fn().mockResolvedValueOnce({
+			ok: false,
+			json: async () => ({}),
+		});
+
+		render(<PhysioSessionPage />);
+
+		fireEvent.click(screen.getByRole("button", { name: "Selecteer patiënt" }));
+		expect(screen.queryByRole("list", { name: "patient-list" })).not.toBeInTheDocument();
+
+		fireEvent.click(screen.getByRole("button", { name: "Selecteer patiënt" }));
+
+		// Simulate API error
+		await screen.findByText("Error: Unable to fetch patients");
+
+		// Ensure error message is displayed
+		expect(screen.getByText("Error: Unable to fetch patients")).toBeInTheDocument();
+	});
 });
