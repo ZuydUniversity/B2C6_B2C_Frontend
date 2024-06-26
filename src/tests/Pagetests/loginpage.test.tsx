@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import LoginPage from "../../pages/loginpage";
-import ForgotPasswordPopup from "../../pages/forgotpasswordpopup";
-import { doc } from "prettier";
 
 describe("Login Page", () => {
 	const setHideNavbar = jest.fn();
