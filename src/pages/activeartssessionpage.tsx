@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./styles/activeartssession.css";
+import SessionScanner from "../components/sessionscanner";
 
 type PatientInfoProps = {
 	name: string;
@@ -67,6 +68,7 @@ const ActiveArtsSession: React.FC = () => {
 
 	return (
 		<>
+		<SessionScanner />
 			<main className="main-container">
 				<h1 className="page-title">Sessie toevoegen</h1>
 				<section className="patient-session-info-container">
