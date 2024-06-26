@@ -3,7 +3,7 @@ import PatientList, { patients } from "../../components/patientlist";
 
 describe("PatientList component", () => {
 	it("should render the component", () => {
-		render(<PatientList onPatientClick={() => {}} />);
+		render(<PatientList onPatientClick={(id: number) => { }} />);
 
 		const patientList = document.getElementsByClassName("patient-row-wrapper") as HTMLCollectionOf<HTMLElement>;
 		expect(patientList.length).toBe(patients.length);
