@@ -153,7 +153,31 @@
     font-size: 18px;
     color: #000369;
   }
-  .patient-session-info-value {
+  .patient-session-info-name {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    margin-top: 9px;
+    color: #000369;
+  }
+  .patient-session-info-age {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    margin-top: 9px;
+    color: #000369;
+  }
+  .patient-session-info-diagnosis {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    margin-top: 9px;
+    color: #000369;
+  }
+  .patient-session-info-medication {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    margin-top: 9px;
+    color: #000369;
+  }
+  .patient-session-info-count {
     font-family: Montserrat, sans-serif;
     font-weight: 400;
     margin-top: 9px;

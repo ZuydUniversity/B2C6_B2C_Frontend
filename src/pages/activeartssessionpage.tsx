@@ -15,26 +15,24 @@ type PatientInfoProps = {
       <img className="patient-session-info-background" src="https://cdn.builder.io/api/v1/image/assets/TEMP/13d0d541a6beb1a30214553122df731e5fdeb6aa403f21a1f83098c86c22ee49?apiKey=625a4e4417524f8294fdf8a1fc2d2593&" alt="" />
       <div className="patient-session-name-container">
         <div className="patient-session-info-label">Naam</div>
-        <div className="patient-session-info-value">{name}</div>
+        <div className="patient-session-info-name">{name}</div>
       </div>
       <div className="patient-session-details-grid">
         <div className="patient-session-detail-item">
           <div className="patient-session-info-label">Leeftijd</div>
-          <div className="patient-session-info-value">{age}</div>
+          <div className="patient-session-info-age">{age}</div>
         </div>
         <div className="diagnosis-container">
           <div className="patient-session-info-label">Diagnose</div>
-          <div className="diagnosis-value">
-            <span style={{ fontSize: '' }}>{diagnosis}</span>
-          </div>
+          <div className="patient-session-info-diagnosis">{diagnosis}</div>
         </div>
         <div className="patient-session-detail-item">
           <div className="patient-session-info-label">Medicatie</div>
-          <div className="patient-session-info-value">{medication}</div>
+          <div className="patient-session-info-medication">{medication}</div>
         </div>
         <div className="appointments-count">
           <div className="patient-session-info-label">Afspraken</div>
-          <div className="appointments-count-value">{appointmentsCount}</div>
+          <div className="patient-session-info-count">{appointmentsCount}</div>
         </div>
       </div>
     </div>
