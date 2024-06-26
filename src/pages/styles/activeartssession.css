@@ -1,593 +1,542 @@
 .main-container {
-	display: flex;
-	flex-direction: column;
-	padding: 0 20px;
-}
-.page-title {
-	color: #000369;
-	align-self: start;
-	font:
-		700 40px Montserrat,
-		-apple-system,
-		Roboto,
-		Helvetica,
-		sans-serif;
-}
-@media (max-width: 991px) {
-	.page-title {
-		max-width: 100%;
-	}
-}
-.patient-session-container {
-	display: flex;
-	margin-top: 41px;
-	flex-direction: column;
-	align-items: start;
-	color: #000369;
-	padding: 0 55px 0 10px;
-}
-@media (max-width: 991px) {
-	.patient-session-info-container {
-		max-width: 100%;
-		padding-right: 20px;
-		margin-top: 40px;
-	}
-}
-.section-title {
-	font:
-		700 25px Montserrat,
-		-apple-system,
-		Roboto,
-		Helvetica,
-		sans-serif;
-	color: #000369;
-}
-.section-divider {
-	border-color: #000369;
-	border-style: solid;
-	border-width: 2px;
-	background-color: #000369;
-	margin-top: 5px;
-	width: 263px;
-	max-width: 100%;
-	height: 2px;
-}
-.patient-session-card {
-	align-self: center;
-	display: flex;
-	gap: 8px;
-	margin: 39px 0 0 3px;
-}
-@media (max-width: 991px) {
-	.patient-session-card {
-		flex-wrap: wrap;
-	}
-}
-.appointment-info {
-	border-radius: 18px 0px;
-	background-color: #d8eaff;
-	display: flex;
-	flex-direction: column;
-	font-size: 15px;
-	font-weight: 600;
-	white-space: nowrap;
-	padding: 52px 13px;
-	color: #000369;
-}
-@media (max-width: 991px) {
-	.appointment-info {
-		white-space: initial;
-	}
-}
-.appointment-label {
-	font-family: Montserrat, sans-serif;
-}
-.appointment-date {
-	font-family: Montserrat, sans-serif;
-	margin-top: 6px;
-}
-.patient-session-details {
-	background-color: #d8eaff;
-	display: flex;
-	gap: 10px;
-	padding: 5px 14px;
-}
-@media (max-width: 991px) {
-	.patient-session-details {
-		flex-wrap: wrap;
-	}
-}
-.patient-session-image {
-	aspect-ratio: 1;
-	object-fit: auto;
-	object-position: center;
-	width: 126px;
-	border: 2px solid #d8eaff;
-}
-.patient-session-info {
-	display: flex;
-	fill: #fff;
-	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.16));
-	overflow: hidden;
-	position: relative;
-	min-height: 59px;
-	width: 595px;
-	gap: 20px;
-	flex-grow: 1;
-	flex-basis: auto;
-	margin: auto 0;
-	padding: 8px 22px;
-}
-@media (max-width: 991px) {
-	.patient-session-info {
-		max-width: 100%;
-		flex-wrap: wrap;
-		padding: 0 20px;
-	}
-}
-.patient-session-info-background {
-	position: absolute;
-	inset: 0;
-	height: 100%;
-	object-fit: cover;
-	object-position: center;
-}
-.patient-session-name-container {
-	position: relative;
-	align-self: start;
-	display: flex;
-	flex-direction: column;
-	font-size: 18px;
-}
-.patient-session-info-label {
-	font-family: Montserrat, sans-serif;
-	font-weight: 600;
-	font-size: 18px;
-	color: #000369;
-}
-.patient-session-info-value {
-	font-family: Montserrat, sans-serif;
-	font-weight: 400;
-	margin-top: 9px;
-	color: #000369;
-}
-.patient-session-details-grid {
-	position: relative;
-	display: flex;
-	align-items: start;
-	gap: 20px;
-	justify-content: space-between;
-	flex-grow: 1;
-	flex-basis: auto;
-}
-@media (max-width: 991px) {
-	.patient-session-details-grid {
-		flex-wrap: wrap;
-	}
-}
-.patient-session-detail-item {
-	display: flex;
-	flex-direction: column;
-	font-size: 18px;
-}
-.patient-session-card-options-button {
-	min-height: 106px;
-	border: none;
-	margin-left: 5px;
-	min-width: 5rem;
-	justify-content: center;
-	text-align: center;
-	font-size: 1.5rem;
-	font-style: bold;
-	color: #1e3a8a;
-	background-color: #d8eaff;
-	border-radius: 0 1.25rem 0 1.25rem;
-}
-.diagnosis-container {
-	align-self: stretch;
-	display: flex;
-	flex-direction: column;
-}
-.diagnosis-value {
-	margin-top: 11px;
-	font:
-		400 18px Montserrat,
-		-apple-system,
-		Roboto,
-		Helvetica,
-		sans-serif;
-}
-.appointments-count {
-	display: flex;
-	flex-direction: column;
-	font-size: 18px;
-	white-space: nowrap;
-}
-@media (max-width: 991px) {
-	.appointments-count {
-		white-space: initial;
-	}
-}
-.appointments-count-value {
-	font-family: Montserrat, sans-serif;
-	font-weight: 400;
-	align-self: center;
-	margin-top: 6px;
-	color: #000369;
-}
-.edit-icon {
-	aspect-ratio: 0.69;
-	object-position: center;
-	width: 66px;
-}
-.results-container {
-	display: flex;
-	margin-top: 56px;
-	width: 100%;
-	padding-left: 10px;
-	flex-direction: column;
-	align-items: start;
-}
-@media (max-width: 991px) {
-	.results-container {
-		max-width: 100%;
-		margin-top: 40px;
-	}
-}
-.results-content {
-	border-radius: 57px;
-	background-color: #d8eaff;
-	align-self: stretch;
-	display: flex;
-	margin-top: 37px;
-	flex-direction: column;
-	justify-content: center;
-	padding: 50px 40px;
-}
-@media (max-width: 991px) {
-	.results-content {
-		max-width: 100%;
-		padding: 0 20px;
-	}
-}
-.results-inner {
-	border-radius: 57px;
-	background-color: #fff;
-	display: flex;
-	flex-direction: column;
-	padding: 42px 33px;
-}
-@media (max-width: 991px) {
-	.results-inner {
-		max-width: 100%;
-		padding: 0 20px;
-	}
-}
-.radiology-results {
-	width: 548px;
-	max-width: 100%;
-}
-.radiology-header {
-	gap: 20px;
-	display: flex;
-}
-@media (max-width: 991px) {
-	.radiology-header {
-		flex-direction: column;
-		align-items: stretch;
-		gap: 0px;
-	}
-}
-.radiology-column {
-	display: flex;
-	flex-direction: column;
-	line-height: normal;
-	width: 76%;
-	margin-left: 0px;
-}
-@media (max-width: 991px) {
-	.radiology-column {
-		width: 100%;
-	}
-}
-.radiology-content {
-	display: flex;
-	flex-grow: 1;
-	flex-direction: column;
-	color: #000369;
-}
-@media (max-width: 991px) {
-	.radiology-content {
-		margin-top: 40px;
-	}
-}
-.radiology-labels {
-	align-self: end;
-	display: flex;
-	margin-top: 64px;
-	width: 182px;
-	max-width: 100%;
-	gap: 20px;
-	font-size: 20px;
-	font-weight: 400;
-	white-space: nowrap;
-	justify-content: space-between;
-}
-@media (max-width: 991px) {
-	.radiology-labels {
-		margin-top: 40px;
-		white-space: initial;
-	}
-}
-.radiology-label {
-	font-family: Montserrat, sans-serif;
-}
-.assessment-column {
-	display: flex;
-	flex-direction: column;
-	line-height: normal;
-	width: 24%;
-	margin-left: 20px;
-}
-@media (max-width: 991px) {
-	.assessment-column {
-		width: 100%;
-	}
-}
-.assessment-label {
-	color: #000369;
-	margin-top: 94px;
-	font:
-		400 20px Montserrat,
-		-apple-system,
-		Roboto,
-		Helvetica,
-		sans-serif;
-}
-@media (max-width: 991px) {
-	.assessment-label {
-		margin-top: 40px;
-	}
-}
-.radiology-item {
-	align-self: center;
-	display: flex;
-	gap: 8px;
-	color: #000369;
-	margin: 22px 0 0 39px;
-}
-@media (max-width: 991px) {
-	.radiology-item {
-		flex-wrap: wrap;
-	}
-}
-.radiology-item-content {
-	border-radius: 18px 0px;
-	background-color: #d8eaff;
-	display: flex;
-	gap: 20px;
-	flex-grow: 1;
-	flex-basis: auto;
-	padding: 18px 33px;
-}
-@media (max-width: 991px) {
-	.radiology-item-content {
-		max-width: 100%;
-		flex-wrap: wrap;
-		padding: 0 20px;
-	}
-}
-.radiology-item-details {
-	border-radius: 18px;
-	box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.16);
-	background-color: #fff;
-	display: flex;
-	gap: 20px;
-	font-size: 16px;
-	white-space: nowrap;
-	padding: 18px;
-}
-@media (max-width: 991px) {
-	.radiology-item-details {
-		white-space: initial;
-	}
-}
-.radiology-item-side {
-	font-family: Montserrat, sans-serif;
-	font-weight: 400;
-}
-.radiology-item-type {
-	font-family: Montserrat, sans-serif;
-	font-weight: 600;
-	flex-grow: 1;
-	flex-basis: auto;
-}
-.radiology-item-input {
-	border-radius: 18px;
-	box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.16);
-	background-color: #fff;
-	align-items: start;
-	justify-content: center;
-	flex-grow: 1;
-	width: fit-content;
-	padding: 17px 16px;
-	font:
-		400 14px Montserrat,
-		-apple-system,
-		Roboto,
-		Helvetica,
-		sans-serif;
-}
-@media (max-width: 991px) {
-	.radiology-item-input {
-		padding-right: 20px;
-	}
-}
-.radiology-item-icon {
-	aspect-ratio: 1.23;
-	object-fit: auto;
-	object-position: center;
-	width: 102px;
-	max-width: 100%;
-}
-.blood-chemistry {
-	color: #000369;
-	align-self: start;
-	margin-top: 99px;
-	font:
-		700 25px Montserrat,
-		-apple-system,
-		Roboto,
-		Helvetica,
-		sans-serif;
-}
-@media (max-width: 991px) {
-	.blood-chemistry {
-		margin-top: 40px;
-	}
-}
-.blood-chemistry-row {
-	align-self: center;
-	display: flex;
-	gap: 20px;
-	font-size: 20px;
-	font-weight: 600;
-	margin: 51px 0 0 33px;
-}
-@media (max-width: 991px) {
-	.blood-chemistry-row {
-		flex-wrap: wrap;
-		margin-top: 40px;
-	}
-}
-.blood-chemistry-item {
-	display: flex;
-	gap: 7px;
-	flex: 1;
-	flex-grow: 1;
-	flex-basis: auto;
-}
-.blood-chemistry-label {
-	border-radius: 11px 0px;
-	border: 2px solid #fc6039;
-	display: flex;
-	gap: 20px;
-	color: #000369;
-	padding: 13px 16px;
-}
-.blood-chemistry-name {
-	font-family: Montserrat, sans-serif;
-	margin: auto 0;
-}
-.blood-chemistry-range {
-	font-family: Montserrat, sans-serif;
-	flex-grow: 1;
-	flex-basis: auto;
-}
-.blood-chemistry-value {
-	font-family: Montserrat, sans-serif;
-	border-radius: 0px 16px;
-	background-color: #fc6039;
-	color: #fff;
-	white-space: nowrap;
-	text-align: center;
-	justify-content: center;
-	padding: 16px 58px;
-}
-@media (max-width: 991px) {
-	.blood-chemistry-value {
-		white-space: initial;
-		padding: 0 20px;
-	}
-}
-.action-buttons {
-	align-self: end;
-	display: flex;
-	margin-top: 72px;
-	gap: 14px;
-	font-size: 16px;
-	font-weight: 600;
-	text-align: center;
-}
-@media (max-width: 991px) {
-	.action-buttons {
-		margin: 40px 10px 0 0;
-	}
-}
-.cancel-button {
-	display: flex;
-	align-items: center;
-	color: #000369;
-	white-space: nowrap;
-	justify-content: center;
-	flex: 1;
-}
-@media (max-width: 991px) {
-	.cancel-button {
-		white-space: initial;
-	}
-}
-.cancel-button-content {
-	display: flex;
-	flex-direction: column;
-	font-family: Montserrat, sans-serif;
-	position: relative;
-	stroke-width: 2px;
-	stroke: #1b21d4;
-	overflow: hidden;
-	border: 2px solid #1b21d4;
-	aspect-ratio: 2.5;
-	justify-content: center;
-	padding: 24px 39px;
-}
-@media (max-width: 991px) {
-	.cancel-button-content {
-		white-space: initial;
-		padding: 0 20px;
-	}
-}
-.cancel-button-bg {
-	position: absolute;
-	inset: 0;
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-	object-position: center;
-}
-.cancel-button-text {
-	position: relative;
-}
-.add-session-button {
-	display: flex;
-	align-items: center;
-	color: #fff;
-	justify-content: center;
-	flex: 1;
-}
-.add-session-button-content {
-	display: flex;
-	flex-direction: column;
-	font-family: Montserrat, sans-serif;
-	position: relative;
-	fill: #1b21d4;
-	overflow: hidden;
-	aspect-ratio: 2.5;
-	width: 150px;
-	padding: 24px 32px 1px;
-}
-@media (max-width: 991px) {
-	.add-session-button-content {
-		padding: 0 20px;
-	}
-}
-.add-session-button-bg {
-	position: absolute;
-	inset: 0;
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-	object-position: center;
-}
-.add-session-button-text {
-	position: relative;
-}
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  .page-title {
+    color: #000369;
+    align-self: start;
+    font: 700 40px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  @media (max-width: 991px) {
+    .page-title {
+      max-width: 100%;
+    }
+    .page-title-divider {
+      border-color: #000369;
+      border-style: solid;
+      border-width: 2px;
+      background-color: #000369;
+      margin-top: 5px;
+      width: 263px;
+      max-width: 100%;
+      height: 2px;
+    
+    }
+  }
+  .patient-session-container {
+    display: flex;
+    margin-top: 41px;
+    flex-direction: column;
+    align-items: start;
+    color: #000369;
+    padding: 0 55px 0 10px;
+  }
+  @media (max-width: 991px) {
+    .patient-session-info-container {
+      max-width: 100%;
+      padding-right: 20px;
+      margin-top: 40px;
+    }
+  }
+  .section-title {
+    font: 700 25px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+    color: #000369;
+  }
+  .section-divider {
+    border-color: #000369;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #000369;
+    margin-top: 5px;
+    width: 263px;
+    max-width: 100%;
+    height: 2px;
+  }
+  .patient-session-card {
+    align-self: center;
+    display: flex;
+    gap: 8px;
+    margin-top: 56px;
+    width: 100%;
+  }
+  @media (max-width: 991px) {
+    .patient-session-card {
+      flex-wrap: wrap;
+    }
+  }
+  .patient-session-info-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    display: flex;
+  }
+  .appointment-info {
+    border-radius: 18px 0px;
+    background-color: #d8eaff;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 52px 13px;
+    color: #000369;
+  }
+  @media (max-width: 991px) {
+    .appointment-info {
+      white-space: initial;
+    }
+  }
+  .appointment-label {
+    font-family: Montserrat, sans-serif;
+  }
+  .appointment-date {
+    font-family: Montserrat, sans-serif;
+    margin-top: 6px;
+  }
+  .patient-session-details {
+    background-color: #d8eaff;
+    display: flex;
+    gap: 10px;
+    padding: 5px 14px;
+  }
+  @media (max-width: 991px) {
+    .patient-session-details {
+      flex-wrap: wrap;
+    }
+  }
+  .patient-session-image {
+    aspect-ratio: 1;
+    object-fit: auto;
+    object-position: center;
+    width: 126px;
+    border: 2px solid #d8eaff;
+  }
+  .patient-session-info {
+    display: flex;
+    fill: #fff;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.16));
+    overflow: hidden;
+    position: relative;
+    min-height: 59px;
+    width: 595px;
+    gap: 20px;
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: auto 0;
+    padding: 8px 22px;
+  }
+  @media (max-width: 991px) {
+    .patient-session-info {
+      max-width: 100%;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+  }
+  .patient-session-info-background {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .patient-session-name-container {
+    position: relative;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+  }
+  .patient-session-info-label {
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #000369;
+  }
+  .patient-session-info-value {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    margin-top: 9px;
+    color: #000369;
+  }
+  .patient-session-details-grid {
+    position: relative;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-basis: auto;
+  }
+  @media (max-width: 991px) {
+    .patient-session-details-grid {
+      flex-wrap: wrap;
+    }
+  }
+  .patient-session-detail-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+  }
+  .patient-session-card-options-button {
+    min-height: 106px;
+    border: none;
+    margin-left: 5px;
+    min-width: 5rem;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: bold;
+    color: #1e3a8a;
+    background-color: #D8EAFF;
+    border-radius: 0 1.25rem 0 1.25rem;
+  }
+  .diagnosis-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+  .diagnosis-value {
+    margin-top: 11px;
+    font: 400 18px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  .appointments-count {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  @media (max-width: 991px) {
+    .appointments-count {
+      white-space: initial;
+    }
+  }
+  .appointments-count-value {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    align-self: center;
+    margin-top: 6px;
+    color: #000369;
+  }
+  .edit-icon {
+    aspect-ratio: 0.69;
+    object-position: center;
+    width: 66px;
+  }
+  .results-container {
+    display: flex;
+    margin-top: 56px;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    
+  }
+  @media (max-width: 991px) {
+    .results-container {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  .results-content {
+    border-radius: 57px;
+    background-color: #d8eaff;
+    align-self: stretch;
+    display: flex;
+    margin-top: 37px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 40px;
+  }
+  @media (max-width: 991px) {
+    .results-content {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  .results-inner {
+    border-radius: 57px;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 42px 33px;
+  }
+  @media (max-width: 991px) {
+    .results-inner {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  .radiology-results {
+    width: 548px;
+    max-width: 100%;
+  }
+  .radiology-header {
+    gap: 20px;
+    display: flex;
+  }
+  @media (max-width: 991px) {
+    .radiology-header {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+  }
+  .radiology-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 76%;
+    margin-left: 0px;
+  }
+  @media (max-width: 991px) {
+    .radiology-column {
+      width: 100%;
+    }
+  }
+  .radiology-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    color: #000369;
+  }
+  @media (max-width: 991px) {
+    .radiology-content {
+      margin-top: 40px;
+    }
+  }
+  .radiology-labels {
+    display: flex;
+    margin-top: 64px;
+    width: 135px;
+    max-width: 100%;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    white-space: nowrap;
+    justify-content: space-between;
+    margin-left: 110px;
+  }
+  @media (max-width: 991px) {
+    .radiology-labels {
+      margin-top: 40px;
+      white-space: initial;
+    }
+  }
+  .radiology-label {
+    font-family: Montserrat, sans-serif;
+  }
+  .assessment-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 24%;
+    margin-left: 20px;
+  }
+  @media (max-width: 991px) {
+    .assessment-column {
+      width: 100%;
+    }
+  }
+  .assessment-label {
+    color: #000369;
+    margin-top: 154px;
+    font: 400 20px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  @media (max-width: 991px) {
+    .assessment-label {
+      margin-top: 40px;
+    }
+  }
+  .radiology-item {
+    align-self: center;
+    display: flex;
+    gap: 8px;
+    color: #000369;
+    margin: 22px 0 0 63px;
+  }
+  @media (max-width: 991px) {
+    .radiology-item {
+      flex-wrap: wrap;
+    }
+  }
+  .radiology-item-content {
+    border-radius: 18px 0px;
+    background-color: #d8eaff;
+    display: flex;
+    gap: 20px;
+    flex-basis: auto;
+    padding: 18px 33px;
+    width: 650px;
+  }
+  @media (max-width: 991px) {
+    .radiology-item-content {
+      max-width: 100%;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+  }
+  .radiology-item-details {
+    border-radius: 18px;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    white-space: nowrap;
+    padding: 18px;
+  }
+  @media (max-width: 991px) {
+    .radiology-item-details {
+      white-space: initial;
+    }
+  }
+  .radiology-item-side {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+  }
+  .radiology-item-type {
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    flex-grow: 1;
+    flex-basis: auto;
+  }
+  .radiology-item-input {
+    border-radius: 18px;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+    align-items: start;
+    justify-content: center;
+    flex-grow: 1;
+    width: fit-content;
+    padding: 17px 16px;
+    font: 400 14px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  @media (max-width: 991px) {
+    .radiology-item-input {
+      padding-right: 20px;
+    }
+  }
+  .radiology-item-button {
+    min-height: 106px;
+    border: none;
+    margin-left: 5px;
+    min-width: 5rem;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: bold;
+    color: #1e3a8a;
+    background-color: #D8EAFF;
+    border-radius: 0 1.25rem 0 1.25rem;
+  }
+  .blood-chemistry {
+    color: #000369;
+    align-self: start;
+    margin-top: 99px;
+    font: 700 25px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  @media (max-width: 991px) {
+    .blood-chemistry {
+      margin-top: 40px;
+    }
+  }
+  .blood-chemistry-row {
+    align-self: center;
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 51px 0 0 33px;
+  }
+  @media (max-width: 991px) {
+    .blood-chemistry-row {
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+  }
+  .blood-chemistry-item {
+    display: flex;
+    gap: 7px;
+    flex: 1;
+    flex-grow: 1;
+    flex-basis: auto;
+  }
+  .blood-chemistry-label {
+    border-radius: 11px 0px;
+    border: 2px solid #fc6039;
+    display: flex;
+    gap: 20px;
+    color: #000369;
+    padding: 13px 16px;
+  }
+  .blood-chemistry-name {
+    font-family: Montserrat, sans-serif;
+    margin: auto 0;
+  }
+  .blood-chemistry-range {
+    font-family: Montserrat, sans-serif;
+    flex-grow: 1;
+    flex-basis: auto;
+  }
+  .blood-chemistry-value {
+    font-family: Montserrat, sans-serif;
+    border-radius: 0px 16px;
+    background-color: #fc6039;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    justify-content: center;
+    padding: 16px 58px;
+  }
+  @media (max-width: 991px) {
+    .blood-chemistry-value {
+      white-space: initial;
+      padding: 0 20px;
+    }
+  }
+  .button-container {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 150px; 
+    height: 40px;
+  }
+  .add-cancel-button-container{
+  margin-top: 70px;
+  margin-left: 610px;
+  }
+  .cancel-session-button {
+    background-color: #fff;
+    border: solid;
+    border-color: #1B21D4;
+    border-width: 2px;
+    color: #000369;
+    width: 150px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 14px;
+  }
+  
+  .add-session-button {
+    background-color: #1B21D4;
+    color: white;
+    cursor: pointer;
+    width: 150px;
+    height: 60px;
+    border-radius: 10px;
+  }
+  
+  .button-container button:hover {
+    opacity: 0.8;
+  }
+  
