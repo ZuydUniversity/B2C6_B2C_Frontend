@@ -1,6 +1,25 @@
 import * as React from "react";
-import "./styles/artssession.css";
-import { FaPlus } from "react-icons/fa";
+import "./styles/artssession.css"; //So the sessionpages have the same styling
+
+// Define hardcoded patient data
+const patients = [
+	{
+		name: "Joep Doe",
+		age: "10 jaar",
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		name: "Joep Doe",
+		age: "10 jaar",
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		name: "Joep Doe",
+		age: "10 jaar",
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	// Add more patients as needed
+];
 
 interface PatientSelectProps {
 	onSelect: () => void;
@@ -23,7 +42,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 	};
 
 	const addPatientToSession = () => {
-		window.location.href = "/activeartssession"; //BAD PRACTICE <3
+		window.location.href = "/activephysiosession"; //BAD PRACTICE <3
 	};
 
 	React.useEffect(() => {
@@ -35,9 +54,8 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 
 	return (
 		<section className="flex-container">
-			<button onClick={onSelect} className="select-patient-button flex-container" aria-label="Select patient">
-				<FaPlus className="select-patient-icon" aria-hidden="true" />
-				<span className="selecting patient">Selecteer patiënt</span>
+			<button onClick={handleOpenListClick} className="select-patient-button" aria-label="Select patient">
+				<span className="add-patient-to-session-icon selecting patient">Selecteer patiënt</span>
 			</button>
 			{showPatients && (
 				<ul className="patient-list">
@@ -71,9 +89,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 };
 
 const AddPatientSelection: React.FC = () => {
-	const handleSelect = () => {
-		return;
-	};
+	const handleSelect = () => {};
 
 	return (
 		<main className="main-patient-container">

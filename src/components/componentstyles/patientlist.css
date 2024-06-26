@@ -1,9 +1,9 @@
 .patientlist-container {
-	border: 30px solid #d8eaff;
+	border: 30px solid #e0f2fe;
 	background-color: white;
 	padding: 10px;
 	margin: auto;
-	border-radius: 20px;
+	border-radius: 70px;
 	width: 60%;
 	max-height: 500px;
 	overflow-y: auto;
@@ -28,7 +28,7 @@
 	justify-content: space-between;
 	padding: 10px;
 	color: #000369;
-	width: 91%;
+	width: 90%;
 }
 
 .patient-row-wrapper {
@@ -41,9 +41,9 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
-	background-color: #d8eaff;
+	background-color: #e0f2fe;
 	margin-bottom: 10px;
-	border-radius: 10px 0px;
+	border-radius: 10px;
 	flex-grow: 1;
 	cursor: pointer;
 }
@@ -73,7 +73,7 @@
 }
 
 .extra-card {
-	background: #d8eaff;
+	background: #e0f2fe;
 	margin-left: 20px;
 	padding: 25px;
 	margin-bottom: 10px;
