@@ -59,7 +59,11 @@
         "functions": 80,
         "lines": 80,
         "statements": 80
-      }
+      },
+      "coveragePathIgnorePatterns": [
+        "/node_modules/",
+        "\\.d\\.ts$"
+    ]
     },
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
