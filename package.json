@@ -62,7 +62,7 @@
       }
     },
     "coveragePathIgnorePatterns": [
-      "src/*.d.ts"
+      "src/react-app-env.d.ts"
     ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
