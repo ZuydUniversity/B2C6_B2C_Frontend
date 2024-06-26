@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/plugin-transform-class-properties": "^7.24.6",
-    "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.6",
-    "@babel/plugin-transform-numeric-separator": "^7.24.6",
-    "@babel/plugin-transform-optional-chaining": "^7.24.6",
-    "@babel/plugin-transform-private-methods": "^7.24.6",
     "@jridgewell/sourcemap-codec": "^1.4.15",
     "@rollup/plugin-terser": "^0.4.4",
     "@testing-library/jest-dom": "^5.17.0",
@@ -71,6 +66,11 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-transform-class-properties": "^7.24.6",
+    "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.6",
+    "@babel/plugin-transform-numeric-separator": "^7.24.6",
+    "@babel/plugin-transform-optional-chaining": "^7.24.6",
+    "@babel/plugin-transform-private-methods": "^7.24.6",
     "eslint-config-react-app": "^7.0.1",
     "prettier": "3.2.5"
   }
