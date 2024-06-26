@@ -1,5 +1,5 @@
 .scanner-container {
-  position: fixed;
+  position: absolute;
   top: 2%;
   right: 2%;
   width: 280px;
@@ -37,10 +37,9 @@
   font: 600 25px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
-.button-container {
+.button-scanner-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .left-icon-scanner,
@@ -56,8 +55,9 @@
   margin: 0 18.5px; 
 }
 
+.left-icon-scanner img,
 .right-icon-scanner img {
-  width: 24px; /* Adjust based on your icon size */
-  height: 24px; /* Adjust based on your icon size */
+  width: 24px;
+  height: 24px; 
   filter: invert(1); /* Makes the icon white if it's originally black */
 }

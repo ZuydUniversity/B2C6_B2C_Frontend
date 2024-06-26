@@ -9,7 +9,7 @@ const Scanner: React.FC = () => {
         <h1 className="scanner-title">Scanner</h1>
         <div className="scanner-preview" role="img" aria-label="Scanner preview area"></div>
         <h2 className="aspect-title">Aspect</h2>
-        <div className="button-container">
+        <div className="button-scanner-container">
           <button className="left-icon-scanner">
             <img src="../../../public/Icons/left.svg" alt="Left icon" />
           </button>
