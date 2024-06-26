@@ -38,6 +38,7 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          personel_number: personel_number,
           email: email,
           password: password,
         }),
