@@ -14,7 +14,9 @@ const PatientInfo: React.FC<PatientInfoProps> = ({ name, age, diagnosis, medicat
 		<img className="patient-session-info-background" src="https://cdn.builder.io/api/v1/image/assets/TEMP/13d0d541a6beb1a30214553122df731e5fdeb6aa403f21a1f83098c86c22ee49?apiKey=625a4e4417524f8294fdf8a1fc2d2593&" alt="" />
 		<div className="patient-session-name-container">
 			<div className="patient-session-info-label">Naam</div>
-			<div className="patient-session-info-value"><p className="name-label"> {name} </p></div>
+			<div className="patient-session-info-value">
+				<p className="name-label"> {name} </p>
+			</div>
 		</div>
 		<div className="patient-session-details-grid">
 			<div className="patient-session-detail-item">
@@ -29,7 +31,10 @@ const PatientInfo: React.FC<PatientInfoProps> = ({ name, age, diagnosis, medicat
 			</div>
 			<div className="patient-session-detail-item">
 				<div className="patient-session-info-label">Medicatie</div>
-				<div className="patient-session-info-value"> <p className="medication-label"> {medication} </p></div>
+				<div className="patient-session-info-value">
+					{" "}
+					<p className="medication-label"> {medication} </p>
+				</div>
 			</div>
 			<div className="appointments-count">
 				<div className="patient-session-info-label">Afspraken</div>

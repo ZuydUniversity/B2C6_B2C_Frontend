@@ -19,19 +19,19 @@ describe("ArtsSession page tests", () => {
 		render(<PatientSelect onSelect={jest.fn()} />);
 	});
 
-	test('toggles the patient list visibility when the button is clicked', () => {
+	test("toggles the patient list visibility when the button is clicked", () => {
 		render(<PatientSelect onSelect={jest.fn()} />);
-		const button = screen.getByRole('button', { name: /Select patient/i });
+		const button = screen.getByRole("button", { name: /Select patient/i });
 
 		// Initially, the patient list should not be visible
-		expect(screen.queryByRole('list')).not.toBeInTheDocument();
+		expect(screen.queryByRole("list")).not.toBeInTheDocument();
 
 		// Click to show the patient list
 		fireEvent.click(button);
-		expect(screen.getByRole('list')).toBeInTheDocument();
+		expect(screen.getByRole("list")).toBeInTheDocument();
 
 		// Click again to hide the patient list
 		fireEvent.click(button);
-		expect(screen.queryByRole('list')).not.toBeInTheDocument();
+		expect(screen.queryByRole("list")).not.toBeInTheDocument();
 	});
 });
