@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./styles/dashboardpagecss.css";
 import MiniKalender from "../components/minikalender";
+import AppointmentPlanner from "../components/appointmentplanner";
 
 interface PatientCardProps {
 	date: string;
@@ -153,34 +154,6 @@ export const PatientCard: React.FC<PatientCardProps> = ({ date, name, age, diagn
 			</div>
 			<div className="patientCardOptions">
 				<input type="Button" className="patientCardOptionsButton" value="..." />
-			</div>
-		</div>
-	);
-};
-
-const DashboardPage: React.FC = () => {
-	return (
-		<div className="dashboardMain">
-			<h1 className="dashboardHeader"> Hallo, Dr. Johannes Doe </h1>
-			<MiniKalender />
-			<div className="dashboardContent">
-				<div className="dashboardInnerContent">
-					<div className="dashboardInnerHeader">
-						<section>
-							<h2>Patiënten met een afspraak</h2>
-							<hr />
-						</section>
-						<div className="dashboardSort">
-							<div>
-								<span>oplopend </span>
-								<img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8680dffe1c994dd27e1c422f85ae2b00662d600ce944f33420b92f4cf8c535d?apiKey=070967f8f2f74db686d34af20d021ec7&" alt="" />
-							</div>
-						</div>
-					</div>
-					{patients.map((patient, index) => (
-						<PatientCard key={index} date={patient.date} name={patient.name} age={patient.age} diagnosis={patient.diagnosis} medication={patient.medication} appointments={patient.appointments} imageUrl={patient.imageUrl} />
-					))}
-				</div>
 			</div>
 		</div>
 	);

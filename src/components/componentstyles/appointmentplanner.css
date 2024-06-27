@@ -1,0 +1,161 @@
+.appointment-planner {
+  background-color: #d8eaff;
+  width: 40%;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 40px;
+  box-sizing: border-box;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  color: #000369;
+  font-family: Arial, sans-serif;
+}
+
+.title-with-underline {
+  font-weight: bold;
+  position: relative;
+  color: #000369;
+  font-size: 25px;
+  margin-top: -10px;
+}
+
+.title-with-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 1.5px;
+  background-color: #000369;
+}
+
+.title-section {
+  margin-bottom: 20px;
+}
+
+.title-of-title-bar {
+  margin-top: 40px;
+  font-size: 20px;
+  color: #000369;
+}
+
+.title-input {
+  width: 520px;
+  height: 20px;
+  padding: 10px;
+  font-size: 10px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.title-input:hover {
+  background-color: #f0f0f0;
+}
+
+.title-input:focus {
+  background-color: white;
+  border-color: #999;
+  outline: none;
+}
+
+.description-textarea {
+  width: 520px;
+  height: 100px; 
+  padding: 10px;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  resize: none; 
+}
+
+.description-textarea:hover {
+  background-color: #f0f0f0;
+}
+
+.description-textarea:focus {
+  background-color: white;
+  border-color: #999;
+  outline: none;
+}
+
+.repetition-section {
+  margin-bottom: 20px;
+}
+
+.title-of-repetition {
+  font-size: 20px;
+  color: #000369;
+}
+
+.optional {
+  font-size: 12px;
+  color: #000369;
+  margin-left: 5px;
+}
+
+.repetition-options {
+  display: flex;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000000;
+  background-color: white;
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.checkbox.selected {
+  background-color: #1b21d4;
+}
+
+.patient-section {
+  margin-top: 40px;
+}
+
+.add-patient {
+  width: 520px;
+  height: 20px;
+  padding: 10px;
+  font-size: 10px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+.cancel-button {
+  position: relative;
+  width: 141px;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 20px;
+  background-color: #d8eaff;
+  color: #ff6347;
+  border: 2px solid #1B21D4;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: red;
+}
