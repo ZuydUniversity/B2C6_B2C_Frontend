@@ -18,32 +18,6 @@ import ActiveArtsSession from "./pages/activeartssessionpage";
 const App: React.FC = () => {
 	const [hideNavbar, setHideNavbar] = useState(false);
 
-  return (
-    <Router>
-      <div className="app-container">
-        {!hideNavbar && <Sidebar />}
-        <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Navigate to="/login" replace />} />
-            <Route
-              path="/login"
-              element={<LoginPage setHideNavbar={setHideNavbar} />}
-            />
-            <Route path="/aboutus" element={<AboutUsPage />} />
-            <Route path="/patients" element={<PatientPage />} />
-            <Route path="/patient/:id" element={<PatientOverview />} />
-            <Route path="/artsen" element={<ArtsPage />} />
-            <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/kalender" element={<KalenderPage />} />
-            <Route 
-              path="*"
-              element={<NotFoundPage setHideNavbar={setHideNavbar} />}
-            />
-          </Routes>
-        </div>
-      </div>
-    </Router>
-  );
 	return (
 		<Router>
 			<div className="app-container">
@@ -62,6 +36,7 @@ const App: React.FC = () => {
 						<Route path="/physiosession" element={<PhysioSessionPage />} />
 						<Route path="/activeartssession" element={<ActiveArtsSession />} />
 						<Route path="*" element={<NotFoundPage setHideNavbar={setHideNavbar} />} />
+            <Route path="/kalender" element={<KalenderPage />} />
 					</Routes>
 				</div>
 			</div>

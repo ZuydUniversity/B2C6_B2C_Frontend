@@ -110,7 +110,7 @@ const KalenderPage: React.FC = () => {
           </tbody>
         </table>
       </div>
-      <button className="add-button">Toevoegen</button>
+      <button className="add-button-kalender">Toevoegen</button>
     </div>
   );
 };
