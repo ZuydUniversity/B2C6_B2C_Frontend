@@ -163,25 +163,25 @@ const Notes: React.FC = () => {
 						{/* Table sections */}
 						<div className="notes-table-sections">
 							<div className="notes-table-sections-title table-section-note">
-								<h2 className="label-notitie">Notitie</h2>
+								<h2>Notitie</h2>
 								<button onClick={sortNotesByName} className="filter-by-button" id="dropdown_arrow_name">
 									<img src={filteredByName ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
 							</div>
 							<div className="notes-table-sections-title table-section-specialist">
-								<h2 className="label-specialist">Specialist</h2>
+								<h2>Specialist</h2>
 								<button onClick={sortNotesBySpecialist} className="filter-by-button" id="dropdown_arrow_specialist">
 									<img src={filteredBySpecialist ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
 							</div>
 							<div className="notes-table-sections-title table-section-patient">
-								<h2 className="label-patient">Patiënt</h2>
+								<h2>Patiënt</h2>
 								<button onClick={sortNotesByPatient} className="filter-by-button" id="dropdown_arrow_patient">
 									<img src={filteredByPatient ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
 							</div>
 							<div className="notes-table-sections-title table-section-session">
-								<h2 className="label-sessie">Sessie</h2>
+								<h2>Sessie</h2>
 								<button onClick={sortNotesBySession} className="filter-by-button" id="dropdown_arrow_session">
 									<img src={filteredBySession ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
