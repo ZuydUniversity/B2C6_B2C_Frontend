@@ -16,7 +16,7 @@ describe("ArtsSession page tests", () => {
 	});
 
 	test("should render the component", () => {
-		render(<PatientSelect />);
+		render(<PatientSelect onSelect={jest.fn()} />);
 	});
 
 	test('toggles the patient list visibility when the button is clicked', () => {
