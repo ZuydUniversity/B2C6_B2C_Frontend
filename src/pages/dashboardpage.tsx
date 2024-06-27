@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./styles/dashboardpagecss.css";
+import "./styles/stylesheetdashboardpage.css";
 import MiniKalender from "../components/minikalender";
 
 interface PatientCardProps {

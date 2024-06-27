@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles/forgotpasswordpopup.css";
+import "./styles/stylsheetforgotpasswordpopup.css";
 
 interface ForgotPasswordPopupProps {
 	onClose: () => void;

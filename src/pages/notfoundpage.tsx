@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./styles/notfoundpage.css";
+import "./styles/stylesheetnotfoundpage.css";
 
 interface Props {
 	setHideNavbar: React.Dispatch<React.SetStateAction<boolean>>;

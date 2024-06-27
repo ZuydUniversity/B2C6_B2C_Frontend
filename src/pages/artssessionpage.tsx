@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./styles/artssession.css";
+import "./styles/stylesheetartssession.css";
 import { FaPlus } from "react-icons/fa";
 
 interface PatientSelectProps {
