@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
 					</a>
 					<li className="calendar-icon">Kalender</li>
 					<a href="/notes" className="url">
-						<li className="documents-icon">Documenten</li>
+						<li className="notities-icon">Notities</li>
 					</a>
 					<a href="/patients" className="url">
 						<li className="patients-icon">Patiëntenoverzicht</li>
