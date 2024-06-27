@@ -131,6 +131,16 @@
 
 .patientCardDetails p {
 	margin: 0; /* Remove default margin for <p> elements */
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  gap: 1.25rem;
+  padding: 0.25rem 1.5rem; 
+  background-color: white;
+  border-radius: 1.25rem;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1608); 
+  max-width: 100%;
+  font-size: 0.7vw;
 }
 
 .patientCardName,

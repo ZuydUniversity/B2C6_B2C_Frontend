@@ -14,6 +14,9 @@ import ArtsSessionPage from "./pages/artssessionpage";
 import PhysioSessionPage from "./pages/physiosessionpage";
 import ActiveArtsSession from "./pages/activeartssessionpage";
 
+import 'typeface-montserrat';
+import "./App.css";
+
 
 const App: React.FC = () => {
 	const [hideNavbar, setHideNavbar] = useState(false);
@@ -43,4 +46,5 @@ const App: React.FC = () => {
 		</Router>
 	);
 };
+
 export default App;
