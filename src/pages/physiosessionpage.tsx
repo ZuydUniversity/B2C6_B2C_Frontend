@@ -4,9 +4,39 @@ import { Patient } from "../models/Patient";
 
 // Define hardcoded patient data
 const patients = [
-	new Patient("John", "Doe", "john.doe@example.com", 34, "123-456-7890", "jane.doe@example.com", "098-765-4321", "Male", "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&"),
-	new Patient("Alice", "Smith", "alice.smith@example.com", 28, "111-222-3333", "bob.smith@example.com", "444-555-6666", "Female", "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&"),
-	new Patient("David", "Johnson", "david.johnson@example.com", 45, "777-888-9999", "emily.johnson@example.com", "000-111-2222", "Male", "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&"),
+	new Patient(
+		"John",
+		"Doe",
+		"john.doe@example.com",
+		34,
+		"123-456-7890",
+		"jane.doe@example.com",
+		"098-765-4321",
+		"Male",
+		"https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&"
+	),
+	new Patient(
+		"Alice",
+		"Smith",
+		"alice.smith@example.com",
+		28,
+		"111-222-3333",
+		"bob.smith@example.com",
+		"444-555-6666",
+		"Female",
+		"https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&"
+	),
+	new Patient(
+		"David",
+		"Johnson",
+		"david.johnson@example.com",
+		45,
+		"777-888-9999",
+		"emily.johnson@example.com",
+		"000-111-2222",
+		"Male",
+		"https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&"
+	),
 ];
 
 interface PatientSelectProps {
@@ -77,7 +107,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 };
 
 const AddPatientSelection: React.FC = () => {
-	const handleSelect = () => { };
+	const handleSelect = () => {};
 
 	return (
 		<main className="main-patient-container">

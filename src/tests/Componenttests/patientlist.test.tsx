@@ -3,7 +3,7 @@ import PatientList, { patients } from "../../components/patientlist";
 
 describe("PatientList component", () => {
 	it("should render the component", () => {
-		render(<PatientList onPatientClick={() => { }} />);
+		render(<PatientList onPatientClick={() => {}} />);
 
 		const patientList = document.getElementsByClassName("patient-row-wrapper") as HTMLCollectionOf<HTMLElement>;
 		expect(patientList.length).toBe(patients.length);
@@ -25,7 +25,7 @@ describe("PatientList component", () => {
 			expect(patientEmail.textContent).toBe(patient.Email);
 
 			const patientSex = patientElement.querySelector("#patient-sex") as HTMLElement;
-			const isGender = (patientSex.textContent === "Male" || patientSex.textContent === "Female");
+			const isGender = patientSex.textContent === "Male" || patientSex.textContent === "Female";
 			expect(isGender).toBe(true);
 
 			const patientAppointmentCount = patientElement.querySelector("#patient-appointment-count") as HTMLElement;

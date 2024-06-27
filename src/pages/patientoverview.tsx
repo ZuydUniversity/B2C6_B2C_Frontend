@@ -25,7 +25,7 @@ const PatientOverview: React.FC = () => {
 		<div className="patient-overview">
 			<h1>Dashboard</h1>
 			<hr />
-			{	/*<PatientDetails patient={patient} /> */}
+			{/*<PatientDetails patient={patient} /> */}
 		</div>
 	);
 };
