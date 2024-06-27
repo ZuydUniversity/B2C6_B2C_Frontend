@@ -186,9 +186,9 @@ const DashboardPage: React.FC = () => {
 
   return (
     <div className="dashboardMain">
-      <h1 className="dashboardHeader"> Hallo, Dr. Johannes Doe </h1>
-      <AppointmentPlanner/>
+      <h1 className="dashboardHeader">Hallo, Dr. Johannes Doe</h1>
       <div className="dashboardContent">
+        <MiniKalender/>
         <div className="dashboardInnerContent">
           <div className="dashboardInnerHeader">
             <section>
@@ -222,6 +222,7 @@ const DashboardPage: React.FC = () => {
       </div>
     </div>
   );
+  
 };
 
 export default DashboardPage;

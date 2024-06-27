@@ -1,10 +1,12 @@
 .appointment-planner {
   background-color: #d8eaff;
-  width: 40%;
+  display: flex;
+  flex-direction: column;
+  width: 610px;
   height: 100vh;
-  position: absolute;
-  right: 0;
-  top: 0;
+  position: relative;
+  left: 650px;
+  margin-top: -140px;
   padding: 40px;
   box-sizing: border-box;
   border-top-left-radius: 25px;
@@ -32,7 +34,7 @@
 }
 
 .title-section {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .title-of-title-bar {
@@ -72,6 +74,7 @@
   border-radius: 10px;
   transition: background-color 0.3s ease;
   resize: none; 
+  margin-bottom: -40px;
 }
 
 .description-textarea:hover {
@@ -142,20 +145,33 @@
   border-radius: 10px;
 }
 
-.cancel-button {
+.cancel-button-ap {
   position: relative;
   width: 141px;
-  padding: 10px;
   font-size: 14px;
   margin-top: 20px;
   background-color: #d8eaff;
-  color: #ff6347;
-  border: 2px solid #1B21D4;
+  color: #1B21D4;
+  border: 2.5px solid #1B21D4;
   cursor: pointer;
-  border-radius: 50px;
   transition: background-color 0.3s ease;
+  margin-left: 250px;
+  margin-bottom: -66.5px;
 }
 
-.add-button:hover {
+.add-button-ap {
+  position: relative;
+  width: 141px;
+  font-size: 14px;
+  margin-top: 20px;
+  background-color: #1B21D4;
+  color: white;
+  border: 2.5px solid #1B21D4;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 400px;
+}
+
+.cancel-button:hover {
   background-color: red;
 }

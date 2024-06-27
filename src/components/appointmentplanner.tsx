@@ -105,9 +105,15 @@ const AppointmentPlanner: React.FC = () => {
         <h2 className="title-of-title-bar">Patiënt toevoegen</h2>
         <div className="add-patient"></div>
       </div>
-      <button className="cancel-button"></button>
+      <button type="button" className="cancel-button-ap">
+              Annuleer
+            </button>
+      <button type="button" className="add-button-ap">
+              Opslaan
+            </button>
     </div>
   );
 };
 
 export default AppointmentPlanner;
+

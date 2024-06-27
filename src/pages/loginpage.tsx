@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles/loginpage.css";
-import ForgotPasswordPopup from "./forgotpasswordpopup"; // Ensure this path is correct
+import ForgotPasswordPopup from "./forgotpasswordpopup"; 
 
 interface Props {
   setHideNavbar: React.Dispatch<React.SetStateAction<boolean>>;
