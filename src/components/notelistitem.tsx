@@ -9,7 +9,7 @@ interface NoteProps {
 const NoteListItem: React.FC<NoteProps> = ({ note }) => {
 	return (
 		<div className="note-list-container">
-			<a href="" className="note-list-item no-link">
+			<a href="/notelist" className="note-list-item no-link">
 				<div className="note-name">{note.Name}</div>
 
 				<div className="note-specialist">
