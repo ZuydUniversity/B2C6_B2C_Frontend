@@ -103,7 +103,7 @@ const KalenderPage: React.FC = () => {
 						<tr>
 							<th>Tijd</th>
 							{days.map((day, index) => (
-								<th key={index}>
+								<th key={index} data-testid={`day-${day}`}>
 									{day}
 									<br />
 									{formatDate(dates[index])}

@@ -50,6 +50,7 @@ describe("KalenderPage", () => {
 		const startDate = getStartOfWeek(new Date());
 		const monthNames = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
 		const formattedStartDate = `${String(startDate.getDate()).padStart(2, "0")} ${monthNames[startDate.getMonth()]}`;
+		screen.debug(); // Print the current DOM state
 		const startDateElement = screen.getAllByText(formattedStartDate);
 		expect(startDateElement.length).toBeGreaterThan(0);
 	});
@@ -62,7 +63,7 @@ describe("KalenderPage", () => {
 		previousWeekDate.setDate(previousWeekDate.getDate() - 7);
 		const monthNames = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
 		const formattedPrevWeekDate = `${String(previousWeekDate.getDate()).padStart(2, "0")} ${monthNames[previousWeekDate.getMonth()]}`;
-		const prevWeekDateElement = screen.getAllByText(formattedPrevWeekDate);
+		const prevWeekDateElement = screen.getAllByAltText(formattedPrevWeekDate);
 		expect(prevWeekDateElement.length).toBeGreaterThan(0);
 	});
 
@@ -112,7 +113,8 @@ describe("KalenderPage", () => {
 		render(<KalenderPage />);
 		const days = ["Ma", "Di", "Wo", "Do", "Vr"];
 		days.forEach((day) => {
-			expect(screen.getByText(day)).toBeInTheDocument();
+			const dayElement = screen.getByTestId(`day-${day}`);
+			expect(dayElement).toBeInTheDocument();
 		});
 	});
 
