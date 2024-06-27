@@ -1,8 +1,8 @@
 import React from "react";
-import { render, fireEvent, screen, cleanup } from "@testing-library/react";
+import { render, fireEvent, screen, cleanup, waitFor } from "@testing-library/react";
 import KalenderPage from "../../pages/kalenderpage";
 
-// Cleanup the DOM after each test :)
+// Cleanup the DOM after each test
 afterEach(cleanup);
 
 // Helper functions used in the tests
@@ -50,8 +50,7 @@ describe("KalenderPage", () => {
 		const startDate = getStartOfWeek(new Date());
 		const monthNames = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
 		const formattedStartDate = `${String(startDate.getDate()).padStart(2, "0")} ${monthNames[startDate.getMonth()]}`;
-		screen.debug(); // Print the current DOM state
-		const startDateElement = screen.getAllByText(formattedStartDate);
+		const startDateElement = screen.getAllByText((content, element) => element?.tagName.toLowerCase() === "th" && content.includes(formattedStartDate));
 		expect(startDateElement.length).toBeGreaterThan(0);
 	});
 
@@ -63,7 +62,7 @@ describe("KalenderPage", () => {
 		previousWeekDate.setDate(previousWeekDate.getDate() - 7);
 		const monthNames = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
 		const formattedPrevWeekDate = `${String(previousWeekDate.getDate()).padStart(2, "0")} ${monthNames[previousWeekDate.getMonth()]}`;
-		const prevWeekDateElement = screen.getAllByAltText(formattedPrevWeekDate);
+		const prevWeekDateElement = screen.getAllByText((content, element) => element?.tagName.toLowerCase() === "th" && content.includes(formattedPrevWeekDate));
 		expect(prevWeekDateElement.length).toBeGreaterThan(0);
 	});
 
@@ -75,7 +74,7 @@ describe("KalenderPage", () => {
 		nextWeekDate.setDate(nextWeekDate.getDate() + 7);
 		const monthNames = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
 		const formattedNextWeekDate = `${String(nextWeekDate.getDate()).padStart(2, "0")} ${monthNames[nextWeekDate.getMonth()]}`;
-		const nextWeekDateElement = screen.getAllByText(formattedNextWeekDate);
+		const nextWeekDateElement = screen.getAllByText((content, element) => element?.tagName.toLowerCase() === "th" && content.includes(formattedNextWeekDate));
 		expect(nextWeekDateElement.length).toBeGreaterThan(0);
 	});
 
@@ -109,13 +108,17 @@ describe("KalenderPage", () => {
 		expect(weekNumberOption).toBeInTheDocument();
 	});
 
-	it("renders all days of the week correctly", () => {
+	it("renders all days of the week correctly", async () => {
 		render(<KalenderPage />);
 		const days = ["Ma", "Di", "Wo", "Do", "Vr"];
-		days.forEach((day) => {
-			const dayElement = screen.getByTestId(`day-${day}`);
-			expect(dayElement).toBeInTheDocument();
-		});
+		for (const day of days) {
+			await waitFor(() => {
+				const dayElement = screen.getByText((content, element) => {
+					return element?.tagName.toLowerCase() === "th" && (element.textContent ?? "").includes(day);
+				});
+				expect(dayElement).toBeInTheDocument();
+			});
+		}
 	});
 
 	it("renders all times correctly", () => {
