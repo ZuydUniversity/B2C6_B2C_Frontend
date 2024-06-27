@@ -128,7 +128,7 @@
 	justify-content: center;
 	align-items: center;
 	margin-bottom: -1px;
-	position: relative;\
+	position: relative;
 }
 
 .popup {
@@ -146,8 +146,8 @@
 	z-index: 1000;
 	white-space: nowrap;
 	transition:
-		opacity 0.3s,
-		visibility 0.3s;
+	opacity 0.3s,
+	visibility 0.3s;
 }
 
 .calendar-day:hover .popup {
