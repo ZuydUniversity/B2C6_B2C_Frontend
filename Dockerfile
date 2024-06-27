@@ -1,6 +1,7 @@
 # Use an official Node runtime as the base image
 FROM node:16
 
+ENV REACT_APP_RUNNING_IN_DOCKER=true
 # Set the working directory in the container to /app
 WORKDIR /app
 

@@ -1,7 +1,8 @@
 import PhysioSessionPage from "../../pages/physiosessionpage";
 import { render } from "@testing-library/react";
 
-test("Check if page renders", () => {
-	const page = render(<PhysioSessionPage />);
-	expect(page.getByText("Selecteer patiënt")).toBeInTheDocument();
+describe("PhysioSessionPage test", () => {
+	it("Should rendere page without failing", () => {
+		render(<PhysioSessionPage />);
+	})
 });

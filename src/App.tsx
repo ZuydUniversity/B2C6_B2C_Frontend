@@ -11,7 +11,7 @@ import NotFoundPage from "./pages/notfoundpage";
 import Notes from "./pages/notes";
 import ArtsSessionPage from "./pages/artssessionpage";
 import PhysioSessionPage from "./pages/physiosessionpage";
-import ActiveArtsSession from "./pages/activeartssessionpage";
+import { ActiveArtsSession } from "./pages/activeartssessionpage";
 
 const App: React.FC = () => {
 	const [hideNavbar, setHideNavbar] = useState(false);

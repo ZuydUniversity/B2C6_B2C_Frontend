@@ -35,7 +35,7 @@ const PatientList: React.FC<PatientListProps> = ({ onPatientClick }) => {
 								{patient.Email}
 							</div>
 							<div className="patient-value" id="patient-sex">
-								{patient.Sex ? "Male" : "Female"}
+								{patient.Sex}
 							</div>
 							<div className="patient-value" id="patient-appointment-count">
 								{patient.Appointments.length}
