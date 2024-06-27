@@ -15,7 +15,7 @@ export class Patient {
 	Medications!: Array<Medication>;
 	Appointments!: Array<Appointment>;
 
-	constructor(firstname: string, lastname: string, email: string, age: number, phonenumber: string, email_contact: string, phonenumber_contact: string) {
+	constructor(firstname: string, lastname: string, email: string, age: number, phonenumber: string, email_contact: string, phonenumber_contact: string, sex: string) {
 		this.Id = 0;
 		this.Firstname = firstname;
 		this.Lastname = lastname;
@@ -24,6 +24,7 @@ export class Patient {
 		this.Phonenumber = phonenumber;
 		this.EmailContact = email_contact;
 		this.PhonenumberContact = phonenumber_contact;
+		this.Sex = sex;
 		this.Specialists = [];
 		this.Notes = [];
 		this.Medications = [];
