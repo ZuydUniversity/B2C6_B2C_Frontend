@@ -60,21 +60,18 @@
 .notes-table-sections {
 	display: flex;
 	flex-direction: row;
-	gap: 0rem;
-	margin-top: 0px;
 	margin-left: 1rem;
 	margin-right: 1rem;
-	margin-bottom: 0px;
 }
 
 .notes-table-sections-title {
-	font-size: 1.1rem;
+	font-size: 17px;
 	font-weight: 600;
 	color: #000000;
 	margin-top: 0px;
 	display: flex;
 	flex-direction: row;
-	gap: 1.5rem;
+	gap: 12px;
 }
 
 .table-section-note {
@@ -117,7 +114,7 @@
 
 .dropdown_arrow {
 	height: 2rem;
-	width: 2rem;
+	width: 1.5rem;
 	margin-left: 0rem;
 	margin-top: 1.4rem;
 }
