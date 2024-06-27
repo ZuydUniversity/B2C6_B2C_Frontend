@@ -9,4 +9,15 @@ import { RadiologySession } from "../models/RadiologySession";
 import { Note } from "../models/Note";
 import { Patient } from "../models/Patient";
 
-export { User, Specialist, Appointment, Medication, Session, DoctorSession, MyometrySession, RadiologySession, Note, Patient };
+export {
+  User,
+  Specialist,
+  Appointment,
+  Medication,
+  Session,
+  DoctorSession,
+  MyometrySession,
+  RadiologySession,
+  Note,
+  Patient,
+};
