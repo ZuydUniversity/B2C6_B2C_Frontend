@@ -20,6 +20,7 @@
 	margin-left: 4%;
 }
 
+
 .notes-title-line {
 	background-color: #1e3a8a;
 	border-color: #1e3a8a;
@@ -60,11 +61,8 @@
 .notes-table-sections {
 	display: flex;
 	flex-direction: row;
-	gap: 0rem;
-	margin-top: 0px;
 	margin-left: 1rem;
 	margin-right: 1rem;
-	margin-bottom: 0px;
 }
 
 .notes-table-sections-title {
