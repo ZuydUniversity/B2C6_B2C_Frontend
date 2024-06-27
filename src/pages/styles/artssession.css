@@ -1,0 +1,287 @@
+.flex {
+	display: flex;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.px-16 {
+	padding-left: 4rem;
+	padding-right: 4rem;
+}
+
+.py-5 {
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+}
+
+.mt-16 {
+	margin-top: 4rem;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.text-sm {
+	font-size: 0.875rem;
+}
+
+.text-blue-700 {
+	color: #1d4ed8;
+}
+
+.rounded-2xl {
+	border-radius: 1.25rem;
+}
+
+.border-2 {
+	border-width: 2px;
+}
+
+.border-solid {
+	border-style: solid;
+}
+
+.border-blue-700 {
+	border-color: #1d4ed8;
+}
+
+.shrink-0 {
+	flex-shrink: 0;
+}
+
+.aspect-square {
+	aspect-ratio: 1 / 1;
+}
+
+.w-34px {
+	width: 34px;
+}
+
+.flex-auto {
+	flex: 1 1 auto;
+}
+
+.my-auto {
+	margin: auto 0;
+}
+
+@media (max-width: 768px) {
+	.max-md-px-5 {
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
+	}
+
+	.max-md-mt-10 {
+		margin-top: 2.5rem;
+	}
+
+	.max-md-max-w-full {
+		max-width: 100%;
+	}
+}
+
+.main-patient-container {
+	flex-direction: column;
+	padding: 1.25rem;
+	font-weight: bold;
+	color: #1e3a8a;
+	margin: 0 auto;
+}
+
+.header-text {
+	font-size: 2.5rem;
+	color: #1e3a8a;
+	margin-left: 10rem;
+}
+
+.sub-header {
+	margin-top: 4rem;
+	font-size: 1.5rem;
+	margin-left: 9.7rem;
+	color: #1e3a8a;
+}
+
+.divider {
+	height: 0.125rem;
+	background-color: #1e3a8a;
+	border: none;
+	width: 416px;
+	margin-left: 10rem;
+}
+
+.divider2 {
+	height: 0.125rem;
+	background-color: #1e3a8a;
+	border: none;
+	width: 260px;
+	margin-left: 10rem;
+	position: relative;
+	bottom: 16px;
+}
+
+@media (max-width: 768px) {
+	.header-text,
+	.sub-header,
+	.divider {
+		max-width: 100%;
+		font-size: 1.75rem;
+		margin-left: 0;
+	}
+}
+
+.gap-3 {
+	gap: 0.75rem;
+}
+
+.flex-container {
+	gap: 0.75rem;
+	justify-content: center;
+	align-items: center;
+	margin-top: 4rem;
+	width: 15%;
+	font-size: 0.875rem;
+	border-radius: 1.25rem;
+	position: relative;
+	left: 80px;
+}
+
+.select-patient-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	width: 553px;
+	height: 76px;
+	border: 1px solid #d1d7e0;
+	border-radius: 15px;
+	background-color: white;
+	cursor: pointer;
+	font-size: 16px;
+	color: #3a69c1;
+	margin-left: 5rem;
+}
+
+.select-patient-button:hover {
+	background-color: #f5f6fa;
+}
+
+@media (max-width: 1000px) {
+	.flex-container {
+		background-color: #3a69c1;
+		color: white;
+		border-radius: 100%;
+		width: 24px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.patient-divider {
+	border: none;
+	border-bottom: 1px solid #ccc; /* Customize the color and thickness */
+	margin: 10px 0; /* Adjust as necessary */
+}
+
+.patient-list {
+	position: absolute;
+	top: -20%;
+	left: 20%;
+	z-index: 1000;
+	width: 570px;
+	overflow-y: auto; /* Enable vertical scrolling if needed */
+	border: 1px solid #ccc;
+	background-color: #fff;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	padding: 10px;
+}
+
+.patient-item {
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.patient-item:hover {
+	background-color: #f5f5f5;
+}
+
+.patient-image {
+	width: 60px;
+	height: 60px;
+	border-radius: 10px;
+	margin-right: 10px;
+	flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.patient-details {
+	display: flex;
+	flex-direction: column;
+	flex: 1; /* Take up remaining space */
+	margin-right: 10px; /* Add some space between details and button */
+}
+
+.patient-info {
+	display: flex;
+	margin-left: 5%;
+	gap: 20%;
+}
+
+.patient-info-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.patient-label {
+	font-weight: bold;
+}
+
+.patient-data {
+	margin-top: 0.25rem;
+}
+
+.add-button {
+	background-color: #1d4ed8;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	width: 93px;
+	height: 34px;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	flex-shrink: 0; /* Prevent the button from shrinking */
+}
+
+.add-button:hover {
+	background-color: #4776ee;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+	.patient-list {
+		max-height: 200px;
+	}
+}
+
+.add-patient-to-session-icon {
+	background: url(../../../public/Icons/Plus.svg) no-repeat 15px;
+	padding-left: 60px;
+	padding-top: 14px;
+	padding-bottom: 10px;
+	background-size: 30px;
+	height: 20px;
+}

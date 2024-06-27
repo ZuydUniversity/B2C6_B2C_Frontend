@@ -1,0 +1,65 @@
+.note-list-container {
+	background-color: #d8eaff;
+	border-radius: 1rem;
+	height: 100%;
+	padding: 1rem;
+}
+
+.note-list-item {
+	display: flex;
+	justify-content: flex-start;
+	align-items: left;
+	gap: 1rem;
+	background-color: #ffffff;
+	border-radius: 10px;
+	font-size: 20px;
+	padding: 10px;
+	color: #1e3a8a;
+	font-weight: 600;
+}
+
+.note-list-container:hover {
+	background-color: #696868d2;
+}
+
+.note-list-item:hover {
+	background-color: #ffffff9a;
+}
+
+.no-link {
+	text-decoration: none;
+}
+
+.note-name {
+	width: 30%;
+}
+
+.note-specialist {
+	width: 30%;
+}
+
+.note-patient {
+	width: 20%;
+}
+
+.note-session {
+	width: 20%;
+}
+
+.note-menu-filter {
+	margin: 0px;
+	padding: 0px;
+	background-color: #1e3a8a;
+	border-radius: 5px;
+	height: 2.5rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.note-menu-filter-text {
+	color: #ffffff;
+	font-size: 1.25rem;
+	font-weight: 600;
+}
