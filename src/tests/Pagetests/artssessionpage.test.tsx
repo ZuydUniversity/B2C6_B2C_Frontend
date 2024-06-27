@@ -10,7 +10,8 @@ describe("ArtsSession page tests", () => {
 		const artsSessionElement2 = document.querySelector(".flex-container");
 		expect(artsSessionElement2).toBeInTheDocument();
 
-		const selectPatientButton = document.querySelector(".select-patient-button");
+		const selectPatientButton = document.querySelector(".select-patient-button") as HTMLButtonElement;
 		expect(selectPatientButton).toBeInTheDocument();
+		expect(selectPatientButton.onclick).toBeDefined();
 	});
 });

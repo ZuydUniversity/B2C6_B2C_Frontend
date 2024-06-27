@@ -4,9 +4,9 @@ import "./componentstyles/patientlist.css";
 import { Patient } from "../abstracts/ImportsModels";
 
 export const patients = [
-	new Patient("John", "Doe", "john.doe@example.com", 34, "123-456-7890", true, "Jane", "Doe", "jane.doe@example.com", "098-765-4321"),
-	new Patient("Alice", "Smith", "alice.smith@example.com", 28, "111-222-3333", false, "Bob", "Smith", "bob.smith@example.com", "444-555-6666"),
-	new Patient("David", "Johnson", "david.johnson@example.com", 45, "777-888-9999", true, "Emily", "Johnson", "emily.johnson@example.com", "000-111-2222"),
+	new Patient("John", "Doe", "john.doe@example.com", 34, "123-456-7890", "jane.doe@example.com", "098-765-4321"),
+	new Patient("Alice", "Smith", "alice.smith@example.com", 28, "111-222-3333", "bob.smith@example.com", "444-555-6666"),
+	new Patient("David", "Johnson", "david.johnson@example.com", 45, "777-888-9999", "emily.johnson@example.com", "000-111-2222"),
 	// Add more patients as needed
 ];
 
