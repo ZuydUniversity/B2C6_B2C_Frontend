@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, screen, cleanup } from "@testing-library/react";
 import KalenderPage from "../../pages/kalenderpage";
 
-// Cleanup the DOM after each test
+// Cleanup the DOM after each test :)
 afterEach(cleanup);
 
 // Helper functions used in the tests
