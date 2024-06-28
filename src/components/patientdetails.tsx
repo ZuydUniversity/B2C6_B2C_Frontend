@@ -4,8 +4,6 @@ import "./componentstyles/patientdetails.css";
 import { Patient } from "../abstracts/ImportsModels";
 
 type ContactPerson = {
-	Firstname: string;
-	Lastname: string;
 	Phonenumber: string;
 	Email: string;
 };
@@ -16,8 +14,6 @@ interface PatientDetailsProps {
 
 const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
 	const contactPerson: ContactPerson = {
-		Firstname: patient.FirstnameContact,
-		Lastname: patient.LastnameContact,
 		Phonenumber: patient.PhonenumberContact,
 		Email: patient.EmailContact,
 	};
@@ -53,7 +49,7 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
 						<div className="patient-info-pair">
 							<span className="patient-label">Geslacht:</span>
 							<span id="patient-sex" className="patient-value">
-								{patient.Sex ? "Male" : "Female"}
+								{patient.Sex}
 							</span>
 						</div>
 					</div>
@@ -61,10 +57,6 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
 				<div className="contact-person-info">
 					<h2>Contactpersoon</h2>
 					<div className="contact-details">
-						<div className="contact-info-pair">
-							<span className="contact-label">Naam:</span>
-							<span id="contactperson-name" className="contact-value">{`${contactPerson.Firstname} ${contactPerson.Lastname}`}</span>
-						</div>
 						<div className="contact-info-pair">
 							<span className="contact-label">Telefoonnummer:</span>
 							<span id="contactperson-phonenumber" className="contact-value">

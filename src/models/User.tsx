@@ -4,6 +4,7 @@ export class User {
 	Id!: number;
 	Firstname!: string;
 	Lastname!: string;
+	Password!: string;
 	Email!: string;
 	Phonenumber!: string;
 	Settings!: Dictionary<boolean>;
