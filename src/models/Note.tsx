@@ -64,6 +64,13 @@ export class Note {
       throw new Error("No connection to the server");
     }
   }
+  
+   /**
+   * Asynchronously retrieves a specific note by its ID from the server.
+   *
+   * @return {Promise<Note>} A promise that resolves with the retrieved note, or throws an error if the note is not retrieved or if there is no connection to the server.
+   * @throws {Error} If the note is not retrieved or if there is no connection to the server.
+   */
   async getspecificNotebyId() {
     try {
       const response = await fetch(`${apiUrl}/notes/${this.Id}`, {
@@ -101,7 +108,7 @@ export class Note {
       throw new Error("No connection to the server");
     }
   }
-  
+
  /**
    * Asynchronously posts a note to the server.
    *
