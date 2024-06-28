@@ -84,4 +84,27 @@ export class Note {
       throw new Error("No connection to the server");
     }
   }
+
+  async deleteNote() {
+    try {
+      const response = await fetch(`${apiUrl}/notes/${this.Id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response) {
+        const data = await response.json();
+        if (data["message"]["success"] !== true) 
+        {
+          throw new Error("Note is not deleted");
+        }
+      } 
+    }
+    catch 
+    {
+      throw new Error("No connection to the server");
+    }
+  }
 }
