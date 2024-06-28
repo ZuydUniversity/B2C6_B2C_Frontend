@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import { act } from "react";
 import MiniKalender from "../../components/minikalender";
 
 describe("MiniKalender component", () => {
@@ -12,7 +13,10 @@ describe("MiniKalender component", () => {
     render(<MiniKalender />);
     const element = screen.getByText("<");
     expect(element).toBeInTheDocument();
-    fireEvent.click(element);
+    
+    act(() => {
+      fireEvent.click(element);
+    });
 
     const currentDate = new Date();
     currentDate.setMonth(currentDate.getMonth() - 1);
@@ -26,7 +30,10 @@ describe("MiniKalender component", () => {
     render(<MiniKalender />);
     const element = screen.getByText(">");
     expect(element).toBeInTheDocument();
-    fireEvent.click(element);
+    
+    act(() => {
+      fireEvent.click(element);
+    });
 
     const currentDate = new Date();
     currentDate.setMonth(currentDate.getMonth() + 1);
@@ -37,30 +44,28 @@ describe("MiniKalender component", () => {
   });
 
   it("should go back from January to December of the previous year", () => {
-    render(<MiniKalender />);
+    const currentDate = new Date(2022, 0); 
+    render(<MiniKalender initialDate={currentDate} />);
     const element = screen.getByText("<");
 
-    // Set the date to January
-    const currentDate = new Date();
-    currentDate.setMonth(0);
-    currentDate.setFullYear(2022);
-    fireEvent.click(element);
-
+    act(() => {
+      fireEvent.click(element);
+    });
+  
     const preMonthYear = `december 2021`;
     const dateElement = screen.getByText(preMonthYear);
     expect(dateElement).toBeInTheDocument();
   });
 
   it("should go forward from December to January of the next year", () => {
-    render(<MiniKalender/>);
+    const currentDate = new Date(2022, 11); 
+    render(<MiniKalender initialDate={currentDate} />);
     const element = screen.getByText(">");
 
-    // Set the date to December
-    const currentDate = new Date();
-    currentDate.setMonth(11);
-    currentDate.setFullYear(2022);
-    fireEvent.click(element);
-
+    act(() => {
+      fireEvent.click(element);
+    });
+  
     const nextMonthYear = `januari 2023`;
     const dateElement = screen.getByText(nextMonthYear);
     expect(dateElement).toBeInTheDocument();
@@ -68,8 +73,11 @@ describe("MiniKalender component", () => {
 
   it("should show popup on hover over a calendar day", () => {
     render(<MiniKalender />);
-    const dayElement = screen.getByText("15"); // Assuming the 15th is visible
-    fireEvent.mouseEnter(dayElement);
+    const dayElement = screen.getByText("15"); 
+
+    act(() => {
+      fireEvent.mouseEnter(dayElement);
+    });
 
     const popupElement = screen.getByText("Day 15");
     expect(popupElement).toBeInTheDocument();
@@ -79,10 +87,14 @@ describe("MiniKalender component", () => {
     render(<MiniKalender />);
     const currentDate = new Date();
     currentDate.setFullYear(2024);
-    currentDate.setMonth(1); // February
-    fireEvent.click(screen.getByText(">")); // Ensure we are in February
+    currentDate.setMonth(1); 
+    
+    act(() => {
+      fireEvent.click(screen.getByText(">"));  
+    });
 
     const dayElements = screen.getAllByText(/^\d+$/);
-    expect(dayElements).toHaveLength(42); // Leap year February has 29 days
+    expect(dayElements).toHaveLength(42); 
   });
 });
+
