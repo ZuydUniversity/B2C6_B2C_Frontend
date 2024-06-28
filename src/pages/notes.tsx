@@ -61,7 +61,7 @@ const Notes: React.FC = () => {
 			sortedNotes.reverse();
 			setFilteredBySpecialist(false);
 		} else {
-			sortedNotes.sort((a: Note, b: Note) => a.Specialist.Firstname.localeCompare(b.Specialist.Firstname));
+			sortedNotes.sort((a: Note, b: Note) => (a.Specialist?.Firstname ?? '').localeCompare(b.Specialist?.Firstname ?? ''));
 			setFilteredBySpecialist(true);
 		}
 
