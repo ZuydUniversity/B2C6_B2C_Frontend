@@ -1,32 +1,27 @@
 // src/pages/PatientPage.tsx
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { Navigate } from "react-router-dom";
 import "./styles/patientcss.css";
 import PatientList from "../components/patientlist";
-import CreatePatient from "../components/createpatient";
 
 const PatientPage: React.FC = () => {
-	const navigate = useNavigate();
-	const [showCreatePatient, setShowCreatePatient] = useState(false);
+	const [navigate, setNavigate] = React.useState(false);
+	var navigationId = 0;
 
 	const handlePatientClick = (id: number) => {
-		navigate(`/patient/${id}`);
+		navigationId = id;
+		return setNavigate(true);
 	};
-	const handleCreatePatient = () => {
-		setShowCreatePatient(!showCreatePatient);
-	};
+
+	if (navigate) {
+		return <Navigate to={`/patient/${navigationId}`} />;
+	}
 
 	return (
 		<div className="patient-page">
-			<h1>Patiëntenoverzicht</h1>
+			<h1 id="title">Patiëntenoverzicht</h1>
 			<hr />
-			<div>
-				<PatientList onPatientClick={handlePatientClick} />
-				<button className="createpatient-button" onClick={handleCreatePatient}>
-					Nieuwe patiënt
-				</button>
-				{showCreatePatient && <CreatePatient />}
-			</div>
+			<PatientList onPatientClick={handlePatientClick} />
 		</div>
 	);
 };

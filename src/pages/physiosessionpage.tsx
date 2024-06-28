@@ -1,24 +1,42 @@
 import * as React from "react";
 import "./styles/artssession.css"; //So the sessionpages have the same styling
+import { Patient } from "../models/Patient";
 
 // Define hardcoded patient data
 const patients = [
-	{
-		name: "Joep Doe",
-		age: "10 jaar",
-		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-	},
-	{
-		name: "Joep Doe",
-		age: "10 jaar",
-		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-	},
-	{
-		name: "Joep Doe",
-		age: "10 jaar",
-		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-	},
-	// Add more patients as needed
+	new Patient(
+		"John",
+		"Doe",
+		"john.doe@example.com",
+		34,
+		"123-456-7890",
+		"jane.doe@example.com",
+		"098-765-4321",
+		"Male",
+		"https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&"
+	),
+	new Patient(
+		"Alice",
+		"Smith",
+		"alice.smith@example.com",
+		28,
+		"111-222-3333",
+		"bob.smith@example.com",
+		"444-555-6666",
+		"Female",
+		"https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&"
+	),
+	new Patient(
+		"David",
+		"Johnson",
+		"david.johnson@example.com",
+		45,
+		"777-888-9999",
+		"emily.johnson@example.com",
+		"000-111-2222",
+		"Male",
+		"https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&"
+	),
 ];
 
 interface PatientSelectProps {
@@ -42,7 +60,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 	};
 
 	const addPatientToSession = () => {
-		window.location.href = "/activephysiosession"; //BAD PRACTICE <3
+		window.location.href = "/activephysiosession"; //BAD PRACTICE <3 --> WHY THA FUCK DID YOU DO IT THEN!!!
 	};
 
 	React.useEffect(() => {
@@ -62,16 +80,16 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 					{patients.map((patient, index) => (
 						<React.Fragment key={index}>
 							<li className="patient-item">
-								<img src={patient.imageUrl} alt={patient.name} className="patient-image" />
+								<img src={patient.ImagePath} alt={patient.Firstname} className="patient-image" />
 								<div className="patient-details">
 									<div className="patient-info">
 										<div className="patient-info-section">
 											<span className="patient-label">Naam:</span>
-											<span className="patient-data">{patient.name}</span>
+											<span className="patient-data">{patient.Firstname}</span>
 										</div>
 										<div className="patient-info-section">
 											<span className="patient-label">Leeftijd:</span>
-											<span className="patient-data">{patient.age}</span>
+											<span className="patient-data">{patient.Age}</span>
 										</div>
 									</div>
 								</div>
