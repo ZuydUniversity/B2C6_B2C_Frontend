@@ -34,4 +34,5 @@ describe("ArtsSession page tests", () => {
 		fireEvent.click(button);
 		expect(screen.queryByRole("list")).not.toBeInTheDocument();
 	});
+	
 });
