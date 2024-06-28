@@ -24,6 +24,8 @@ const PatientFunctionalDetails: React.FC = () => {
                                 <div className="result">Linkerarm<br />28/50</div>
                                 <div className="result">Linkerarm<br />28/50</div>
                                 <div className="result">Linkerarm<br />28/50</div>
+                                <div className="result">Linkerarm<br />28/50</div>
+                                <div className="result">Linkerarm<br />28/50</div>
                             </div>
                         </div>
 
@@ -36,10 +38,42 @@ const PatientFunctionalDetails: React.FC = () => {
                     <div className="medical-data">
                         <h2>Medische gegevens</h2>
                         <div className="ck-values">
-                            <div className="ck-value">CK<br />0-145 U/L<br />100</div>
-                            <div className="ck-value">CK<br />0-145 U/L<br />100</div>
-                            <div className="ck-value">CK<br />0-145 U/L<br />100</div>
-                            <div className="ck-value">CK<br />0-145 U/L<br />100</div>
+                            <div className="ck-row">
+                                <div className="ck-value">
+                                    <span className="ck-left">CK</span>
+                                    <span className="ck-right">0-145 U/L</span>
+                                </div>
+                                <div className="ck-number">
+                                    <span>100</span>
+                                </div>
+                            </div>
+                            <div className="ck-row">
+                                <div className="ck-value">
+                                    <span className="ck-left">CK</span>
+                                    <span className="ck-right">0-145 U/L</span>
+                                </div>
+                                <div className="ck-number">
+                                    <span>100</span>
+                                </div>
+                            </div>
+                            <div className="ck-row">
+                                <div className="ck-value">
+                                    <span className="ck-left">CK</span>
+                                    <span className="ck-right">0-145 U/L</span>
+                                </div>
+                                <div className="ck-number">
+                                    <span>100</span>
+                                </div>
+                            </div>
+                            <div className="ck-row">
+                                <div className="ck-value">
+                                    <span className="ck-left">CK</span>
+                                    <span className="ck-right">0-145 U/L</span>
+                                </div>
+                                <div className="ck-number">
+                                    <span>100</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

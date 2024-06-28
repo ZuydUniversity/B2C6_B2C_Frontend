@@ -51,17 +51,18 @@
 }
 
 .result {
-    background-color: orange;
+    background-color: #FC6039;
     padding: 10px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
+    color: white;
 }
 
 .cmas-score {
-    background-color: blue;
+    background-color: #000369;
     padding: 10px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
     color: white;
 }
 
@@ -70,12 +71,51 @@
     flex-direction: column;
 }
 
-.ck-value {
-    background-color: orange;
-    padding: 10px;
+.ck-row {
+    display: flex;
+    justify-content: space-between;
     margin: 5px 0;
+}
+
+.ck-value {
+    background-color: white;
+    padding: 10px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
+    color: blue;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #FC6039;
+}
+
+.ck-number {
+    background-color: #FC6039;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ck-value {
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ck-left {
+    text-align: left;
+    flex: 1;
+}
+
+.ck-right {
+    text-align: right;
+    flex: 1;
 }
 
 .hero-calendar {
