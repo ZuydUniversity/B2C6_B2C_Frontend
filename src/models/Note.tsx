@@ -38,6 +38,12 @@ export class Note {
     
       if (response) {
         const data = await response.json();
+        if (data["message"]["success"] !== true) 
+        {
+          throw new Error("Note is not retrieved");
+        }
+        else
+        {
         const notes: Array<Note> = [];
           data["notes"].forEach((note: any) => {
             const newNote = new Note(
@@ -53,6 +59,7 @@ export class Note {
 
         return notes;       
       }
+    }
     } catch {
       throw new Error("No connection to the server");
     }
