@@ -54,9 +54,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 
 	return (
 		<section className="flex-container">
-			<button onClick={handleOpenListClick} className="select-patient-button" aria-label="Select patient">
-				<span className="add-patient-to-session-icon selecting patient">Selecteer patiënt</span>
-			</button>
+			<button onClick={handleOpenListClick} className="select-patient-button" aria-label="Select patient" value="Selecteer patiënt"></button>
 			{showPatients && (
 				<ul className="patient-list">
 					{patients.map((patient, index) => (
@@ -88,7 +86,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 	);
 };
 
-const AddPatientSelection: React.FC = () => {
+const ArtsSession: React.FC = () => {
 	const handleSelect = () => {
 		return;
 	};
@@ -104,4 +102,4 @@ const AddPatientSelection: React.FC = () => {
 	);
 };
 
-export default AddPatientSelection;
+export { ArtsSession, PatientSelect };
