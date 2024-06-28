@@ -17,6 +17,16 @@
 	.page-title {
 		max-width: 100%;
 	}
+	.page-title-divider {
+		border-color: #000369;
+		border-style: solid;
+		border-width: 2px;
+		background-color: #000369;
+		margin-top: 5px;
+		width: 263px;
+		max-width: 100%;
+		height: 2px;
+	}
 }
 .patient-session-container {
 	display: flex;
@@ -56,12 +66,19 @@
 	align-self: center;
 	display: flex;
 	gap: 8px;
-	margin: 39px 0 0 3px;
+	margin-top: 56px;
+	width: 100%;
 }
 @media (max-width: 991px) {
 	.patient-session-card {
 		flex-wrap: wrap;
 	}
+}
+.patient-session-info-container {
+	width: 100%;
+	flex-direction: column;
+	align-items: start;
+	display: flex;
 }
 .appointment-info {
 	border-radius: 18px 0px;
@@ -145,7 +162,31 @@
 	font-size: 18px;
 	color: #000369;
 }
-.patient-session-info-value {
+.patient-session-info-name {
+	font-family: Montserrat, sans-serif;
+	font-weight: 400;
+	margin-top: 9px;
+	color: #000369;
+}
+.patient-session-info-age {
+	font-family: Montserrat, sans-serif;
+	font-weight: 400;
+	margin-top: 9px;
+	color: #000369;
+}
+.patient-session-info-diagnosis {
+	font-family: Montserrat, sans-serif;
+	font-weight: 400;
+	margin-top: 9px;
+	color: #000369;
+}
+.patient-session-info-medication {
+	font-family: Montserrat, sans-serif;
+	font-weight: 400;
+	margin-top: 9px;
+	color: #000369;
+}
+.patient-session-info-count {
 	font-family: Montserrat, sans-serif;
 	font-weight: 400;
 	margin-top: 9px;
@@ -224,7 +265,6 @@
 	display: flex;
 	margin-top: 56px;
 	width: 100%;
-	padding-left: 10px;
 	flex-direction: column;
 	align-items: start;
 }
@@ -253,7 +293,6 @@
 .results-inner {
 	border-radius: 57px;
 	background-color: #fff;
-	display: flex;
 	flex-direction: column;
 	padding: 42px 33px;
 }
@@ -302,16 +341,16 @@
 	}
 }
 .radiology-labels {
-	align-self: end;
 	display: flex;
 	margin-top: 64px;
-	width: 182px;
+	width: 135px;
 	max-width: 100%;
 	gap: 20px;
 	font-size: 20px;
 	font-weight: 400;
 	white-space: nowrap;
 	justify-content: space-between;
+	margin-left: 110px;
 }
 @media (max-width: 991px) {
 	.radiology-labels {
@@ -336,7 +375,7 @@
 }
 .assessment-label {
 	color: #000369;
-	margin-top: 94px;
+	margin-top: 154px;
 	font:
 		400 20px Montserrat,
 		-apple-system,
@@ -354,7 +393,7 @@
 	display: flex;
 	gap: 8px;
 	color: #000369;
-	margin: 22px 0 0 39px;
+	margin: 22px 0 0 63px;
 }
 @media (max-width: 991px) {
 	.radiology-item {
@@ -366,9 +405,9 @@
 	background-color: #d8eaff;
 	display: flex;
 	gap: 20px;
-	flex-grow: 1;
 	flex-basis: auto;
 	padding: 18px 33px;
+	width: 650px;
 }
 @media (max-width: 991px) {
 	.radiology-item-content {
@@ -423,12 +462,18 @@
 		padding-right: 20px;
 	}
 }
-.radiology-item-icon {
-	aspect-ratio: 1.23;
-	object-fit: auto;
-	object-position: center;
-	width: 102px;
-	max-width: 100%;
+.radiology-item-button {
+	min-height: 106px;
+	border: none;
+	margin-left: 5px;
+	min-width: 5rem;
+	justify-content: center;
+	text-align: center;
+	font-size: 1.5rem;
+	font-style: bold;
+	color: #1e3a8a;
+	background-color: #d8eaff;
+	border-radius: 0 1.25rem 0 1.25rem;
 }
 .blood-chemistry {
 	color: #000369;
@@ -500,94 +545,65 @@
 		padding: 0 20px;
 	}
 }
-.action-buttons {
-	align-self: end;
+.button-container {
 	display: flex;
-	margin-top: 72px;
-	gap: 14px;
-	font-size: 16px;
-	font-weight: 600;
-	text-align: center;
+	justify-content: start;
+	gap: 10px;
+	margin-top: 20px;
 }
-@media (max-width: 991px) {
-	.action-buttons {
-		margin: 40px 10px 0 0;
-	}
-}
-.cancel-button {
-	display: flex;
-	align-items: center;
-	color: #000369;
-	white-space: nowrap;
-	justify-content: center;
-	flex: 1;
-}
-@media (max-width: 991px) {
-	.cancel-button {
-		white-space: initial;
-	}
-}
-.cancel-button-content {
-	display: flex;
-	flex-direction: column;
-	font-family: Montserrat, sans-serif;
-	position: relative;
-	stroke-width: 2px;
-	stroke: #1b21d4;
-	overflow: hidden;
-	border: 2px solid #1b21d4;
-	aspect-ratio: 2.5;
-	justify-content: center;
-	padding: 24px 39px;
-}
-@media (max-width: 991px) {
-	.cancel-button-content {
-		white-space: initial;
-		padding: 0 20px;
-	}
-}
-.cancel-button-bg {
-	position: absolute;
-	inset: 0;
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-	object-position: center;
-}
-.cancel-button-text {
-	position: relative;
-}
-.add-session-button {
-	display: flex;
-	align-items: center;
-	color: #fff;
-	justify-content: center;
-	flex: 1;
-}
-.add-session-button-content {
-	display: flex;
-	flex-direction: column;
-	font-family: Montserrat, sans-serif;
-	position: relative;
-	fill: #1b21d4;
-	overflow: hidden;
-	aspect-ratio: 2.5;
+
+.button-container button {
+	padding: 10px 20px;
+	font-size: 14px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
 	width: 150px;
-	padding: 24px 32px 1px;
+	height: 40px;
 }
-@media (max-width: 991px) {
-	.add-session-button-content {
-		padding: 0 20px;
-	}
+.add-cancel-button-container {
+	margin-top: 70px;
+	margin-left: 610px;
 }
-.add-session-button-bg {
-	position: absolute;
-	inset: 0;
-	height: 100%;
+.cancel-session-button {
+	background-color: #fff;
+	border: solid;
+	border-color: #1b21d4;
+	border-width: 2px;
+	color: #000369;
+	width: 150px;
+	height: 60px;
+	border-radius: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-right: 14px;
+}
+
+.add-session-button {
+	background-color: #1b21d4;
+	color: white;
+	cursor: pointer;
+	width: 150px;
+	height: 60px;
+	border-radius: 10px;
+}
+
+.button-container button:hover {
+	opacity: 0.8;
+}
+.section-divider-title {
+	border-color: #000369;
+	border-style: solid;
+	border-width: 2px;
+	background-color: #000369;
+	margin-top: 5px;
+	width: 438px;
+	max-width: 100%;
+	height: 2px;
+}
+.session-header {
 	width: 100%;
-	object-fit: cover;
-	object-position: center;
-}
-.add-session-button-text {
-	position: relative;
+	flex-direction: column;
+	align-items: start;
+	display: flex;
 }
