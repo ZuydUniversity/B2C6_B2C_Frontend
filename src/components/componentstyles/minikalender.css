@@ -108,22 +108,22 @@
 	align-items: center;
 	margin-bottom: -1px;
 	position: relative;
-  width: calc(100% / 7);
-  font-family: Arial, Helvetica, sans-serif;
-  aspect-ratio: 1;
-  text-align: center;
-  box-sizing: border-box;
-  margin: 1px 0;
-  cursor: default;
-  border-radius: 0;
-  transition: background-color 0.3s;
-  border: 1px solid black;
-  color: #000369;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: -0px;
+	width: calc(100% / 7);
+	font-family: Arial, Helvetica, sans-serif;
+	aspect-ratio: 1;
+	text-align: center;
+	box-sizing: border-box;
+	margin: 1px 0;
+	cursor: default;
+	border-radius: 0;
+	transition: background-color 0.3s;
+	border: 1px solid black;
+	color: #000369;
+	background-color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: -0px;
 }
 
 .popup {

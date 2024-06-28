@@ -12,9 +12,9 @@ const Sidebar: React.FC = () => {
 					<a href="/dashboard" className="url">
 						<li className="dashboard-icon">Dashboard</li>
 					</a>
-          <a href="/kalender" className="url">
-					  <li className="calendar-icon">Kalender</li>
-          </a>
+					<a href="/kalender" className="url">
+						<li className="calendar-icon">Kalender</li>
+					</a>
 					<a href="/notes" className="url">
 						<li className="notities-icon">Notities</li>
 					</a>

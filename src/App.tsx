@@ -8,15 +8,14 @@ import PatientOverview from "./pages/patientoverview";
 import Sidebar from "./components/sidebar";
 import LoginPage from "./pages/loginpage";
 import NotFoundPage from "./pages/notfoundpage";
-import KalenderPage from "./pages/kalenderpage"; 
+import KalenderPage from "./pages/kalenderpage";
 import Notes from "./pages/notes";
 import ArtsSessionPage from "./pages/artssessionpage";
 import PhysioSessionPage from "./pages/physiosessionpage";
 import ActiveArtsSession from "./pages/activeartssessionpage";
 
-import 'typeface-montserrat';
+import "typeface-montserrat";
 import "./App.css";
-
 
 const App: React.FC = () => {
 	const [hideNavbar, setHideNavbar] = useState(false);
@@ -39,7 +38,7 @@ const App: React.FC = () => {
 						<Route path="/physiosession" element={<PhysioSessionPage />} />
 						<Route path="/activeartssession" element={<ActiveArtsSession />} />
 						<Route path="*" element={<NotFoundPage setHideNavbar={setHideNavbar} />} />
-            <Route path="/kalender" element={<KalenderPage />} />
+						<Route path="/kalender" element={<KalenderPage />} />
 					</Routes>
 				</div>
 			</div>
