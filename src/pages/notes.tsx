@@ -142,15 +142,8 @@ const Notes: React.FC = () => {
 
 	return (
 		<div className="general-container">
-			<div className="notes-background">
-				{/* Title bar in container */}
-				<div className="notes-title">
-					<h1>
-						Notities
-						<hr className="notes-title-line" />
-					</h1>
-				</div>
-
+			<h1 className="notes-header">Notities</h1>
+			
 				{/* Container for the list of notes (with border) */}
 				<div className="notes-container">
 					<div className="notes-container-inside">
@@ -197,7 +190,7 @@ const Notes: React.FC = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		
 	);
 };
 
