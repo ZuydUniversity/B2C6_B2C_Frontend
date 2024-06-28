@@ -1,5 +1,6 @@
 import { Specialist, Patient, Session } from "../abstracts/ImportsModels";
 import { apiUrl } from "../abstracts/Constances";
+import { stringify } from "querystring";
 
 export class Note {
 	Id!: number | null;
@@ -26,7 +27,7 @@ export class Note {
    * @returns {Array<Note>} The notes of the specialist
    */
 
-  async getallnotes() {
+  async getAllNotes() {
     try {
       const response = await fetch(`${apiUrl}/notes`, {
         method: "GET",
@@ -53,6 +54,33 @@ export class Note {
         return notes;       
       }
     } catch {
+      throw new Error("No connection to the server");
+    }
+  }
+
+  async postNote() {
+
+    const createNote = JSON.stringify(this);
+
+    try {
+      const response = await fetch(`${apiUrl}/notes`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: createNote,
+      });
+
+      if (response) {
+        const data = await response.json();
+        if (data["message"]["success"] !== true) 
+        {
+          throw new Error("Note is not saved");
+        }
+      } 
+    }
+    catch 
+    {
       throw new Error("No connection to the server");
     }
   }
