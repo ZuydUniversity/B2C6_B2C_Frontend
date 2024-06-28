@@ -22,7 +22,6 @@ code {
 
 .main-content {
 	width: 100%;
-	transform: scale(1);
-	transform-origin: top left;
+	background-color: darkkhaki;
 }
 

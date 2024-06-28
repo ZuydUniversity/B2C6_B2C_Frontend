@@ -1,6 +1,7 @@
 .general-container {
 	height: 80%;
 	width: 80%;
+	padding-left: 50px;
 }
 
 .notes-background {
@@ -20,8 +21,6 @@
 	margin-left: 4%;
 	border-bottom: 4px solid #1e3a8a;
 }
-
-
 
 .notes-container {
 	display: flex;
