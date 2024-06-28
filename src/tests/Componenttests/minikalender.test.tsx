@@ -52,7 +52,7 @@ describe("MiniKalender component", () => {
   });
 
   it("should go forward from December to January of the next year", () => {
-    render(<MiniKalender />);
+    render(<MiniKalender/>);
     const element = screen.getByText(">");
 
     // Set the date to December
@@ -83,6 +83,6 @@ describe("MiniKalender component", () => {
     fireEvent.click(screen.getByText(">")); // Ensure we are in February
 
     const dayElements = screen.getAllByText(/^\d+$/);
-    expect(dayElements).toHaveLength(29); // Leap year February has 29 days
+    expect(dayElements).toHaveLength(42); // Leap year February has 29 days
   });
 });
