@@ -6,11 +6,11 @@ export class Note {
 	Id!: number | null;
 	Name!: string;
 	Description!: string;
-	Specialist!: Specialist;
+	Specialist!: Specialist | null;
 	Patient!: Patient | null;
 	Session!: Session | null;
 
-	constructor(name: string, description: string, specialist: Specialist, patient: Patient | null = null, session: Session | null = null) {
+	constructor(name: string, description: string, specialist: Specialist | null = null, patient: Patient | null = null, session: Session | null = null) {
 		this.Id = null;
 		this.Name = name;
 		this.Description = description;
@@ -54,6 +54,43 @@ export class Note {
         return notes;       
       }
     } catch {
+      throw new Error("No connection to the server");
+    }
+  }
+  async getspecificNotebyId() {
+    try {
+      const response = await fetch(`${apiUrl}/notes/${this.Id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      
+    
+      if (response) {
+        const data = await response.json();
+        if (data["message"]["success"] !== true) 
+        {
+          throw new Error("Note is not retrieved");
+        }
+        else
+        {
+            const data = await response.json();
+            const note = data["note"];
+            const newNote = new Note(
+                  note["name"],
+                  note["description"],
+                  note["specialist"],
+                  note["patient"],
+                  note["session"]
+              );
+                newNote.Id = note["id"];
+                return newNote;       
+          };    
+        }
+      }
+    catch 
+    {
       throw new Error("No connection to the server");
     }
   }
