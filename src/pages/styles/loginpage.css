@@ -95,7 +95,7 @@
 	justify-content: space-between;
 }
 
-.loginpage-button {
+button {
 	width: 30%;
 	height: 6vh;
 	padding: 10px;
@@ -112,7 +112,7 @@
 	color: red;
 }
 
-.loginpage-button:hover {
+button:hover {
 	background-color: #161bac;
 }
 
