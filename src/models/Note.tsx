@@ -129,6 +129,12 @@ export class Note {
     }
   }
 
+  /**
+   * Deletes a note from the server.
+   *
+   * @return {Promise<void>} Promise that resolves when the note is successfully deleted.
+   * @throws {Error} If the note is not deleted or if there is no connection to the server.
+   */
   async deleteNote() {
     try {
       const response = await fetch(`${apiUrl}/notes/${this.Id}`, {
