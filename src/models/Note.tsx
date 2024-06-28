@@ -152,6 +152,11 @@ export class Note {
     }
   }
 
+    /**
+   * Patch a note by sending an update request to the server.
+   *
+   * @return {Promise<void>} Promise that resolves when the note is successfully patched.
+   */
   async patchNote() {
     const updateNote = JSON.stringify(this);
 
