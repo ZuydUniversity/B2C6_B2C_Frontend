@@ -151,4 +151,30 @@ export class Note {
       throw new Error("No connection to the server");
     }
   }
+
+  async patchNote() {
+    const updateNote = JSON.stringify(this);
+
+    try {
+      const response = await fetch(`${apiUrl}/notes/${this.Id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: updateNote,
+      });
+
+      if (response) {
+        const data = await response.json();
+        if (data["message"]["success"] !== true) 
+        {
+          throw new Error("Note is not saved");
+        }
+      } 
+    }
+    catch 
+    {
+      throw new Error("No connection to the server");
+    }
+  }
 }
