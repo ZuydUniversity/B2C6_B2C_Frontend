@@ -1,7 +1,7 @@
-import { apiUrl, Dictionary } from "../abstracts/Constances";
+import { Dictionary } from "../abstracts/Constances";
 
 export class User {
-	Id!: number;
+	_id!: number;
 	Firstname!: string;
 	Lastname!: string;
 	Password!: string;
@@ -10,7 +10,7 @@ export class User {
 	Settings!: Dictionary<boolean>;
 
 	constructor(firstname: string, lastname: string, email: string, phonenumber: string) {
-		this.Id = 0;
+		this._id = 0;
 		this.Firstname = firstname;
 		this.Lastname = lastname;
 		this.Email = email;
