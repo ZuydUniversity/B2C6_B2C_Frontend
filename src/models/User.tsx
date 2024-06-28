@@ -1,9 +1,10 @@
-import { Dictionary } from "../abstracts/Dictionary";
+import { Dictionary } from "../abstracts/Constances";
 
 export class User {
 	_id!: number;
 	Firstname!: string;
 	Lastname!: string;
+	Password!: string;
 	Email!: string;
 	Phonenumber!: string;
 	Settings!: Dictionary<boolean>;

@@ -115,6 +115,7 @@
 	width: 416px;
 	margin-left: 10rem;
 }
+
 .divider2 {
 	height: 0.125rem;
 	background-color: #1e3a8a;
@@ -184,14 +185,11 @@
 	}
 }
 
-/* Existing styles can remain */
-
 .patient-divider {
 	border: none;
 	border-bottom: 1px solid #ccc; /* Customize the color and thickness */
 	margin: 10px 0; /* Adjust as necessary */
-  }
-  
+}
 
 .patient-list {
 	position: absolute;
@@ -234,8 +232,23 @@
 	margin-right: 10px; /* Add some space between details and button */
 }
 
-.patient-details p {
-	margin: 0; /* Remove default margin */
+.patient-info {
+	display: flex;
+	margin-left: 5%;
+	gap: 20%;
+}
+
+.patient-info-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.patient-label {
+	font-weight: bold;
+}
+
+.patient-data {
+	margin-top: 0.25rem;
 }
 
 .add-button {
@@ -264,7 +277,7 @@
 	}
 }
 
-.add-patient-to-session-icon{
+.add-patient-to-session-icon {
 	background: url(../../../public/Icons/Plus.svg) no-repeat 15px;
 	padding-left: 60px;
 	padding-top: 14px;
@@ -272,4 +285,3 @@
 	background-size: 30px;
 	height: 20px;
 }
-  

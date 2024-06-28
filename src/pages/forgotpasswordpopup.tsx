@@ -17,7 +17,7 @@ const ForgotPasswordPopup: React.FC<ForgotPasswordPopupProps> = ({ onClose }) =>
 	return (
 		<div className="popup-overlay" onClick={onClose}>
 			<div className="popup-content" onClick={(e) => e.stopPropagation()}>
-				<form onSubmit={handleSubmit}>
+				<form id="reset-password-form" onSubmit={handleSubmit}>
 					<h1>wachtwoord vergeten</h1>
 					<p>Indien je je wachtwoord bent vergeten, kun je deze wijzigen via mail. Vul onderstaande gegevens in en volg vervolgens de instructies in de e-mail om je wachtwoord eenvoudig te wijzigen.</p>
 					<label htmlFor="email">Vul hier je e-mailadres in</label>

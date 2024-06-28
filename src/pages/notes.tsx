@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import "./styles/notes.css";
 import NoteListItem from "../components/notelistitem";
 import { Note, Specialist, Patient, Appointment, Session } from "../abstracts/ImportsModels";
-import dropdown_arrow from "./images/dropdown_arrow.png";
-import dropdown_arrow_up from "./images/dropdown_arrow_reverse.png";
 
 // Set constant values for the tests
 const baseSpecialist1 = new Specialist("Barack", "Obama", "JohnDoe@gmail.com", "0612345678");
 const baseSpecialist2 = new Specialist("John", "Doe", "JohnDoe@gmail.com", "0612345678");
 
-const patient = new Patient("Jane", "English", "Jane.English@yahoo.com", 25, "0612345678", false, "Tarzan", "English", "Tarzan.English@yahoo.com", "0612345678");
+const patient = new Patient("John", "Doe", "john.doe@example.com", 34, "123-456-7890", "john.smith@example.com", "444-555-6666", "Male");
 
 const appointment = new Appointment("Appointment 1", new Date(2021, 11, 1), new Date(2021, 11, 2), baseSpecialist1, patient);
 
@@ -17,9 +15,9 @@ const session1 = new Session("Session 1", appointment.Startdatetime, appointment
 const session2 = new Session("Session 2", appointment.Startdatetime, appointment.Enddatetime, appointment.Specialist, appointment.Patient, appointment);
 
 export var initialNotes: Note[] = [
-	new Note("Note 1", "This is the first note.", baseSpecialist1),
-	new Note("Note 6", "This is the second note.", baseSpecialist2),
-	new Note("Note 3", "This is the third note.", baseSpecialist2),
+	new Note("Note 1", "This is the first note.", baseSpecialist1, null, session1),
+	new Note("Note 6", "This is the second note.", baseSpecialist2, patient, session2),
+	new Note("Note 3", "This is the third note.", baseSpecialist2, patient),
 	new Note("Note 4", "This is the fourth note.", baseSpecialist1),
 ];
 
@@ -167,25 +165,25 @@ const Notes: React.FC = () => {
 							<div className="notes-table-sections-title table-section-note">
 								<h2>Notitie</h2>
 								<button onClick={sortNotesByName} className="filter-by-button" id="dropdown_arrow_name">
-									<img src={filteredByName ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+									<img src={filteredByName ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
 							</div>
 							<div className="notes-table-sections-title table-section-specialist">
 								<h2>Specialist</h2>
 								<button onClick={sortNotesBySpecialist} className="filter-by-button" id="dropdown_arrow_specialist">
-									<img src={filteredBySpecialist ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+									<img src={filteredBySpecialist ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
 							</div>
 							<div className="notes-table-sections-title table-section-patient">
 								<h2>Patiënt</h2>
 								<button onClick={sortNotesByPatient} className="filter-by-button" id="dropdown_arrow_patient">
-									<img src={filteredByPatient ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+									<img src={filteredByPatient ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
 							</div>
 							<div className="notes-table-sections-title table-section-session">
 								<h2>Sessie</h2>
 								<button onClick={sortNotesBySession} className="filter-by-button" id="dropdown_arrow_session">
-									<img src={filteredBySession ? dropdown_arrow_up : dropdown_arrow} alt="Arrow down" className="dropdown_arrow" />
+									<img src={filteredBySession ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
 								</button>
 							</div>
 						</div>

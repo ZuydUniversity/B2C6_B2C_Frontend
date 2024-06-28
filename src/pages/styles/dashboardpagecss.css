@@ -4,6 +4,7 @@
 	justify-content: center;
 	align-items: center;
 	margin: 0 2%;
+	margin-bottom: -200%;
 }
 
 .dashboardHeader {
@@ -20,9 +21,9 @@
 	display: flex;
 	flex-grow: 1;
 	width: 75%;
-	padding: 3%;
+	padding: 40px;
 	background-color: #e0f2fe;
-	border-radius: 75px;
+	border-radius: 70px;
 	max-height: calc(100vh - 250px);
 	overflow: hidden;
 }
@@ -55,9 +56,10 @@
 }
 
 .dashboardInnerHeader hr {
-	height: 0.125rem;
 	border: 2px solid #1e3a8a;
 	background-color: #1e3a8a;
+	margin: 1px;
+	width: 100%;
 }
 
 .dashboardSort {

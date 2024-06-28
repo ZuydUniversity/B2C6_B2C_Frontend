@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
 					</a>
 					<li className="calendar-icon">Kalender</li>
 					<a href="/notes" className="url">
-						<li className="documents-icon">Documenten</li>
+						<li className="notities-icon">Notities</li>
 					</a>
 					<a href="/patients" className="url">
 						<li className="patients-icon">Patiëntenoverzicht</li>
@@ -26,7 +26,9 @@ const Sidebar: React.FC = () => {
 					<a href="/artsession" className="url">
 						<li className="add-doctor-session-icon">Sessie toevoegen arts</li>
 					</a>
-					<li className="add-physio-session-icon">Sessie toevoegen fysiotherapeut</li>
+					<a href="/physiosession" className="url">
+						<li className="add-physio-session-icon">Sessie toevoegen fysiotherapeut</li>
+					</a>
 				</ul>
 				<hr />
 			</nav>
