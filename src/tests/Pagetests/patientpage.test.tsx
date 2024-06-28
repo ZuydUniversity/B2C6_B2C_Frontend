@@ -1,18 +1,17 @@
 import PatientPage from "../../pages/patientpage";
 import { fireEvent, render } from "@testing-library/react";
 import { screen } from "@testing-library/dom";
-import { MemoryRouter } from 'react-router-dom'; // Import MemoryRouter
+import { MemoryRouter } from "react-router-dom"; // Import MemoryRouter
 
 test("Check if page renders", () => {
 	// Wrap PatientPage with MemoryRouter
 	const page = render(
-	  <MemoryRouter>
-		<PatientPage />
-	  </MemoryRouter>
+		<MemoryRouter>
+			<PatientPage />
+		</MemoryRouter>
 	);
 	expect(page.getByText("Patiëntenoverzicht")).toBeInTheDocument();
-  });
-
+});
 
 // test("Check if page renders", () => {
 // 	const page = render(<PatientPage />);
