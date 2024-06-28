@@ -22,11 +22,13 @@ export class Note {
   // Note functions
   // --------------
 
-  /**
-   * Get the all the notes of the specialist
-   * @returns {Array<Note>} The notes of the specialist
+   /**
+   * Asynchronously retrieves all notes from the server.
+   *
+   * @return {Promise<Array<Note>>} A promise that resolves with an array of Note objects,
+   * or throws an error if the notes are not retrieved or if there is no connection to the server.
+   * @throws {Error} If the notes are not retrieved or if there is no connection to the server.
    */
-
   async getAllNotes() {
     try {
       const response = await fetch(`${apiUrl}/notes`, {
@@ -64,7 +66,7 @@ export class Note {
       throw new Error("No connection to the server");
     }
   }
-  
+
    /**
    * Asynchronously retrieves a specific note by its ID from the server.
    *
