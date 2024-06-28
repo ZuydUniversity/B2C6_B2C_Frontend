@@ -25,30 +25,30 @@ export class Note {
    * Get the all the notes of the specialist
    * @returns {Array<Note>} The notes of the specialist
    */
-  async getNotesOfSpecialist() {
+
+  async getallnotes() {
     try {
-      const response = await fetch(`${apiUrl}notes/specialist/${this.Specialist.Id}`, {
+      const response = await fetch(`${apiUrl}/notes`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
       });
-
+    
       if (response) {
         const data = await response.json();
-
         const notes: Array<Note> = [];
-        data.forEach((note: any) => {
-          const newNote = new Note(
-            note.Name,
-            note.Description,
-            this.Specialist,
-            note.Patient,
-            note.Session
-          );
-          newNote.Id = note.Id;
-          notes.push(newNote);
-        });
+          data["notes"].forEach((note: any) => {
+            const newNote = new Note(
+              note["name"],
+              note["description"],
+              note["specialist"],
+              note["patient"],
+              note["session"]
+            );
+            newNote.Id = note["id"];
+            notes.push(newNote);
+          });
 
         return notes;       
       }
