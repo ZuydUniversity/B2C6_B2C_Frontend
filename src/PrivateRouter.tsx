@@ -8,7 +8,24 @@ interface PrivateRouteProps {
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
     const isAuthenticated = () => {
         const accessToken = localStorage.getItem("accessToken");
-        return !accessToken;
+        const tokenTimestamp = localStorage.getItem("tokenTimestamp");
+
+        if (!accessToken || !tokenTimestamp)
+            return false;
+
+        const now = new Date().getTime();
+        const tokenAge = now - parseInt(tokenTimestamp, 10)
+
+        if (tokenAge > 15 * 60 * 1000) {
+
+            localStorage.removeItem("accessToken");
+            localStorage.removeItem("tokenTimestamp");
+
+            return false;
+
+        }
+
+        return true;
     };
 
     return isAuthenticated() ? <>{element}</> : <Navigate to="/login" />;
