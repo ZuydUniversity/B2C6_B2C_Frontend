@@ -70,7 +70,10 @@ type PatientInfoProps = {
     return (
       <>
         <main className="main-container">
-          <h1 className="page-title">Sessie toevoegen</h1>
+          <section className="session-header">
+            <h1 className="page-title">Sessie toevoegen</h1>
+            <div className="section-divider-title"/>
+            </section>
           <section className="patient-session-info-container">
             <h2 className="section-title">Patiëntgegevens</h2>
             <div className="section-divider" />
