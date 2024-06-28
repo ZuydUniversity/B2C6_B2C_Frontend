@@ -1,14 +1,36 @@
 import React from 'react';
-import { Navigate } from "react-router-dom";
+import { useState } from 'react';
 import './styles/stylesheetsettings.css';
 import MiniKalender from "../components/minikalender";
-//nog een import voor de plannin/notitie component.
+import SettingSwitch from '../components/switchsetting';
 
 const SettingsPage: React.FC = () => {
+    const [selectedItem, setSelectedItem] = useState<string>('Profiel');
+    
+    const handleNavClick = (item: string) => {
+        setSelectedItem(item);
+    };
+
     return (
         <div className="settings-page">
-            <main className="">
-                
+            <main>
+                <h1 className='settings-page'>Instellingen</h1>
+                <div className='settings-layout-styling'>
+                    <nav className='settings-navbar'>
+                        <ul>
+                            <li className={selectedItem === 'Profiel' ? 'active' : ''} onClick={() => handleNavClick('Profiel')}>Profiel</li>
+                            <li className={selectedItem === 'Meldingen' ? 'active' : ''} onClick={() => handleNavClick('Meldingen')}>Meldingen</li>
+                            <li className={selectedItem === 'Logboek' ? 'active' : ''} onClick={() => handleNavClick('Logboek')}>Logboek</li>
+                            <li className={selectedItem === 'Dashboard Instellingen' ? 'active' : ''} onClick={() => handleNavClick('Dashboard Instellingen')}>Dashboard Instellingen</li>
+                        </ul>
+                    </nav>
+                    <div className='settings-component-styling'>
+                        {selectedItem === 'Profiel' && <MiniKalender/>} 
+                        {selectedItem === 'Meldingen' && <div></div>}
+                        {selectedItem === 'Logboek' && <div>Logboek Component</div>}
+                        {selectedItem === 'Dashboard Instellingen' && <div>Dashboard Instellingen Component</div>}
+                    </div>
+                </div>
             </main>
         </div>
     );

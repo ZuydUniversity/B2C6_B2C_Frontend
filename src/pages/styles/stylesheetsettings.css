@@ -1,7 +1,66 @@
 .settings-page {
+    background: #D8EAFF;
+    height: 100%;
+    margin: 0;
+
+    
 
 }
 
 .settings-page h1 {
+    width: 300px;
+    height: 61px;
+    font-style: bold;
+    color: #000369;
+    padding: 34px 0 0 10px;
+    margin-left: 34px;
+    border-bottom: 3px solid #000369;
+
+}
+
+.settings-layout-styling {
+    width: 1164px;
+    height: 858px;
+    padding-left: 34px;
+}
+
+.settings-navbar {
+    background-color: #000369;
+    display: flex;
+    flex-direction: column;
+    width: 259px;
+    height: 858px;
+    border-radius: 57px 0px;
+    margin-left: 34px;
+    margin-top: 41px;
+    color:white;    
+}
+
+.settings-navbar ul li {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    padding-left: 60px;
+    padding-top: 3px;
+    font-size: 14px;
+    color: #FFF;
+    align-items: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;  
+    opacity: 0.3;
     
+}
+
+.settings-navbar ul li:hover {
+    opacity: 100%;
+}
+
+.settings-navbar ul li::selection {
+    opacity: 100%;
+}
+.url {
+    text-decoration: none;
+    color:black;
 }

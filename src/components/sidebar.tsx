@@ -32,7 +32,9 @@ const Sidebar: React.FC = () => {
 			</nav>
 			<div className="settings-logout">
 				<ul>
+					<a href="/settings" className="url">
 					<li className="settings-icon">Instellingen</li>
+					</a>
 					<a href="/login" className="url">
 						<li className="logout-icon">Uitloggen</li>
 					</a>
