@@ -101,7 +101,13 @@ export class Note {
       throw new Error("No connection to the server");
     }
   }
-
+  
+ /**
+   * Asynchronously posts a note to the server.
+   *
+   * @return {Promise<void>} Promise that resolves when the note is successfully posted.
+   * @throws {Error} If the note is not saved or if there is no connection to the server.
+   */
   async postNote() {
 
     const createNote = JSON.stringify(this);
