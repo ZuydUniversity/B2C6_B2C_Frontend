@@ -9,7 +9,7 @@ describe("MiniKalender component", () => {
 		expect(element).toBeInTheDocument();
 	});
 
-	it("should go back one month", () => {
+	it("should go back one month", () => { 
 		render(<MiniKalender />);
 		const element = screen.getByText("<");
 		expect(element).toBeInTheDocument();
