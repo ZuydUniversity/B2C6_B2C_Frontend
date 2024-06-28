@@ -56,9 +56,10 @@
 }
 
 .dashboardInnerHeader hr {
-	height: 0.125rem;
 	border: 2px solid #1e3a8a;
 	background-color: #1e3a8a;
+	margin: 1px;
+	width: 100%;
 }
 
 .dashboardSort {
