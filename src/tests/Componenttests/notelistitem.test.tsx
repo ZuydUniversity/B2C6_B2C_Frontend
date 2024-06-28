@@ -26,7 +26,7 @@ describe("Notes component", () => {
 		expect(noteName.textContent).toBe(note1.Name);
 
 		const noteSpecialist = document.getElementsByClassName("note-specialist")[0] as HTMLElement;
-		expect(noteSpecialist.textContent).toBe(note1.Specialist.Firstname + " " + note1.Specialist.Lastname);
+		expect(noteSpecialist.textContent).toBe(note1.Specialist?.Firstname + " " + note1.Specialist?.Lastname);
 
 		const notePatient = document.getElementsByClassName("note-patient")[0] as HTMLElement;
 		expect(notePatient.textContent).toBe(note1.Patient?.Firstname + " " + note1.Patient?.Lastname);
@@ -45,7 +45,7 @@ describe("Notes component", () => {
 		expect(noteName.textContent).toBe(note2.Name);
 
 		const noteSpecialist = document.getElementsByClassName("note-specialist")[0] as HTMLElement;
-		expect(noteSpecialist.textContent).toBe(note2.Specialist.Firstname + " " + note2.Specialist.Lastname);
+		expect(noteSpecialist.textContent).toBe(note2.Specialist?.Firstname + " " + note2.Specialist?.Lastname);
 
 		const notePatient = document.getElementsByClassName("note-patient")[0] as HTMLElement;
 		expect(notePatient.textContent).toBe("-");
