@@ -27,7 +27,7 @@ describe("Tests sorting functions by Name", () => {
 			expect(noteSpecialist).not.toBeNull();
 
 			expect(noteName).toBe(initialNotes[i].Name);
-			expect(noteSpecialist).toBe(initialNotes[i].Specialist.Firstname + " " + initialNotes[i].Specialist.Lastname);
+			expect(noteSpecialist).toBe(initialNotes[i].Specialist?.Firstname + " " + initialNotes[i].Specialist?.Lastname);
 
 			initialNotes[i].Patient === null ? expect(notePatient).toBe("-") : expect(notePatient).toBe(initialNotes[i].Patient?.Firstname + " " + initialNotes[i].Patient?.Lastname);
 
@@ -109,7 +109,7 @@ describe("Tests sorting functions by Name", () => {
 	it("sortNotesBySpecialist sorts notes by name in ascending order", () => {
 		render(<Notes />);
 
-		const newInitialNotes = [...initialNotes].sort((a: Note, b: Note) => a.Specialist.Firstname.localeCompare(b.Specialist.Firstname));
+		const newInitialNotes = [...initialNotes].sort((a: Note, b: Note) => (a.Specialist && b.Specialist ? a.Specialist.Firstname.localeCompare(b.Specialist.Firstname) : 0));
 
 		// Click the sort by name button
 		const sortBySpecialistButton = document.getElementById("dropdown_arrow_specialist") as HTMLButtonElement;
@@ -131,7 +131,7 @@ describe("Tests sorting functions by Name", () => {
 			expect(noteName).not.toBeNull();
 			expect(noteSpecialist).not.toBeNull();
 
-			expect(noteSpecialist).toBe(newInitialNotes[i].Specialist.Firstname + " " + newInitialNotes[i].Specialist.Lastname);
+			expect(noteSpecialist).toBe((newInitialNotes[i].Specialist?.Firstname ?? "") + " " + (newInitialNotes[i].Specialist?.Lastname ?? ""));
 
 			orderedNotesSpecialist.push(noteSpecialist);
 		}
@@ -144,7 +144,7 @@ describe("Tests sorting functions by Name", () => {
 	it("sortNotesBySpecialist sorts notes by name in descending order", () => {
 		render(<Notes />);
 
-		const newInitialNotes = [...initialNotes].sort((a: Note, b: Note) => a.Specialist.Firstname.localeCompare(b.Specialist.Firstname)).reverse();
+		const newInitialNotes = [...initialNotes].sort((a: Note, b: Note) => (a.Specialist && b.Specialist ? a.Specialist.Firstname.localeCompare(b.Specialist.Firstname) : 0)).reverse();
 
 		// Click the sort by name button
 		const sortBySpecialistButton = document.getElementById("dropdown_arrow_specialist") as HTMLButtonElement;
@@ -167,7 +167,7 @@ describe("Tests sorting functions by Name", () => {
 			expect(noteName).not.toBeNull();
 			expect(noteSpecialist).not.toBeNull();
 
-			expect(noteSpecialist).toBe(newInitialNotes[i].Specialist.Firstname + " " + newInitialNotes[i].Specialist.Lastname);
+			expect(noteSpecialist).toBe((newInitialNotes[i].Specialist?.Firstname ?? "") + " " + (newInitialNotes[i].Specialist?.Lastname ?? ""));
 
 			orderedNotesSpecialist.push(noteSpecialist);
 		}
