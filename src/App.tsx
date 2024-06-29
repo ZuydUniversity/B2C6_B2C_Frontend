@@ -12,6 +12,7 @@ import Notes from "./pages/notes";
 import { ArtsSession } from "./pages/artssessionpage";
 import PhysioSessionPage from "./pages/physiosessionpage";
 import { ActiveArtsSession } from "./pages/activeartssessionpage";
+import Physiosessionresultspage from "./pages/physiosessionresultspage";
 import PrivateRoute from "./PrivateRouter";
 
 const App: React.FC = () => {
@@ -34,6 +35,7 @@ const App: React.FC = () => {
 						<Route path="/artsession" element={<PrivateRoute element={<ArtsSession />} />} />
 						<Route path="/physiosession" element={<PrivateRoute element={<PhysioSessionPage />} />} />
 						<Route path="/activeartssession" element={<PrivateRoute element={<ActiveArtsSession />} />} />
+						<Route path="/physiosessionresults" element={<PrivateRoute element={<Physiosessionresultspage />} />} />
 						<Route path="*" element={<NotFoundPage setHideNavbar={setHideNavbar} />} />
 					</Routes>
 				</div>
