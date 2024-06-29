@@ -1,10 +1,27 @@
 // CreatePatient.test.tsx
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, within } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import CreatePatient from "../../components/createpatient";
+import exp from "constants";
 
 describe("CreatePatient Component", () => {
+	test("renders without crashing", () => {
+		render(<CreatePatient />);
+		const createPatientElement = document.querySelector(".modal");
+		expect(createPatientElement).toBeInTheDocument();
+	});
+	test('selecting the "Man" radio button', () => {
+		render(<CreatePatient />);
+		
+		const manRadioButton = screen.getByLabelText(/Man/i);
+		
+		fireEvent.click(manRadioButton);
+		
+		expect(manRadioButton).toBeChecked();
+	  });
+
+
 	test("allows firstname to be entered", () => {
 		render(<CreatePatient />);
 		const firstnameInput = screen.getByLabelText(/Voornaam:/i) as HTMLInputElement;
