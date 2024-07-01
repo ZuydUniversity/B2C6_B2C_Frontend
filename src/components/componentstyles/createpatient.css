@@ -1,0 +1,125 @@
+.main-content {
+	padding: 20px;
+}
+
+header {
+	background: #f7f7f7;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.close-btn {
+	font-weight: bold;
+}
+
+.close-btn:hover {
+	cursor: pointer;
+	color: red;
+	transition: 0.1s ease;
+}
+
+.form-container {
+	border: 1px solid #ddd;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	width: 100%;
+	max-width: 680px;
+	background-color: #d8eaff;
+	color: #000369;
+}
+
+.patient-actions button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.add-patient-form {
+	margin-top: 10px;
+}
+
+.add-patient-form form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.add-patient-form label {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.input-field {
+	background-color: #fff;
+	color: #000000;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	width: 350px; /* Fixed width for input fields */
+	height: 30px;
+	font-size: 18px;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+	transition:
+		box-shadow 200ms ease-in-out,
+		transform 200ms ease-in-out;
+}
+
+.input-field:hover {
+	transform: scale(1.015);
+}
+
+.input-field:active {
+	transform: translateY(2px);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+button {
+	background-color: #7d80ea;
+	color: var(--btn-text-color);
+	border: none;
+	border-radius: 20px;
+	width: 175px;
+	height: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	transition:
+		box-shadow 0.3s ease-in-out,
+		transform 200ms ease-in-out;
+	margin: 5px auto 0 auto;
+	display: block;
+}
+
+button:hover {
+	transform: scale(1.05);
+	box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+	background-color: #6369e7;
+}
+
+button:active {
+	box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+	transform: translateY(-4px);
+}
+
+.radio-group {
+	display: flex;
+	justify-content: space-around;
+	width: 350px; /* Match the input field width */
+}
+
+.form-container input:hover {
+	background-color: rgb(238, 238, 238);
+}
