@@ -22,10 +22,8 @@ const ForgotPasswordPopup: React.FC<ForgotPasswordPopupProps> = ({ onClose }) =>
 			}),
 		});
 
-		if (response.ok)
-			alert("Email verstuurd! Check u inbox om verder te gaan.");
-		else
-			alert("Kon email niet versturen naar " + email);
+		if (response.ok) alert("Email verstuurd! Check u inbox om verder te gaan.");
+		else alert("Kon email niet versturen naar " + email);
 
 		onClose();
 	};
