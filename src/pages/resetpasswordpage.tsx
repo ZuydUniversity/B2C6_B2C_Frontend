@@ -92,10 +92,10 @@ const ResetPasswordPage: React.FC<Props> = ({ setHideNavbar }) => {
 
                 <div className="new-password-container">
                     <div className="label-wrapper">
-                        <label htmlFor="newPassword">New Password</label>
+                        <label htmlFor="new-password-input">New Password</label>
                     </div>
                     <div className="new-password-input-container">
-                        <input className="password-input" type={showNewPassword ? "text" : "password"} value={new_password} onChange={(e) => { checkSecurityPassword(e.target.value) }} />
+                        <input id="new-password-input" className="password-input" type={showNewPassword ? "text" : "password"} value={new_password} onChange={(e) => { checkSecurityPassword(e.target.value) }} />
                         <span className={`password-toggle-icon ${showNewPassword ? 'visible' : ''}`} onClick={togglePasswordVisibility} >
                             <img src={showNewPassword ? "Icons/ShowPassword.svg" : "Icons/HidePassword.svg"} alt={showNewPassword ? "👁" : "‒"} />
                         </span>
@@ -104,9 +104,9 @@ const ResetPasswordPage: React.FC<Props> = ({ setHideNavbar }) => {
 
                 <div className="check-password-container">
                     <div className="label-wrapper">
-                        <label htmlFor="checkPassword" >Verify Password</label>
+                        <label htmlFor="check-password-input" >Verify Password</label>
                     </div>
-                    <input className="password-input" type="password" value={check_password} onChange={(e) => { checkCheckPassword(e.target.value) }} />
+                    <input id="check-password-input" className="password-input" type="password" value={check_password} onChange={(e) => { checkCheckPassword(e.target.value) }} />
                 </div>
 
                 <p>Password requirements:</p>
@@ -120,7 +120,7 @@ const ResetPasswordPage: React.FC<Props> = ({ setHideNavbar }) => {
                 </ul>
 
                 <div className="button-container">
-                    <button type="button" className="cancel-button" onClick={cancelPasswordReset}>Cancel</button>
+                    <button id="cancel-button" type="button" className="cancel-button" onClick={cancelPasswordReset}>Cancel</button>
                     <button type="submit" className="reset-button ">Reset Password</button>
                 </div>
 
