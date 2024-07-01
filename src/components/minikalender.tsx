@@ -1,11 +1,15 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./componentstyles/minikalender.css";
 
-const MiniKalender: React.FC = () => {
+interface MiniKalenderProps {
+	initialDate?: Date;
+}
+
+const MiniKalender: React.FC<MiniKalenderProps> = ({ initialDate = new Date() }) => {
 	const calendarRef = useRef<HTMLDivElement>(null);
 	const titleRef = useRef<HTMLDivElement>(null);
 
-	const [currentDate, setCurrentDate] = useState(new Date());
+	const [currentDate, setCurrentDate] = useState(initialDate);
 	const [hoveredDay, setHoveredDay] = useState<number | null>(null);
 
 	const daysOfWeek = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];

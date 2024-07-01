@@ -19,7 +19,6 @@ const PatientPage: React.FC = () => {
 
 	return (
 		<div className="patient-page">
-			{/* <1 id="title">Patiëntenoverzicht</h1> wordt gebruik voor een render test */}
 			<h1 id="title">Patiëntenoverzicht</h1>
 			<hr />
 			<PatientList onPatientClick={handlePatientClick} />
