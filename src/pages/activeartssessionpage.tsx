@@ -1,5 +1,5 @@
 import * as React from "react";
-import search_icon from "./images/search_icon.png"; 
+import search_icon from "./images/search_icon.png";
 import "./styles/activeartssession.css";
 import SessionScanner from "../components/sessionscanner";
 
