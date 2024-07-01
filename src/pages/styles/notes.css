@@ -37,7 +37,7 @@
 }
 
 .notes-filter-bar {
-	font-size: 25px;	
+	font-size: 25px;
 }
 
 .notes-table-sections {
@@ -77,7 +77,6 @@
 	flex-direction: column;
 	gap: 1rem;
 }
-
 
 .table-section-note-filter {
 	background-color: #1e3a8a;
