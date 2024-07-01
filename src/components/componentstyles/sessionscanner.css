@@ -19,7 +19,6 @@
 
 .scanner-title {
   color: #fff;
-  font: 600 25px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .scanner-preview {
@@ -27,6 +26,14 @@
   background-color: #fff;
   margin-top: 25px;
   height: 375px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.scanner-preview img {
+  object-fit: contain;
 }
 
 .aspect-title {
@@ -34,7 +41,6 @@
   text-align: center;
   align-self: center;
   margin-top: 28px;
-  font: 600 25px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .button-scanner-container {
@@ -52,12 +58,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 18.5px; 
+  margin: 0 18.5px;
 }
 
 .left-icon-scanner img,
 .right-icon-scanner img {
-  width: 24px;
-  height: 24px; 
+  width: 70px;
+  height: 70px;
   filter: invert(1); /* Makes the icon white if it's originally black */
 }
