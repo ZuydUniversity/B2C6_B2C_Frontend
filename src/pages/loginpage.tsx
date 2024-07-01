@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles/loginpage.css";
 import ForgotPasswordPopup from "./forgotpasswordpopup"; // Ensure this path is correct
+import { apiUrl } from "../abstracts/Constances";
 
 interface Props {
 	setHideNavbar: React.Dispatch<React.SetStateAction<boolean>>;
@@ -8,6 +9,7 @@ interface Props {
 
 const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
 	const [showPopup, setShowPopup] = useState<boolean>(false);
+	const [personel_number, setPersonelNumber] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
@@ -30,12 +32,13 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
 
 	const handleLogin = async () => {
 		try {
-			const response = await fetch("http://127.0.0.1:8000/api/user/login", {
+			const response = await fetch(apiUrl + "user/login", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({
+					personel_number: personel_number,
 					email: email,
 					password: password,
 				}),
@@ -45,10 +48,13 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
 				const data = await response.json();
 				const accessToken = data.access_token;
 
+				const now = new Date().getTime();
 				localStorage.setItem("accessToken", accessToken);
+				localStorage.setItem("tokenTimestamp", now.toString());
+
 				window.location.href = "/dashboard";
 			} else {
-				setError("Incorrect email or password");
+				setError("Incorrect personeels nummer, email or password");
 			}
 		} catch (error) {
 			setError("No connection");
@@ -62,7 +68,7 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
 					<h1>Inloggen</h1>
 					<div>
 						<div className="form-group">
-							<input type="text" id="personnel-number" name="personnel-number" placeholder="Personeels nummer" />
+							<input type="text" id="personnel-number" name="personnel-number" placeholder="Personeels nummer" onChange={(e) => setPersonelNumber(e.target.value)} />
 						</div>
 						<div className="form-group">
 							<input type="text" id="login-email" name="login-email" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} />
@@ -71,7 +77,9 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
 							<input type="password" id="password" name="password" placeholder="Wachtwoord" onChange={(e) => setPassword(e.target.value)} />
 						</div>
 						<div className="form-group action-group">
-							<button className="loginpage-button" onClick={handleLogin}>Log in</button>
+							<button className="loginpage-button" onClick={handleLogin}>
+								Log in
+							</button>
 							<a href="#" onClick={openPopup}>
 								Wachtwoord vergeten?
 							</a>

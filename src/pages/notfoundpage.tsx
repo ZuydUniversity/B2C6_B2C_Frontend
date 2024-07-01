@@ -19,7 +19,7 @@ const NotFoundPage: React.FC<Props> = ({ setHideNavbar }) => {
 			<img src="/images/404Error.jpg" alt="404 Error" className="error-image" />
 			<br />
 			<a href="/dashboard">
-				<input type="button" value="Naar start" />
+				<input className="page-not-found-button" type="button" value="Naar start" />
 			</a>
 		</div>
 	);

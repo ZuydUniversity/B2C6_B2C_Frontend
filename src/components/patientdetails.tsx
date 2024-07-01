@@ -49,7 +49,7 @@ const PatientDetails: React.FC<PatientDetailsProps> = ({ patient }) => {
 						<div className="patient-info-pair">
 							<span className="patient-label">Geslacht:</span>
 							<span id="patient-sex" className="patient-value">
-								{patient.Sex ? "Male" : "Female"}
+								{patient.Sex}
 							</span>
 						</div>
 					</div>

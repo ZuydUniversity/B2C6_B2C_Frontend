@@ -1,8 +1,9 @@
 // Scanner.test.tsx
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-import Scanner from "../../components/sessionscanner";
+import userEvent from "@testing-library/user-event";
+import '@testing-library/jest-dom/extend-expect'; // for additional matchers
+import Scanner from "../../components/sessionscanner"; // adjust the import path as needed
 
 describe("Scanner component", () => {
   test("renders the Scanner component with initial image", () => {
@@ -20,31 +21,38 @@ describe("Scanner component", () => {
     expect(initialImage).toHaveAttribute("src", "Images/diddy.png");
   });
 
-  test("renders navigation buttons", () => {
+  it("should go to the next image when right button is clicked", async () => {
     render(<Scanner />);
-    
-    // Check if navigation buttons are present
-    const leftButton = screen.getByAltText(/Left icon/i);
-    const rightButton = screen.getByAltText(/Right icon/i);
-    
-    expect(leftButton).toBeInTheDocument();
-    expect(rightButton).toBeInTheDocument();
+    const rightButton = screen.getByRole("button", { name: /Right icon/i });
+    await userEvent.click(rightButton);
+    expect(screen.getByAltText("Scanner preview 1")).toBeInTheDocument();
   });
 
-  test("initial image index is correct", () => {
+  it("should go to the previous image when left button is clicked", async () => {
     render(<Scanner />);
-    
-    // Check the initial image index is 0
-    const image = screen.getByAltText(/Scanner preview 0/i);
-    expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute("src", "Images/diddy.png");
+    const leftButton = screen.getByRole("button", { name: /Left icon/i });
+    await userEvent.click(leftButton);
+    expect(screen.getByAltText("Scanner preview 2")).toBeInTheDocument(); // because it cycles back
   });
 
-  test("check image index after component mount", () => {
+  it("should cycle to the last image if left button is clicked on the first image", async () => {
     render(<Scanner />);
-    
-    // The image source should be based on the initial state
-    const image = screen.getByAltText(/Scanner preview 0/i);
-    expect(image).toHaveAttribute("src", "Images/diddy.png");
+    const leftButton = screen.getByRole("button", { name: /Left icon/i });
+    await userEvent.click(leftButton);
+    expect(screen.getByAltText("Scanner preview 2")).toBeInTheDocument();
+  });
+
+  it("should cycle to the first image if right button is clicked on the last image", async () => {
+    render(<Scanner />);
+    const rightButton = screen.getByRole("button", { name: /Right icon/i });
+
+    // Simulate clicking right button until the last image
+    await userEvent.click(rightButton);
+    await userEvent.click(rightButton);
+    await userEvent.click(rightButton); // Now at the last image
+
+    // Clicking once more should cycle back to the first image
+    await userEvent.click(rightButton);
+    expect(screen.getByAltText("Scanner preview 0")).toBeInTheDocument();
   });
 });

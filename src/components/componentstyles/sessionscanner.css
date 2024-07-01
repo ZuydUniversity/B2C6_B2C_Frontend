@@ -1,69 +1,69 @@
 .scanner-container {
-  position: absolute;
-  top: 2%;
-  right: 2%;
-  width: 280px;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 1000;
+	position: absolute;
+	top: 2%;
+	right: 2%;
+	width: 280px;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 1000;
 }
 
 .scanner-card {
-  border-radius: 20px;
-  background-color: #1b21d4;
-  display: flex;
-  flex-direction: column;
-  max-height: 464px;
-  padding: 25px 32px;
+	border-radius: 20px;
+	background-color: #1b21d4;
+	display: flex;
+	flex-direction: column;
+	max-height: 464px;
+	padding: 25px 32px;
 }
 
 .scanner-title {
-  color: #fff;
+	color: #fff;
 }
 
 .scanner-preview {
-  border-radius: 20px;
-  background-color: #fff;
-  margin-top: 25px;
-  height: 375px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+	border-radius: 20px;
+	background-color: #fff;
+	margin-top: 25px;
+	height: 375px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
 }
 
 .scanner-preview img {
-  object-fit: contain;
+	object-fit: contain;
 }
 
 .aspect-title {
-  color: #fff;
-  text-align: center;
-  align-self: center;
-  margin-top: 28px;
+	color: #fff;
+	text-align: center;
+	align-self: center;
+	margin-top: 28px;
 }
 
 .button-scanner-container {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .left-icon-scanner,
 .right-icon-scanner {
-  width: 66px;
-  height: 66px;
-  background-color: #1092F9;
-  border: 2px solid #fff;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 18.5px;
+	width: 66px;
+	height: 66px;
+	background-color: #1092f9;
+	border: 2px solid #fff;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 18.5px;
 }
 
 .left-icon-scanner img,
 .right-icon-scanner img {
-  width: 70px;
-  height: 70px;
-  filter: invert(1); /* Makes the icon white if it's originally black */
+	width: 70px;
+	height: 70px;
+	filter: invert(1); /* Makes the icon white if it's originally black */
 }

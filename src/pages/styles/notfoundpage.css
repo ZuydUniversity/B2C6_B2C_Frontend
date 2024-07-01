@@ -10,7 +10,7 @@
 	margin: 20px auto;
 }
 
-input {
+.page-not-found-button {
 	background-color: #5b92e5;
 	color: white;
 	padding: 10px 20px;
@@ -21,6 +21,6 @@ input {
 	transition: background-color 0.3s ease;
 }
 
-input:hover {
+.page-not-found-button:hover {
 	background-color: #4a7cc3;
 }
