@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles/forgotpasswordpopup.css";
+import { apiUrl } from "../abstracts/Constances";
 
 interface ForgotPasswordPopupProps {
 	onClose: () => void;
@@ -8,9 +9,22 @@ interface ForgotPasswordPopupProps {
 const ForgotPasswordPopup: React.FC<ForgotPasswordPopupProps> = ({ onClose }) => {
 	const [email, setEmail] = useState("");
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		console.log("Submitted email:", email);
+
+		const response = await fetch(apiUrl + "user/forgot-password", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				email: email,
+			}),
+		});
+
+		if (response.ok) alert("Email verstuurd! Check u inbox om verder te gaan.");
+		else alert("Kon email niet versturen naar " + email);
+
 		onClose();
 	};
 
