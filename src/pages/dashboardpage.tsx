@@ -152,7 +152,7 @@ export const PatientCard: React.FC<PatientCardProps> = ({ date, name, age, diagn
 				</div>
 			</div>
 			<div className="patientCardOptions">
-				<input type="Button" className="patientCardOptionsButton" value="..." />
+				<input type="Button" className="patientCardOptionsButton" defaultValue="..." />
 			</div>
 		</div>
 	);
