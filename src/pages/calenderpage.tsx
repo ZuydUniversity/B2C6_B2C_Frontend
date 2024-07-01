@@ -48,9 +48,13 @@ const CalenderPage: React.FC = () => {
 
 	const handleWeekChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
 		const week = parseInt(event.target.value, 10);
-		const newDate = getDateOfISOWeek(week, new Date().getFullYear());
-		setCurrentWeek(newDate);
-		setSelectedWeek(week);
+		if (week > 0 && week <= 52) {
+			const newDate = getDateOfISOWeek(week, new Date().getFullYear());
+			setCurrentWeek(newDate);
+			setSelectedWeek(week);
+		} else {
+			console.error("Invalid week number");
+		}
 	};
 
 	const formatDate = (date: Date): string => {

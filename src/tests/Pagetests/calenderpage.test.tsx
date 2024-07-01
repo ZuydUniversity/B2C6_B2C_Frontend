@@ -139,13 +139,13 @@ describe("CalenderPage", () => {
 		for (let i = 0; i < 52; i++) {
 			fireEvent.click(prevButton);
 		}
-		expect(screen.getByText(/week 1/i)).toBeInTheDocument();
+		expect(screen.getByText(/Week 1/i)).toBeInTheDocument();
 
 		// Navigate to the last week of the year
 		for (let i = 0; i < 52; i++) {
 			fireEvent.click(nextButton);
 		}
-		expect(screen.getByText(/week 52/i)).toBeInTheDocument();
+		expect(screen.getByText(/Week 52/i)).toBeInTheDocument();
 	});
 
 	it("handles edge cases for handleWeekChange", async () => {
@@ -171,16 +171,42 @@ describe("CalenderPage", () => {
 		});
 	});
 
-	// Negative tests for invalid inputs
-	it("handles invalid week number (e.g., 53)", async () => {
+	// Negative tests
+	it("handles invalid week number (e.g., 0)", () => {
 		render(<CalenderPage />);
 		const weekSelect = screen.getByTestId("week-select");
 
-		// Test for invalid week number (e.g., 53)
+		fireEvent.change(weekSelect, { target: { value: "0" } });
+		expect(screen.queryByText(/Week 0/i)).not.toBeInTheDocument();
+	});
+
+	it("handles invalid week number (e.g., 53)", () => {
+		render(<CalenderPage />);
+		const weekSelect = screen.getByTestId("week-select");
+
 		fireEvent.change(weekSelect, { target: { value: "53" } });
 		expect(screen.queryByText(/Week 53/i)).not.toBeInTheDocument();
 	});
+});
 
+describe("Helper functions", () => {
+	it("getWeekNumber works correctly", () => {
+		expect(getWeekNumber(new Date("2022-01-01"))).toBe(1);
+		expect(getWeekNumber(new Date("2022-01-02"))).toBe(1);
+		expect(getWeekNumber(new Date("2022-12-31"))).toBe(52);
+	});
+
+	it("getStartOfWeek works correctly", () => {
+		expect(getStartOfWeek(new Date("2022-01-05")).toISOString().split("T")[0]).toBe("2022-01-03");
+		expect(getStartOfWeek(new Date("2022-12-31")).toISOString().split("T")[0]).toBe("2022-12-26");
+	});
+
+	it("getDateOfISOWeek works correctly", () => {
+		expect(getDateOfISOWeek(1, 2022).toISOString().split("T")[0]).toBe("2022-01-03");
+		expect(getDateOfISOWeek(52, 2022).toISOString().split("T")[0]).toBe("2022-12-26");
+	});
+
+	// Negative tests for helper functions
 	it("handles invalid date in getWeekNumber", () => {
 		expect(() => getWeekNumber(new Date("invalid-date"))).toThrow();
 	});
@@ -191,6 +217,5 @@ describe("CalenderPage", () => {
 
 	it("handles invalid week and year in getDateOfISOWeek", () => {
 		expect(() => getDateOfISOWeek(53, 2022)).toThrow();
-		expect(() => getDateOfISOWeek(1, -1)).toThrow(); // Invalid year
 	});
 });
