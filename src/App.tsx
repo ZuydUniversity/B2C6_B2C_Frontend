@@ -12,7 +12,7 @@ import KalenderPage from "./pages/kalenderpage";
 import Notes from "./pages/notes";
 import { ArtsSession } from "./pages/artssessionpage";
 import PhysioSessionPage from "./pages/physiosessionpage";
-import ActiveArtsSession from "./pages/activeartssessionpage";
+import { ActiveArtsSession } from "./pages/activeartssessionpage";
 import Physiosessionresultspage from "./pages/physiosessionresultspage";
 import PrivateRoute from "./PrivateRouter";
 
