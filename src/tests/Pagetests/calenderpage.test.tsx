@@ -180,7 +180,7 @@ describe("Helper functions", () => {
 	it("getWeekNumber works correctly", () => {
 		expect(getWeekNumber(new Date("2022-01-01"))).toBe(1);
 		expect(getWeekNumber(new Date("2022-01-02"))).toBe(2);
-		expect(getWeekNumber(new Date("2022-12-31"))).toBe(52);
+		expect(getWeekNumber(new Date("2022-12-31"))).toBe(53);
 	});
 
 	it("getStartOfWeek works correctly", () => {
