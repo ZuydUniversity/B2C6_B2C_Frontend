@@ -18,7 +18,7 @@ const PatientPage: React.FC = () => {
 
 	return (
 		<div className="patient-page">
-			<h1>Patiëntenoverzicht</h1>
+			<h1 id="title">Patiëntenoverzicht</h1>
 			<hr />
 			<div>
 				<PatientList onPatientClick={handlePatientClick} />

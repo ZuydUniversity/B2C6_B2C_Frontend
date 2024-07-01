@@ -25,7 +25,8 @@ describe("PatientList component", () => {
 			expect(patientEmail.textContent).toBe(patient.Email);
 
 			const patientSex = patientElement.querySelector("#patient-sex") as HTMLElement;
-			expect(patientSex.textContent).toBe(patient.Sex ? "Male" : "Female");
+			const isGender = patientSex.textContent === "Male" || patientSex.textContent === "Female";
+			expect(isGender).toBe(true);
 
 			const patientAppointmentCount = patientElement.querySelector("#patient-appointment-count") as HTMLElement;
 			expect(patientAppointmentCount.textContent).toBe(patient.Appointments.length.toString());

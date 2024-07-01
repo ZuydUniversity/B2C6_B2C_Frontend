@@ -48,7 +48,10 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
 				const data = await response.json();
 				const accessToken = data.access_token;
 
+				const now = new Date().getTime();
 				localStorage.setItem("accessToken", accessToken);
+				localStorage.setItem("tokenTimestamp", now.toString());
+
 				window.location.href = "/dashboard";
 			} else {
 				setError("Incorrect personeels nummer, email or password");

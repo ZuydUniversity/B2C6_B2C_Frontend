@@ -3,7 +3,7 @@ import { Patient } from "../../abstracts/ImportsModels";
 import PatientDetails from "../../components/patientdetails";
 
 // Set const values for the tests
-const patient = new Patient("Johnny", "English", "Johnny.English@gmail.com", 37, "0612345678", "Timmy.English@gmail.com", "0689378469");
+const patient = new Patient("Johnny", "English", "Johnny.English@gmail.com", 37, "0612345678", "Timmy.English@gmail.com", "0689378469", "Male");
 
 describe("PatientDetails component", () => {
 	it("should render the PatientDetails component with all properties", () => {
