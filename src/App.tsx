@@ -11,8 +11,10 @@ import NotFoundPage from "./pages/notfoundpage";
 import Notes from "./pages/notes";
 import { ArtsSession } from "./pages/artssessionpage";
 import PhysioSessionPage from "./pages/physiosessionpage";
-import ActiveArtsSession from "./pages/activeartssessionpage";
+import { ActiveArtsSession } from "./pages/activeartssessionpage";
+import Physiosessionresultspage from "./pages/physiosessionresultspage";
 import PrivateRoute from "./PrivateRouter";
+import ResetPasswordPage from "./pages/resetpasswordpage";
 
 const App: React.FC = () => {
 	const [hideNavbar, setHideNavbar] = useState(false);
@@ -25,6 +27,7 @@ const App: React.FC = () => {
 					<Routes>
 						<Route path="/" element={<Navigate to="/login" replace />} />
 						<Route path="/login" element={<LoginPage setHideNavbar={setHideNavbar} />} />
+						<Route path="/reset-password" element={<ResetPasswordPage setHideNavbar={setHideNavbar} />} />
 						<Route path="/aboutus" element={<PrivateRoute element={<AboutUsPage />} />} />
 						<Route path="/patients" element={<PrivateRoute element={<PatientPage />} />} />
 						<Route path="/patient/:id" element={<PrivateRoute element={<PatientOverview />} />} />
@@ -34,6 +37,7 @@ const App: React.FC = () => {
 						<Route path="/artsession" element={<PrivateRoute element={<ArtsSession />} />} />
 						<Route path="/physiosession" element={<PrivateRoute element={<PhysioSessionPage />} />} />
 						<Route path="/activeartssession" element={<PrivateRoute element={<ActiveArtsSession />} />} />
+						<Route path="/physiosessionresults" element={<PrivateRoute element={<Physiosessionresultspage />} />} />
 						<Route path="*" element={<NotFoundPage setHideNavbar={setHideNavbar} />} />
 					</Routes>
 				</div>
