@@ -15,7 +15,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
 		const now = new Date().getTime();
 		const tokenAge = now - parseInt(tokenTimestamp, 10);
 
-		if (tokenAge > 15 * 60 * 1000) {
+		if (tokenAge > 1440 * 60 * 1000) {
 			localStorage.removeItem("accessToken");
 			localStorage.removeItem("tokenTimestamp");
 

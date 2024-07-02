@@ -39,7 +39,7 @@ const App: React.FC = () => {
 						<Route path="/artsession" element={<PrivateRoute element={<ArtsSession />} />} />
 						<Route path="/physiosession" element={<PrivateRoute element={<PhysioSessionPage />} />} />
 						<Route path="/activeartssession" element={<PrivateRoute element={<ActiveArtsSession />} />} />
-						<Route path="/physiosessionresults" element={<PrivateRoute element={<Physiosessionresultspage />} />} />
+						<Route path="/physiosessionresultspage" element={<PrivateRoute element={<Physiosessionresultspage />} />} />
 						<Route path="*" element={<NotFoundPage setHideNavbar={setHideNavbar} />} />
 					</Routes>
 				</div>

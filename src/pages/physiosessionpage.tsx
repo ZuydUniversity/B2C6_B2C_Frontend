@@ -60,7 +60,7 @@ const PatientSelect: React.FC<PatientSelectProps> = ({ onSelect }) => {
 	};
 
 	const addPatientToSession = () => {
-		window.location.href = "/activephysiosession"; //BAD PRACTICE <3 --> WHY THA FUCK DID YOU DO IT THEN!!!
+		window.location.href = "/physiosessionresultspage"; //BAD PRACTICE <3 --> WHY THA FUCK DID YOU DO IT THEN!!!
 	};
 
 	React.useEffect(() => {
