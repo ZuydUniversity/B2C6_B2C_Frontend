@@ -247,6 +247,6 @@ describe("Helper functions", () => {
 
 	it("getDateOfISOWeek works correctly", () => {
 		expect(getDateOfISOWeek(1, 2022).toISOString().split("T")[0]).toBe("2022-01-03");
-		expect(getDateOfISOWeek(52, 2022).toISOString().split("T")[0]).toBe("2022-12-25");
+		expect(getDateOfISOWeek(52, 2022).toISOString().split("T")[0]).toBe("2022-12-26");
 	});
 });
