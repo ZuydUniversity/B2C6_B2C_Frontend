@@ -177,18 +177,18 @@ describe("CalenderPage", () => {
 		});
 	});
 
-	// Test for invalid week number (e.g., -3)
-	it("handles edge cases for handleWeekChange with week -3", () => {
+	it("handles edge cases for handleWeekChange with week 0", () => {
 		render(<CalenderPage />);
 		const weekSelect = screen.getByTestId("week-select");
-		fireEvent.change(weekSelect, { target: { value: "-3" } });
+		// Test for invalid week number (e.g., 0)
+		fireEvent.change(weekSelect, { target: { value: "0" } });
 		expect(screen.queryByText(/Week 0/i)).not.toBeInTheDocument();
 	});
 
-	// Test for invalid week number (e.g., 53)
 	it("handles edge cases for handleWeekChange with week 53", () => {
 		render(<CalenderPage />);
 		const weekSelect = screen.getByTestId("week-select");
+		// Test for invalid week number (e.g., 53)
 		fireEvent.change(weekSelect, { target: { value: "53" } });
 		expect(screen.queryByText(/Week 53/i)).not.toBeInTheDocument();
 	});
