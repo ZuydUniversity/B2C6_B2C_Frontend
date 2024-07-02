@@ -193,6 +193,14 @@ describe("CalenderPage", () => {
 			expect(screen.queryByText(/Week 53/i)).not.toBeInTheDocument();
 		});
 	});
+
+	it("handles edge cases for invalid date", async () => {
+		render(<CalenderPage />);
+		expect(() => getWeekNumber(new Date("invalid-date"))).toThrow("Invalid date");
+		expect(() => getStartOfWeek(new Date("invalid-date"))).toThrow("Invalid date");
+		expect(() => getDateOfISOWeek(53, 2022)).toThrow("Invalid week number");
+		expect(() => getDateOfISOWeek(1, -1)).toThrow("Invalid year");
+	});
 });
 
 // Negative tests for helper functions
@@ -243,4 +251,22 @@ describe("Helper functions", () => {
 		expect(getDateOfISOWeek(1, 2022).toISOString().split("T")[0]).toBe("2022-01-03");
 		expect(getDateOfISOWeek(52, 2022).toISOString().split("T")[0]).toBe("2022-12-26");
 	});
+});
+
+it("navigates to the first and last week of the year", () => {
+	render(<CalenderPage />);
+	const prevButton = screen.getByRole("button", { name: /</ });
+	const nextButton = screen.getByRole("button", { name: />/ });
+
+	// Navigate to the first week of the year
+	for (let i = 0; i < 52; i++) {
+		fireEvent.click(prevButton);
+	}
+	expect(screen.getAllByText(/Week 1/i)).not.toHaveLength(0);
+
+	// Navigate to the last week of the year
+	for (let i = 0; i < 52; i++) {
+		fireEvent.click(nextButton);
+	}
+	expect(screen.getAllByText(/Week 52/i)).not.toHaveLength(0);
 });
