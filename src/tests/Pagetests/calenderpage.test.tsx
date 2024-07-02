@@ -123,6 +123,35 @@ describe("CalenderPage", () => {
 		expect(weekNumberOption).toBeInTheDocument();
 	});
 
+	it("calls handleWeekChange on week number change", async () => {
+		render(<CalenderPage />);
+		const weekSelect = screen.getByTestId("week-select");
+		fireEvent.change(weekSelect, { target: { value: "10" } });
+
+		await waitFor(() => {
+			const selectedWeekOption = screen.getByText("Week 10");
+			expect(selectedWeekOption).toBeInTheDocument();
+		});
+	});
+
+	it("renders kalender-header-underline correctly", () => {
+		render(<CalenderPage />);
+		const headerUnderline = screen.getByRole("presentation", { name: "kalender-header-underline" });
+		expect(headerUnderline).toBeInTheDocument();
+	});
+
+	it("renders kalender-underline correctly", () => {
+		render(<CalenderPage />);
+		const underline = screen.getByRole("presentation", { name: "kalender-underline" });
+		expect(underline).toBeInTheDocument();
+	});
+
+	it("toevoegen button is blue", () => {
+		render(<CalenderPage />);
+		const toevoegenButton = screen.getByRole("button", { name: /toevoegen/i });
+		expect(toevoegenButton).toHaveStyle("color: ButtonText; background-color: ButtonFace");
+	});
+
 	it("renders all days of the week correctly", async () => {
 		render(<CalenderPage />);
 		const days = ["Ma", "Di", "Wo", "Do", "Vr"];

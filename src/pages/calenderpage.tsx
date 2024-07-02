@@ -87,19 +87,19 @@ const CalenderPage: React.FC = () => {
 	return (
 		<div className="kalender">
 			<h1 className="kalender-title">Kalender</h1>
-			<div className="kalender-underline"></div>
+			<div role="presentation" aria-label="kalender-underline" className="kalender-underline"></div>
 			<div className="kalender-header">
-				<button className="arrow-button-left" onClick={handlePrevWeek}>
+				<button className="arrow-button-left underline" onClick={handlePrevWeek}>
 					&lt;
 				</button>
 				<h2>
 					{formatDate(currentWeek)} - {formatDate(new Date(currentWeek.getTime() + 4 * 86400000))}, {currentWeek.getFullYear()}
 				</h2>
-				<button className="arrow-button-right" onClick={handleNextWeek}>
+				<button className="arrow-button-right underline" onClick={handleNextWeek}>
 					&gt;
 				</button>
 			</div>
-			<div className="kalender-header-underline"></div>
+			<div role="presentation" aria-label="kalender-header-underline" className="kalender-header-underline"></div>
 			<div className="week-toggle-button">
 				<select className="workweek" value={selectedWeek} onChange={handleWeekChange} data-testid="week-select">
 					{Array.from({ length: 52 }, (_, i) => (
