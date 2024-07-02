@@ -6,7 +6,7 @@ import { Session } from "../models/Session";
 import { DoctorSession } from "../models/DoctorSession";
 import { MyometrySession } from "../models/MyometrySession";
 import { RadiologySession } from "../models/RadiologySession";
-import { Note } from "../models/Note";
+import Note, { getAllNotes } from "../models/Note";
 import { Patient } from "../models/Patient";
 
-export { User, Specialist, Appointment, Medication, Session, DoctorSession, MyometrySession, RadiologySession, Note, Patient };
+export { User, Specialist, Appointment, Medication, Session, DoctorSession, MyometrySession, RadiologySession, Note, Patient, getAllNotes };

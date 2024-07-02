@@ -3,10 +3,11 @@ import { Note } from "../abstracts/ImportsModels";
 import "./componentstyles/notelistitem.css";
 
 interface NoteProps {
-	note: Note;
+	note: Note | undefined;
 }
 
 const NoteListItem: React.FC<NoteProps> = ({ note }) => {
+  note = note ?? new Note("","");
 	return (
 		<div className="note-list-container">
 			<a href="/notelist" className="note-list-item no-link">

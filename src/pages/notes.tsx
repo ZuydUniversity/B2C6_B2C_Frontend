@@ -1,28 +1,46 @@
 import React, { useState } from "react";
 import "./styles/notes.css";
 import NoteListItem from "../components/notelistitem";
-import { Note, Specialist, Patient, Appointment, Session } from "../abstracts/ImportsModels";
+import { Note, Specialist, Patient, Appointment, Session, getAllNotes } from "../abstracts/ImportsModels";
 
 // Set constant values for the tests
 const baseSpecialist1 = new Specialist("Barack", "Obama", "JohnDoe@gmail.com", "0612345678");
 const baseSpecialist2 = new Specialist("John", "Doe", "JohnDoe@gmail.com", "0612345678");
-
 const patient = new Patient("John", "Doe", "john.doe@example.com", 34, "123-456-7890", "john.smith@example.com", "444-555-6666", "Male");
-
 const appointment = new Appointment("Appointment 1", new Date(2021, 11, 1), new Date(2021, 11, 2), baseSpecialist1, patient);
-
-const session1 = new Session("Session 1", appointment.Startdatetime, appointment.Enddatetime, appointment.Specialist, appointment.Patient, appointment);
-const session2 = new Session("Session 2", appointment.Startdatetime, appointment.Enddatetime, appointment.Specialist, appointment.Patient, appointment);
-
-export var initialNotes: Note[] = [
-	new Note("Note 1", "This is the first note.", baseSpecialist1, null, session1),
-	new Note("Note 6", "This is the second note.", baseSpecialist2, patient, session2),
-	new Note("Note 3", "This is the third note.", baseSpecialist2, patient),
-	new Note("Note 4", "This is the fourth note.", baseSpecialist1),
+export const testNotes: (Note | undefined)[] = [
+  new Note("Note 1", "This is the first note.", baseSpecialist1, null, new Session("Session 1", appointment.Startdatetime, appointment.Enddatetime, appointment.Specialist, appointment.Patient, appointment)),
+  new Note("Note 6", "This is the second note.", baseSpecialist2, patient, new Session("Session 2", appointment.Startdatetime, appointment.Enddatetime, appointment.Specialist, appointment.Patient, appointment)),
+  new Note("Note 3", "This is the third note.", baseSpecialist2, patient),
+  new Note("Note 4", "This is the fourth note.", baseSpecialist1),
 ];
 
+let debug = false;
+
+export function setDebug(value: boolean) {
+  debug = value;
+}
+
+let allNotes: (Note | undefined)[] = [];
+
 const Notes: React.FC = () => {
-	const [notes, setNotes] = useState<Note[]>(initialNotes);
+  // Get all notes from the server
+  async function getNotes ()  {
+    if (debug === false) {
+      try {
+        var getNotesResponse = await getAllNotes();
+        if (getNotesResponse !== undefined) {
+          allNotes = getNotesResponse;
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      allNotes = testNotes;
+    }
+  }
+
+	const [notes, setNotes] = useState<(Note | undefined)[]>(allNotes);
 	const [filteredByName, setFilteredByName] = useState<boolean>(false);
 	const [filteredBySpecialist, setFilteredBySpecialist] = useState<boolean>(false);
 	const [filteredByPatient, setFilteredByPatient] = useState<boolean>(false);
@@ -30,25 +48,27 @@ const Notes: React.FC = () => {
 
 	// Sort notes by name
 	const sortNotesByName = () => {
-		// Copy the notes array
-		let sortedNotes = [...notes];
+    if (notes !== undefined) {
+      // Copy the notes array
+      let sortedNotes = [...notes];
 
-		// Check if it is already sorted by name, if so, reverse the list
-		if (filteredByName) {
-			sortedNotes.reverse();
-			setFilteredByName(false);
-		} else {
-			sortedNotes.sort((a: Note, b: Note) => a.Name.localeCompare(b.Name));
-			setFilteredByName(true);
-		}
+      // Check if it is already sorted by name, if so, reverse the list
+      if (filteredByName) {
+        sortedNotes.reverse();
+        setFilteredByName(false);
+      } else {
+        sortedNotes.sort((a: Note | undefined, b: Note | undefined) => (a ?? new Note("","")).Name.localeCompare((b ?? new Note("","")).Name));
+        setFilteredByName(true);
+      }
 
-		// Set all other filters to false
-		setFilteredBySpecialist(false);
-		setFilteredByPatient(false);
-		setFilteredBySession(false);
+      // Set all other filters to false
+      setFilteredBySpecialist(false);
+      setFilteredByPatient(false);
+      setFilteredBySession(false);
 
-		// Update the notes array
-		setNotes(sortedNotes);
+      // Update the notes array
+      setNotes(sortedNotes);
+    }
 	};
 
 	// Sort notes by specialist
@@ -61,7 +81,7 @@ const Notes: React.FC = () => {
 			sortedNotes.reverse();
 			setFilteredBySpecialist(false);
 		} else {
-			sortedNotes.sort((a: Note, b: Note) => (a.Specialist?.Firstname ?? "").localeCompare(b.Specialist?.Firstname ?? ""));
+			sortedNotes.sort((a: Note | undefined, b: Note | undefined) => ((a ?? new Note("","")).Specialist?.Firstname ?? "").localeCompare((b ?? new Note("","")).Specialist?.Firstname ?? ""));
 			setFilteredBySpecialist(true);
 		}
 
@@ -84,15 +104,17 @@ const Notes: React.FC = () => {
 			sortedNotes.reverse();
 			setFilteredByPatient(false);
 		} else {
-			sortedNotes.sort((a: Note, b: Note) => {
-				if (a.Patient === null && b.Patient === null) {
+			sortedNotes.sort((a: Note | undefined, b: Note | undefined) => {
+        let _a = a ?? new Note("","");
+        let _b = b ?? new Note("","");
+				if (_a.Patient === null && _b.Patient === null) {
 					return 0; // Beschouw ze als gelijk
-				} else if (a.Patient === null) {
+				} else if (_a.Patient === null) {
 					return 1; // plaats a achter b
-				} else if (b.Patient === null) {
+				} else if (_b.Patient === null) {
 					return -1; // plaats b achter a
 				} else {
-					return a.Patient.Firstname.localeCompare(b.Patient.Firstname);
+					return _a.Patient.Firstname.localeCompare(_b.Patient.Firstname);
 				}
 			});
 			setFilteredByPatient(true);
@@ -117,15 +139,17 @@ const Notes: React.FC = () => {
 			sortedNotes.reverse();
 			setFilteredBySession(false);
 		} else {
-			sortedNotes.sort((a: Note, b: Note) => {
-				if (a.Session === null && b.Session === null) {
+			sortedNotes.sort((a: Note | undefined, b: Note | undefined) => {
+        let _a = a ?? new Note("","");
+        let _b = b ?? new Note("","");
+				if (_a.Session === null && _b.Session === null) {
 					return 0; // Beschouw ze als gelijk
-				} else if (a.Session === null) {
+				} else if (_a.Session === null) {
 					return 1; // plaats a achter b
-				} else if (b.Session === null) {
+				} else if (_b.Session === null) {
 					return -1; // plaats b achter a
 				} else {
-					return a.Session.Name.localeCompare(b.Session.Name);
+					return _a.Session.Name.localeCompare(_b.Session.Name);
 				}
 			});
 			setFilteredBySession(true);
@@ -183,8 +207,8 @@ const Notes: React.FC = () => {
 
 					{/* List of notes */}
 					<div className="notes-list">
-						{notes.map((note: Note, index: number) => {
-							return <NoteListItem key={note.Id ?? index} note={note} />;
+						{notes.map((note: Note | undefined, index: number) => {
+							return <NoteListItem key={(note ?? new Note("","")).Id ?? index} note={note} />;
 						})}
 					</div>
 				</div>

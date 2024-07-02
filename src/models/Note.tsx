@@ -2,7 +2,7 @@ import { Specialist, Patient, Session } from "../abstracts/ImportsModels";
 import { apiUrl } from "../abstracts/Constances";
 import { stringify } from "querystring";
 
-export class Note {
+class Note {
 	Id!: number | null;
 	Name!: string;
 	Description!: string;
@@ -173,3 +173,15 @@ export class Note {
 		}
 	}
 }
+
+/**
+ * Get all notes
+ * 
+ * @returns A list of all notes
+ */
+export async function getAllNotes() {
+  const note = new Note("", "");
+  return await note.getAllNotes();
+}
+
+export default Note;
