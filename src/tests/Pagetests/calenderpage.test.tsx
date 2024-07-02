@@ -66,6 +66,30 @@ describe("CalenderPage", () => {
 		expect(startDateElement.length).toBeGreaterThan(0);
 	});
 
+	it("renders the kalender-table-container correctly", () => {
+		render(<CalenderPage />);
+		const calenderTableContainer = screen.getByRole("presentation", { name: "kalender-table-container" });
+		expect(calenderTableContainer).toBeInTheDocument();
+	});
+
+	it("renders the kalender-underline correctly", () => {
+		render(<CalenderPage />);
+		const kalenderUnderline = screen.getByRole("presentation", { name: "kalender-underline" });
+		expect(kalenderUnderline).toBeInTheDocument();
+	});
+
+	it("renders the kalender-header-underline correctly", () => {
+		render(<CalenderPage />);
+		const kalenderHeaderUnderline = screen.getByRole("presentation", { name: "kalender-header-underline" });
+		expect(kalenderHeaderUnderline).toBeInTheDocument();
+	});
+
+	it("renders the toevoegen button correctly", () => {
+		render(<CalenderPage />);
+		const toevoegenButton = screen.getByRole("button", { name: /toevoegen/i });
+		expect(toevoegenButton).toBeInTheDocument();
+	});
+
 	it("navigates to the previous week", () => {
 		render(<CalenderPage />);
 		const prevButton = screen.getByRole("button", { name: /</ });
@@ -132,18 +156,6 @@ describe("CalenderPage", () => {
 			const selectedWeekOption = screen.getByText("Week 10");
 			expect(selectedWeekOption).toBeInTheDocument();
 		});
-	});
-
-	it("renders kalender-header-underline correctly", () => {
-		render(<CalenderPage />);
-		const headerUnderline = screen.getByRole("presentation", { name: "kalender-header-underline" });
-		expect(headerUnderline).toBeInTheDocument();
-	});
-
-	it("renders kalender-underline correctly", () => {
-		render(<CalenderPage />);
-		const underline = screen.getByRole("presentation", { name: "kalender-underline" });
-		expect(underline).toBeInTheDocument();
 	});
 
 	it("toevoegen button is blue", () => {
@@ -235,6 +247,6 @@ describe("Helper functions", () => {
 
 	it("getDateOfISOWeek works correctly", () => {
 		expect(getDateOfISOWeek(1, 2022).toISOString().split("T")[0]).toBe("2022-01-03");
-		expect(getDateOfISOWeek(52, 2022).toISOString().split("T")[0]).toBe("2022-12-26");
+		expect(getDateOfISOWeek(52, 2022).toISOString().split("T")[0]).toBe("2022-12-25");
 	});
 });

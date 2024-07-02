@@ -14,7 +14,7 @@ const getWeekNumber = (date: Date): number => {
 // Functie om de startdatum van een ISO week te krijgen
 const getDateOfISOWeek = (week: number, year: number): Date => {
 	if (week < 1 || week > 52) {
-		throw new Error("Invalid week");
+		throw new Error("Invalid week number");
 	}
 	if (year < 1) {
 		throw new Error("Invalid year");
@@ -109,7 +109,7 @@ const CalenderPage: React.FC = () => {
 					))}
 				</select>
 			</div>
-			<div className="kalender-table-container">
+			<div role="presentation" aria-label="kalender-table-container" className="kalender-table-container">
 				<table className="kalender-table">
 					<thead>
 						<tr>
