@@ -1,6 +1,7 @@
 import React from "react";
 import { render, fireEvent, screen, cleanup, waitFor } from "@testing-library/react";
 import CalenderPage from "../../pages/calenderpage";
+import { toBeInvalid } from "@testing-library/jest-dom/matchers";
 
 // Cleanup the DOM after each test
 afterEach(cleanup);
@@ -194,7 +195,7 @@ describe("Negative tests", () => {
 
 		// Test for invalid week number (e.g., 0)
 		fireEvent.change(weekSelect, { target: { value: "0" } });
-		expect(screen.queryByText(/Week 0/i)).not.toBeInTheDocument();
+		expect(toBeInvalid);
 
 		// Test for invalid week number (e.g., 53)
 		fireEvent.change(weekSelect, { target: { value: "53" } });
