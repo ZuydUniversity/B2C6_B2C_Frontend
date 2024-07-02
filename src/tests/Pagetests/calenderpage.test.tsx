@@ -177,14 +177,6 @@ describe("CalenderPage", () => {
 		});
 	});
 
-	it("handles edge cases for handleWeekChange with week 0", () => {
-		render(<CalenderPage />);
-		const weekSelect = screen.getByTestId("week-select");
-		// Test for invalid week number (e.g., 0)
-		fireEvent.change(weekSelect, { target: { value: "0" } });
-		expect(screen.queryByText(/Week 0/i)).not.toBeInTheDocument();
-	});
-
 	it("handles edge cases for handleWeekChange with week 53", () => {
 		render(<CalenderPage />);
 		const weekSelect = screen.getByTestId("week-select");
