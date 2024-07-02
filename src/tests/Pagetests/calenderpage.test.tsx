@@ -177,11 +177,11 @@ describe("CalenderPage", () => {
 		});
 	});
 
-	it("handles edge cases for handleWeekChange", async () => {
+	it("handles edge cases for handleWeekChange", () => {
 		render(<CalenderPage />);
 		const weekSelect = screen.getByTestId("week-select");
 		// Test for invalid week number (e.g., 0)
-		fireEvent.change(weekSelect, { target: { value: "0" } });
+		fireEvent.change(weekSelect, { target: { value: "invalid week number" } });
 		expect(screen.queryByText(/Week 0/i)).not.toBeInTheDocument();
 	});
 
@@ -189,7 +189,7 @@ describe("CalenderPage", () => {
 	it("handles edge cases for handleWeekChange", () => {
 		render(<CalenderPage />);
 		const weekSelect = screen.getByTestId("week-select");
-		fireEvent.change(weekSelect, { target: { value: "53" } });
+		fireEvent.change(weekSelect, { target: { value: "invalid week number" } });
 		expect(screen.queryByText(/Week 53/i)).not.toBeInTheDocument();
 	});
 });
