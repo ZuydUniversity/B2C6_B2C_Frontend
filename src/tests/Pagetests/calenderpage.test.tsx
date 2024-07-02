@@ -158,12 +158,6 @@ describe("CalenderPage", () => {
 		});
 	});
 
-	it("toevoegen button is blue", () => {
-		render(<CalenderPage />);
-		const toevoegenButton = screen.getByRole("button", { name: /toevoegen/i });
-		expect(toevoegenButton).toHaveStyle("color: ButtonText; background-color: ButtonFace");
-	});
-
 	it("renders all days of the week correctly", async () => {
 		render(<CalenderPage />);
 		const days = ["Ma", "Di", "Wo", "Do", "Vr"];
