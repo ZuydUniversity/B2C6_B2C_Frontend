@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles/notes.css";
 import NoteListItem from "../components/notelistitem";
 import { Note, Specialist, Patient, Appointment, Session, getAllNotes } from "../abstracts/ImportsModels";
+import NoteFilterBar from "../components/notefilterbar";
 
 // Set constant values for the tests
 const baseSpecialist1 = new Specialist("Barack", "Obama", "JohnDoe@gmail.com", "0612345678");
