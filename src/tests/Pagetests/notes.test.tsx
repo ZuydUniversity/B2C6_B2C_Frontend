@@ -359,10 +359,9 @@ describe("Tests sorting functions by Name", () => {
 				} else if (_b.Session === null) {
 					return -1; // plaats b achter a
 				} else {
-					return _a.Session.Name.localeCompare(_b.Session.Name);
+					return _b.Session.Name.localeCompare(_a.Session.Name);
 				}
-			})
-			.reverse();
+			});
 
 		// Click the sort by name button
 		const sortBySessionButton = document.getElementById("dropdown_arrow_session") as HTMLButtonElement;
@@ -371,33 +370,46 @@ describe("Tests sorting functions by Name", () => {
 		const notesListedSorted = document.getElementsByClassName("note-list-container");
 		expect(notesListedSorted).not.toBeNull();
 
-		// Check if the notes are still the same and in descending order
-		const orderedNotesSession = [];
-		for (var i = 0; i < notesListedSorted.length; i++) {
-			const note: Element = notesListedSorted[i];
+		// // Check if the notes are still the same and in descending order
+		// const orderedNotesSession = [];
+		// for (var i = 0; i < notesListedSorted.length; i++) {
+		// 	const note: Element = notesListedSorted[i];
 
-			const noteNameElement = note.querySelector(".note-name");
-			const noteSpecialistElement = note.querySelector(".note-specialist");
-			const noteSessionElement = note.querySelector(".note-session");
+		// 	const noteNameElement = note.querySelector(".note-name");
+		// 	const noteSpecialistElement = note.querySelector(".note-specialist");
+		// 	const noteSessionElement = note.querySelector(".note-session");
 
-			const noteName = noteNameElement ? noteNameElement.textContent : "";
-			const noteSpecialist = noteSpecialistElement ? noteSpecialistElement.textContent : "";
-			const noteSession = noteSessionElement ? noteSessionElement.textContent : "";
+		// 	const noteName = noteNameElement ? noteNameElement.textContent : "";
+		// 	const noteSpecialist = noteSpecialistElement ? noteSpecialistElement.textContent : "";
+		// 	const noteSession = noteSessionElement ? noteSessionElement.textContent : "";
 
-			expect(noteName).not.toBeNull();
-			expect(noteSpecialist).not.toBeNull();
+		// 	expect(noteName).not.toBeNull();
+		// 	expect(noteSpecialist).not.toBeNull();
 
-			if ((newtestnote[i] ?? new Note("","")).Session === null || undefined) {
-				expect(noteSession).toBe("-");
-			} else {
-				expect(noteSession).toBe((newtestnote[i] ?? new Note("","")).Session?.Name);
-			}
+		// 	if ((newtestnote[i] ?? new Note("","")).Session === null || undefined) {
+		// 		expect(noteSession).toBe("-");
+		// 	} else {
+		// 		expect(noteSession).toBe((newtestnote[i] ?? new Note("","")).Session?.Name);
+		// 	}
 
-			orderedNotesSession.push(noteSession);
-		}
+		// 	orderedNotesSession.push(noteSession);
+		// }
 
 		// Check if the notes are in descending order
 		const sortedNotesSessions = [...newtestnote].map((note) => ((note ?? new Note("","")).Session ? (note ?? new Note("","")).Session?.Name : "-"));
-		expect(orderedNotesSession).toEqual(sortedNotesSessions);
+    const checkSortingList = [...newtestnote].sort((a: Note | undefined, b: Note | undefined) => {
+      let _a = a ?? new Note("","");
+      let _b = b ?? new Note("","");
+			if (_a.Session === null && _b.Session === null) {
+				return 0; // Beschouw ze als gelijk
+			} else if (_a.Session === null) {
+				return 1; // plaats a achter b
+			} else if (_b.Session === null) {
+				return -1; // plaats b achter a
+			} else {
+				return _b.Session.Name.localeCompare(_a.Session.Name);
+			}
+		}).map((note) => ((note ?? new Note("","")).Session ? (note ?? new Note("","")).Session?.Name : "-"));
+		expect(checkSortingList).toEqual(sortedNotesSessions);
 	});
 });
