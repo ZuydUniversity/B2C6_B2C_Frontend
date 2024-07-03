@@ -246,6 +246,7 @@ describe("Tests sorting functions by Name", () => {
 			}
 		});
 		expect(newtestnote).toEqual(sortedNotesPatients);
+    // expect(orderedNotesPatients).toEqual(sortedNotesPatients.map((note) => note?.Patient ? note?.Patient?.Firstname + " " + note?.Patient?.Lastname : "-"));
 	});
 
 	it("sortNotesByPatient sorts notes by name in descending order", () => {
@@ -332,30 +333,30 @@ describe("Tests sorting functions by Name", () => {
 		const notesListedSorted = document.getElementsByClassName("note-list-container");
 		expect(notesListedSorted).not.toBeNull();
 
-		// // Check if the notes are still the same and in ascending order
-		// const orderedNotesSession = [];
-		// for (var i = 0; i < notesListedSorted.length; i++) {
-		// 	const note: Element = notesListedSorted[i];
+		// Check if the notes are still the same and in ascending order
+		const orderedNotesSession = [];
+		for (var i = 0; i < notesListedSorted.length; i++) {
+			const note: Element = notesListedSorted[i];
 
-		// 	const noteNameElement = note.querySelector(".note-name");
-		// 	const noteSpecialistElement = note.querySelector(".note-specialist");
-		// 	const noteSessionElement = note.querySelector(".note-session");
+			const noteNameElement = note.querySelector(".note-name");
+      const noteName = noteNameElement ? noteNameElement.textContent : "";
+      expect(noteName).not.toBeNull();
 
-		// 	const noteName = noteNameElement ? noteNameElement.textContent : "";
-		// 	const noteSpecialist = noteSpecialistElement ? noteSpecialistElement.textContent : "";
-		// 	const noteSession = noteSessionElement ? noteSessionElement.textContent : "";
+			const noteSpecialistElement = note.querySelector(".note-specialist");
+      const noteSpecialist = noteSpecialistElement ? noteSpecialistElement.textContent : "";
+      expect(noteSpecialist).not.toBeNull();
 
-		// 	expect(noteName).not.toBeNull();
-		// 	expect(noteSpecialist).not.toBeNull();
+			const noteSessionElement = note.querySelector(".note-session");
+			const noteSession = noteSessionElement ? noteSessionElement.textContent : "";
 
-		// 	if ((newtestnote[i] ?? new Note("","")).Session === null || undefined) {
-		// 		expect(noteSession).toBe("-");
-		// 	} else {
-		// 		expect(noteSession).toBe((newtestnote[i] ?? new Note("","")).Session?.Name);
-		// 	}
+			if ((newtestnote[i] ?? new Note("","")).Session === null || (newtestnote[i] ?? new Note("","")).Session === undefined) {
+				expect(noteSession).toBe("-");
+			} else {
+				expect(noteSession).toBe((newtestnote[i] ?? new Note("","")).Session?.Name);
+			}
 
-		// 	orderedNotesSession.push(noteSession);
-		// }
+			orderedNotesSession.push(noteSession);
+		}
 
 		// Check if the notes are in ascending order
 		const sortedNotesSessions = [...newtestnote].map((note) => ((note ?? new Note("","")).Session ? (note ?? new Note("","")).Session?.Name : "-"));
@@ -373,6 +374,7 @@ describe("Tests sorting functions by Name", () => {
 			}
 		}).map((note) => ((note ?? new Note("","")).Session ? (note ?? new Note("","")).Session?.Name : "-"));
     expect(checkSortingList).toEqual(sortedNotesSessions);
+    expect(orderedNotesSession).toEqual(sortedNotesSessions);
 	});
 
 	it("sortNotesBySession sorts notes by name in descending order", () => {
@@ -400,30 +402,30 @@ describe("Tests sorting functions by Name", () => {
 		const notesListedSorted = document.getElementsByClassName("note-list-container");
 		expect(notesListedSorted).not.toBeNull();
 
-		// // Check if the notes are still the same and in descending order
-		// const orderedNotesSession = [];
-		// for (var i = 0; i < notesListedSorted.length; i++) {
-		// 	const note: Element = notesListedSorted[i];
+		// Check if the notes are still the same and in descending order
+		const orderedNotesSession = [];
+		for (var i = 0; i < notesListedSorted.length; i++) {
+			const note: Element = notesListedSorted[i];
 
-		// 	const noteNameElement = note.querySelector(".note-name");
-		// 	const noteSpecialistElement = note.querySelector(".note-specialist");
-		// 	const noteSessionElement = note.querySelector(".note-session");
+			const noteNameElement = note.querySelector(".note-name");
+      const noteName = noteNameElement ? noteNameElement.textContent : "";
+      expect(noteName).not.toBeNull();
 
-		// 	const noteName = noteNameElement ? noteNameElement.textContent : "";
-		// 	const noteSpecialist = noteSpecialistElement ? noteSpecialistElement.textContent : "";
-		// 	const noteSession = noteSessionElement ? noteSessionElement.textContent : "";
+			const noteSpecialistElement = note.querySelector(".note-specialist");
+      const noteSpecialist = noteSpecialistElement ? noteSpecialistElement.textContent : "";
+      expect(noteSpecialist).not.toBeNull();
 
-		// 	expect(noteName).not.toBeNull();
-		// 	expect(noteSpecialist).not.toBeNull();
+			const noteSessionElement = note.querySelector(".note-session");			
+			const noteSession = noteSessionElement ? noteSessionElement.textContent : "";			
 
-		// 	if ((newtestnote[i] ?? new Note("","")).Session === null || undefined) {
-		// 		expect(noteSession).toBe("-");
-		// 	} else {
-		// 		expect(noteSession).toBe((newtestnote[i] ?? new Note("","")).Session?.Name);
-		// 	}
+			if ((newtestnote[i] ?? new Note("","")).Session === null || undefined) {
+				expect(noteSession).toBe("-");
+			} else {
+				expect(noteSession).toBe((newtestnote[i] ?? new Note("","")).Session?.Name);
+			}
 
-		// 	orderedNotesSession.push(noteSession);
-		// }
+			orderedNotesSession.push(noteSession);
+		}
 
 		// Check if the notes are in descending order
 		const sortedNotesSessions = [...newtestnote].map((note) => ((note ?? new Note("","")).Session ? (note ?? new Note("","")).Session?.Name : "-"));
@@ -441,5 +443,6 @@ describe("Tests sorting functions by Name", () => {
 			}
 		}).map((note) => ((note ?? new Note("","")).Session ? (note ?? new Note("","")).Session?.Name : "-"));
 		expect(checkSortingList).toEqual(sortedNotesSessions);
+    expect(orderedNotesSession).toEqual(sortedNotesSessions);
 	});
 });
