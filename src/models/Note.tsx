@@ -43,7 +43,7 @@ class Note {
 				if (data["message"]["success"] !== true) {
 					throw new Error("Note is not retrieved");
 				} else {
-					const notes: Array<Note> = [];
+					const notes: (Note | undefined)[] = [];
 					data["notes"].forEach((note: any) => {
 						const newNote = new Note(note["name"], note["description"], note["specialist"], note["patient"], note["session"]);
 						newNote.Id = note["id"];

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Note, Specialist, Patient, Session, Appointment } from "../../abstracts/ImportsModels";
-import Notes, { setDebug, testNotes } from "../../pages/notes";
+import Notes, { setDebug, set_Debug, testNotes } from "../../pages/notes";
 
 const baseSpecialist1 = new Specialist("Barack", "Obama", "JohnDoe@gmail.com", "0612345678");
 const baseSpecialist2 = new Specialist("John", "Doe", "JohnDoe@gmail.com", "0612345678");
@@ -19,6 +19,7 @@ if (testNotes === undefined) {
 }
 
 setDebug(true);
+set_Debug(true);
 
 // Test the sorting functions
 describe("Tests sorting functions by Name", () => {
@@ -53,6 +54,17 @@ describe("Tests sorting functions by Name", () => {
 			testnote.Session === null ? expect(noteSession).toBe("-") : expect(noteSession).toBe(testnote.Session?.Name);
 		}
 	});
+
+  it("should not assign debug value to true", () => {
+    setDebug(false);
+    render(<Notes />);
+  });
+
+  it("should not assign debug values to true", () => {
+    setDebug(false);
+    set_Debug(false);
+    render(<Notes />);
+  });
 
 	it("sortNotesByName sorts notes by name in ascending order", () => {
 		render(<Notes />);
@@ -237,7 +249,8 @@ describe("Tests sorting functions by Name", () => {
 	});
 
 	it("sortNotesByPatient sorts notes by name in descending order", () => {
-		render(<Notes />);
+		setDebug(true);
+    render(<Notes />);
 
 		const newtestnote = [..._testNotes].sort((a: Note | undefined, b: Note | undefined) => {
         let _a = a ?? new Note("","");
@@ -261,6 +274,22 @@ describe("Tests sorting functions by Name", () => {
 		expect(notesListedSorted).not.toBeNull();
 
 		// Check if the notes are in descending order
+    const orderedNotesPatients = [];
+    for (var i = 0; i < notesListedSorted.length; i++) {
+			const note: Element = notesListedSorted[i];
+
+			const noteNameElement = note.querySelector(".note-name");
+      const noteName = noteNameElement ? noteNameElement.textContent : "";
+      expect(noteName).not.toBeNull();
+
+			const noteSpecialistElement = note.querySelector(".note-specialist");
+			const noteSpecialist = noteSpecialistElement ? noteSpecialistElement.textContent : "";
+			expect(noteSpecialist).not.toBeNull();
+
+			const patientName = note.querySelector(".note-patient")?.textContent;
+      expect(patientName).not.toBeNull();
+      orderedNotesPatients.push(patientName);
+		}
 
     // Check if the notes are still the same and in descending order
     const sortedNotesPatients = [...newtestnote].sort((a: Note | undefined, b: Note | undefined) => {
@@ -277,6 +306,7 @@ describe("Tests sorting functions by Name", () => {
       }
     });
     expect(newtestnote).toEqual(sortedNotesPatients);
+    expect(orderedNotesPatients).toEqual(sortedNotesPatients.map((note) => note?.Patient ? note?.Patient?.Firstname + " " + note?.Patient?.Lastname : "-"));
 	});
 
 	it("sortNotesBySession sorts notes by name in ascending order", () => {

@@ -16,9 +16,14 @@ export const testNotes: (Note | undefined)[] = [
 ];
 
 let debug = false;
+let _debug = false;
 
 export function setDebug(value: boolean) {
   debug = value;
+}
+
+export function set_Debug(value: boolean) {
+  _debug = value;
 }
 
 let allNotes: (Note | undefined)[] = [];
@@ -28,17 +33,22 @@ const Notes: React.FC = () => {
   async function getNotes ()  {
     if (debug === false) {
       try {
-        var getNotesResponse = await getAllNotes();
-        if (getNotesResponse !== undefined) {
-          allNotes = getNotesResponse;
+        var getNotesResponse: (Note | undefined)[] | undefined = undefined;
+        if (_debug === false) {
+          getNotesResponse = await getAllNotes();
+        }
+        allNotes = getNotesResponse ?? [];
+        if (_debug === true) {
+          throw new Error("Debug mode enabled, no connection to backend.")
         }
       } catch (error) {
-        console.error(error);
+        return [];
       }
     } else {
       allNotes = testNotes;
     }
   }
+  getNotes();
 
 	const [notes, setNotes] = useState<(Note | undefined)[]>(allNotes);
 	const [filteredByName, setFilteredByName] = useState<boolean>(false);
@@ -54,7 +64,8 @@ const Notes: React.FC = () => {
 
       // Check if it is already sorted by name, if so, reverse the list
       if (filteredByName) {
-        sortedNotes.reverse();
+        // sortedNotes.reverse();
+        sortedNotes.sort((a: Note | undefined, b: Note | undefined) => (b ?? new Note("","")).Name.localeCompare((a ?? new Note("","")).Name));
         setFilteredByName(false);
       } else {
         sortedNotes.sort((a: Note | undefined, b: Note | undefined) => (a ?? new Note("","")).Name.localeCompare((b ?? new Note("","")).Name));
@@ -78,7 +89,8 @@ const Notes: React.FC = () => {
 
 		// Check if it is already sorted by specialist, if so, reverse the list
 		if (filteredBySpecialist) {
-			sortedNotes.reverse();
+			//sortedNotes.reverse();
+      sortedNotes.sort((a: Note | undefined, b: Note | undefined) => ((b ?? new Note("","")).Specialist?.Firstname ?? "").localeCompare((a ?? new Note("","")).Specialist?.Firstname ?? ""));
 			setFilteredBySpecialist(false);
 		} else {
 			sortedNotes.sort((a: Note | undefined, b: Note | undefined) => ((a ?? new Note("","")).Specialist?.Firstname ?? "").localeCompare((b ?? new Note("","")).Specialist?.Firstname ?? ""));
@@ -101,7 +113,20 @@ const Notes: React.FC = () => {
 
 		// Check if it is already sorted by patient, if so, reverse the list
 		if (filteredByPatient) {
-			sortedNotes.reverse();
+			//sortedNotes.reverse();
+      sortedNotes.sort((a: Note | undefined, b: Note | undefined) => {
+        let _a = a ?? new Note("","");
+        let _b = b ?? new Note("","");
+				if (_a.Patient === null && _b.Patient === null) {
+					return 0; // Beschouw ze als gelijk
+				} else if (_a.Patient === null) {
+					return 1; // plaats a achter b
+				} else if (_b.Patient === null) {
+					return -1; // plaats b achter a
+				} else {
+					return _b.Patient.Firstname.localeCompare(_a.Patient.Firstname);
+				}
+			});
 			setFilteredByPatient(false);
 		} else {
 			sortedNotes.sort((a: Note | undefined, b: Note | undefined) => {
@@ -136,7 +161,20 @@ const Notes: React.FC = () => {
 
 		// Check if it is already sorted by session, if so, reverse the list
 		if (filteredBySession) {
-			sortedNotes.reverse();
+			//sortedNotes.reverse();
+      sortedNotes.sort((a: Note | undefined, b: Note | undefined) => {
+        let _a = a ?? new Note("","");
+        let _b = b ?? new Note("","");
+				if (_a.Session === null && _b.Session === null) {
+					return 0; // Beschouw ze als gelijk
+				} else if (_a.Session === null) {
+					return 1; // plaats a achter b
+				} else if (_b.Session === null) {
+					return -1; // plaats b achter a
+				} else {
+					return _b.Session.Name.localeCompare(_a.Session.Name);
+				}
+			});
 			setFilteredBySession(false);
 		} else {
 			sortedNotes.sort((a: Note | undefined, b: Note | undefined) => {
