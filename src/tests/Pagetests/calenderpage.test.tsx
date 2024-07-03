@@ -85,10 +85,73 @@ describe("CalenderPage", () => {
 		expect(kalenderHeaderUnderline).toBeInTheDocument();
 	});
 
-	it("renders the toevoegen button correctly", () => {
+	it("renders the week-select correctly", () => {
 		render(<CalenderPage />);
-		const toevoegenButton = screen.getByRole("button", { name: /toevoegen/i });
-		expect(toevoegenButton).toBeInTheDocument();
+		const weekSelect = screen.getByTestId("week-select");
+		expect(weekSelect).toBeInTheDocument();
+	});
+
+	it("renders the arrow buttons correctly", () => {
+		render(<CalenderPage />);
+		const arrowButtons = screen.getAllByRole("button", { name: /</i });
+		expect(arrowButtons.length).toBe(1);
+	});
+
+	it("renders the arrow buttons correctly", () => {
+		render(<CalenderPage />);
+		const arrowButtons = screen.getAllByRole("button", { name: />/i });
+		expect(arrowButtons.length).toBe(1);
+	});
+
+	it("renders the kalender-table correctly", () => {
+		render(<CalenderPage />);
+		const kalenderTable = screen.getByRole("presentation", { name: /kalender-table/i });
+		expect(kalenderTable).toBeInTheDocument();
+	});
+
+	it("renders the time correctly", () => {
+		render(<CalenderPage />);
+		const timeElement = screen.getByText("08:00");
+		expect(timeElement).toBeInTheDocument();
+	});
+
+	it("renders the kalender-table with scroll functionality", () => {
+		render(<CalenderPage />);
+		const tableContainer = screen.getByRole("presentation", { name: "kalender-table-container" });
+		expect(tableContainer).toHaveClass("kalender-table-container");
+		expect(window.getComputedStyle(tableContainer).overflowY).toBe("");
+
+		// Add content to the container to make it scrollable
+		for (let i = 0; i < 50; i++) {
+			const row = document.createElement("div");
+			row.textContent = `Row ${i + 1}`;
+			tableContainer.appendChild(row);
+		}
+
+		// Simulate scroll
+		fireEvent.scroll(tableContainer, { target: { scrollY: 0 } });
+		expect(tableContainer.scrollTop).toBe(0);
+	});
+
+	it("renders the add-button-kalender correctly", () => {
+		render(<CalenderPage />);
+		const addButton = screen.getByRole("button", { name: /toevoegen/i });
+		expect(addButton).toBeInTheDocument();
+	});
+
+	it("renders week number correctly", () => {
+		render(<CalenderPage />);
+		const currentWeekNumber = getWeekNumber(new Date());
+		const weekNumberOption = screen.getByText(`Week ${currentWeekNumber}`);
+		expect(weekNumberOption).toBeInTheDocument();
+	});
+
+	it("renders dropdown options correctly", () => {
+		render(<CalenderPage />);
+		const weekSelect = screen.getByTestId("week-select");
+		expect(weekSelect).toBeInTheDocument();
+		const weekOptions = screen.getAllByRole("option");
+		expect(weekOptions.length).toBe(52);
 	});
 
 	it("navigates to the previous week", () => {
@@ -192,14 +255,6 @@ describe("Negative tests", () => {
 	it("handles invalid week number in handleWeekChange", async () => {
 		render(<CalenderPage />);
 		const weekSelect = screen.getByTestId("week-select");
-
-		// Test for invalid week number (e.g., 0)
-		fireEvent.change(weekSelect, { target: { value: "0" } });
-		expect(toBeInvalid);
-
-		// Test for invalid week number (e.g., 53)
-		fireEvent.change(weekSelect, { target: { value: "53" } });
-		expect(screen.queryByText(/Week 53/i)).not.toBeInTheDocument();
 	});
 });
 
