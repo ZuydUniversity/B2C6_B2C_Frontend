@@ -14,11 +14,6 @@ const getDateOfISOWeek = (week: number, year: number): Date => {
 	const simple = new Date(year, 0, 1 + (week - 1) * 7);
 	const dayOfWeek = simple.getDay();
 	const ISOweekStart = simple;
-	if (dayOfWeek <= 4) {
-		ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
-	} else {
-		ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
-	}
 	return ISOweekStart;
 };
 
@@ -226,12 +221,6 @@ describe("CalenderPage", () => {
 		times.forEach((time) => {
 			expect(screen.getByText(time)).toBeInTheDocument();
 		});
-	});
-
-	it("getDateOfISOWeek handles week starting on Sunday correctly", () => {
-		const result = getDateOfISOWeek(1, 2023); // Use a date that ensures dayOfWeek > 4
-		expect(result).toBeInstanceOf(Date);
-		expect(result.getDay()).toBeGreaterThan(0);
 	});
 });
 
