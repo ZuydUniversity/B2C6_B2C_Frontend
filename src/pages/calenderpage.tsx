@@ -11,6 +11,7 @@ const getDateOfISOWeek = (week: number, year: number): Date => {
   const simple = new Date(year, 0, 1 + (week - 1) * 7);
   const dayOfWeek = simple.getDay();
   const ISOweekStart = simple;
+
   return ISOweekStart;
 };
 

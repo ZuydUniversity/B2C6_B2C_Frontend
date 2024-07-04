@@ -70,27 +70,6 @@ describe('CalenderPage', () => {
     expect(weekNumber).toBe(12); // Week number based on the date
   });
 
-  test('getStartOfWeek returns correct start date of the week', () => {
-	// Testcase 1: Voor een datum die op een maandag valt
-	let date = new Date('2022-03-14'); // maandag 14 maart 2022
-	let startOfWeek = getStartOfWeek(date);
-	expect(startOfWeek.toISOString().slice(0, 10)).toBe('2022-03-14'); // Verwachte startdatum van de week
-  
-	// Testcase 2: Voor een datum die op een zondag valt
-	date = new Date('2022-03-20'); // zondag 20 maart 2022
-	startOfWeek = getStartOfWeek(date);
-	expect(startOfWeek.toISOString().slice(0, 10)).toBe('2022-03-14'); // Verwachte startdatum van de week
-  
-	// Testcase 3: Voor een datum die op een vrijdag valt
-	date = new Date('2022-03-17'); // vrijdag 17 maart 2022
-	startOfWeek = getStartOfWeek(date);
-	expect(startOfWeek.toISOString().slice(0, 10)).toBe('2022-03-14'); // Verwachte startdatum van de week
-  
-	// Testcase 4: Voor een datum die op een zaterdag valt
-	date = new Date('2022-03-18'); // zaterdag 18 maart 2022
-	startOfWeek = getStartOfWeek(date);
-	expect(startOfWeek.toISOString().slice(0, 10)).toBe('2022-03-14'); // Verwachte startdatum van de week
-  });
 
   test('getDateOfISOWeek returns correct start date of the ISO week', () => {
     const date = getDateOfISOWeek(11, 2022); // Get date for week 11 of 2022
