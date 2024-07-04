@@ -16,6 +16,7 @@
 	padding: 10px;
 	color: #1e3a8a;
 	font-weight: 600;
+	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1608);
 }
 
 .note-list-container:hover {
