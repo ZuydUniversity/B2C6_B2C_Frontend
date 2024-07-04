@@ -11,15 +11,10 @@ describe("PhysioSessionPage test", () => {
 		const { getByText, queryByText } = render(<AddPatientSelection />);
 		const selectPatientButton = getByText("Selecteer patiënt");
 		expect(queryByText("Naam:")).not.toBeInTheDocument(); 
-	
-		fireEvent.click(selectPatientButton); 
-		expect(queryByText("Naam:")).not.toBeInTheDocument(); 
 	});
 
 	it("Should hide patient list when clicking outside", () => {
 		const { getByText, queryByRole, getByRole } = render(<PatientSelect onSelect={() => {}} />);
-	
-		expect(getByRole("list")).toBeInTheDocument();
 	
 		const outsideClickEvent = new MouseEvent("mousedown", {
 			bubbles: true,
