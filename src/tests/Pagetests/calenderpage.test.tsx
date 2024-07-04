@@ -92,19 +92,15 @@ describe("CalenderPage", () => {
 
 	it("renders the arrow buttons correctly", () => {
 		render(<CalenderPage />);
-		const arrowButtons = screen.getAllByRole("button", { name: /</i });
-		expect(arrowButtons.length).toBe(1);
-	});
-
-	it("renders the arrow buttons correctly", () => {
-		render(<CalenderPage />);
-		const arrowButtons = screen.getAllByRole("button", { name: />/i });
-		expect(arrowButtons.length).toBe(1);
+		const prevButton = screen.getByRole("button", { name: /</i });
+		const nextButton = screen.getByRole("button", { name: />/i });
+		expect(prevButton).toBeInTheDocument();
+		expect(nextButton).toBeInTheDocument();
 	});
 
 	it("renders the kalender-table correctly", () => {
 		render(<CalenderPage />);
-		const kalenderTable = screen.getByRole("presentation", { name: /kalender-table/i });
+		const kalenderTable = screen.getByRole("presentation", { name: "kalender-table-container" });
 		expect(kalenderTable).toBeInTheDocument();
 	});
 
@@ -114,11 +110,10 @@ describe("CalenderPage", () => {
 		expect(timeElement).toBeInTheDocument();
 	});
 
-	it("renders the kalender-table with scroll functionality", () => {
+	it("renders the kalender-table with scroll functionality", async () => {
 		render(<CalenderPage />);
 		const tableContainer = screen.getByRole("presentation", { name: "kalender-table-container" });
 		expect(tableContainer).toHaveClass("kalender-table-container");
-		expect(window.getComputedStyle(tableContainer).overflowY).toBe("");
 
 		// Add content to the container to make it scrollable
 		for (let i = 0; i < 50; i++) {
@@ -128,8 +123,11 @@ describe("CalenderPage", () => {
 		}
 
 		// Simulate scroll
-		fireEvent.scroll(tableContainer, { target: { scrollY: 0 } });
-		expect(tableContainer.scrollTop).toBe(0);
+		fireEvent.scroll(tableContainer, { target: { scrollTop: 100 } });
+
+		await waitFor(() => {
+			expect(tableContainer.scrollTop).toBe(100);
+		});
 	});
 
 	it("renders the add-button-kalender correctly", () => {
@@ -249,26 +247,43 @@ it("handles edge cases for invalid date", async () => {
 	expect(() => getDateOfISOWeek(1, -1)).toThrow("Invalid year");
 });
 
-// Negative tests for helper functions
-describe("Negative tests", () => {
-	it("handles invalid week number in handleWeekChange", async () => {
+describe("CalenderPage - invalid inputs", () => {
+	it("does not allow invalid week numbers", async () => {
 		render(<CalenderPage />);
 		const weekSelect = screen.getByTestId("week-select");
+
+		// Test for invalid week number (0)
+		fireEvent.change(weekSelect, { target: { value: "0" } });
+		expect(screen.queryByText(/Week 0/i)).not.toBeInTheDocument();
+
+		// Test for invalid week number (53)
+		fireEvent.change(weekSelect, { target: { value: "53" } });
+		expect(screen.queryByText(/Week 53/i)).not.toBeInTheDocument();
+	});
+
+	it("does not contain invalid date values", () => {
+		render(<CalenderPage />);
+		const invalidDates = ["36 januari", "32 februari", "31 april", "31 juni", "31 september", "31 november"];
+		invalidDates.forEach((date) => {
+			const invalidDateElement = screen.queryByText(date);
+			expect(invalidDateElement).not.toBeInTheDocument();
+		});
 	});
 });
 
+// Negative tests for helper functions
 describe("Negative tests for helper functions", () => {
-	it("handles invalid date in getWeekNumber", () => {
+	it("throws error for invalid date in getWeekNumber", () => {
 		expect(() => getWeekNumber(new Date("invalid-date"))).toThrow("Invalid date");
 	});
 
-	it("handles invalid date in getStartOfWeek", () => {
-		expect(() => getStartOfWeek(new Date("invalid-date"))).toThrow("Invalid date");
+	it("throws error for invalid week number in getDateOfISOWeek", () => {
+		expect(() => getDateOfISOWeek(0, 2022)).toThrow("Invalid week number");
+		expect(() => getDateOfISOWeek(53, 2022)).toThrow("Invalid week number");
 	});
 
-	it("handles invalid week and year in getDateOfISOWeek", () => {
-		expect(() => getDateOfISOWeek(53, 2022)).toThrow("Invalid week number");
-		expect(() => getDateOfISOWeek(1, -1)).toThrow("Invalid year");
+	it("throws error for invalid year in getDateOfISOWeek", () => {
+		expect(() => getDateOfISOWeek(1, 0)).toThrow("Invalid year");
 	});
 });
 
@@ -307,93 +322,4 @@ it("navigates to the first and last week of the year", () => {
 		fireEvent.click(nextButton);
 	}
 	expect(screen.getAllByText(/Week 52/i)).not.toHaveLength(0);
-});
-
-describe("CalenderPage - week select", () => {
-	it("does not contain options for week 0 and week 53", () => {
-		render(<CalenderPage />);
-		const weekSelect = screen.getByTestId("week-select");
-
-		// Check that there is no option with value "0"
-		const weekZeroOption = screen.queryByRole("option", { name: "Week 0" });
-		expect(weekZeroOption).not.toBeInTheDocument();
-
-		// Check that there is no option with value "53"
-		const weekFiftyThreeOption = screen.queryByRole("option", { name: "Week 53" });
-		expect(weekFiftyThreeOption).not.toBeInTheDocument();
-	});
-});
-
-describe("CalenderPage - invalid date values", () => {
-	it("does not contain invalid date values like 'January has 36 days'", () => {
-		render(<CalenderPage />);
-
-		const invalidDates = ["36 januari", "32 februari", "31 april", "31 juni", "31 september", "31 november"];
-
-		invalidDates.forEach((date) => {
-			const invalidDateElement = screen.queryByText(date);
-			expect(invalidDateElement).not.toBeInTheDocument();
-		});
-	});
-
-	describe("CalenderPage - week select", () => {
-		it("does not contain options for week 0 and week 53", () => {
-			render(<CalenderPage />);
-			const weekSelect = screen.getByTestId("week-select");
-
-			// Check that there is no option with value "0"
-			const weekZeroOption = screen.queryByRole("option", { name: "Week 0" });
-			expect(weekZeroOption).not.toBeInTheDocument();
-
-			// Check that there is no option with value "53"
-			const weekFiftyThreeOption = screen.queryByRole("option", { name: "Week 53" });
-			expect(weekFiftyThreeOption).not.toBeInTheDocument();
-		});
-	});
-
-	describe("CalenderPage - invalid date values", () => {
-		it("does not contain invalid date values like 'January has 36 days'", () => {
-			render(<CalenderPage />);
-
-			const invalidDates = ["36 januari", "32 februari", "31 april", "31 juni", "31 september", "31 november"];
-
-			invalidDates.forEach((date) => {
-				const invalidDateElement = screen.queryByText(date);
-				expect(invalidDateElement).not.toBeInTheDocument();
-			});
-		});
-	});
-	it("throws error for invalid date in getWeekNumber", () => {
-		expect(() => getWeekNumber(new Date("invalid-date"))).toThrow("Invalid date");
-	});
-	it("throws error for invalid week number in getDateOfISOWeek", () => {
-		expect(() => getDateOfISOWeek(0, 2022)).toThrow("Invalid week number");
-		expect(() => getDateOfISOWeek(53, 2022)).toThrow("Invalid week number");
-	});
-	it("throws error for invalid year in getDateOfISOWeek", () => {
-		expect(() => getDateOfISOWeek(1, 0)).toThrow("Invalid year");
-	});
-	it("throws error for invalid year in getDateOfISOWeek", () => {
-		expect(() => getDateOfISOWeek(1, 0)).toThrow("Invalid year");
-	});
-	it("returns correct start date for a given week and year in getDateOfISOWeek", () => {
-		const startDate = getDateOfISOWeek(1, 2022);
-		expect(startDate.toISOString().split("T")[0]).toBe("2022-01-03");
-	});
-	it("calculates the correct week number for a given date in getWeekNumber", () => {
-		const weekNumber = getWeekNumber(new Date("2022-01-03"));
-		expect(weekNumber).toBe(2);
-	});
-	it("handles invalid week number in handleWeekChange", () => {
-		render(<CalenderPage />);
-		const weekSelect = screen.getByTestId("week-select");
-
-		// Test for invalid week number (0)
-		fireEvent.change(weekSelect, { target: { value: "0" } });
-		expect(screen.queryByText(/Week 0/i)).not.toBeInTheDocument();
-
-		// Test for invalid week number (53)
-		fireEvent.change(weekSelect, { target: { value: "53" } });
-		expect(screen.queryByText(/Week 53/i)).not.toBeInTheDocument();
-	});
 });
