@@ -82,7 +82,7 @@ describe("KalenderPage", () => {
 	test("changes to the correct week when an invalid week number is selected", () => {
 		render(<KalenderPage />);
 		const weekSelect = screen.getByTestId("week-select");
-		fireEvent.change(weekSelect, { target: { value: "100" } });
+		fireEvent.change(weekSelect, { target: { value: "NaN" } });
 	});
 
 	// Helper functions
