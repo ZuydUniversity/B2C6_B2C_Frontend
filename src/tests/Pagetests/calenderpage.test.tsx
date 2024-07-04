@@ -82,27 +82,28 @@ describe("KalenderPage", () => {
 	test("changes to the correct week when an invalid week number is selected", () => {
 		render(<KalenderPage />);
 		const weekSelect = screen.getByTestId("week-select");
+		fireEvent.change(weekSelect, { target: { value: "100" } });
 	});
+
+	// Helper functions
+	const getWeekNumber = (date: Date): number => {
+		const firstJan = new Date(date.getFullYear(), 0, 1);
+		const pastDaysOfYear = (date.valueOf() - firstJan.valueOf()) / 86400000;
+		return Math.ceil((pastDaysOfYear + firstJan.getDay() + 1) / 7);
+	};
+
+	const getDateOfISOWeek = (week: number, year: number): Date => {
+		const simple = new Date(year, 0, 1 + (week - 1) * 7);
+		const dayOfWeek = simple.getDay();
+		const ISOweekStart = simple;
+		if (dayOfWeek <= 4) ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
+		else ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+		return new Date(Date.UTC(ISOweekStart.getFullYear(), ISOweekStart.getMonth(), ISOweekStart.getDate()));
+	};
+
+	const getStartOfWeek = (date: Date): Date => {
+		const day = date.getDay();
+		const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+		return new Date(Date.UTC(date.getFullYear(), date.getMonth(), diff));
+	};
 });
-
-// Helper functions
-const getWeekNumber = (date: Date): number => {
-	const firstJan = new Date(date.getFullYear(), 0, 1);
-	const pastDaysOfYear = (date.valueOf() - firstJan.valueOf()) / 86400000;
-	return Math.ceil((pastDaysOfYear + firstJan.getDay() + 1) / 7);
-};
-
-const getDateOfISOWeek = (week: number, year: number): Date => {
-	const simple = new Date(year, 0, 1 + (week - 1) * 7);
-	const dayOfWeek = simple.getDay();
-	const ISOweekStart = simple;
-	if (dayOfWeek <= 4) ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
-	else ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
-	return new Date(Date.UTC(ISOweekStart.getFullYear(), ISOweekStart.getMonth(), ISOweekStart.getDate()));
-};
-
-const getStartOfWeek = (date: Date): Date => {
-	const day = date.getDay();
-	const diff = date.getDate() - day + (day === 0 ? -6 : 1);
-	return new Date(Date.UTC(date.getFullYear(), date.getMonth(), diff));
-};
