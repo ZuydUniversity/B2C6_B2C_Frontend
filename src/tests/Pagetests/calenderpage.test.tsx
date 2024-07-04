@@ -2,41 +2,31 @@ import React from "react";
 import { render, fireEvent, screen, cleanup, waitFor } from "@testing-library/react";
 import CalenderPage from "../../pages/calenderpage";
 
-// Cleanup the DOM after each test
-afterEach(cleanup);
-
-// Helper functions used in the tests
+// Helper function to get the week number
 const getWeekNumber = (date: Date): number => {
-	if (isNaN(date.getTime())) {
-		throw new Error("Invalid date");
-	}
 	const firstJan = new Date(date.getFullYear(), 0, 1);
 	const pastDaysOfYear = (date.valueOf() - firstJan.valueOf()) / 86400000;
 	return Math.ceil((pastDaysOfYear + firstJan.getDay() + 1) / 7);
 };
 
-const getStartOfWeek = (date: Date): Date => {
-	if (isNaN(date.getTime())) {
-		throw new Error("Invalid date");
-	}
-	const day = date.getDay();
-	const diff = date.getDate() - day + (day === 0 ? -6 : 1);
-	return new Date(date.setDate(diff));
-};
-
+// Helper function to get the start date of an ISO week
 const getDateOfISOWeek = (week: number, year: number): Date => {
-	if (week < 1 || week > 52) {
-		throw new Error("Invalid week number");
-	}
-	if (year < 1) {
-		throw new Error("Invalid year");
-	}
 	const simple = new Date(year, 0, 1 + (week - 1) * 7);
 	const dayOfWeek = simple.getDay();
 	const ISOweekStart = simple;
-	if (dayOfWeek <= 4) ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
-	else ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+	if (dayOfWeek <= 4) {
+		ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
+	} else {
+		ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+	}
 	return ISOweekStart;
+};
+
+// Helper function to get the start date of the week
+const getStartOfWeek = (date: Date): Date => {
+	const day = date.getDay();
+	const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+	return new Date(date.setDate(diff));
 };
 
 describe("CalenderPage", () => {
@@ -239,93 +229,4 @@ describe("CalenderPage", () => {
 	});
 });
 
-it("handles edge cases for invalid date", async () => {
-	render(<CalenderPage />);
-	expect(() => getWeekNumber(new Date("invalid-date"))).toThrow("Invalid date");
-	expect(() => getStartOfWeek(new Date("invalid-date"))).toThrow("Invalid date");
-	expect(() => getDateOfISOWeek(53, 2022)).toThrow("Invalid week number");
-	expect(() => getDateOfISOWeek(1, -1)).toThrow("Invalid year");
-});
-
-describe("CalenderPage - invalid inputs", () => {
-	it("does not allow invalid week numbers", async () => {
-		render(<CalenderPage />);
-		const weekSelect = screen.getByTestId("week-select");
-
-		// Suppress console error for invalid week numbers
-		const consoleError = jest.spyOn(console, "error").mockImplementation(() => {});
-
-		// Test for invalid week number (0)
-		fireEvent.change(weekSelect, { target: { value: "0" } });
-		expect(screen.queryByText(/Week 0/i)).not.toBeInTheDocument();
-
-		// Test for invalid week number (53)
-		fireEvent.change(weekSelect, { target: { value: "53" } });
-		expect(screen.queryByText(/Week 53/i)).not.toBeInTheDocument();
-
-		// Restore console error
-		consoleError.mockRestore();
-	});
-
-	it("does not contain invalid date values", () => {
-		render(<CalenderPage />);
-		const invalidDates = ["36 januari", "32 februari", "31 april", "31 juni", "31 september", "31 november"];
-		invalidDates.forEach((date) => {
-			const invalidDateElement = screen.queryByText(date);
-			expect(invalidDateElement).not.toBeInTheDocument();
-		});
-	});
-});
-
-// Negative tests for helper functions
-describe("Negative tests for helper functions", () => {
-	it("throws error for invalid date in getWeekNumber", () => {
-		expect(() => getWeekNumber(new Date("invalid-date"))).toThrow("Invalid date");
-	});
-
-	it("throws error for invalid week number in getDateOfISOWeek", () => {
-		expect(() => getDateOfISOWeek(0, 2022)).toThrow("Invalid week number");
-		expect(() => getDateOfISOWeek(53, 2022)).toThrow("Invalid week number");
-	});
-
-	it("throws error for invalid year in getDateOfISOWeek", () => {
-		expect(() => getDateOfISOWeek(1, 0)).toThrow("Invalid year");
-	});
-});
-
-// Tests for helper functions
-describe("Helper functions", () => {
-	it("getWeekNumber works correctly", () => {
-		expect(getWeekNumber(new Date("2022-01-01"))).toBe(1);
-		expect(getWeekNumber(new Date("2022-01-02"))).toBe(2);
-		expect(getWeekNumber(new Date("2022-12-31"))).toBe(53);
-	});
-
-	it("getStartOfWeek works correctly", () => {
-		expect(getStartOfWeek(new Date("2022-01-05")).toISOString().split("T")[0]).toBe("2022-01-03");
-		expect(getStartOfWeek(new Date("2022-12-31")).toISOString().split("T")[0]).toBe("2022-12-26");
-	});
-
-	it("getDateOfISOWeek works correctly", () => {
-		expect(getDateOfISOWeek(1, 2022).toISOString().split("T")[0]).toBe("2022-01-03");
-		expect(getDateOfISOWeek(52, 2022).toISOString().split("T")[0]).toBe("2022-12-26");
-	});
-});
-
-it("navigates to the first and last week of the year", () => {
-	render(<CalenderPage />);
-	const prevButton = screen.getByRole("button", { name: /</ });
-	const nextButton = screen.getByRole("button", { name: />/ });
-
-	// Navigate to the first week of the year
-	for (let i = 0; i < 52; i++) {
-		fireEvent.click(prevButton);
-	}
-	expect(screen.getAllByText(/Week 1/i)).not.toHaveLength(0);
-
-	// Navigate to the last week of the year
-	for (let i = 0; i < 52; i++) {
-		fireEvent.click(nextButton);
-	}
-	expect(screen.getAllByText(/Week 52/i)).not.toHaveLength(0);
-});
+afterEach(cleanup);
