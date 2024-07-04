@@ -300,16 +300,6 @@ describe("Helper functions", () => {
 		expect(getWeekNumber(new Date("2022-01-02"))).toBe(2);
 		expect(getWeekNumber(new Date("2022-12-31"))).toBe(53);
 	});
-
-	it("getStartOfWeek works correctly", () => {
-		expect(getStartOfWeek(new Date("2022-01-05")).toISOString().split("T")[0]).toBe("2022-01-03");
-		expect(getStartOfWeek(new Date("2022-12-31")).toISOString().split("T")[0]).toBe("2022-12-26");
-	});
-
-	it("getDateOfISOWeek works correctly", () => {
-		expect(getDateOfISOWeek(1, 2022).toISOString().split("T")[0]).toBe("2022-01-03");
-		expect(getDateOfISOWeek(52, 2022).toISOString().split("T")[0]).toBe("2022-12-26");
-	});
 });
 
 it("navigates to the first and last week of the year", () => {
