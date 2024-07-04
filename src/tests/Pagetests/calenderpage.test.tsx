@@ -252,6 +252,9 @@ describe("CalenderPage - invalid inputs", () => {
 		render(<CalenderPage />);
 		const weekSelect = screen.getByTestId("week-select");
 
+		// Suppress console error for invalid week numbers
+		const consoleError = jest.spyOn(console, "error").mockImplementation(() => {});
+
 		// Test for invalid week number (0)
 		fireEvent.change(weekSelect, { target: { value: "0" } });
 		expect(screen.queryByText(/Week 0/i)).not.toBeInTheDocument();
@@ -259,6 +262,9 @@ describe("CalenderPage - invalid inputs", () => {
 		// Test for invalid week number (53)
 		fireEvent.change(weekSelect, { target: { value: "53" } });
 		expect(screen.queryByText(/Week 53/i)).not.toBeInTheDocument();
+
+		// Restore console error
+		consoleError.mockRestore();
 	});
 
 	it("does not contain invalid date values", () => {
