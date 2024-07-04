@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import "./styles/calenderpagecss.css";
 
-// Functie om de weeknummer te krijgen
 const getWeekNumber = (date: Date): number => {
 	const firstJan = new Date(date.getFullYear(), 0, 1);
 	const pastDaysOfYear = (date.valueOf() - firstJan.valueOf()) / 86400000;
 	return Math.ceil((pastDaysOfYear + firstJan.getDay() + 1) / 7);
 };
 
-// Functie om de startdatum van een ISO week te krijgen
 const getDateOfISOWeek = (week: number, year: number): Date => {
 	const simple = new Date(year, 0, 1 + (week - 1) * 7);
 	const dayOfWeek = simple.getDay();
 	const ISOweekStart = simple;
 	if (dayOfWeek <= 4) ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
+	else ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
 	return ISOweekStart;
 };
 
-// Functie om de startdatum van de week te krijgen
 const getStartOfWeek = (date: Date): Date => {
 	const day = date.getDay();
 	const diff = date.getDate() - day + (day === 0 ? -6 : 1);
