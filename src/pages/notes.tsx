@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 // Set constant values for the tests
 const baseSpecialist1 = new Specialist("Barack", "Obama", "JohnDoe@gmail.com", "0612345678");
 const baseSpecialist2 = new Specialist("John", "Doe", "JohnDoe@gmail.com", "0612345678");
+const navigate = useNavigate();
 
 const patient = new Patient("John", "Doe", "john.doe@example.com", 34, "123-456-7890", "john.smith@example.com", "444-555-6666", "Male");
 
@@ -28,7 +29,6 @@ const Notes: React.FC = () => {
 	const [filteredBySpecialist, setFilteredBySpecialist] = useState<boolean>(false);
 	const [filteredByPatient, setFilteredByPatient] = useState<boolean>(false);
 	const [filteredBySession, setFilteredBySession] = useState<boolean>(false);
-	const navigate = useNavigate();
 
 	const handleNoteClick = (note: Note) => {
 	   navigate("/edit-note", { state: { note } });
