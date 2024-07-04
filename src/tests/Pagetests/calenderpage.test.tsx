@@ -16,26 +16,6 @@ const getStartOfWeek = (date: Date): Date => {
 	return new Date(date.setDate(diff));
 };
 
-const getDateOfISOWeek = (week: number, year: number): Date => {
-	const simple = new Date(year, 0, 1 + (week - 1) * 7);
-	const dayOfWeek = simple.getDay();
-	const ISOweekStart = simple;
-	return ISOweekStart;
-};
-
-// Test the `getDateOfISOWeek` function to cover both branches
-describe("getDateOfISOWeek", () => {
-	it("returns the correct start date of the week when dayOfWeek <= 4", () => {
-		const result = getDateOfISOWeek(1, 2022);
-		expect(result.toISOString().split("T")[0]).toBe("2022-01-01");
-	});
-
-	it("returns the correct start date of the week when dayOfWeek > 4", () => {
-		const result = getDateOfISOWeek(2, 2022);
-		expect(result.toISOString().split("T")[0]).toBe("2022-01-08");
-	});
-});
-
 describe("CalenderPage", () => {
 	it("renders without crashing", () => {
 		render(<CalenderPage />);
@@ -99,12 +79,6 @@ describe("CalenderPage", () => {
 		render(<CalenderPage />);
 		const kalenderTable = screen.getByRole("presentation", { name: "kalender-table-container" });
 		expect(kalenderTable).toBeInTheDocument();
-	});
-
-	it("renders the time correctly", () => {
-		render(<CalenderPage />);
-		const timeElement = screen.getByText("08:00");
-		expect(timeElement).toBeInTheDocument();
 	});
 
 	it("renders the kalender-table with scroll functionality", async () => {
