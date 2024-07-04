@@ -1,7 +1,6 @@
 import React from "react";
 import { render, fireEvent, screen, cleanup, waitFor } from "@testing-library/react";
 import CalenderPage from "../../pages/calenderpage";
-import { toBeInvalid } from "@testing-library/jest-dom/matchers";
 
 // Cleanup the DOM after each test
 afterEach(cleanup);
@@ -335,5 +334,66 @@ describe("CalenderPage - invalid date values", () => {
 			const invalidDateElement = screen.queryByText(date);
 			expect(invalidDateElement).not.toBeInTheDocument();
 		});
+	});
+
+	describe("CalenderPage - week select", () => {
+		it("does not contain options for week 0 and week 53", () => {
+			render(<CalenderPage />);
+			const weekSelect = screen.getByTestId("week-select");
+
+			// Check that there is no option with value "0"
+			const weekZeroOption = screen.queryByRole("option", { name: "Week 0" });
+			expect(weekZeroOption).not.toBeInTheDocument();
+
+			// Check that there is no option with value "53"
+			const weekFiftyThreeOption = screen.queryByRole("option", { name: "Week 53" });
+			expect(weekFiftyThreeOption).not.toBeInTheDocument();
+		});
+	});
+
+	describe("CalenderPage - invalid date values", () => {
+		it("does not contain invalid date values like 'January has 36 days'", () => {
+			render(<CalenderPage />);
+
+			const invalidDates = ["36 januari", "32 februari", "31 april", "31 juni", "31 september", "31 november"];
+
+			invalidDates.forEach((date) => {
+				const invalidDateElement = screen.queryByText(date);
+				expect(invalidDateElement).not.toBeInTheDocument();
+			});
+		});
+	});
+	it("throws error for invalid date in getWeekNumber", () => {
+		expect(() => getWeekNumber(new Date("invalid-date"))).toThrow("Invalid date");
+	});
+	it("throws error for invalid week number in getDateOfISOWeek", () => {
+		expect(() => getDateOfISOWeek(0, 2022)).toThrow("Invalid week number");
+		expect(() => getDateOfISOWeek(53, 2022)).toThrow("Invalid week number");
+	});
+	it("throws error for invalid year in getDateOfISOWeek", () => {
+		expect(() => getDateOfISOWeek(1, 0)).toThrow("Invalid year");
+	});
+	it("throws error for invalid year in getDateOfISOWeek", () => {
+		expect(() => getDateOfISOWeek(1, 0)).toThrow("Invalid year");
+	});
+	it("returns correct start date for a given week and year in getDateOfISOWeek", () => {
+		const startDate = getDateOfISOWeek(1, 2022);
+		expect(startDate.toISOString().split("T")[0]).toBe("2022-01-03");
+	});
+	it("calculates the correct week number for a given date in getWeekNumber", () => {
+		const weekNumber = getWeekNumber(new Date("2022-01-03"));
+		expect(weekNumber).toBe(2);
+	});
+	it("handles invalid week number in handleWeekChange", () => {
+		render(<CalenderPage />);
+		const weekSelect = screen.getByTestId("week-select");
+
+		// Test for invalid week number (0)
+		fireEvent.change(weekSelect, { target: { value: "0" } });
+		expect(screen.queryByText(/Week 0/i)).not.toBeInTheDocument();
+
+		// Test for invalid week number (53)
+		fireEvent.change(weekSelect, { target: { value: "53" } });
+		expect(screen.queryByText(/Week 53/i)).not.toBeInTheDocument();
 	});
 });
