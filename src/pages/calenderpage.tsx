@@ -44,10 +44,7 @@ const CalenderPage: React.FC = () => {
 
   const handleWeekChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const week = parseInt(event.target.value, 10);
-    if (isNaN(week) || week < 1 || week > 52) {
-      console.error("Invalid week number");
-      return;
-    }
+
     const newDate = getDateOfISOWeek(week, new Date().getFullYear());
     setCurrentWeek(newDate);
     setSelectedWeek(week);

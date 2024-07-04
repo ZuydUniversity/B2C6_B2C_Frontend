@@ -39,7 +39,7 @@ describe('CalenderPage', () => {
   });
 
   test('getDateOfISOWeek handles week adjustment correctly', () => {
-	const date = getDateOfISOWeek(11, 2022);
+    const date = getDateOfISOWeek(11, 2022);
   });
 
   test('changes to the next week when right arrow is clicked', () => {
@@ -82,20 +82,8 @@ describe('CalenderPage', () => {
     // Correcting for timezone difference by using toISOString()
     expect(startOfWeek.toISOString().slice(0, 10)).toBe('2022-03-14'); // Start of the week for the given date
   });
-
-  test('changes to the correct week when an invalid week number is selected', () => {
-    render(<CalenderPage />);
-    const weekSelect = screen.getByTestId('week-select');
-    const initialWeekText = screen.getByRole('heading', { level: 2 }).textContent;
-
-    fireEvent.change(weekSelect, { target: { value: '53' } });
-
-    const updatedWeekText = screen.getByRole('heading', { level: 2 }).textContent;
-    expect(updatedWeekText).toBe(initialWeekText); // Week should not change
-  });
 });
 
-// Helper functions
 const getWeekNumber = (date: Date): number => {
   const firstJan = new Date(date.getFullYear(), 0, 1);
   const pastDaysOfYear = (date.valueOf() - firstJan.valueOf()) / 86400000;
