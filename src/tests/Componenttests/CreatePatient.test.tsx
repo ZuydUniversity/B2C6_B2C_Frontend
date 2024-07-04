@@ -13,14 +13,13 @@ describe("CreatePatient Component", () => {
 	});
 	test('selecting the "Man" radio button', () => {
 		render(<CreatePatient />);
-		
-		const manRadioButton = screen.getByLabelText(/Man/i);
-		
-		fireEvent.click(manRadioButton);
-		
-		expect(manRadioButton).toBeChecked();
-	  });
 
+		const manRadioButton = screen.getByLabelText(/Man/i);
+
+		fireEvent.click(manRadioButton);
+
+		expect(manRadioButton).toBeChecked();
+	});
 
 	test("allows firstname to be entered", () => {
 		render(<CreatePatient />);
