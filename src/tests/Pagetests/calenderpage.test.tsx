@@ -2,17 +2,17 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import KalenderPage from '../../pages/calenderpage';
+import CalenderPage from '../../pages/calenderpage';
 
-describe('KalenderPage', () => {
-  test('renders the kalender title', () => {
-    render(<KalenderPage />);
+describe('CalenderPage', () => {
+  test('renders the calender title', () => {
+    render(<CalenderPage />);
     const titleElement = screen.getByText(/Kalender/i);
     expect(titleElement).toBeInTheDocument();
   });
 
   test('renders the correct days of the week', () => {
-    render(<KalenderPage />);
+    render(<CalenderPage />);
     const days = ["Ma", "Di", "Wo", "Do", "Vr"];
     days.forEach(day => {
       const dayElement = screen.getByTestId(`day-${day}`);
@@ -22,13 +22,13 @@ describe('KalenderPage', () => {
   });
 
   test('renders the week number select dropdown', () => {
-    render(<KalenderPage />);
+    render(<CalenderPage />);
     const weekSelect = screen.getByTestId('week-select');
     expect(weekSelect).toBeInTheDocument();
   });
 
   test('changes to the previous week when left arrow is clicked', () => {
-    render(<KalenderPage />);
+    render(<CalenderPage />);
     const initialWeekText = screen.getByRole('heading', { level: 2 }).textContent;
 
     const prevButton = screen.getByRole('button', { name: '<' });
@@ -39,7 +39,7 @@ describe('KalenderPage', () => {
   });
 
   test('changes to the next week when right arrow is clicked', () => {
-    render(<KalenderPage />);
+    render(<CalenderPage />);
     const initialWeekText = screen.getByRole('heading', { level: 2 }).textContent;
 
     const nextButton = screen.getByRole('button', { name: '>' });
@@ -50,7 +50,7 @@ describe('KalenderPage', () => {
   });
 
   test('changes the week when a different week number is selected', () => {
-    render(<KalenderPage />);
+    render(<CalenderPage />);
     const weekSelect = screen.getByTestId('week-select');
     const initialWeekText = screen.getByRole('heading', { level: 2 }).textContent;
 
@@ -80,7 +80,7 @@ describe('KalenderPage', () => {
   });
 
   test('changes to the correct week when an invalid week number is selected', () => {
-    render(<KalenderPage />);
+    render(<CalenderPage />);
     const weekSelect = screen.getByTestId('week-select');
     const initialWeekText = screen.getByRole('heading', { level: 2 }).textContent;
 
