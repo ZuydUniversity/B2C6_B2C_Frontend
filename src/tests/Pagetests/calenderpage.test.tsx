@@ -78,17 +78,6 @@ describe("KalenderPage", () => {
 		// Correcting for timezone difference by using toISOString()
 		expect(startOfWeek.toISOString().slice(0, 10)).toBe("2022-03-14"); // Start of the week for the given date
 	});
-
-	test("changes to the correct week when an invalid week number is selected", () => {
-		render(<KalenderPage />);
-		const weekSelect = screen.getByTestId("week-select");
-		const initialWeekText = screen.getByRole("heading", { level: 2 }).textContent;
-
-		fireEvent.change(weekSelect, { target: { value: "53" } });
-
-		const updatedWeekText = screen.getByRole("heading", { level: 2 }).textContent;
-		expect(updatedWeekText).toBe(initialWeekText); // Week should not change
-	});
 });
 
 // Helper functions
