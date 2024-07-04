@@ -227,6 +227,12 @@ describe("CalenderPage", () => {
 			expect(screen.getByText(time)).toBeInTheDocument();
 		});
 	});
+
+	it("getDateOfISOWeek handles week starting on Sunday correctly", () => {
+		const result = getDateOfISOWeek(1, 2023); // Use a date that ensures dayOfWeek > 4
+		expect(result).toBeInstanceOf(Date);
+		expect(result.getDay()).toBeGreaterThan(4);
+	});
 });
 
 afterEach(cleanup);
