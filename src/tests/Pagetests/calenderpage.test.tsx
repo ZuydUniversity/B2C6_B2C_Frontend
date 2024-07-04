@@ -38,6 +38,10 @@ describe('CalenderPage', () => {
     expect(updatedWeekText).not.toBe(initialWeekText);
   });
 
+  test('getDateOfISOWeek handles week adjustment correctly', () => {
+	const date = getDateOfISOWeek(11, 2022);
+  });
+
   test('changes to the next week when right arrow is clicked', () => {
     render(<CalenderPage />);
     const initialWeekText = screen.getByRole('heading', { level: 2 }).textContent;
