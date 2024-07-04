@@ -3,9 +3,7 @@ import "./styles/calenderpagecss.css";
 
 // Functie om de weeknummer te krijgen
 const getWeekNumber = (date: Date): number => {
-	if (isNaN(date.getTime())) {
-		throw new Error("Invalid date");
-	}
+
 	const firstJan = new Date(date.getFullYear(), 0, 1);
 	const pastDaysOfYear = (date.valueOf() - firstJan.valueOf()) / 86400000;
 	return Math.ceil((pastDaysOfYear + firstJan.getDay() + 1) / 7);
@@ -13,12 +11,7 @@ const getWeekNumber = (date: Date): number => {
 
 // Functie om de startdatum van een ISO week te krijgen
 const getDateOfISOWeek = (week: number, year: number): Date => {
-	if (week < 1 || week > 52) {
-		throw new Error("Invalid week number");
-	}
-	if (year < 1) {
-		throw new Error("Invalid year");
-	}
+
 	const simple = new Date(year, 0, 1 + (week - 1) * 7);
 	const dayOfWeek = simple.getDay();
 	const ISOweekStart = simple;
@@ -29,9 +22,7 @@ const getDateOfISOWeek = (week: number, year: number): Date => {
 
 // Functie om de startdatum van de week te krijgen
 const getStartOfWeek = (date: Date): Date => {
-	if (isNaN(date.getTime())) {
-		throw new Error("Invalid date");
-	}
+
 	const day = date.getDay();
 	const diff = date.getDate() - day + (day === 0 ? -6 : 1);
 	return new Date(date.setDate(diff));
