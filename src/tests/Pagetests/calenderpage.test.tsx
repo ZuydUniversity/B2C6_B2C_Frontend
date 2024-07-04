@@ -32,7 +32,7 @@ describe("getDateOfISOWeek", () => {
 
 	it("returns the correct start date of the week when dayOfWeek > 4", () => {
 		const result = getDateOfISOWeek(2, 2022);
-		expect(result.toISOString().split("T")[0]).toBe("2022-01-8");
+		expect(result.toISOString().split("T")[0]).toBe("2022-01-08");
 	});
 });
 
