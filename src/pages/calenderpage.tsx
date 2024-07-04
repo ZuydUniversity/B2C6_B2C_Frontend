@@ -13,7 +13,6 @@ const getDateOfISOWeek = (week: number, year: number): Date => {
   const simple = new Date(year, 0, 1 + (week - 1) * 7);
   const dayOfWeek = simple.getDay();
   const ISOweekStart = simple;
-  if (dayOfWeek <= 4) ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
   return ISOweekStart;
 };
 
