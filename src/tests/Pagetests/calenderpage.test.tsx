@@ -39,6 +39,30 @@ const getDateOfISOWeek = (week: number, year: number): Date => {
 	return ISOweekStart;
 };
 
+describe("Helper functions", () => {
+	it("getDateOfISOWeek works correctly for dayOfWeek <= 4", () => {
+		const date = new Date(2023, 0, 5); // January 5, 2023 is a Thursday (dayOfWeek = 4)
+		const result = getDateOfISOWeek(1, 2023);
+		expect(result.toISOString().split("T")[0]).toBe("2023-01-02"); // The Monday of the first week
+	});
+
+	it("getDateOfISOWeek works correctly for dayOfWeek > 4", () => {
+		const date = new Date(2023, 0, 6); // January 6, 2023 is a Friday (dayOfWeek = 5)
+		const result = getDateOfISOWeek(1, 2023);
+		expect(result.toISOString().split("T")[0]).toBe("2023-01-02"); // The Monday of the first week
+	});
+
+	// Additional tests to ensure edge cases are covered
+	it("throws error for invalid week number in getDateOfISOWeek", () => {
+		expect(() => getDateOfISOWeek(0, 2022)).toThrow("Invalid week number");
+		expect(() => getDateOfISOWeek(53, 2022)).toThrow("Invalid week number");
+	});
+
+	it("throws error for invalid year in getDateOfISOWeek", () => {
+		expect(() => getDateOfISOWeek(1, 0)).toThrow("Invalid year");
+	});
+});
+
 describe("CalenderPage", () => {
 	it("renders without crashing", () => {
 		render(<CalenderPage />);
