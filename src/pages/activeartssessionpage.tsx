@@ -1,5 +1,4 @@
 import * as React from "react";
-import search_icon from "./images/search_icon.png";
 import "./styles/activeartssession.css";
 
 type PatientInfoProps = {
@@ -120,7 +119,7 @@ const ActiveArtsSession: React.FC = () => {
 									<div className="radiology-item-input">Type iets ...</div>
 								</div>
 								<button onClick={handleRadiologyButtonClick} className="radiology-item-button">
-									<img src={search_icon} className="radiology-item-button-img" alt="Radiology Button" />
+									<img src="Images/search_icon.png" className="radiology-item-button-img" alt="Radiology Button" />
 								</button>
 							</div>
 							<h3 className="blood-chemistry">Bloedchemie</h3>
