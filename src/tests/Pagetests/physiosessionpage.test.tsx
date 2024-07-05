@@ -23,7 +23,7 @@ describe("PhysioSessionPage test", () => {
 		});
 		document.dispatchEvent(outsideClickEvent);
 
-		expect(queryByRole("list")).not.toBeInTheDocument();
+		expect(queryByRole("list")).not.toBeInTheDocument(); 
 	});
 
 	it("Should correctly display patient information when selected", () => {
