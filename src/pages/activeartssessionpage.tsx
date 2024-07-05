@@ -1,6 +1,6 @@
 import * as React from "react";
+import search_icon from "./images/search_icon.png";
 import "./styles/activeartssession.css";
-
 
 type PatientInfoProps = {
 	name: string;
