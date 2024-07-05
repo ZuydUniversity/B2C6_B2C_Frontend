@@ -22,14 +22,14 @@ const PatientOverview: React.FC = () => {
 		return <div>Patiënt niet gevonden</div>;
 	}
 
-  return (
-    <div className="patient-overview">
-      <h1>Dashboard</h1>
-      <hr />
-      <PatientDetails patient={patient} />
-      <PatientFunctionalDetails />
-    </div>
-  );
+	return (
+		<div className="patient-overview">
+			<h1>Dashboard</h1>
+			<hr />
+			<PatientDetails patient={patient} />
+			<PatientFunctionalDetails />
+		</div>
+	);
 };
 
 export default PatientOverview;
