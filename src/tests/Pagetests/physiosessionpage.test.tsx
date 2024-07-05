@@ -14,17 +14,20 @@ describe("PhysioSessionPage test", () => {
 	});
 
 	it("Should hide patient list when clicking outside", () => {
-		const { getByText, queryByRole, getByRole } = render(<PatientSelect onSelect={() => {}} />);
-
+		const { container, queryByRole } = render(<PatientSelect onSelect={() => {}} />);
+	
 		const outsideClickEvent = new MouseEvent("mousedown", {
 			bubbles: true,
 			cancelable: true,
 			view: window,
 		});
-		document.dispatchEvent(outsideClickEvent);
-
-		expect(queryByRole("list")).not.toBeInTheDocument(); 
+	
+		// Dispatch the event from a valid DOM element
+		container.dispatchEvent(outsideClickEvent);
+	
+		expect(queryByRole("list")).not.toBeInTheDocument();
 	});
+	
 
 	it("Should correctly display patient information when selected", () => {
 		const { getByText, getAllByRole } = render(<AddPatientSelection />);
