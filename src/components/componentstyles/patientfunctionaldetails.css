@@ -1,0 +1,158 @@
+.dashboard {
+	display: flex;
+	flex-direction: column;
+	font-family: Arial, sans-serif;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #cce0ff;
+	padding: 10px;
+}
+
+.header h1 {
+	margin: 0;
+}
+
+.header select {
+	padding: 5px;
+}
+
+.content {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+.left-column,
+.right-column {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	margin: 10px;
+}
+
+.functional-data,
+.medical-data,
+.hero-calendar,
+.charts {
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.myometric-results,
+.cmas-result,
+.ck-values,
+.calendar-icons,
+.charts .chart {
+	margin: 10px 0;
+}
+
+.results {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+	margin: 0;
+}
+
+.result {
+	background-color: #fc6039;
+	padding: 10px;
+	text-align: center;
+	border-radius: 10px;
+	color: white;
+}
+
+.cmas-score {
+	background-color: #000369;
+	padding: 10px;
+	text-align: center;
+	border-radius: 10px;
+	color: white;
+}
+
+.ck-values {
+	display: flex;
+	flex-direction: column;
+}
+
+.ck-row {
+	display: flex;
+	justify-content: space-between;
+	margin: 5px 0;
+}
+
+.ck-value {
+	background-color: white;
+	padding: 10px;
+	text-align: center;
+	border-radius: 10px;
+	color: blue;
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #fc6039;
+}
+
+.ck-number {
+	background-color: #fc6039;
+	padding: 10px;
+	text-align: center;
+	border-radius: 10px;
+	color: white;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.ck-value {
+	margin-right: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.ck-left {
+	text-align: left;
+	flex: 1;
+}
+
+.ck-right {
+	text-align: right;
+	flex: 1;
+}
+
+.hero-calendar {
+	display: flex;
+	flex-direction: column;
+}
+
+.calendar-icons {
+	display: flex;
+	justify-content: space-around;
+	margin: 10px 0;
+}
+
+.calendar-icons span {
+	font-size: 2em;
+}
+
+textarea {
+	width: 100%;
+	height: 50px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+.charts .chart {
+	margin: 10px 0;
+}
+
+.charts .chart img {
+	width: 100%;
+}

@@ -3,6 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import "./styles/patientoverviewcss.css";
 import PatientDetails from "../components/patientdetails";
+import PatientFunctionalDetails from "../components/patientfunctionaldetails";
 import { Patient } from "../abstracts/ImportsModels";
 
 const patients = [
@@ -25,7 +26,8 @@ const PatientOverview: React.FC = () => {
 		<div className="patient-overview">
 			<h1>Dashboard</h1>
 			<hr />
-			{/*<PatientDetails patient={patient} /> */}
+			<PatientDetails patient={patient} />
+			<PatientFunctionalDetails />
 		</div>
 	);
 };
