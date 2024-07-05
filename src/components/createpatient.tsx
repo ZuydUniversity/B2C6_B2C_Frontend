@@ -55,6 +55,46 @@ const CreatePatient: React.FC = () => {
 	const firstnameRef = useRef(null);
 	const lastnameRef = useRef(null);
 	const emailRef = useRef(null);
+	const handleSubmitPatient = async (event: React.FormEvent) => {
+		event.preventDefault();
+		const newPatient = {
+		  Firstname: firstname,
+		  Lastname: lastname,
+		  Email: email,
+		  Age: age,
+		  Phonenumber: phonenumber,
+		  Sex: sex,
+		  FirstnameContact: firstnameContact,
+		  LastnameContact: lastnameContact,
+		  EmailContact: emailContact,
+		  PhonenumberContact: phonenumberContact,
+		  Specialist: specialist,
+		  Note: note,
+		  Medication: medication,
+		  Appointment: appointment,
+		};
+	  
+		// Replace 'http://localhost:8000/patients' with FastAPI endpoint URL
+		const apiUrl = 'http://localhost:8000/patients';
+	  
+		try {
+		  const response = await fetch(apiUrl, {
+			method: 'POST',
+			headers: {
+			  'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(newPatient),
+		  });
+	  
+		  if (!response.ok) {
+			throw new Error(`Error: ${response.status}`);
+		  }
+	  
+		  console.log('Patient created successfully');
+		} catch (error) {
+		  console.error('Failed to create patient:', error);
+		}
+	  };
 
 	return (
 		<div className="modal">
@@ -135,6 +175,7 @@ const CreatePatient: React.FC = () => {
 			</div>
 		</div>
 	);
+	
 };
 
 export default CreatePatient;
