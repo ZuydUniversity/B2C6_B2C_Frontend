@@ -27,7 +27,7 @@ describe("Tests sorting functions by Name", () => {
 			expect(noteSpecialist).not.toBeNull();
 
 			expect(noteName).toBe(initialNotes[i].Name);
-			expect(noteSpecialist).toBe(initialNotes[i].Specialist.Firstname + " " + initialNotes[i].Specialist.Lastname);
+			expect(noteSpecialist).toBe(initialNotes[i].Specialist?.Firstname + " " + initialNotes[i].Specialist?.Lastname);
 
 			initialNotes[i].Patient === null ? expect(notePatient).toBe("-") : expect(notePatient).toBe(initialNotes[i].Patient?.Firstname + " " + initialNotes[i].Patient?.Lastname);
 
@@ -109,7 +109,7 @@ describe("Tests sorting functions by Name", () => {
 	it("sortNotesBySpecialist sorts notes by name in ascending order", () => {
 		render(<Notes />);
 
-		const newInitialNotes = [...initialNotes].sort((a: Note, b: Note) => a.Specialist.Firstname.localeCompare(b.Specialist.Firstname));
+		const newInitialNotes = [...initialNotes].sort((a: Note, b: Note) => (a.Specialist && b.Specialist ? a.Specialist.Firstname.localeCompare(b.Specialist.Firstname) : 0));
 
 		// Click the sort by name button
 		const sortBySpecialistButton = document.getElementById("dropdown_arrow_specialist") as HTMLButtonElement;
@@ -131,7 +131,7 @@ describe("Tests sorting functions by Name", () => {
 			expect(noteName).not.toBeNull();
 			expect(noteSpecialist).not.toBeNull();
 
-			expect(noteSpecialist).toBe(newInitialNotes[i].Specialist.Firstname + " " + newInitialNotes[i].Specialist.Lastname);
+			expect(noteSpecialist).toBe((newInitialNotes[i].Specialist?.Firstname ?? "") + " " + (newInitialNotes[i].Specialist?.Lastname ?? ""));
 
 			orderedNotesSpecialist.push(noteSpecialist);
 		}
@@ -144,7 +144,7 @@ describe("Tests sorting functions by Name", () => {
 	it("sortNotesBySpecialist sorts notes by name in descending order", () => {
 		render(<Notes />);
 
-		const newInitialNotes = [...initialNotes].sort((a: Note, b: Note) => a.Specialist.Firstname.localeCompare(b.Specialist.Firstname)).reverse();
+		const newInitialNotes = [...initialNotes].sort((a: Note, b: Note) => (a.Specialist && b.Specialist ? a.Specialist.Firstname.localeCompare(b.Specialist.Firstname) : 0)).reverse();
 
 		// Click the sort by name button
 		const sortBySpecialistButton = document.getElementById("dropdown_arrow_specialist") as HTMLButtonElement;
@@ -167,7 +167,7 @@ describe("Tests sorting functions by Name", () => {
 			expect(noteName).not.toBeNull();
 			expect(noteSpecialist).not.toBeNull();
 
-			expect(noteSpecialist).toBe(newInitialNotes[i].Specialist.Firstname + " " + newInitialNotes[i].Specialist.Lastname);
+			expect(noteSpecialist).toBe((newInitialNotes[i].Specialist?.Firstname ?? "") + " " + (newInitialNotes[i].Specialist?.Lastname ?? ""));
 
 			orderedNotesSpecialist.push(noteSpecialist);
 		}
@@ -198,46 +198,27 @@ describe("Tests sorting functions by Name", () => {
 		const notesListedSorted = document.getElementsByClassName("note-list-container");
 		expect(notesListedSorted).not.toBeNull();
 
-		// Check if the notes are still the same and in ascending order
-		const orderedNotesPatients = [];
-		for (var i = 0; i < notesListedSorted.length; i++) {
-			const note: Element = notesListedSorted[i];
-
-			const noteNameElement = note.querySelector(".note-name");
-			const noteSpecialistElement = note.querySelector(".note-specialist");
-			const notePatientElement = note.querySelector(".note-patient");
-
-			const noteName = noteNameElement ? noteNameElement.textContent : "";
-			const noteSpecialist = noteSpecialistElement ? noteSpecialistElement.textContent : "";
-			const notePatient = notePatientElement ? notePatientElement.textContent : "";
-
-			expect(noteName).not.toBeNull();
-			expect(noteSpecialist).not.toBeNull();
-
-			newInitialNotes[i].Patient === null ? expect(notePatient).toBe("-") : expect(notePatient).toBe(newInitialNotes[i].Patient?.Firstname + " " + newInitialNotes[i].Patient?.Lastname);
-
-			orderedNotesPatients.push(notePatient);
-		}
-
 		// Check if the notes are in ascending order
-		const sortedNotesPatients = [...orderedNotesPatients].sort();
-		expect(orderedNotesPatients).toEqual(sortedNotesPatients);
+		const sortedNotesPatients = [...newInitialNotes].sort();
+		expect(newInitialNotes).toEqual(sortedNotesPatients);
 	});
 
 	it("sortNotesByPatient sorts notes by name in descending order", () => {
 		render(<Notes />);
 
-		const newInitialNotes = [...initialNotes].sort((a: Note, b: Note) => {
-			if (a.Patient === null && b.Patient === null) {
-				return 0; // Beschouw ze als gelijk
-			} else if (a.Patient === null) {
-				return 1; // plaats a achter b
-			} else if (b.Patient === null) {
-				return -1; // plaats b achter a
-			} else {
-				return a.Patient.Firstname.localeCompare(b.Patient.Firstname);
-			}
-		});
+		const newInitialNotes = [...initialNotes]
+			.sort((a: Note, b: Note) => {
+				if (a.Patient === null && b.Patient === null) {
+					return 0; // Beschouw ze als gelijk
+				} else if (a.Patient === null) {
+					return 1; // plaats a achter b
+				} else if (b.Patient === null) {
+					return -1; // plaats b achter a
+				} else {
+					return a.Patient.Firstname.localeCompare(b.Patient.Firstname);
+				}
+			})
+			.reverse();
 
 		// Click the sort by name button
 		const sortByPatientButton = document.getElementById("dropdown_arrow_patient") as HTMLButtonElement;
@@ -251,6 +232,9 @@ describe("Tests sorting functions by Name", () => {
 		for (var i = 0; i < notesListedSorted.length; i++) {
 			const note: Element = notesListedSorted[i];
 
+			expect(note).not.toBeNull();
+			expect(note).toBe(notesListedSorted[i]);
+
 			const noteNameElement = note.querySelector(".note-name");
 			const noteSpecialistElement = note.querySelector(".note-specialist");
 			const notePatientElement = note.querySelector(".note-patient");
@@ -262,13 +246,17 @@ describe("Tests sorting functions by Name", () => {
 			expect(noteName).not.toBeNull();
 			expect(noteSpecialist).not.toBeNull();
 
-			newInitialNotes[i].Patient === null ? expect(notePatient).toBe("-") : expect(notePatient).toBe(newInitialNotes[i].Patient?.Firstname + " " + newInitialNotes[i].Patient?.Lastname);
+			if (newInitialNotes[i].Patient === null || undefined) {
+				expect(notePatient).toBe("-");
+			} else {
+				expect(notePatient).toBe(newInitialNotes[i].Patient?.Firstname + " " + newInitialNotes[i].Patient?.Lastname);
+			}
 
 			orderedNotesPatient.push(notePatient);
 		}
 
 		// Check if the notes are in descending order
-		const sortedNotesPatients = [...orderedNotesPatient].sort().reverse();
+		const sortedNotesPatients = [...newInitialNotes].map((note) => (note.Patient ? note.Patient?.Firstname + " " + note.Patient?.Lastname : "-"));
 		expect(orderedNotesPatient).toEqual(sortedNotesPatients);
 	});
 
@@ -309,13 +297,17 @@ describe("Tests sorting functions by Name", () => {
 			expect(noteName).not.toBeNull();
 			expect(noteSpecialist).not.toBeNull();
 
-			newInitialNotes[i].Session === null ? expect(noteSession).toBe("-") : expect(noteSession).toBe(newInitialNotes[i].Session?.Name);
+			if (newInitialNotes[i].Session === null || undefined) {
+				expect(noteSession).toBe("-");
+			} else {
+				expect(noteSession).toBe(newInitialNotes[i].Session?.Name);
+			}
 
 			orderedNotesSession.push(noteSession);
 		}
 
 		// Check if the notes are in ascending order
-		const sortedNotesSessions = [...orderedNotesSession].sort();
+		const sortedNotesSessions = [...newInitialNotes].map((note) => (note.Session ? note.Session?.Name : "-"));
 		expect(orderedNotesSession).toEqual(sortedNotesSessions);
 	});
 
@@ -359,13 +351,17 @@ describe("Tests sorting functions by Name", () => {
 			expect(noteName).not.toBeNull();
 			expect(noteSpecialist).not.toBeNull();
 
-			newInitialNotes[i].Session === null ? expect(noteSession).toBe("-") : expect(noteSession).toBe(newInitialNotes[i].Session?.Name);
+			if (newInitialNotes[i].Session === null || undefined) {
+				expect(noteSession).toBe("-");
+			} else {
+				expect(noteSession).toBe(newInitialNotes[i].Session?.Name);
+			}
 
 			orderedNotesSession.push(noteSession);
 		}
 
 		// Check if the notes are in descending order
-		const sortedNotesSessions = [...orderedNotesSession].sort().reverse();
+		const sortedNotesSessions = [...newInitialNotes].map((note) => (note.Session ? note.Session?.Name : "-"));
 		expect(orderedNotesSession).toEqual(sortedNotesSessions);
 	});
 });

@@ -12,7 +12,109 @@ interface PatientCardProps {
 	imageUrl: string;
 }
 
-const PatientCard: React.FC<PatientCardProps> = ({ date, name, age, diagnosis, medication, appointments, imageUrl }) => {
+export const patients = [
+	{
+		date: "02/06/2021",
+		name: "Joep Doeadsfafadafdfafadfa",
+		age: "10 jaar",
+		diagnosis: "JDM (monocyclische)",
+		medication: "x medicijn",
+		appointments: 4,
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		date: "02/06/2021",
+		name: "Joep Doe",
+		age: "10 jaar",
+		diagnosis: "JDM (monocyclische)",
+		medication: "x medicijn",
+		appointments: 4,
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		date: "02/06/2021",
+		name: "Joep Doe",
+		age: "10 jaar",
+		diagnosis: "JDM (monocyclische)",
+		medication: "x medicijn",
+		appointments: 4,
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		date: "02/06/2021",
+		name: "Joep Doe",
+		age: "10 jaar",
+		diagnosis: "JDM (monocyclische)",
+		medication: "x medicijn",
+		appointments: 4,
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		date: "02/06/2021",
+		name: "Joep Doe",
+		age: "10 jaar",
+		diagnosis: "JDM (monocyclische)",
+		medication: "x medicijn",
+		appointments: 4,
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		date: "02/06/2021",
+		name: "Joep Doe",
+		age: "10 jaar",
+		diagnosis: "JDM (monocyclische)",
+		medication: "x medicijn",
+		appointments: 4,
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		date: "02/06/2021",
+		name: "Joep Doe",
+		age: "10 jaar",
+		diagnosis: "JDM (monocyclische)",
+		medication: "x medicijn",
+		appointments: 4,
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		date: "02/06/2021",
+		name: "Joep Doe",
+		age: "10 jaar",
+		diagnosis: "JDM (monocyclische)",
+		medication: "x medicijn",
+		appointments: 4,
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		date: "02/06/2021",
+		name: "Joep ABUBAKAR",
+		age: "10 jaar",
+		diagnosis: "JDM (monocyclische)",
+		medication: "A medicijn, A medicijn, A medicijn, A medicijn, ",
+		appointments: 4,
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		date: "02/06/2021",
+		name: "Joep Doe",
+		age: "10 jaar",
+		diagnosis: "JDM (monocyclische)",
+		medication: "x medicijn",
+		appointments: 4,
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+	{
+		date: "02/06/2021",
+		name: "Joep Doe",
+		age: "10 jaar",
+		diagnosis: "JDM (monocyclische)",
+		medication: "x medicijn",
+		appointments: 4,
+		imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
+	},
+];
+
+export const PatientCard: React.FC<PatientCardProps> = ({ date, name, age, diagnosis, medication, appointments, imageUrl }) => {
 	return (
 		<div className="patientCard">
 			<div className="patientCardTime">
@@ -50,115 +152,13 @@ const PatientCard: React.FC<PatientCardProps> = ({ date, name, age, diagnosis, m
 				</div>
 			</div>
 			<div className="patientCardOptions">
-				<input type="Button" className="patientCardOptionsButton" value="..." />
+				<input type="Button" className="patientCardOptionsButton" defaultValue="..." />
 			</div>
 		</div>
 	);
 };
 
 const DashboardPage: React.FC = () => {
-	const patients = [
-		{
-			date: "02/06/2021",
-			name: "Joep Doeadsfafadafdfafadfa",
-			age: "10 jaar",
-			diagnosis: "JDM (monocyclische)",
-			medication: "x medicijn",
-			appointments: 4,
-			imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-		},
-		{
-			date: "02/06/2021",
-			name: "Joep Doe",
-			age: "10 jaar",
-			diagnosis: "JDM (monocyclische)",
-			medication: "x medicijn",
-			appointments: 4,
-			imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-		},
-		{
-			date: "02/06/2021",
-			name: "Joep Doe",
-			age: "10 jaar",
-			diagnosis: "JDM (monocyclische)",
-			medication: "x medicijn",
-			appointments: 4,
-			imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-		},
-		{
-			date: "02/06/2021",
-			name: "Joep Doe",
-			age: "10 jaar",
-			diagnosis: "JDM (monocyclische)",
-			medication: "x medicijn",
-			appointments: 4,
-			imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-		},
-		{
-			date: "02/06/2021",
-			name: "Joep Doe",
-			age: "10 jaar",
-			diagnosis: "JDM (monocyclische)",
-			medication: "x medicijn",
-			appointments: 4,
-			imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-		},
-		{
-			date: "02/06/2021",
-			name: "Joep Doe",
-			age: "10 jaar",
-			diagnosis: "JDM (monocyclische)",
-			medication: "x medicijn",
-			appointments: 4,
-			imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-		},
-		{
-			date: "02/06/2021",
-			name: "Joep Doe",
-			age: "10 jaar",
-			diagnosis: "JDM (monocyclische)",
-			medication: "x medicijn",
-			appointments: 4,
-			imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-		},
-		{
-			date: "02/06/2021",
-			name: "Joep Doe",
-			age: "10 jaar",
-			diagnosis: "JDM (monocyclische)",
-			medication: "x medicijn",
-			appointments: 4,
-			imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-		},
-		{
-			date: "02/06/2021",
-			name: "Joep ABUBAKAR",
-			age: "10 jaar",
-			diagnosis: "JDM (monocyclische)",
-			medication: "A medicijn, A medicijn, A medicijn, A medicijn, ",
-			appointments: 4,
-			imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-		},
-		{
-			date: "02/06/2021",
-			name: "Joep Doe",
-			age: "10 jaar",
-			diagnosis: "JDM (monocyclische)",
-			medication: "x medicijn",
-			appointments: 4,
-			imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-		},
-		{
-			date: "02/06/2021",
-			name: "Joep Doe",
-			age: "10 jaar",
-			diagnosis: "JDM (monocyclische)",
-			medication: "x medicijn",
-			appointments: 4,
-			imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cbc49fe5e5cad6f542ab1afdfa1a584a22b1d760a502af4d81ca29d57f2d10c?apiKey=070967f8f2f74db686d34af20d021ec7&",
-		},
-	];
-
 	return (
 		<div className="dashboardMain">
 			<h1 className="dashboardHeader"> Hallo, Dr. Johannes Doe </h1>

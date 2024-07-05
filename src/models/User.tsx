@@ -1,15 +1,16 @@
-import { Dictionary } from "../abstracts/Dictionary";
+import { apiUrl, Dictionary } from "../abstracts/Constances";
 
 export class User {
-	_id!: number;
+	Id!: number;
 	Firstname!: string;
 	Lastname!: string;
+	Password!: string;
 	Email!: string;
 	Phonenumber!: string;
 	Settings!: Dictionary<boolean>;
 
 	constructor(firstname: string, lastname: string, email: string, phonenumber: string) {
-		this._id = 0;
+		this.Id = 0;
 		this.Firstname = firstname;
 		this.Lastname = lastname;
 		this.Email = email;

@@ -1,41 +1,16 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./componentstyles/minikalender.css";
 
-const MiniKalender: React.FC = () => {
+interface MiniKalenderProps {
+	initialDate?: Date;
+}
+
+const MiniKalender: React.FC<MiniKalenderProps> = ({ initialDate = new Date() }) => {
 	const calendarRef = useRef<HTMLDivElement>(null);
 	const titleRef = useRef<HTMLDivElement>(null);
 
-	const [currentDate, setCurrentDate] = useState(new Date());
+	const [currentDate, setCurrentDate] = useState(initialDate);
 	const [hoveredDay, setHoveredDay] = useState<number | null>(null);
-
-	useEffect(() => {
-		const calendar = calendarRef.current;
-		const title = titleRef.current;
-
-		const handleMouseOver = () => {
-			if (calendar) {
-				calendar.classList.add("calendar-hover");
-			}
-		};
-
-		const handleMouseOut = () => {
-			if (calendar) {
-				calendar.classList.remove("calendar-hover");
-			}
-		};
-
-		if (title) {
-			title.addEventListener("mouseover", handleMouseOver);
-			title.addEventListener("mouseout", handleMouseOut);
-		}
-
-		return () => {
-			if (title) {
-				title.removeEventListener("mouseover", handleMouseOver);
-				title.removeEventListener("mouseout", handleMouseOut);
-			}
-		};
-	}, []);
 
 	const daysOfWeek = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
 	const monthNames = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
@@ -79,7 +54,7 @@ const MiniKalender: React.FC = () => {
 					{hoveredDay === day && (
 						<div className="popup">
 							<div>Day {day}</div>
-							<div>Dummy Text</div>
+							<div>Additional Info</div>
 						</div>
 					)}
 				</div>
@@ -107,15 +82,13 @@ const MiniKalender: React.FC = () => {
 				</a>
 			</nav>
 			<div className="calendar-header"></div>
-			<div className="calendar-left-button" onClick={handlePreviousMonth}>
+			<div id="previous-month" className="calendar-left-button" onClick={handlePreviousMonth}>
 				{"<"}
 			</div>
-			<div className="calendar-text">
-				<div>
-					{monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
-				</div>
+			<div id="current-date" className="calendar-text">
+				{monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
 			</div>
-			<div className="calendar-right-button" onClick={handleNextMonth}>
+			<div id="next-month" className="calendar-right-button" onClick={handleNextMonth}>
 				{">"}
 			</div>
 			<div className="days-of-week">

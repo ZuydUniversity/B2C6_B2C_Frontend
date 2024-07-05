@@ -24,7 +24,7 @@
 
 .main-sidebar {
 	position: absolute;
-	height: 100vh;
+	height: 100%;
 	width: 250px;
 	box-sizing: border-box;
 	flex-shrink: 0;
