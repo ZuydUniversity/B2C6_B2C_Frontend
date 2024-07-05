@@ -10,4 +10,3 @@ describe("ActiveArtsSession test", () => {
 		render(<PatientInfo name="Joep Doe" age="10 jaar" diagnosis="JDM (monocyclische)" medication="x medicijn" appointmentsCount={4} />);
 	});
 });
- 
