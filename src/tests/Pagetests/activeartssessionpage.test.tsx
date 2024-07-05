@@ -7,3 +7,4 @@ describe("ActiveArtsSession", () => {
 		render(<ActiveArtsSession />);
 	});
 });
+ 
