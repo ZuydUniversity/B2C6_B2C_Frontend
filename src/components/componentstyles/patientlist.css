@@ -1,14 +1,14 @@
 .patientlist-container {
-  border: 30px solid #d8eaff;
-  background-color: white;
-  padding: 10px;
-  margin: auto;
-  border-radius: 20px;
-  width: 60%;
-  max-height: 500px;
-  overflow-y: auto;
+	border: 30px solid #e0f2fe;
+	background-color: white;
+	padding: 10px;
+	margin: auto;
+	border-radius: 70px;
+	width: 60%;
+	max-height: 500px;
+	overflow-y: auto;
 
-  /* ::-webkit-scrollbar {
+	/* ::-webkit-scrollbar {
     display: none;
   }
   -ms-overflow-style: none;  
@@ -16,68 +16,68 @@
 }
 
 .patient-title {
-  text-align: left;
-  padding: 15px;
-  font-size: 1.1rem;
-  color: #000369;
-  text-decoration: underline;
+	text-align: left;
+	padding: 15px;
+	font-size: 1.1rem;
+	color: #000369;
+	text-decoration: underline;
 }
 
 .patientlist-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  color: #000369;
-  width: 91%;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	color: #000369;
+	width: 90%;
 }
 
 .patient-row-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .patient-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #d8eaff;
-  margin-bottom: 10px;
-  border-radius: 10px 0px;
-  flex-grow: 1;
-  cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	background-color: #e0f2fe;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	flex-grow: 1;
+	cursor: pointer;
 }
 
 .patient-value-container {
-  display: flex;
-  justify-content: space-between;
-  background-color: white;
-  padding: 10px;
-  width: 100%;
-  border-radius: 20px;
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+	padding: 10px;
+	width: 100%;
+	border-radius: 20px;
 }
 
 .patient-label-container {
-  justify-content: space-between;
-  display: flex;
-  width: 100%;
-  border-radius: 20px;
-  padding-left: 30px;
+	justify-content: space-between;
+	display: flex;
+	width: 100%;
+	border-radius: 20px;
+	padding-left: 30px;
 }
 
 .patient-value {
-  color: #000369;
-  font-weight: bold;
-  padding: 5px;
-  border-radius: 5px;
+	color: #000369;
+	font-weight: bold;
+	padding: 5px;
+	border-radius: 5px;
 }
 
 .extra-card {
-  background: #d8eaff;
-  margin-left: 20px;
-  padding: 25px;
-  margin-bottom: 10px;
-  border-radius: 0px 10px;
-  font-weight: bold;
-  margin-right: 10px;
+	background: #e0f2fe;
+	margin-left: 20px;
+	padding: 25px;
+	margin-bottom: 10px;
+	border-radius: 0px 10px;
+	font-weight: bold;
+	margin-right: 10px;
 }
