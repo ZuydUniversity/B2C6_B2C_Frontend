@@ -4,42 +4,45 @@ import PhysioSessionPage from "../../pages/physiosessionpage";
 import { fireEvent, render } from "@testing-library/react";
 
 describe("PhysioSessionPage test", () => {
-	it("Should rendere page without failing", () => {
-		render(<PhysioSessionPage />);
-	});
-	it("Should toggle patient list visibility on button click", () => {
-		const { getByText, queryByText } = render(<AddPatientSelection />);
-		const selectPatientButton = getByText("Selecteer patiënt");
-		expect(queryByText("Naam:")).not.toBeInTheDocument();
-	});
+    it("Should render page without failing", () => {
+        render(<PhysioSessionPage />);
+    });
 
-	it("Should hide patient list when clicking outside", () => {
-		const { getByText, queryByRole, getByRole } = render(<PatientSelect onSelect={() => {}} />);
+    it("Should toggle patient list visibility on button click", () => {
+        const { getByText, queryByText } = render(<AddPatientSelection />);
+        const selectPatientButton = getByText("Selecteer patiënt");
+        expect(queryByText("Naam:")).not.toBeInTheDocument();
+    });
 
-		const outsideClickEvent = new MouseEvent("mousedown", {
-			bubbles: true,
-			cancelable: true,
-			view: window,
-		});
-		document.dispatchEvent(outsideClickEvent);
+    it("Should hide patient list when clicking outside", () => {
+        const { container, queryByRole } = render(<PatientSelect onSelect={() => {}} />);
 
-		expect(queryByRole("list")).not.toBeInTheDocument();
-	});
+        const outsideClickEvent = new MouseEvent("mousedown", {
+            bubbles: true,
+            cancelable: true,
+            view: window,
+        });
 
-	it("Should correctly display patient information when selected", () => {
-		const { getByText, getAllByRole } = render(<AddPatientSelection />);
-		const selectPatientButton = getByText("Selecteer patiënt");
-		fireEvent.click(selectPatientButton);
+        // Dispatch the event from a valid DOM element
+        container.dispatchEvent(outsideClickEvent);
 
-		const patientButtons = getAllByRole("button");
-		fireEvent.click(patientButtons[0]);
-	});
+        expect(queryByRole("list")).not.toBeInTheDocument();
+    });
 
-	it("Should correctly display all patients in the list", () => {
-		const { getByText, getAllByRole } = render(<AddPatientSelection />);
-		const selectPatientButton = getByText("Selecteer patiënt");
-		fireEvent.click(selectPatientButton);
+    it("Should correctly display patient information when selected", () => {
+        const { getByText, getAllByRole } = render(<AddPatientSelection />);
+        const selectPatientButton = getByText("Selecteer patiënt");
+        fireEvent.click(selectPatientButton);
 
-		const patientButtons = getAllByRole("button");
-	});
+        const patientButtons = getAllByRole("button");
+        fireEvent.click(patientButtons[0]);
+    });
+
+    it("Should correctly display all patients in the list", () => {
+        const { getByText, getAllByRole } = render(<AddPatientSelection />);
+        const selectPatientButton = getByText("Selecteer patiënt");
+        fireEvent.click(selectPatientButton);
+
+        const patientButtons = getAllByRole("button");
+    });
 });
