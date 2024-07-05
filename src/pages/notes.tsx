@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles/notes.css";
 import NoteListItem from "../components/notelistitem";
 import { Note, Specialist, Patient, Appointment, Session } from "../abstracts/ImportsModels";
+import "../components/searchbar";
 
 // Set constant values for the tests
 const baseSpecialist1 = new Specialist("Barack", "Obama", "JohnDoe@gmail.com", "0612345678");
@@ -61,7 +62,7 @@ const Notes: React.FC = () => {
 			sortedNotes.reverse();
 			setFilteredBySpecialist(false);
 		} else {
-			sortedNotes.sort((a: Note, b: Note) => a.Specialist.Firstname.localeCompare(b.Specialist.Firstname));
+			sortedNotes.sort((a: Note, b: Note) => (a.Specialist?.Firstname ?? "").localeCompare(b.Specialist?.Firstname ?? ""));
 			setFilteredBySpecialist(true);
 		}
 
@@ -142,58 +143,50 @@ const Notes: React.FC = () => {
 
 	return (
 		<div className="general-container">
-			<div className="notes-background">
-				{/* Title bar in container */}
-				<div className="notes-title">
-					<h1>
-						Notities
-						<hr className="notes-title-line" />
-					</h1>
-				</div>
+			<h1 className="notes-header">Notities</h1>
 
-				{/* Container for the list of notes (with border) */}
-				<div className="notes-container">
-					<div className="notes-container-inside">
-						{/* Search bar? */}
-						<div className="notes-filter-bar">
-							Search bar here, maybe? Or a filter bar? Or both? Or neither? Who knows? Not me.
-							<hr />
-						</div>
+			{/* Container for the list of notes (with border) */}
+			<div className="notes-container">
+				<div className="notes-container-inside">
+					{/* Search bar? */}
+					<div className="notes-filter-bar">
+						Search bar here, maybe? Or a filter bar? Or both? Or neither? Who knows? Not me.
+						<hr />
+					</div>
 
-						{/* Table sections */}
-						<div className="notes-table-sections">
-							<div className="notes-table-sections-title table-section-note">
-								<h2>Notitie</h2>
-								<button onClick={sortNotesByName} className="filter-by-button" id="dropdown_arrow_name">
-									<img src={filteredByName ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
-								</button>
-							</div>
-							<div className="notes-table-sections-title table-section-specialist">
-								<h2>Specialist</h2>
-								<button onClick={sortNotesBySpecialist} className="filter-by-button" id="dropdown_arrow_specialist">
-									<img src={filteredBySpecialist ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
-								</button>
-							</div>
-							<div className="notes-table-sections-title table-section-patient">
-								<h2>Patiënt</h2>
-								<button onClick={sortNotesByPatient} className="filter-by-button" id="dropdown_arrow_patient">
-									<img src={filteredByPatient ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
-								</button>
-							</div>
-							<div className="notes-table-sections-title table-section-session">
-								<h2>Sessie</h2>
-								<button onClick={sortNotesBySession} className="filter-by-button" id="dropdown_arrow_session">
-									<img src={filteredBySession ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
-								</button>
-							</div>
+					{/* Table sections */}
+					<div className="notes-table-sections">
+						<div className="notes-table-sections-title table-section-note">
+							<h2>Notitie</h2>
+							<button onClick={sortNotesByName} className="filter-by-button" id="dropdown_arrow_name">
+								<img src={filteredByName ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
+							</button>
 						</div>
+						<div className="notes-table-sections-title table-section-specialist">
+							<h2>Specialist</h2>
+							<button onClick={sortNotesBySpecialist} className="filter-by-button" id="dropdown_arrow_specialist">
+								<img src={filteredBySpecialist ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
+							</button>
+						</div>
+						<div className="notes-table-sections-title table-section-patient">
+							<h2>Patiënt</h2>
+							<button onClick={sortNotesByPatient} className="filter-by-button" id="dropdown_arrow_patient">
+								<img src={filteredByPatient ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
+							</button>
+						</div>
+						<div className="notes-table-sections-title table-section-session">
+							<h2>Sessie</h2>
+							<button onClick={sortNotesBySession} className="filter-by-button" id="dropdown_arrow_session">
+								<img src={filteredBySession ? "Images/dropdown_arrow_reverse.png" : "Images/dropdown_arrow.png"} alt="Arrow down" className="dropdown_arrow" />
+							</button>
+						</div>
+					</div>
 
-						{/* List of notes */}
-						<div className="notes-list">
-							{notes.map((note: Note, index: number) => {
-								return <NoteListItem key={note.Id ?? index} note={note} />;
-							})}
-						</div>
+					{/* List of notes */}
+					<div className="notes-list">
+						{notes.map((note: Note, index: number) => {
+							return <NoteListItem key={note.Id ?? index} note={note} />;
+						})}
 					</div>
 				</div>
 			</div>

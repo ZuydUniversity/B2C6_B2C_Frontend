@@ -71,16 +71,16 @@ const LoginPage: React.FC<Props> = ({ setHideNavbar }) => {
 							<input type="text" id="personnel-number" name="personnel-number" placeholder="Personeels nummer" onChange={(e) => setPersonelNumber(e.target.value)} />
 						</div>
 						<div className="form-group">
-							<input type="text" id="login-email" name="login-email" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} />
+							<input type="email" id="login-email" name="login-email" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} />
 						</div>
 						<div className="form-group">
 							<input type="password" id="password" name="password" placeholder="Wachtwoord" onChange={(e) => setPassword(e.target.value)} />
 						</div>
 						<div className="form-group action-group">
-							<button className="loginpage-button" onClick={handleLogin}>
+							<button id="login-button" onClick={handleLogin}>
 								Log in
 							</button>
-							<a href="#" onClick={openPopup}>
+							<a id="password-forgotten-button" href="#" onClick={openPopup}>
 								Wachtwoord vergeten?
 							</a>
 						</div>

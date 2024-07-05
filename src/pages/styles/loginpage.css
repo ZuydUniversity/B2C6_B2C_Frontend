@@ -65,21 +65,24 @@
 }
 
 #personnel-number {
-	background: url(/public/Icons/UserCard.svg) no-repeat 15px;
+	background: url(/public/Icons/UserCard.svg) no-repeat 18px;
 	padding-left: 55px;
-	background-size: 34px;
+	background-size: 30px;
+	border-radius: 20px; /* Ensure this matches the password field */
 }
 
 #login-email {
-	background: url(/public/Icons/User.svg) no-repeat 15px;
+	background: url(/public/Icons/User.svg) no-repeat 18px;
 	padding-left: 55px;
-	background-size: 35px;
+	background-size: 30px;
+	border-radius: 20px; /* Ensure this matches the password field */
 }
 
 #password {
 	background: url(/public/Icons/Key.svg) no-repeat 18px;
 	padding-left: 55px;
 	background-size: 30px;
+	border-radius: 20px;
 }
 
 .form-group a {
@@ -95,7 +98,7 @@
 	justify-content: space-between;
 }
 
-.loginpage-button {
+button {
 	width: 30%;
 	height: 6vh;
 	padding: 10px;
@@ -112,7 +115,7 @@
 	color: red;
 }
 
-.loginpage-button:hover {
+button:hover {
 	background-color: #161bac;
 }
 

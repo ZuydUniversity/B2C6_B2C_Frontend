@@ -1,6 +1,6 @@
 .note-list-container {
 	background-color: #d8eaff;
-	border-radius: 1rem;
+	border-radius: 16px;
 	height: 100%;
 	padding: 1rem;
 }
@@ -16,14 +16,11 @@
 	padding: 10px;
 	color: #1e3a8a;
 	font-weight: 600;
+	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1608);
 }
 
 .note-list-container:hover {
 	background-color: #696868d2;
-}
-
-.note-list-item:hover {
-	background-color: #ffffff9a;
 }
 
 .no-link {
