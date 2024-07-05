@@ -49,4 +49,3 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 [![codecov](https://codecov.io/gh/username/repository/branch/main/graph/badge.svg?token=YOURTOKEN)](https://codecov.io/gh/username/repository)
 
-This is my project. Here's more information about it...
