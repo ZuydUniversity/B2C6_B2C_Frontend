@@ -17,7 +17,7 @@ const note2 = new Note("Note 2", "This is another note", baseSpecialist1);
 // Test the Notes component
 describe("Notes component", () => {
 	it("should render the Notes component with all properties", () => {
-		render(<NoteListItem key={note1.Id} note={note1} onClick={()=>""}/>);
+		render(<NoteListItem key={note1.Id} note={note1} onClick={() => ""} />);
 
 		const noteListItem = document.getElementsByClassName("note-list-item")[0];
 		expect(noteListItem).toBeInTheDocument();
@@ -36,7 +36,7 @@ describe("Notes component", () => {
 	});
 
 	it("should render the Notes component without properties", () => {
-		render(<NoteListItem key={note2.Id} note={note2} onClick={()=>""}/>);
+		render(<NoteListItem key={note2.Id} note={note2} onClick={() => ""} />);
 
 		const noteListItem = document.getElementsByClassName("note-list-item")[0];
 		expect(noteListItem).toBeInTheDocument();

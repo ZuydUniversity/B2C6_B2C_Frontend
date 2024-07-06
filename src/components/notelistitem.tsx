@@ -17,9 +17,7 @@ const NoteListItem: React.FC<NoteProps> = ({ note, onClick }) => {
 					{note.Specialist?.Firstname} {note.Specialist?.Lastname}
 				</div>
 
-				<div className="note-patient">
-					{note.Patient != null ? `${note.Patient.Firstname} ${note.Patient.Lastname}` : "-"}
-				</div>
+				<div className="note-patient">{note.Patient != null ? `${note.Patient.Firstname} ${note.Patient.Lastname}` : "-"}</div>
 
 				<div className="note-session">{note.Session != null ? note.Session.Name : "-"}</div>
 			</div>
