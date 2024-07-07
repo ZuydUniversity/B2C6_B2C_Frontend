@@ -30,7 +30,6 @@ const App: React.FC = () => {
 						<Route path="/" element={<Navigate to="/login" replace />} />
 						<Route path="/login" element={<LoginPage setHideNavbar={setHideNavbar} />} />
 						<Route path="/settings" element={<PrivateRoute element={<SettingsPage />} />} /> 
-						<Route path ="/settingss" element={<SettingsPage />}/>
 						<Route path="/reset-password" element={<ResetPasswordPage setHideNavbar={setHideNavbar} />} />
 						<Route path="/aboutus" element={<PrivateRoute element={<AboutUsPage />} />} />
 						<Route path="/patients" element={<PrivateRoute element={<PatientPage />} />} />
