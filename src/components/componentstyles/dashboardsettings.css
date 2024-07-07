@@ -3,6 +3,7 @@
   border-radius: 1rem;
   height: 80%;
   padding: 1rem;
+  width: 100%;
 }
 
 .settins-container {
@@ -19,5 +20,17 @@
   align-items: center;
   padding-left: 1rem;
   padding-right: 1rem;
+  font-size: 1rem;
+}
+
+.settings-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.element-name {
   font-size: 1rem;
 }

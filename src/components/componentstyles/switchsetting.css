@@ -1,50 +1,55 @@
 .switch-container {
-  width: 10%;
-  height: 5%;
-}
-
-.switch-default-checkbox {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.switch-default-checkbox:checked + .switch-slider {
-  background-color: #2196f3;
-}
-
-.switch-default-checkbox:focus + .switch-slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-.switch-default-checkbox:checked + .switch-slider:before {
-  -webkit-transform: translateX(1.5rem);
-  -ms-transform: translateX(1.5rem);
-  transform: translateX(1.5rem);
+  --button-width: 3.5em;
+  --button-height: 2em;
+  --toggle-diameter: 1.5em;
+  --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+  --toggle-shadow-offset: 10px;
+  --toggle-wider: 3em;
+  --color-grey: #cccccc;
+  --color-green: #4296f4;
 }
 
 .switch-slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  background-color: #c2d6ff;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  display: inline-block;
+  width: var(--button-width);
+  height: var(--button-height);
+  background-color: var(--color-grey);
+  border-radius: calc(var(--button-height) / 2);
+  position: relative;
+  transition: 0.3s all ease-in-out;
 }
 
-.switch-slider:before {
-  position: absolute;
+.switch-slider::after {
   content: "";
-  height: 1.5rem;
-  width: 1.5rem;
-  left: 0.25rem;
-  bottom: 0.25rem;
-  border-radius: 50%;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  display: inline-block;
+  width: var(--toggle-diameter);
+  height: var(--toggle-diameter);
+  background-color: #fff;
+  border-radius: calc(var(--toggle-diameter) / 2);
+  position: absolute;
+  top: var(--button-toggle-offset);
+  transform: translateX(var(--button-toggle-offset));
+  box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+  transition: 0.3s all ease-in-out;
+}
+
+.switch-container input[type="checkbox"]:checked + .switch-slider {
+  background-color: var(--color-green);
+}
+
+.switch-container input[type="checkbox"]:checked + .switch-slider::after {
+  transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+  box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+}
+
+.switch-container input[type="checkbox"] {
+  display: none;
+}
+
+.switch-container input[type="checkbox"]:active + .switch-slider::after {
+  width: var(--toggle-wider);
+}
+
+.switch-container input[type="checkbox"]:checked:active + .switch-slider::after {
+  transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
 }

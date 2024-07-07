@@ -7,12 +7,7 @@ const DashboardSettings: React.FC = () => {
   return (
     <div className="settings-containers-background">
       <div className="settings-container">
-        <div className="settings-element">
-          <p className="element-name">
-            Dark Theme
-          </p>
-          <SettingSwitch status={false} />
-        </div>
+        <SettingSwitch status={false} />
       </div>
     </div>
   );
