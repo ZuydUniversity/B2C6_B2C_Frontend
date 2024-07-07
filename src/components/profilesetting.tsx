@@ -19,7 +19,7 @@ interface UserProfileProps {
   const ProfileSetting: React.FC<UserProfileProps> = ({ user }) => {
     return (
       <div className="profile">
-        <h2>User Profile</h2>
+        <h2>Profiel</h2>
         <div className="profile-info">
           <div className="profile-item">
             <strong>First Name:</strong> {user.firstName}
