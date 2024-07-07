@@ -4,9 +4,18 @@ import './styles/stylesheetsettings.css';
 import MiniKalender from "../components/minikalender";
 import DashboardSettings from '../components/dashboardsettings';
 import ProfileSetting from '../components/profilesetting';
+import LogbookSetting from '../components/logboeksettings';
 
 const SettingsPage: React.FC = () => {
     const [selectedItem, setSelectedItem] = useState<string>('Profiel');
+    const user = {
+        firstName: 'Levi',
+        lastName: 'Noah',
+        phone: '06-40440411',
+        email: 'levi.noah@mockdata.nl',
+        jobtitle: 'Arts',
+        specialist: 'juvenile dermatomyositis',
+        location: 'Universitair Medisch Centrum Utrecht'}
     
     const handleNavClick = (item: string) => {
         setSelectedItem(item);
@@ -27,9 +36,9 @@ const SettingsPage: React.FC = () => {
                         </ul>
                     </nav>
                     <div className='settings-component-styling'>
-                        {selectedItem === 'Profiel' && <ProfileSetting/>} 
+                        {selectedItem === 'Profiel' && <ProfileSetting user={user} /> } 
                         {selectedItem === 'Meldingen' && <div>meldingen</div>}
-                        {selectedItem === 'Logboek' && <div>Logboek Component</div>}
+                        {selectedItem === 'Logboek' && <LogbookSetting/> }
                         {selectedItem === 'Dashboard Instellingen' && <DashboardSettings/> }
                     </div>
                 </div>
