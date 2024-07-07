@@ -13,6 +13,12 @@ const DashboardSettings: React.FC = () => {
           </p>
           <SettingSwitch status={false} />
         </div>
+        <div className="settings-element">
+          <p className="element-name">
+            Compact Mode
+          </p>
+          <SettingSwitch status={false} />
+        </div>
       </div>
     </div>
   );
