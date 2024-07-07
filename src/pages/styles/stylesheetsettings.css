@@ -2,9 +2,6 @@
     background: #D8EAFF;
     height: 100%;
     margin: 0;
-
-    
-
 }
 
 .settings-page h1 {
@@ -15,7 +12,6 @@
     padding: 34px 0 0 10px;
     margin-left: 34px;
     border-bottom: 3px solid #000369;
-
 }
 
 .settings-layout-styling {
@@ -50,7 +46,6 @@
     font-weight: 600;
     line-height: normal;  
     opacity: 0.3;
-    
 }
 
 .settings-navbar ul li:hover {
