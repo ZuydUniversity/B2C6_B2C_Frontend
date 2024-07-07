@@ -4,7 +4,8 @@ import './styles/stylesheetsettings.css';
 import MiniKalender from "../components/minikalender";
 import DashboardSettings from '../components/dashboardsettings';
 import ProfileSetting from '../components/profilesetting';
-import LogbookSetting from '../components/logboeksettings';
+import MeldingSettings from '../components/meldingsettings';
+import LogboekSettings from '../components/logboeksettings';
 
 const SettingsPage: React.FC = () => {
     const [selectedItem, setSelectedItem] = useState<string>('Profiel');
@@ -29,16 +30,16 @@ const SettingsPage: React.FC = () => {
                     <MiniKalender/>
                     <nav className='settings-navbar'>
                         <ul>
-                            <li className={selectedItem === 'Profiel' ? 'active' : ''} onClick={() => handleNavClick('Profiel')}>Profiel</li>
-                            <li className={selectedItem === 'Meldingen' ? 'active' : ''} onClick={() => handleNavClick('Meldingen')}>Meldingen</li>
-                            <li className={selectedItem === 'Logboek' ? 'active' : ''} onClick={() => handleNavClick('Logboek')}>Logboek</li>
-                            <li className={selectedItem === 'Dashboard Instellingen' ? 'active' : ''} onClick={() => handleNavClick('Dashboard Instellingen')}>Dashboard Instellingen</li>
+                            <li id='Profiel' className={selectedItem === 'Profiel' ? 'active' : ''} onClick={() => handleNavClick('Profiel')}>Profiel</li>
+                            <li id='Meldingen' className={selectedItem === 'Meldingen' ? 'active' : ''} onClick={() => handleNavClick('Meldingen')}>Meldingen</li>
+                            <li id='Logboek' className={selectedItem === 'Logboek' ? 'active' : ''} onClick={() => handleNavClick('Logboek')}>Logboek</li>
+                            <li id='Dashboard' className={selectedItem === 'Dashboard Instellingen' ? 'active' : ''} onClick={() => handleNavClick('Dashboard Instellingen')}>Dashboard Instellingen</li>
                         </ul>
                     </nav>
                     <div className='settings-component-styling'>
-                        {selectedItem === 'Profiel' && <ProfileSetting user={user} /> } 
-                        {selectedItem === 'Meldingen' && <div>meldingen</div>}
-                        {selectedItem === 'Logboek' && <LogbookSetting/> }
+                        {selectedItem === 'Profiel' && <ProfileSetting user={user}/>} 
+                        {selectedItem === 'Meldingen' && <MeldingSettings/>}
+                        {selectedItem === 'Logboek' && <LogboekSettings/>}
                         {selectedItem === 'Dashboard Instellingen' && <DashboardSettings/> }
                     </div>
                 </div>
