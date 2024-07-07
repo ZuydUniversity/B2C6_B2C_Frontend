@@ -3,7 +3,7 @@ import { render, fireEvent, screen, cleanup, waitFor } from "@testing-library/re
 import CalenderPage from "../../pages/calenderpage";
 
 test("required test", () => {
-    expect(true).toBe(true);
+	expect(true).toBe(true);
 });
 
 // // Cleanup the DOM after each test
