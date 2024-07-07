@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './styles/stylesheetsettings.css';
 import MiniKalender from "../components/minikalender";
+import DashboardSettings from '../components/dashboardsettings';
 import SettingSwitch from '../components/switchsetting';
 
 const SettingsPage: React.FC = () => {
@@ -16,6 +17,7 @@ const SettingsPage: React.FC = () => {
             <main>
                 <h1 className='settings-page'>Instellingen</h1>
                 <div className='settings-layout-styling'>
+                    <MiniKalender/>
                     <nav className='settings-navbar'>
                         <ul>
                             <li className={selectedItem === 'Profiel' ? 'active' : ''} onClick={() => handleNavClick('Profiel')}>Profiel</li>
@@ -28,11 +30,11 @@ const SettingsPage: React.FC = () => {
                         {selectedItem === 'Profiel' && <div>profiel</div>} 
                         {selectedItem === 'Meldingen' && <div>meldingen</div>}
                         {selectedItem === 'Logboek' && <div>Logboek Component</div>}
-                        {selectedItem === 'Dashboard Instellingen' && <div>Dashboard Instellingen Component</div>}
+                        {selectedItem === 'Dashboard Instellingen' && <DashboardSettings/> }
                     </div>
                 </div>
                 <div>
-                    <MiniKalender/>
+                    
                 </div>
             </main>
         </div>
