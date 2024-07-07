@@ -150,12 +150,7 @@ const Notes: React.FC = () => {
 				<div className="notes-container-inside">
 					{/* Search bar? */}
 					<div className="notes-filter-bar">
-						<input
-							type="text"
-							placeholder="Zoek notitie..."
-							className="search-bar"
-							disabled
-						/>
+						<input type="text" placeholder="Zoek notitie..." className="search-bar" disabled />
 						<hr />
 					</div>
 					{/* Table sections */}
