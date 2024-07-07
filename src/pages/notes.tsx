@@ -150,10 +150,9 @@ const Notes: React.FC = () => {
 				<div className="notes-container-inside">
 					{/* Search bar? */}
 					<div className="notes-filter-bar">
-						Search bar here, maybe? Or a filter bar? Or both? Or neither? Who knows? Not me.
+						<input type="text" placeholder="Zoek notitie..." className="search-bar" disabled />
 						<hr />
 					</div>
-
 					{/* Table sections */}
 					<div className="notes-table-sections">
 						<div className="notes-table-sections-title table-section-note">

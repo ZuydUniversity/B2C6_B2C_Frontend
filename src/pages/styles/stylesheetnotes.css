@@ -56,6 +56,14 @@
 	gap: 12px;
 }
 
+.search-bar {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+	border: 50px solid #ccc;
+	border-radius: 50px;
+}
+
 .table-section-note {
 	width: 30%;
 }
