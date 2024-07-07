@@ -7,7 +7,7 @@ const DashboardSettings: React.FC = () => {
   return (
     <div className="settings-containers-background">
       <div className="settings-container">
-        <SettingSwitch status={false} />
+        
       </div>
     </div>
   );

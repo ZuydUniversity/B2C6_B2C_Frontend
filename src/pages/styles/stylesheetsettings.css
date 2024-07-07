@@ -18,6 +18,9 @@
     width: 1164px;
     height: 858px;
     padding-left: 34px;
+    display:flex;
+    flex-direction: row;
+    gap: 32px;
 }
 
 .settings-navbar {

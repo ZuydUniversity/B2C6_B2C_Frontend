@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './styles/stylesheetsettings.css';
 import MiniKalender from "../components/minikalender";
 import DashboardSettings from '../components/dashboardsettings';
-import SettingSwitch from '../components/switchsetting';
+import ProfileSetting from '../components/profilesetting';
 
 const SettingsPage: React.FC = () => {
     const [selectedItem, setSelectedItem] = useState<string>('Profiel');
@@ -27,7 +27,7 @@ const SettingsPage: React.FC = () => {
                         </ul>
                     </nav>
                     <div className='settings-component-styling'>
-                        {selectedItem === 'Profiel' && <div>profiel</div>} 
+                        {selectedItem === 'Profiel' && <ProfileSetting/>} 
                         {selectedItem === 'Meldingen' && <div>meldingen</div>}
                         {selectedItem === 'Logboek' && <div>Logboek Component</div>}
                         {selectedItem === 'Dashboard Instellingen' && <DashboardSettings/> }
