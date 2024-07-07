@@ -25,11 +25,14 @@ const SettingsPage: React.FC = () => {
                         </ul>
                     </nav>
                     <div className='settings-component-styling'>
-                        {selectedItem === 'Profiel' && <MiniKalender/>} 
-                        {selectedItem === 'Meldingen' && <div></div>}
+                        {selectedItem === 'Profiel' && <div>profiel</div>} 
+                        {selectedItem === 'Meldingen' && <div>meldingen</div>}
                         {selectedItem === 'Logboek' && <div>Logboek Component</div>}
                         {selectedItem === 'Dashboard Instellingen' && <div>Dashboard Instellingen Component</div>}
                     </div>
+                </div>
+                <div>
+                    <MiniKalender/>
                 </div>
             </main>
         </div>
