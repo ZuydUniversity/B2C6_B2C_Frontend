@@ -22,22 +22,3 @@
   padding-right: 1rem;
   font-size: 1rem;
 }
-
-.settings-element {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  background-color: #D8EAFF;
-  padding-left: 5%;
-  padding-right: 5%;
-  border-radius: 1rem;
-  width: 90%;
-  padding-top: 0rem;
-  margin-bottom: 1rem;
-}
-
-.element-name {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
