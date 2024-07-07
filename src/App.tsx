@@ -9,6 +9,7 @@ import Sidebar from "./components/sidebar";
 import LoginPage from "./pages/loginpage";
 import NotFoundPage from "./pages/notfoundpage";
 import Notes from "./pages/notes";
+import SettingsPage from "./pages/settingspage";
 import { ArtsSession } from "./pages/artssessionpage";
 import PhysioSessionPage from "./pages/physiosessionpage";
 import { ActiveArtsSession } from "./pages/activeartssessionpage";
@@ -28,6 +29,7 @@ const App: React.FC = () => {
 					<Routes>
 						<Route path="/" element={<Navigate to="/login" replace />} />
 						<Route path="/login" element={<LoginPage setHideNavbar={setHideNavbar} />} />
+						<Route path="/settings" element={<PrivateRoute element={<SettingsPage />} />} />
 						<Route path="/reset-password" element={<ResetPasswordPage setHideNavbar={setHideNavbar} />} />
 						<Route path="/aboutus" element={<PrivateRoute element={<AboutUsPage />} />} />
 						<Route path="/patients" element={<PrivateRoute element={<PatientPage />} />} />

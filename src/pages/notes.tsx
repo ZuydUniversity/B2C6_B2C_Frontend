@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles/notes.css";
+import "./styles/stylesheetnotes.css";
 import NoteListItem from "../components/notelistitem";
 import { Note, Specialist, Patient, Appointment, Session } from "../abstracts/ImportsModels";
 import "../components/searchbar";

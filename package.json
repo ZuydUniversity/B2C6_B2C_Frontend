@@ -70,7 +70,9 @@
       "!src/reportWebVitals.ts",
       "!src/abstracts/**",
       "!src/pages/notfoundpage.tsx",
-      "!src/models/**"
+      "!src/models/**",
+      "!src/scripts/**",
+      "!src/pages/calenderpage.tsx"
     ]
   },
   "devDependencies": {
