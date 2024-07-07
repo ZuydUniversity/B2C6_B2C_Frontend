@@ -15,6 +15,9 @@
 }
 
 .settings-layout-styling {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
     width: 1164px;
     height: 858px;
     padding-left: 34px;
@@ -61,4 +64,9 @@
 .url {
     text-decoration: none;
     color:black;
+}
+
+.settings-component-styling {
+  margin-top: 2.5rem;
+  width: 55%;
 }

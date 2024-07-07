@@ -6,13 +6,13 @@ interface SettingStatus {
 }
 
 const SettingSwitch: React.FC<SettingStatus> = ({status}) => {
-  const [switchState, setSwitchState] = useState<boolean>(false);
+  const [switchState, setSwitchState] = useState<boolean>(status);
 
   return (
-    <div className="switch-container">
-      <a id="switch-default-checkbox" type="checkbox" onClick={() => {setSwitchState(!switchState)}}></a>
+    <label className="switch-container">
+      <input id="switch-default-checkbox" type="checkbox" onClick={() => {setSwitchState(!switchState)}}></input>
       <span className="switch-slider"></span>
-    </div>
+    </label>
   );
 }
 
