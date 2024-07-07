@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/aboutuscss.css";
+import "./styles/stylesheetaboutus.css";
 
 const AboutUsPage: React.FC = () => {
 	return (

@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./styles/artssession.css"; //So the sessionpages have the same styling
+import "./styles/stylesheetartssession.css"; //So the sessionpages have the same styling
 
 // Define hardcoded patient data
 const patients = [

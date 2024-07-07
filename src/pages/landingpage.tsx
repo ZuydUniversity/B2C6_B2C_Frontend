@@ -1,6 +1,6 @@
 // src/LandingPage.tsx
 import React, { useEffect } from "react";
-import "./styles/landingpagecss.css";
+import "./styles/stylesheetlandingpage.css";
 
 const LandingPage: React.FC = () => {
 	useEffect(() => {

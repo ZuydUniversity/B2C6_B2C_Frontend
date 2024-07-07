@@ -1,5 +1,6 @@
 import React from "react";
-import "./styles/artscss.css";
+import "./styles/stylesheetarts.css";
+import Sidebar from "../components/sidebar";
 
 const ArtsPage: React.FC = () => {
 	return (

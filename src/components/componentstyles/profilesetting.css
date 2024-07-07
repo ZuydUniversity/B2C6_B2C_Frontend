@@ -1,0 +1,32 @@
+.profile {
+	background-color: #c2d6ff;
+	border-radius: 1rem;
+	height: 80%;
+	padding: 1rem;
+	width: 100%;
+}
+
+.profile h2 {
+	width: 70%;
+	height: 5%;
+	font-style: bold;
+	color: #000369;
+	padding: 20px 0 0 10px;
+	margin-left: 10px;
+	border-bottom: 3px solid #000369;
+}
+
+.profile-info {
+	color: #000369;
+}
+
+.profile-item {
+	border: 2px solid #000369;
+	border-radius: 8px;
+	padding: 10px;
+	margin: 1rem;
+	background-color: #d6e0f5; /* Different background color */
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added drop shadow */
+}

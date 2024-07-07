@@ -1,7 +1,7 @@
 // src/pages/PatientOverview.tsx
 import React from "react";
 import { useParams } from "react-router-dom";
-import "./styles/patientoverviewcss.css";
+import "./styles/stylesheetpatientoverview.css";
 import PatientDetails from "../components/patientdetails";
 import PatientFunctionalDetails from "../components/patientfunctionaldetails";
 import { Patient } from "../abstracts/ImportsModels";

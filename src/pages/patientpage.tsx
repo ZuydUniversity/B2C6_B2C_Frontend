@@ -1,7 +1,7 @@
 // src/pages/PatientPage.tsx
 import React from "react";
 import { Navigate } from "react-router-dom";
-import "./styles/patientcss.css";
+import "./styles/stylesheetpatient.css";
 import PatientList from "../components/patientlist";
 
 const PatientPage: React.FC = () => {
